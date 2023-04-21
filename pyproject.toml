@@ -1,0 +1,40 @@
+[tool.black]
+exclude = '''
+^/(
+  (
+    # root directories to exclude
+    \.DS_Store
+    | \.conan
+    | \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | \.vs
+    | \.vscode
+    | _venv
+  )/
+  # any rooted files to ignore would go here
+)
+# unrooted paths here
+| __pycache__/
+'''
+# In different versions of black, there were 3 different ways to turn on
+# the same thing - splitting up of long string literals
+experimental-string-processing = true
+preview = true
+enable-unstable-feature = ['string_processing']
+
+line-length = 120
+
+[tool.isort]
+profile = 'black'
+lines_between_types = 1
+combine_as_imports = true
+line_length = 120
+
+[tool.ruff]
+line-length = 120
+ignore = [
+    "E402", # Module level import not at top of file
+]

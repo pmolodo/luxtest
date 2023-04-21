@@ -1,0 +1,4 @@
+# Tell git to stop altering line endings.  Check things out in the state they're
+# saved in the repo. Modern text editors can deal with either LF or CRLF on any
+# platform.
+* -text
