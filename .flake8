@@ -1,0 +1,13 @@
+[flake8]
+max-line-length = 120
+
+ignore =
+    # E203 = whitespace before ':' - black will format like `"mystr"[2 + 1 :]`, which flake8 doesn't like
+    E203,
+    # E402 = module level import not at top of file
+    E402,
+    # E501 = line too long
+    E501,
+    # W503 = line break before binary operator - black will break (long_condition and other_long_condition)
+    #   in a way that this check doesn't like
+    W503,

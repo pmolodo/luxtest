@@ -9,3 +9,25 @@
 **/*.exr
 !/dome_grid_2k.exr
 **/*.png
+
+
+# python byte-compiled / optimized files
+__pycache__/
+*.py[co]
+
+# Virtual environments
+.tox/
+.venv/
+_venv/
+
+# Linters / tools
+.bash_history
+.conan
+.mypy_cache
+
+# IDEs
+.idea/
+.vs/
+
+# OS - specific
+.DS_Store
