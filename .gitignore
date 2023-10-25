@@ -1,0 +1,10 @@
+/.thumbs
+/backup
+/web
+/renders
+**/*.rat
+**/*.tx
+**/*.autosave
+**/*.nk~
+**/*.exr
+**/*.png
