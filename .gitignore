@@ -7,4 +7,5 @@
 **/*.autosave
 **/*.nk~
 **/*.exr
+!/dome_grid_2k.exr
 **/*.png
