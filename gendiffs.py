@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import os, shutil
 
 def needs_update(existing, dependent):
