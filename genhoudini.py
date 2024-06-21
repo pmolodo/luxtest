@@ -4,10 +4,13 @@
 """
 
 import argparse
+import importlib
 import inspect
 import os
+import subprocess
 import sys
 import traceback
+
 
 
 ###############################################################################
@@ -16,6 +19,8 @@ import traceback
 
 THIS_FILE = os.path.abspath(inspect.getsourcefile(lambda: None) or __file__)
 THIS_DIR = os.path.dirname(THIS_FILE)
+DEPS_DIR = os.path.join(THIS_DIR, ".deps")
+PY_DEPS_DIR = os.path.join(DEPS_DIR, "python")
 
 LUXTEST_HIP = os.path.join(THIS_DIR, "luxtest.hip")
 
@@ -32,6 +37,39 @@ def is_ipython():
     return True
 
 
+
+def pip_import(module_name, pip_package_name=None):
+    try:
+        return importlib.import_module(module_name)
+    except ImportError:
+        pass
+
+    # couldn't import, first try ensuring PY_DEPS_DIR is on path,
+    # and retry
+    os.makedirs(PY_DEPS_DIR, exist_ok=True)
+    if PY_DEPS_DIR not in sys.path:
+        sys.path.insert(0, PY_DEPS_DIR)
+        try:
+            return importlib.import_module(module_name)
+        except ImportError:
+            pass
+
+    # still couldn't import - install via pip
+    if pip_package_name is None:
+        pip_package_name = module_name
+    os.makedirs(PY_DEPS_DIR, exist_ok=True)
+
+    # ensurepip not necessary, houdini's python install includes it... and it was erroring
+    # subprocess.check_call([sys.executable, "-m", "ensurepip"])
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "--target", PY_DEPS_DIR, pip_package_name])
+    print("=" * 80)
+
+    return importlib.import_module(module_name)
+
+
+tqdm = pip_import("tqdm")
+
+
 ###############################################################################
 # Core functions
 ###############################################################################
@@ -45,7 +83,7 @@ def render_luxtest(hip_path=LUXTEST_HIP):
     num_rops = len(rop_nodes)
     print(f"Found {num_rops} ROP nodes")
 
-    for i, rop_node in enumerate(rop_nodes):
+    for i, rop_node in enumerate(tqdm.tqdm(rop_nodes, desc="ROP nodes")):
         print(f"Rendering node {i + 1}/{len(rop_nodes)}: {rop_node.name()}")
         rop_node.render()
 
