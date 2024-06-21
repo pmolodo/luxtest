@@ -41,13 +41,14 @@ def render_luxtest(hip_path=LUXTEST_HIP):
     import hou
     print(f"Loading: {hip_path}")
     hou.hipFile.load(hip_path)
-    rop_nodes = [x for x in hou.node('/stage').allSubChildren() if isinstance(x, hou.RopNode)]
+    usdrender_type = hou.lopNodeTypeCategory().nodeType("usdrender_rop")
+    rop_nodes = [x for x in hou.node('/stage').allSubChildren() if x.type() == usdrender_type]
     num_rops = len(rop_nodes)
-    print(f"Found {num_rops} ROP nodes")
+    print(f"Found {num_rops} usdrender ROP nodes")
 
     for i, rop_node in enumerate(rop_nodes):
         print(f"Rendering node {i + 1}/{len(rop_nodes)}: {rop_node.name()}")
-        rop_node.render()
+        rop_node.render(output_progress=True, verbose=True)
 
 
 ###############################################################################
