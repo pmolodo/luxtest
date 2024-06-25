@@ -47,7 +47,7 @@ def render_luxtest(hip_path=LUXTEST_HIP):
     print(f"Found {num_rops} usdrender ROP nodes")
 
     for i, rop_node in enumerate(rop_nodes):
-        print(f"Rendering node {i + 1}/{len(rop_nodes)}: {rop_node.name()}")
+        print(f"Rendering node {i + 1}/{num_rops}: {rop_node.name()}")
         rop_node.render(output_progress=True, verbose=True)
 
 
