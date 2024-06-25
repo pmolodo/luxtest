@@ -38,16 +38,20 @@ def is_ipython():
 ###############################################################################
 
 
-def render_luxtest(hip_path=LUXTEST_HIP, renderers: Iterable[str] = ()):
+def render_luxtest(hip_path=LUXTEST_HIP, renderers: Iterable[str] = (), lights: Iterable[str] = ()):
     import hou
     print(f"Loading: {hip_path}")
     hou.hipFile.load(hip_path)
     usdrender_type = hou.lopNodeTypeCategory().nodeType("usdrender_rop")
 
     rop_nodes = [x for x in hou.node('/stage').allSubChildren() if x.type() == usdrender_type]
+    if lights:
+        light_prefixes = tuple(f"render_{l}_" for l in lights)
+        rop_nodes = [x for x in rop_nodes if x.name().startswith(light_prefixes)]
     if renderers:
         renderer_suffixes = tuple(f"_{r}" for r in renderers)
         rop_nodes = [x for x in rop_nodes if x.name().endswith(renderer_suffixes)]
+    rop_nodes.sort(key=lambda node: node.name())
     num_rops = len(rop_nodes)
     print()
     print("=" * 80)
@@ -80,6 +84,12 @@ def get_parser():
                         help="Only render images for the given renderer; if not"
                         " specified, render images for all renderers. May be"
                         " repeated.")
+    parser.add_argument("-l", "--light",
+                        choices=("cylinder", "disk", "distant", "dome", "rect", "sphere", "visible-rect"),
+                        action="append", dest="lights",
+                        help="Only render images for the given lights; if not"
+                        " specified, render images for all lights. May be"
+                        " repeated.")
     return parser
 
 
@@ -89,7 +99,7 @@ def main(argv=None):
     parser = get_parser()
     args = parser.parse_args(argv)
     try:
-        render_luxtest(args.hip_file, renderers=args.renderers)
+        render_luxtest(args.hip_file, lights=args.lights, renderers=args.renderers)
     except Exception:  # pylint: disable=broad-except
 
         traceback.print_exc()
