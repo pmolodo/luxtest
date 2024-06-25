@@ -2,10 +2,12 @@
 
 import os, shutil
 
+
 def needs_update(existing, dependent):
     if os.path.exists(dependent):
         return os.path.getmtime(existing) > os.path.getmtime(dependent)
     return True
+
 
 TEST_ROOT = "renders"
 WEB_ROOT = "web"
@@ -17,52 +19,72 @@ RENDERERS = [
 ]
 
 TESTS = [
-    ("distant", 15, {
-        1: "Angle from 0 to 90, normalize OFF", 
-        6: "Angle from 0 to 90, normalize ON", 
-        11: "Colour temperature from 2000 to 11000",
-    }),
+    (
+        "distant",
+        15,
+        {
+            1: "Angle from 0 to 90, normalize OFF",
+            6: "Angle from 0 to 90, normalize ON",
+            11: "Colour temperature from 2000 to 11000",
+        },
+    ),
     ("dome", 1, {}),
-    ("cylinder", 40, {
-        1: "Radius from 0.1 to 0.5, normalize OFF", 
-        6: "Radius from 0.1 to 0.5, normalize ON", 
-        11: "Colour temperature from 2000 to 11000",
-        16: "Cone angle from 90 to 10",
-        21: "Softness from 0 to 1 (cone 45)",
-        26: "Focus from 0 to 100 (cone 60, focusTint red)",
-        31: "IES angle scale -1 to 1 (IES normalize OFF)",
-        36: "IES angle scale -1 to 1 (IES normalize ON)",
-    }),
-    ("disk", 40, {
-        1: "Radius from 0.1 to 0.5, normalize OFF", 
-        6: "Radius from 0.1 to 0.5, normalize ON", 
-        11: "Colour temperature from 2000 to 11000",
-        16: "Cone angle from 90 to 10",
-        21: "Softness from 0 to 1 (cone 45)",
-        26: "Focus from 0 to 100 (cone 60, focusTint red)",
-        31: "IES angle scale -1 to 1 (IES normalize OFF)",
-        36: "IES angle scale -1 to 1 (IES normalize ON)",
-    }),
-    ("rect", 40, {
-        1: "Width from 0.1 to 0.5, normalize OFF", 
-        6: "Width from 0.1 to 0.5, normalize ON", 
-        11: "Colour temperature from 2000 to 11000",
-        16: "Cone angle from 90 to 10",
-        21: "Softness from 0 to 1 (cone 45)",
-        26: "Focus from 0 to 100 (cone 60, focusTint red)",
-        31: "IES angle scale -1 to 1 (IES normalize OFF)",
-        36: "IES angle scale -1 to 1 (IES normalize ON)",
-    }),
-    ("sphere", 40, {
-        1: "Radius from 0.1 to 0.5, normalize OFF", 
-        6: "Radius from 0.1 to 0.5, normalize ON", 
-        11: "Colour temperature from 2000 to 11000",
-        16: "Cone angle from 90 to 10",
-        21: "Softness from 0 to 1 (cone 45)",
-        26: "Focus from 0 to 100 (cone 60, focusTint red)",
-        31: "IES angle scale -1 to 1 (IES normalize OFF)",
-        36: "IES angle scale -1 to 1 (IES normalize ON)",
-    }),
+    (
+        "cylinder",
+        40,
+        {
+            1: "Radius from 0.1 to 0.5, normalize OFF",
+            6: "Radius from 0.1 to 0.5, normalize ON",
+            11: "Colour temperature from 2000 to 11000",
+            16: "Cone angle from 90 to 10",
+            21: "Softness from 0 to 1 (cone 45)",
+            26: "Focus from 0 to 100 (cone 60, focusTint red)",
+            31: "IES angle scale -1 to 1 (IES normalize OFF)",
+            36: "IES angle scale -1 to 1 (IES normalize ON)",
+        },
+    ),
+    (
+        "disk",
+        40,
+        {
+            1: "Radius from 0.1 to 0.5, normalize OFF",
+            6: "Radius from 0.1 to 0.5, normalize ON",
+            11: "Colour temperature from 2000 to 11000",
+            16: "Cone angle from 90 to 10",
+            21: "Softness from 0 to 1 (cone 45)",
+            26: "Focus from 0 to 100 (cone 60, focusTint red)",
+            31: "IES angle scale -1 to 1 (IES normalize OFF)",
+            36: "IES angle scale -1 to 1 (IES normalize ON)",
+        },
+    ),
+    (
+        "rect",
+        40,
+        {
+            1: "Width from 0.1 to 0.5, normalize OFF",
+            6: "Width from 0.1 to 0.5, normalize ON",
+            11: "Colour temperature from 2000 to 11000",
+            16: "Cone angle from 90 to 10",
+            21: "Softness from 0 to 1 (cone 45)",
+            26: "Focus from 0 to 100 (cone 60, focusTint red)",
+            31: "IES angle scale -1 to 1 (IES normalize OFF)",
+            36: "IES angle scale -1 to 1 (IES normalize ON)",
+        },
+    ),
+    (
+        "sphere",
+        40,
+        {
+            1: "Radius from 0.1 to 0.5, normalize OFF",
+            6: "Radius from 0.1 to 0.5, normalize ON",
+            11: "Colour temperature from 2000 to 11000",
+            16: "Cone angle from 90 to 10",
+            21: "Softness from 0 to 1 (cone 45)",
+            26: "Focus from 0 to 100 (cone 60, focusTint red)",
+            31: "IES angle scale -1 to 1 (IES normalize OFF)",
+            36: "IES angle scale -1 to 1 (IES normalize ON)",
+        },
+    ),
     ("visible-rect", 1, {}),
 ]
 
@@ -70,8 +92,7 @@ OUTPUT_DIR = "diff"
 
 MAP = "magma"
 
-HTML = \
-"""<!DOCTYPE html>
+HTML = """<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -104,7 +125,7 @@ for name, end, descriptions in TESTS:
   </tr>
 """
 
-    for frame in range(1, end+1):
+    for frame in range(1, end + 1):
 
         if frame in descriptions:
             desc = descriptions[frame]
@@ -144,7 +165,10 @@ for name, end, descriptions in TESTS:
             HTML += f'    <td><img src="img/{output_png}"</td>\n'
 
             if needs_update(renderer_exr, output_path) or needs_update(embree_exr, output_path):
-                cmd = f"oiiotool {embree_exr} {renderer_exr} --diff --absdiff --mulc 2,2,2,1 --colormap {MAP} --colorconvert linear sRGB -o {output_path}"
+                cmd = (
+                    f"oiiotool {embree_exr} {renderer_exr} --diff --absdiff --mulc 2,2,2,1 --colormap"
+                    f" {MAP} --colorconvert linear sRGB -o {output_path}"
+                )
                 print(cmd)
                 os.system(cmd)
 

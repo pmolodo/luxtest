@@ -1,7 +1,6 @@
 #!/usr/bin/env hython
 
-"""Render all lights for all renderers in luxtest.hip
-"""
+"""Render all lights for all renderers in luxtest.hip"""
 
 import argparse
 import inspect
@@ -39,13 +38,19 @@ def is_ipython():
 ###############################################################################
 
 
-def render_luxtest(hip_path=LUXTEST_HIP, renderers: Iterable[str] = (), lights: Iterable[str] = (), frame: Optional[int] = None):
+def render_luxtest(
+    hip_path=LUXTEST_HIP,
+    renderers: Iterable[str] = (),
+    lights: Iterable[str] = (),
+    frame: Optional[int] = None,
+):
     import hou
+
     print(f"Loading: {hip_path}")
     hou.hipFile.load(hip_path)
     usdrender_type = hou.lopNodeTypeCategory().nodeType("usdrender_rop")
 
-    rop_nodes = [x for x in hou.node('/stage').allSubChildren() if x.type() == usdrender_type]
+    rop_nodes = [x for x in hou.node("/stage").allSubChildren() if x.type() == usdrender_type]
     if lights:
         light_prefixes = tuple(f"render_{l}_" for l in lights)
         rop_nodes = [x for x in rop_nodes if x.name().startswith(light_prefixes)]
@@ -85,21 +90,47 @@ def get_parser():
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     parser.add_argument(
-        "hip_file", nargs="?", default=LUXTEST_HIP,
-        help="path to the .hip file to render")
-    parser.add_argument("-r", "--renderer", choices=("karma", "ris", "arnold"),
-                        action="append", dest="renderers",
-                        help="Only render images for the given renderer; if not"
-                        " specified, render images for all renderers. May be"
-                        " repeated.")
-    parser.add_argument("-l", "--light",
-                        choices=("cylinder", "disk", "distant", "dome", "rect", "sphere", "visible-rect"),
-                        action="append", dest="lights",
-                        help="Only render images for the given lights; if not"
-                        " specified, render images for all lights. May be"
-                        " repeated.")
-    parser.add_argument("-f", "--frame", type=int,
-                        help="Only render the single given frame for all lights")
+        "hip_file",
+        nargs="?",
+        default=LUXTEST_HIP,
+        help="path to the .hip file to render",
+    )
+    parser.add_argument(
+        "-r",
+        "--renderer",
+        choices=("karma", "ris", "arnold"),
+        action="append",
+        dest="renderers",
+        help=(
+            "Only render images for the given renderer; if not"
+            " specified, render images for all renderers. May be"
+            " repeated."
+        ),
+    )
+    parser.add_argument(
+        "-l",
+        "--light",
+        choices=(
+            "cylinder",
+            "disk",
+            "distant",
+            "dome",
+            "rect",
+            "sphere",
+            "visible-rect",
+        ),
+        action="append",
+        dest="lights",
+        help=(
+            "Only render images for the given lights; if not specified, render images for all lights. May be repeated."
+        ),
+    )
+    parser.add_argument(
+        "-f",
+        "--frame",
+        type=int,
+        help="Only render the single given frame for all lights",
+    )
     return parser
 
 
@@ -109,7 +140,12 @@ def main(argv=None):
     parser = get_parser()
     args = parser.parse_args(argv)
     try:
-        render_luxtest(args.hip_file, lights=args.lights, renderers=args.renderers, frame=args.frame)
+        render_luxtest(
+            args.hip_file,
+            lights=args.lights,
+            renderers=args.renderers,
+            frame=args.frame,
+        )
     except Exception:  # pylint: disable=broad-except
 
         traceback.print_exc()
