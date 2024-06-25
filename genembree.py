@@ -1,19 +1,130 @@
 #!/usr/bin/env python
 
-import sys
-import os
-import argparse
-from glob import glob
+"""Run the UsdLux_2 test suite"""
 
-TESTS = [
-    ("distant", 15),
-    ("dome", 1),
-    ("cylinder", 40),
-    ("disk", 40),
-    ("rect", 40),
-    ("sphere", 40),
-    ("visible-rect", 1),
-]
+import argparse
+import inspect
+import os
+import subprocess
+import sys
+import traceback
+
+from glob import glob
+from typing import Iterable, List
+
+###############################################################################
+# Constants
+###############################################################################
+
+
+THIS_FILE = os.path.abspath(inspect.getsourcefile(lambda: None) or __file__)
+THIS_DIR = os.path.dirname(THIS_FILE)
+
+TESTS = {
+    "distant": 15,
+    "dome": 1,
+    "cylinder": 40,
+    "disk": 40,
+    "rect": 40,
+    "sphere": 40,
+    "visible-rect": 1,
+}
+
+EMBREE_DELEGATE = "Embree"
+DEFAULT_DELEGATES = (EMBREE_DELEGATE,)
+DEFAULT_INPUT_GLOBS = (os.path.join(THIS_DIR, "usd", "*.usda"),)
+DEFAULT_OUTPUT_DIR = os.path.join(THIS_DIR, "renders")
+DEFAULT_RESOLUTION = 512
+DEFAULT_CAMERA = "/cameras/camera1"
+
+###############################################################################
+# Utilities
+###############################################################################
+
+
+def is_ipython():
+    try:
+        __IPYTHON__  # type: ignore
+    except NameError:
+        return False
+    return True
+
+
+if sys.platform == "win32":
+    to_shell_cmd = subprocess.list2cmdline
+else:
+
+    def to_shell_cmd(cmd_list):
+        import shlex
+
+        return " ".join(shlex.quote(x) for x in cmd_list)
+
+
+###############################################################################
+# Core functions
+###############################################################################
+
+
+def run_tests(
+    input_usd_globs: Iterable[str] = DEFAULT_INPUT_GLOBS,
+    output_dir=DEFAULT_OUTPUT_DIR,
+    delegates=DEFAULT_DELEGATES,
+    resolution=DEFAULT_RESOLUTION,
+    camera=DEFAULT_CAMERA,
+) -> List[str]:
+    """Runs tests on input usds matching given glob, for all given delegates
+
+    Returns
+    -------
+    failures: List[str]
+    """
+
+    if not input_usd_globs:
+        print(
+            "ERROR: no input usd glob patterns specified. Please specify a glob pattern to match usd layers to render"
+        )
+        return 1
+
+    input_layers = []
+    for pattern in input_usd_globs:
+        print(f"globbing: {pattern}")
+        new_layers = glob(pattern)
+        print(f"found {len(new_layers)} layers")
+        for f in new_layers:
+            print(f"  {f}")
+        input_layers.extend(new_layers)
+
+    if not input_layers:
+        print(f"ERROR: input patterns {input_usd_globs} did not match any files")
+        return 2
+
+    failures = []
+    for delegate in delegates:
+        delegate_output_dir = os.path.join(output_dir, delegate.lower())
+        os.makedirs(delegate_output_dir, exist_ok=True)
+
+        for layer in input_layers:
+            input_file = os.path.basename(layer)
+            base = os.path.splitext(input_file)[0]
+            output_file = f"{delegate.lower()}-{base}.####.exr"
+            output_path = os.path.join(delegate_output_dir, output_file)
+            end_frame = TESTS.get(base)
+            if end_frame:
+                frames = ",".join([str(x) for x in range(1, end_frame + 1)])
+            else:
+                frames = ""
+
+            exitcode = run_test(
+                layer,
+                output_path,
+                delegate=delegate,
+                resolution=resolution,
+                camera=camera,
+                frames=frames,
+            )
+            if exitcode:
+                failures.append(layer)
+    return failures
 
 
 def run_test(
@@ -25,32 +136,102 @@ def run_test(
     frames: str,
 ):
 
-    camera_str = f"--camera {camera}" if camera else ""
+    usdrecord = "usdrecord"
+    if sys.platform == "win32":
+        usdrecord += ".cmd"
 
-    cmd = (
-        f"usdrecord --disableCameraLight --disableGpu --imageWidth {resolution} {camera_str} --renderer {delegate}"
-        f" --colorCorrectionMode disabled {usd_path} {output_path} --frames {frames}"
+    cmd = [
+        usdrecord,
+        "--disableCameraLight",
+        "--disableGpu",
+        "--imageWidth",
+        str(resolution),
+        "--renderer",
+        delegate,
+        "--colorCorrectionMode=disabled",
+    ]
+    if frames:
+        cmd.extend(["--frames", frames])
+    if camera:
+        cmd.extend(["--camera", camera])
+    cmd.extend([usd_path, output_path])
+    print(to_shell_cmd(cmd))
+    return subprocess.call(cmd)
+
+
+###############################################################################
+# CLI
+###############################################################################
+
+
+def get_parser():
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+    )
+    parser.add_argument(
+        "-d",
+        "--delegates",
+        nargs="+",
+        default=DEFAULT_DELEGATES,
+        help=(
+            "Delegates to use to render the test suite. Can specify multiple delegates, which will run each specified"
+            " delegate sequentially."
+        ),
+    )
+    parser.add_argument(
+        "-r",
+        "--resolution",
+        type=int,
+        default=DEFAULT_RESOLUTION,
+        help="Resolution of the rendered test images",
+    )
+    parser.add_argument(
+        "-c",
+        "--camera",
+        default=DEFAULT_CAMERA,
+        help="Prim path to camera to render from",
+    )
+    parser.add_argument(
+        "-i",
+        "--input",
+        nargs="+",
+        default=DEFAULT_INPUT_GLOBS,
+        help="Glob pattern(s) to match input usd filepaths to render",
     )
 
-    print(cmd)
-    return os.system(cmd)
+    parser.add_argument(
+        "-o",
+        "--output-dir",
+        default=DEFAULT_OUTPUT_DIR,
+        help=(
+            "Base directory under which to write the rendered images. Subdirectories will be created for each render"
+            " delegate."
+        ),
+    )
+
+    return parser
 
 
-def main():
-    os.makedirs("renders/embree", exist_ok=True)
+def main(argv=None):
+    if argv is None:
+        argv = sys.argv[1:]
+    parser = get_parser()
+    args = parser.parse_args(argv)
+    print(args)
 
-    failures = []
-    for test, end in TESTS:
-        frames = ",".join([str(x) for x in range(1, end + 1)])
-        usd_path = f"usd/{test}.usda"
-        output_path = f"renders/embree/embree-{test}.####.exr"
-        resolution = 512
-        camera = "/cameras/camera1"
-        delegate = "Embree"
+    try:
+        failures = run_tests(
+            args.input,
+            output_dir=args.output_dir,
+            delegates=args.delegates,
+            resolution=args.resolution,
+            camera=args.camera,
+        )
+    except Exception:  # pylint: disable=broad-except
+        traceback.print_exc()
+        return 1
 
-        exitcode = run_test(usd_path, output_path, delegate, resolution, camera, frames)
-        if exitcode:
-            failures.append(test)
     print()
     if failures:
         print("!" * 80)
@@ -59,58 +240,9 @@ def main():
             print(f)
         print("!" * 80)
         return 1
-
     print("All lights successfully rendered")
     return 0
 
-    # parser = argparse.ArgumentParser(description = "Run the UsdLux_2 test suite")
-    # parser.add_argument("-d", "--delegates",
-    #                   nargs="+",
-    #                   default=["Embree"],
-    #                   help="Delegates to use to render the test suite. Can specify multiple delegates, which will run each specified delegate sequentially. If no delegate is specified, Embree will be used."
-    # )
-    # parser.add_argument("-r", "--resolution",
-    #                   type=int,
-    #                   default=512,
-    #                   help="Resolution of the rendered test images"
-    # )
 
-    # parser.add_argument("-i", "--input",
-    #                     nargs="+",
-    #                     help="Glob pattern to match input usd layers to render"
-    # )
-
-    # parser.add_argument("-o", "--output-dir",
-    #                     default=".",
-    #                     help="Base directory under which to write the rendered images. Subdirectories will be created for each render delegate. If unspecified, the current directory will be used")
-
-    # args = parser.parse_args()
-    # print(args)
-
-    # if not args.input:
-    #     print("ERROR: no input specified. Please specify a glob pattern to match usd layers to render")
-    #     sys.exit(1)
-
-    # input_layers = []
-    # for pattern in args.input:
-    #     input_layers += glob(pattern)
-
-    # if not input_layers:
-    #     print(f"ERROR: input patterns {args.input} did not match any files")
-    #     sys.exit(2)
-
-    # for delegate in args.delegates:
-    #     delegate_output_dir = os.path.join(args.output_dir, delegate)
-    #     os.makedirs(delegate_output_dir, exist_ok=True)
-
-    #     for layer in input_layers:
-    #         head, tail = os.path.split(layer)
-    #         base, ext = os.path.splitext(tail)
-    #         output_file = base + ".exr"
-    #         output_path = os.path.join(delegate_output_dir, output_file)
-
-    #         run_test(layer, output_path, delegate, args.resolution, "camera1")
-
-
-if __name__ == "__main__":
+if __name__ == "__main__" and not is_ipython():
     sys.exit(main())
