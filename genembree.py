@@ -23,11 +23,12 @@ def run_test(usd_path: str, output_path: str, delegate: str, resolution: int, ca
          f" --colorCorrectionMode disabled {usd_path} {output_path} --frames {frames}"
 
     print(cmd)
-    os.system(cmd)
+    return os.system(cmd)
 
 def main():
     os.makedirs("renders/embree", exist_ok=True)
 
+    failures = []
     for test, end in TESTS:
         frames = ','.join([str(x) for x in range(1, end+1)])
         usd_path = f"usd/{test}.usda"
@@ -36,7 +37,20 @@ def main():
         camera = "/cameras/camera1"
         delegate = "Embree"
 
-        run_test(usd_path, output_path, delegate, resolution, camera, frames)
+        exitcode = run_test(usd_path, output_path, delegate, resolution, camera, frames)
+        if exitcode:
+            failures.append(test)
+    print()
+    if failures:
+        print("!" * 80)
+        print(f"Enountered {len(failures)} failures:")
+        for f in failures:
+            print(f)
+        print("!" * 80)
+        return 1
+
+    print("All lights successfully rendered")
+    return 0
 
     # parser = argparse.ArgumentParser(description = "Run the UsdLux_2 test suite")
     # parser.add_argument("-d", "--delegates", 
@@ -91,4 +105,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
