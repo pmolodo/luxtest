@@ -9,6 +9,7 @@ import os
 import sys
 import traceback
 
+from typing import Iterable
 
 ###############################################################################
 # Constants
@@ -37,14 +38,24 @@ def is_ipython():
 ###############################################################################
 
 
-def render_luxtest(hip_path=LUXTEST_HIP):
+def render_luxtest(hip_path=LUXTEST_HIP, renderers: Iterable[str] = ()):
     import hou
     print(f"Loading: {hip_path}")
     hou.hipFile.load(hip_path)
     usdrender_type = hou.lopNodeTypeCategory().nodeType("usdrender_rop")
+
     rop_nodes = [x for x in hou.node('/stage').allSubChildren() if x.type() == usdrender_type]
+    if renderers:
+        renderer_suffixes = tuple(f"_{r}" for r in renderers)
+        rop_nodes = [x for x in rop_nodes if x.name().endswith(renderer_suffixes)]
     num_rops = len(rop_nodes)
-    print(f"Found {num_rops} usdrender ROP nodes")
+    print()
+    print("=" * 80)
+    print(f"Found {num_rops} usdrender ROP nodes:")
+    for rop_node in rop_nodes:
+        print(rop_node.name())
+    print("=" * 80)
+    print()
 
     for i, rop_node in enumerate(rop_nodes):
         print(f"Rendering node {i + 1}/{num_rops}: {rop_node.name()}")
@@ -64,6 +75,11 @@ def get_parser():
     parser.add_argument(
         "hip_file", nargs="?", default=LUXTEST_HIP,
         help="path to the .hip file to render")
+    parser.add_argument("-r", "--renderer", choices=("karma", "ris", "arnold"),
+                        action="append", dest="renderers",
+                        help="Only render images for the given renderer; if not"
+                        " specified, render images for all renderers. May be"
+                        " repeated.")
     return parser
 
 
@@ -73,7 +89,7 @@ def main(argv=None):
     parser = get_parser()
     args = parser.parse_args(argv)
     try:
-        render_luxtest(args.hip_file)
+        render_luxtest(args.hip_file, renderers=args.renderers)
     except Exception:  # pylint: disable=broad-except
 
         traceback.print_exc()
