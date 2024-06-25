@@ -19,7 +19,7 @@ def run_test(usd_path: str, output_path: str, delegate: str, resolution: int, ca
 
     camera_str = f"--camera {camera}" if camera else ""
 
-    cmd = f"usdrecord --disableDefaultLight --disableGpu --imageWidth {resolution} {camera_str} --renderer {delegate}" \
+    cmd = f"usdrecord --disableCameraLight --disableGpu --imageWidth {resolution} {camera_str} --renderer {delegate}" \
          f" --colorCorrectionMode disabled {usd_path} {output_path} --frames {frames}"
 
     print(cmd)
