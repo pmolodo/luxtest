@@ -19,6 +19,7 @@ THIS_FILE = os.path.abspath(inspect.getsourcefile(lambda: None) or __file__)
 THIS_DIR = os.path.dirname(THIS_FILE)
 
 LUXTEST_HIP = os.path.join(THIS_DIR, "luxtest.hip")
+HUSK_PRE_RENDER = os.path.join(THIS_DIR, "husk_pre_render.py")
 
 ###############################################################################
 # Utilities
@@ -69,6 +70,7 @@ def render_luxtest(hip_path=LUXTEST_HIP, renderers: Iterable[str] = (), lights: 
         render_kwargs["frame_range"] = (frame, frame)
     for i, rop_node in enumerate(rop_nodes):
         print(f"Rendering node {i + 1}/{num_rops}: {rop_node.name()}")
+        rop_node.parm("husk_prerender").set(HUSK_PRE_RENDER)
         rop_node.render(**render_kwargs)
 
 
