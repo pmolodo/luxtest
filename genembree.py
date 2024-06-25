@@ -15,22 +15,33 @@ TESTS = [
     ("visible-rect", 1),
 ]
 
-def run_test(usd_path: str, output_path: str, delegate: str, resolution: int, camera: str, frames: str):
+
+def run_test(
+    usd_path: str,
+    output_path: str,
+    delegate: str,
+    resolution: int,
+    camera: str,
+    frames: str,
+):
 
     camera_str = f"--camera {camera}" if camera else ""
 
-    cmd = f"usdrecord --disableCameraLight --disableGpu --imageWidth {resolution} {camera_str} --renderer {delegate}" \
-         f" --colorCorrectionMode disabled {usd_path} {output_path} --frames {frames}"
+    cmd = (
+        f"usdrecord --disableCameraLight --disableGpu --imageWidth {resolution} {camera_str} --renderer {delegate}"
+        f" --colorCorrectionMode disabled {usd_path} {output_path} --frames {frames}"
+    )
 
     print(cmd)
     return os.system(cmd)
+
 
 def main():
     os.makedirs("renders/embree", exist_ok=True)
 
     failures = []
     for test, end in TESTS:
-        frames = ','.join([str(x) for x in range(1, end+1)])
+        frames = ",".join([str(x) for x in range(1, end + 1)])
         usd_path = f"usd/{test}.usda"
         output_path = f"renders/embree/embree-{test}.####.exr"
         resolution = 512
@@ -53,8 +64,8 @@ def main():
     return 0
 
     # parser = argparse.ArgumentParser(description = "Run the UsdLux_2 test suite")
-    # parser.add_argument("-d", "--delegates", 
-    #                   nargs="+", 
+    # parser.add_argument("-d", "--delegates",
+    #                   nargs="+",
     #                   default=["Embree"],
     #                   help="Delegates to use to render the test suite. Can specify multiple delegates, which will run each specified delegate sequentially. If no delegate is specified, Embree will be used."
     # )
@@ -99,9 +110,6 @@ def main():
     #         output_path = os.path.join(delegate_output_dir, output_file)
 
     #         run_test(layer, output_path, delegate, args.resolution, "camera1")
-
-
-
 
 
 if __name__ == "__main__":
