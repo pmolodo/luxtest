@@ -42,3 +42,14 @@
   - will be of format `render_{light}_{renderer}
   - ie, `render_rect_ris`
 - In the parameters pane, click "Render to Disk"
+
+## Renders repo
+
+Result rendered images are available in a
+[separate repo](https://github.com/pmolodo/luxtest_renders).  To add it to
+this repo, first ensure "renders" subdir does not already exist, then from
+the repo root, run:
+
+```shell
+git clone https://github.com/pmolodo/luxtest_renders renders
+```
