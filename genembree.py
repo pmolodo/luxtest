@@ -10,7 +10,7 @@ import sys
 import traceback
 
 from glob import glob
-from typing import Iterable, List
+from typing import Iterable, List, Optional
 
 ###############################################################################
 # Constants
@@ -71,6 +71,7 @@ def run_tests(
     delegates=DEFAULT_DELEGATES,
     resolution=DEFAULT_RESOLUTION,
     camera=DEFAULT_CAMERA,
+    frames: Optional[str] = None,
 ) -> List[str]:
     """Runs tests on input usds matching given glob, for all given delegates
 
@@ -108,19 +109,23 @@ def run_tests(
             base = os.path.splitext(input_file)[0]
             output_file = f"{delegate.lower()}-{base}.####.exr"
             output_path = os.path.join(delegate_output_dir, output_file)
-            end_frame = TESTS.get(base)
-            if end_frame:
-                frames = ",".join([str(x) for x in range(1, end_frame + 1)])
+            if frames is None:
+                end_frame = TESTS.get(base)
+                if end_frame:
+                    test_frames = f"1:{end_frame}"
+                else:
+                    test_frames = ""
             else:
-                frames = ""
+                test_frames = frames
 
+            print("-" * 80)
             exitcode = run_test(
                 layer,
                 output_path,
                 delegate=delegate,
                 resolution=resolution,
                 camera=camera,
-                frames=frames,
+                frames=test_frames,
             )
             if exitcode:
                 failures.append(layer)
@@ -209,6 +214,11 @@ def get_parser():
             " delegate."
         ),
     )
+    parser.add_argument(
+        "-f",
+        "--frames",
+        help="Frame string, in FRAMESPEC format used by usdrecord (see --frames arg in `usdrecord --help`).",
+    )
 
     return parser
 
@@ -227,6 +237,7 @@ def main(argv=None):
             delegates=args.delegates,
             resolution=args.resolution,
             camera=args.camera,
+            frames=args.frames,
         )
     except Exception:  # pylint: disable=broad-except
         traceback.print_exc()
