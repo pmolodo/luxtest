@@ -9,7 +9,7 @@ import os
 import sys
 import traceback
 
-from typing import Iterable
+from typing import Iterable, Optional
 
 ###############################################################################
 # Constants
@@ -38,7 +38,7 @@ def is_ipython():
 ###############################################################################
 
 
-def render_luxtest(hip_path=LUXTEST_HIP, renderers: Iterable[str] = (), lights: Iterable[str] = ()):
+def render_luxtest(hip_path=LUXTEST_HIP, renderers: Iterable[str] = (), lights: Iterable[str] = (), frame: Optional[int] = None):
     import hou
     print(f"Loading: {hip_path}")
     hou.hipFile.load(hip_path)
@@ -61,9 +61,15 @@ def render_luxtest(hip_path=LUXTEST_HIP, renderers: Iterable[str] = (), lights: 
     print("=" * 80)
     print()
 
+    render_kwargs = {
+        "output_progress": True,
+        "verbose": True,
+    }
+    if frame is not None:
+        render_kwargs["frame_range"] = (frame, frame)
     for i, rop_node in enumerate(rop_nodes):
         print(f"Rendering node {i + 1}/{num_rops}: {rop_node.name()}")
-        rop_node.render(output_progress=True, verbose=True)
+        rop_node.render(**render_kwargs)
 
 
 ###############################################################################
@@ -90,6 +96,8 @@ def get_parser():
                         help="Only render images for the given lights; if not"
                         " specified, render images for all lights. May be"
                         " repeated.")
+    parser.add_argument("-f", "--frame", type=int,
+                        help="Only render the single given frame for all lights")
     return parser
 
 
@@ -99,7 +107,7 @@ def main(argv=None):
     parser = get_parser()
     args = parser.parse_args(argv)
     try:
-        render_luxtest(args.hip_file, lights=args.lights, renderers=args.renderers)
+        render_luxtest(args.hip_file, lights=args.lights, renderers=args.renderers, frame=args.frame)
     except Exception:  # pylint: disable=broad-except
 
         traceback.print_exc()
