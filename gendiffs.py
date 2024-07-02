@@ -149,7 +149,10 @@ for name, end, descriptions in TESTS:
 
         cmd = f"{oiiotool} {embree_exr} --ch R,G,B --colorconvert linear sRGB -o {embree_png_path}"
         if needs_update(embree_exr, embree_png_path):
-            os.system(cmd)
+            print(cmd)
+            result = os.system(cmd)
+            print(result)
+            assert os.path.isfile(embree_png_path)
 
         for renderer in RENDERERS:
             renderer_base = os.path.join(TEST_ROOT, renderer, f"{name}-{renderer}.{frame:04}")
@@ -159,7 +162,9 @@ for name, end, descriptions in TESTS:
 
             cmd = f"{oiiotool} {renderer_exr} --ch R,G,B --colorconvert linear sRGB -o {renderer_png_path}"
             if needs_update(renderer_exr, renderer_png_path):
+                print(cmd)
                 os.system(cmd)
+                assert os.path.isfile(renderer_png_path)
 
             output_png = f"diff-{name}-{renderer}.{frame:04}.png"
             output_path = os.path.join(WEB_ROOT, "img", output_png)
