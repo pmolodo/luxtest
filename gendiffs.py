@@ -29,6 +29,15 @@ TESTS = [
             11: "Colour temperature from 2000 to 11000",
         },
     ),
+    (
+        "distant-angle",
+        15,
+        {
+            1: "Angle from 0 to 90, normalize OFF",
+            6: "Angle from 0 to 90, normalize ON",
+            11: "Colour temperature from 2000 to 11000",
+        },
+    ),
     ("dome", 1, {}),
     (
         "cylinder",

@@ -22,6 +22,7 @@ THIS_DIR = os.path.dirname(THIS_FILE)
 
 TESTS = {
     "distant": 15,
+    "distant-angle": 15,
     "dome": 1,
     "cylinder": 40,
     "disk": 40,
