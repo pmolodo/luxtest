@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
-import os, shutil
+import os
+import shutil
 
 
 def needs_update(existing, dependent):
@@ -144,7 +145,9 @@ for name, end, descriptions in TESTS:
 
         HTML += f'    <td><img src="img/{embree_png}"</td>\n'
 
-        cmd = f"oiiotool {embree_exr} --ch R,G,B --colorconvert linear sRGB -o {embree_png_path}"
+        oiiotool = os.environ.get("LUXTEST_OIIOTOOL", "oiiotool")
+
+        cmd = f"{oiiotool} {embree_exr} --ch R,G,B --colorconvert linear sRGB -o {embree_png_path}"
         if needs_update(embree_exr, embree_png_path):
             os.system(cmd)
 
@@ -154,7 +157,7 @@ for name, end, descriptions in TESTS:
             renderer_png = f"{name}-{renderer}.{frame:04}.png"
             renderer_png_path = os.path.join(WEB_ROOT, "img", renderer_png)
 
-            cmd = f"oiiotool {renderer_exr} --ch R,G,B --colorconvert linear sRGB -o {renderer_png_path}"
+            cmd = f"{oiiotool} {renderer_exr} --ch R,G,B --colorconvert linear sRGB -o {renderer_png_path}"
             if needs_update(renderer_exr, renderer_png_path):
                 os.system(cmd)
 
@@ -166,7 +169,7 @@ for name, end, descriptions in TESTS:
 
             if needs_update(renderer_exr, output_path) or needs_update(embree_exr, output_path):
                 cmd = (
-                    f"oiiotool {embree_exr} {renderer_exr} --diff --absdiff --mulc 2,2,2,1 --colormap"
+                    f"{oiiotool} {embree_exr} {renderer_exr} --diff --absdiff --mulc 2,2,2,1 --colormap"
                     f" {MAP} --colorconvert linear sRGB -o {output_path}"
                 )
                 print(cmd)
