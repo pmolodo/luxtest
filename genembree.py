@@ -81,10 +81,11 @@ def run_tests(
     """
 
     if not input_usd_globs:
-        print(
+        errmsg = (
             "ERROR: no input usd glob patterns specified. Please specify a glob pattern to match usd layers to render"
         )
-        return 1
+        print(errmsg)
+        return [errmsg]
 
     input_layers = []
     for pattern in input_usd_globs:
@@ -96,8 +97,9 @@ def run_tests(
         input_layers.extend(new_layers)
 
     if not input_layers:
-        print(f"ERROR: input patterns {input_usd_globs} did not match any files")
-        return 2
+        errmsg = f"ERROR: input patterns {input_usd_globs} did not match any files"
+        print(errmsg)
+        return [errmsg]
 
     failures = []
     for delegate in delegates:
