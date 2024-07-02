@@ -109,7 +109,7 @@ def run_tests(
         for layer in input_layers:
             input_file = os.path.basename(layer)
             base = os.path.splitext(input_file)[0]
-            output_file = f"{delegate.lower()}-{base}.####.exr"
+            output_file = f"{base}-{delegate.lower()}.####.exr"
             output_path = os.path.join(delegate_output_dir, output_file)
             if frames is None:
                 end_frame = TESTS.get(base)
