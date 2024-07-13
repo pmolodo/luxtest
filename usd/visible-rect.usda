@@ -152,10 +152,6 @@ def Xform "cameras"
         float fStop = 0
         float horizontalAperture = 0.20955
         float horizontalApertureOffset = 0
-        asset houdini:backgroundimage = @@
-        asset houdini:foregroundimage = @@
-        float houdini:guidescale = 1
-        bool houdini:inviewermenu = 1
         token projection = "perspective"
         double shutter:close = 0.25
         double shutter:open = -0.25
@@ -168,10 +164,11 @@ def Xform "cameras"
 }
 
 def Xform "grid1" (
-    prepend apiSchemas = ["MaterialBindingAPI"]
+    prepend apiSchemas = ["GeomModelAPI", "MaterialBindingAPI"]
     kind = "component"
 )
 {
+    float3[] extentsHint = [(-5, 0, -5), (5, 0, 5)]
     rel material:binding = </materials/usdpreviewsurface1>
     token visibility = "invisible"
     matrix4d xformOp:transform:xform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
@@ -236,9 +233,11 @@ def Scope "Render"
 }
 
 def Xform "grid3" (
+    prepend apiSchemas = ["GeomModelAPI"]
     kind = "component"
 )
 {
+    float3[] extentsHint = [(-5, 0, -5), (5, 0, 5)]
     token visibility = "invisible"
     matrix4d xformOp:transform:xform = ( (0.1, 0, 0, 0), (0, 0.07071067811865477, 0.07071067811865477, 0), (0, -0.07071067811865477, 0.07071067811865477, 0), (0, 0.2, -1, 1) )
     uniform token[] xformOpOrder = ["xformOp:transform:xform"]
@@ -262,12 +261,10 @@ def Xform "grid3" (
 
 def Xform "lights"
 {
-    def RectLight "arealight6" (
-        prepend apiSchemas = ["KarmaLightSettingsAPI", "HoudiniViewportGuideAPI"]
+    def RectLight "visible_rect_light" (
+        prepend apiSchemas = ["HoudiniViewportLightAPI", "KarmaLightAPI", "HoudiniViewportGuideAPI"]
     )
     {
-        float3[] extent = [(-0.5, -0.5, -0), (0.5, 0.5, 0)]
-        bool houdini:inviewermenu = 1
         color3f inputs:color = (1, 1, 1)
         float inputs:diffuse = 1
         bool inputs:enableColorTemperature = 0

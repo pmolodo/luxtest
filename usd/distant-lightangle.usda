@@ -11,9 +11,6 @@
 
 def Xform "cameras"
 {
-    matrix4d xformOp:transform = ( (0.17364817766693041, 0.984807753012208, 0, 0), (-0.984807753012208, 0.17364817766693041, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
-    uniform token[] xformOpOrder = ["xformOp:transform"]
-
     def Camera "camera1" (
         prepend apiSchemas = ["HoudiniCameraPlateAPI", "HoudiniViewportGuideAPI"]
     )
@@ -25,10 +22,6 @@ def Xform "cameras"
         float fStop = 0
         float horizontalAperture = 0.20955
         float horizontalApertureOffset = 0
-        asset houdini:backgroundimage = @@
-        asset houdini:foregroundimage = @@
-        float houdini:guidescale = 1
-        bool houdini:inviewermenu = 1
         token projection = "perspective"
         double shutter:close = 0.25
         double shutter:open = -0.25
@@ -108,23 +101,20 @@ def Scope "Render"
 
 def Xform "lights"
 {
-    def DistantLight "distant_angle_light" (
+    def DistantLight "distant_lightangle_light" (
         prepend apiSchemas = ["HoudiniViewportLightAPI", "HoudiniViewportGuideAPI"]
     )
     {
-        float2 houdini:clippingRange = (0.001, 10000)
-        float houdini:guidescale = 1
-        bool houdini:inviewermenu = 1
         float inputs:angle.timeSamples = {
             1: 0,
-            2: 14.0625,
+            2: 22.5,
             3: 45,
-            4: 75.9375,
+            4: 67.5,
             5: 90,
             6: 0,
-            7: 14.0625,
+            7: 22.5,
             8: 45,
-            9: 75.9375,
+            9: 67.5,
             10: 90,
             11: 0.53,
             12: 0.53,
@@ -135,12 +125,12 @@ def Xform "lights"
         color3f inputs:color = (1, 1, 1)
         float inputs:colorTemperature.timeSamples = {
             11: 2000,
-            12: 3406.25,
+            12: 4250,
             13: 6500,
-            14: 9593.75,
+            14: 8750,
             15: 11000,
         }
-        float inputs:diffuse = 1
+        float inputs:diffuse = 2.79
         bool inputs:enableColorTemperature.timeSamples = {
             1: 0,
             2: 0,
@@ -179,7 +169,7 @@ def Xform "lights"
         }
         float inputs:specular = 1
         rel light:filters = None
-        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 0, -1, 0), (0, 1, 0, 0), (0, 4.5685529708862305, 0, 1) )
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 0.8660254037844387, -0.49999999999999994, 0), (0, 0.49999999999999994, 0.8660254037844387, 0), (0, 5, 0, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 }

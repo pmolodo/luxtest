@@ -11,13 +11,16 @@
 
 def Xform "cameras"
 {
+    matrix4d xformOp:transform = ( (0.17364817766693041, 0.984807753012208, 0, 0), (-0.984807753012208, 0.17364817766693041, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+    uniform token[] xformOpOrder = ["xformOp:transform"]
+
     def Camera "camera1" (
         prepend apiSchemas = ["HoudiniCameraPlateAPI", "HoudiniViewportGuideAPI"]
     )
     {
         float2 clippingRange = (1, 1000000)
         float exposure = 0
-        float focalLength = 0.9
+        float focalLength = 0.5
         float focusDistance = 5
         float fStop = 0
         float horizontalAperture = 0.20955
@@ -94,14 +97,14 @@ def Scope "Render"
         custom float karma:object:ssslimit = 0
         token[] materialBindingPurposes = ["full", "allPurpose"]
         float pixelAspectRatio = 1
-        int2 resolution = (1, 1)
+        int2 resolution = (512, 512)
         custom string ri:integrator:name = "PxrDirectLighting"
     }
 }
 
 def Xform "lights"
 {
-    def DistantLight "distant_pixel_light" (
+    def DistantLight "distant_camangle_light" (
         prepend apiSchemas = ["HoudiniViewportLightAPI", "HoudiniViewportGuideAPI"]
     )
     {
