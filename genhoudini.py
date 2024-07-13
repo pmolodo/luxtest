@@ -5,6 +5,7 @@
 import argparse
 import inspect
 import os
+import re
 import sys
 import traceback
 
@@ -19,6 +20,8 @@ THIS_DIR = os.path.dirname(THIS_FILE)
 
 LUXTEST_HIP = os.path.join(THIS_DIR, "luxtest.hip")
 HUSK_PRE_RENDER = os.path.join(THIS_DIR, "husk_pre_render.py")
+
+HOUDINI_ATTR_RE = re.compile(r"""^\s*[A-Za-z_][A-Za-z_0-9]* houdini:[A-Za-z_][A-Za-z_0-9:]*.*""")
 
 ###############################################################################
 # Utilities
@@ -94,6 +97,15 @@ def output_usd(lights: Iterable[str] = ()):
     for i, rop_node in enumerate(rop_nodes):
         print(f"Outputing USD node {i + 1}/{num_rops}: {rop_node.name()}")
         rop_node.render()
+
+        # strip out houdini-specific attributes
+        outpath = rop_node.parm("lopoutput").eval()
+        with open(outpath, "r", encoding="utf8") as reader:
+            lines = reader.readlines()
+        newlines = [x for x in lines if not HOUDINI_ATTR_RE.match(x)]
+        if len(newlines) != len(lines):
+            with open(outpath, "w", encoding="utf8", newline="\n") as writer:
+                writer.writelines(newlines)
 
 
 def render_images(
