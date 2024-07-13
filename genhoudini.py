@@ -33,6 +33,21 @@ def is_ipython():
     return True
 
 
+def filter_lights(rop_nodes: Iterable["hou.Node"], lights: Iterable[str]):
+    if not lights:
+        return rop_nodes
+    light_suffixes = tuple(f"_{l}" for l in lights)
+    return [x for x in rop_nodes if x.name().endsiwth(light_suffixes)]
+
+
+def filter_renderers(rop_nodes: Iterable["hou.Node"], renderers: Iterable[str]):
+    if not renderers:
+        return rop_nodes
+
+    renderer_prefixes = tuple(f"render_{r}_" for r in renderers)
+    rop_nodes = [x for x in rop_nodes if x.name().startswith(renderer_prefixes)]
+
+
 ###############################################################################
 # Core functions
 ###############################################################################
@@ -40,23 +55,59 @@ def is_ipython():
 
 def render_luxtest(
     hip_path=LUXTEST_HIP,
+    renderers: Optional[Iterable[str]] = None,
+    lights: Optional[Iterable[str]] = None,
+    frame: Optional[int] = None,
+    images=True,
+    usd=True,
+):
+    import hou
+
+    print(f"Loading: {hip_path}")
+    hou.hipFile.load(hip_path)
+
+    renderers = list(renderers) if renderers else []
+    lights = list(lights) if lights else []
+
+    if usd:
+        output_usd(lights=lights)
+    if images:
+        render_images(renderers=renderers, lights=lights, frame=frame)
+
+
+def output_usd(lights: Iterable[str] = ()):
+    import hou
+
+    usdrop_type = hou.lopNodeTypeCategory().nodeType("usd_rop")
+    rop_nodes = [x for x in hou.node("/stage").allSubChildren() if x.type() == usdrop_type]
+    rop_nodes = filter_lights(rop_nodes, lights)
+    rop_nodes.sort(key=lambda node: node.name())
+    num_rops = len(rop_nodes)
+    print()
+    print("=" * 80)
+    print(f"Found {num_rops} usd ROP nodes:")
+    for rop_node in rop_nodes:
+        print(rop_node.name())
+    print("=" * 80)
+    print()
+
+    for i, rop_node in enumerate(rop_nodes):
+        print(f"Outputing USD node {i + 1}/{num_rops}: {rop_node.name()}")
+        rop_node.render()
+
+
+def render_images(
     renderers: Iterable[str] = (),
     lights: Iterable[str] = (),
     frame: Optional[int] = None,
 ):
     import hou
 
-    print(f"Loading: {hip_path}")
-    hou.hipFile.load(hip_path)
     usdrender_type = hou.lopNodeTypeCategory().nodeType("usdrender_rop")
 
     rop_nodes = [x for x in hou.node("/stage").allSubChildren() if x.type() == usdrender_type]
-    if lights:
-        light_prefixes = tuple(f"render_{l}_" for l in lights)
-        rop_nodes = [x for x in rop_nodes if x.name().startswith(light_prefixes)]
-    if renderers:
-        renderer_suffixes = tuple(f"_{r}" for r in renderers)
-        rop_nodes = [x for x in rop_nodes if x.name().endswith(renderer_suffixes)]
+    rop_nodes = filter_lights(rop_nodes, lights)
+    rop_nodes = filter_renderers(rop_nodes, renderers)
     rop_nodes.sort(key=lambda node: node.name())
     num_rops = len(rop_nodes)
     print()
@@ -95,6 +146,8 @@ def get_parser():
         default=LUXTEST_HIP,
         help="path to the .hip file to render",
     )
+    parser.add_argument("--no-images", dest="images", action="store_false", help="Disable rendering output images")
+    parser.add_argument("--no-usd", dest="usd", action="store_false", help="Disable writing out usda files")
     parser.add_argument(
         "-r",
         "--renderer",
@@ -145,6 +198,8 @@ def main(argv=None):
             lights=args.lights,
             renderers=args.renderers,
             frame=args.frame,
+            images=args.images,
+            usd=args.usd,
         )
     except Exception:  # pylint: disable=broad-except
 
