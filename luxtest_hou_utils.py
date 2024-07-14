@@ -1,5 +1,7 @@
 import re
 
+from typing import Iterable, Optional, Union
+
 import hou
 
 ###############################################################################
@@ -7,8 +9,13 @@ import hou
 ###############################################################################
 
 
-def top_stage_nodes():
-    return hou.node("/stage").children()
+def top_stage_nodes(type=""):
+    nodes = hou.node("/stage").children()
+    if type:
+        if isinstance(type, str):
+            type = lop_type(type)
+        nodes = [x for x in nodes if x.type() == type]
+    return nodes
 
 
 RENDERER_SHORT_NAMES = {
@@ -92,6 +99,51 @@ def get_rop_out_parm(node):
         raise TypeError(f"Unrecognized rop node type: {node} - {node.type()}")
 
 
+def get_non_default_parms(nodeOrParms, frames: Optional[Iterable[Union[float, int]]] = None):
+    if isinstance(nodeOrParms, hou.Node):
+        parms = nodeOrParms.parms()
+    else:
+        parms = list(nodeOrParms)
+    if frames is None:
+        return set([x for x in parms if not x.isAtDefault()])
+    orig_frame = hou.frame()
+    non_default = None
+    try:
+        for frame in frames:
+            hou.setFrame(frame)
+            current_non_defaults = get_non_default_parms(parms)
+            if non_default is None:
+                non_default = current_non_defaults
+            else:
+                non_default.update(current_non_defaults)
+    finally:
+        hou.setFrame(orig_frame)
+    return non_default
+
+
+def parmgrep(node, input):
+    regex = re.compile(input, re.IGNORECASE)
+    names = [hou.text.decode(x.name()) for x in node.parms()]
+    return [x for x in names if regex.search(x)]
+
+
+def houdini_range(start, stop=None, step=1):
+    if stop is None:
+        start = 0
+        stop = start - 1
+    current = start
+    while current <= stop:
+        yield current
+        current += step
+
+
+def get_frames(node):
+    start = node.parm("f1").eval()
+    stop = node.parm("f2").eval()
+    step = node.parm("f3").eval()
+    return houdini_range(start, stop, step)
+
+
 ###############################################################################
 # Naming Utils
 ###############################################################################
@@ -116,14 +168,16 @@ def node_category(node):
 LIGHT_NAME_RE = re.compile("^(?P<name>.*)_light$")
 
 
-def parse_light_name(nodename):
-    if isinstance(nodename, hou.Node):
-        nodename = nodename.name()
+def parse_light_name(node_or_name):
+    if isinstance(node_or_name, hou.Node):
+        nodename = node_or_name.name()
+    else:
+        nodename = node_or_name
     return LIGHT_NAME_RE.match(nodename).group("name")
 
 
 def get_standardized_name(node, associated_light_node):
-    light_name = parse_light_name(associated_light_node.name())
+    light_name = parse_light_name(associated_light_node)
     category = node_category(node)
     if category == "light":
         return f"{light_name}_light"
