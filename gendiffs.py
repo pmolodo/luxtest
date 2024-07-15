@@ -58,7 +58,11 @@ def needs_update(existing, dependent):
 os.makedirs(os.path.join(WEB_ROOT, "img"), exist_ok=True)
 
 for name, description in light_descriptions.items():
-    start, end = description["frames"]
+    frames = description.get("frames")
+    if not frames:
+        start = end = 1
+    else:
+        start, end = frames
     summaries_by_start_frame = genLightParamDescriptions.get_light_group_summaries(name, description)
 
     HTML += f"""<h1>{name}</h1>
