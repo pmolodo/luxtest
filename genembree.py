@@ -20,16 +20,10 @@ from typing import Iterable, List, Optional
 THIS_FILE = os.path.abspath(inspect.getsourcefile(lambda: None) or __file__)
 THIS_DIR = os.path.dirname(THIS_FILE)
 
-TESTS = {
-    "distant": 15,
-    "distant-angle": 15,
-    "dome": 1,
-    "cylinder": 40,
-    "disk": 40,
-    "rect": 40,
-    "sphere": 40,
-    "visible-rect": 1,
-}
+if THIS_DIR not in sys.path:
+    sys.path.append(THIS_DIR)
+
+import genLightParamDescriptions
 
 EMBREE_DELEGATE = "Embree"
 DEFAULT_DELEGATES = (EMBREE_DELEGATE,)
@@ -81,6 +75,8 @@ def run_tests(
     failures: List[str]
     """
 
+    light_descriptions = genLightParamDescriptions.read_descriptions()
+
     if not input_usd_globs:
         errmsg = (
             "ERROR: no input usd glob patterns specified. Please specify a glob pattern to match usd layers to render"
@@ -113,11 +109,15 @@ def run_tests(
             output_file = f"{base}-{delegate.lower()}.####.exr"
             output_path = os.path.join(delegate_output_dir, output_file)
             if frames is None:
-                end_frame = TESTS.get(base)
-                if end_frame:
-                    test_frames = f"1:{end_frame}"
+                test_frames = light_descriptions.get(base, {}).get("frames")
+                if test_frames:
+                    start, end = test_frames
+                    if start == end:
+                        test_frames = f"{start}"
+                    else:
+                        test_frames = f"{start}:{end}"
                 else:
-                    test_frames = ""
+                    test_frames = "1"
             else:
                 test_frames = frames
 
@@ -163,8 +163,12 @@ def run_test(
     if camera:
         cmd.extend(["--camera", camera])
     cmd.extend([usd_path, output_path])
-    print(to_shell_cmd(cmd))
-    return subprocess.call(cmd)
+    try:
+        print(to_shell_cmd(cmd))
+    except Exception:
+        print(cmd)
+        raise
+    return subprocess.check_call(cmd)
 
 
 ###############################################################################

@@ -46,11 +46,6 @@ def is_ipython():
     return True
 
 
-###############################################################################
-# Utility functions
-###############################################################################
-
-
 def is_iterable(obj) -> bool:
     try:
         iter(obj)
@@ -89,6 +84,33 @@ def to_json_val(obj):
     elif is_iterable(obj):
         return list(to_json_val(x) for x in obj)
     raise RuntimeError(f"Do not know how to serialize: {obj}")
+
+
+def format_val(val):
+    if isinstance(val, float):
+        if math.isclose(val, int(val)):
+            val = int(val)
+        else:
+            return f"{val:.1f}".lstrip("0")
+    elif isinstance(val, str):
+        split = val.split("/")
+        while split and split[0] in (".", ".."):
+            del split[0]
+        val = "/".join(split)
+        return repr(val)
+    elif isinstance(val, bool):
+        # on/off are shorter than True/False
+        return "on" if val else "off"
+    return str(val)
+
+
+def format_attr(attr_name):
+    split = attr_name.split(":")
+    if split[0] == "inputs":
+        del split[0]
+    if split[0] == "shaping":
+        del split[0]
+    return ":".join(split)
 
 
 def get_light_name(light):
@@ -402,7 +424,7 @@ def write_light_param_descriptions(path: str, recurse: bool = False, json_out_pa
     for light_name, desc in descriptions.items():
         print()
         print(f"{light_name}:")
-        print(summarize(light_name, desc))
+        print(summarize_light(light_name, desc))
     print("=" * 80)
     print
     print(f"Writing as json: {json_out_path}")
@@ -430,39 +452,14 @@ def find_summary_override(light_name: str, start: int, end: int):
     return None
 
 
-def summarize(light_name, light_description):
+def get_light_group_summaries(light_name, light_description):
     groups = light_description.get("frame_groups")
     if not groups:
-        return ""
-
-    def format_val(val):
-        if isinstance(val, float):
-            if math.isclose(val, int(val)):
-                val = int(val)
-            else:
-                return f"{val:.1f}".lstrip("0")
-        elif isinstance(val, str):
-            split = val.split("/")
-            while split and split[0] in (".", ".."):
-                del split[0]
-            val = "/".join(split)
-            return repr(val)
-        elif isinstance(val, bool):
-            # on/off are shorter than True/False
-            return "on" if val else "off"
-        return str(val)
-
-    def format_attr(attr_name):
-        split = attr_name.split(":")
-        if split[0] == "inputs":
-            del split[0]
-        if split[0] == "shaping":
-            del split[0]
-        return ":".join(split)
+        return []
 
     already_printed_overrides: Set[Tuple[int, int]] = set()
 
-    lines = []
+    summaries_by_start_frame = {}
     for group in groups:
         start, end = group["frames"]
 
@@ -501,8 +498,17 @@ def summarize(light_name, light_description):
             frame_str = str(start)
         else:
             frame_str = f"{start}-{end}"
-        lines.append(f"{frame_str}: {frame_desc}")
-    return "\n".join(lines)
+
+        summaries_by_start_frame[start] = f"{frame_str}: {frame_desc}"
+    return summaries_by_start_frame
+
+
+def summarize_light(light_name, light_description):
+    summaries = get_light_group_summaries(light_name, light_description)
+    if not summaries:
+        return ""
+
+    return "\n".join(summaries.values())
 
 
 def gen_light_param_descriptions(stage: Usd.Stage):

@@ -311,7 +311,7 @@ def reset_net_box_summaries(dry_run=True):
         # now get the new summary text
         desc = param_descriptions[usd_light_name]
         try:
-            summary = genLightParamDescriptions.summarize(light_name, desc)
+            summary = genLightParamDescriptions.summarize_light(light_name, desc)
         except Exception:
             print(desc)
             print(f"error summarizing light: {light_name}")

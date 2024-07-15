@@ -1,14 +1,21 @@
 #!/usr/bin/env python
 
+import inspect
 import os
 import shutil
+import sys
 
+###############################################################################
+# Constants
+###############################################################################
 
-def needs_update(existing, dependent):
-    if os.path.exists(dependent):
-        return os.path.getmtime(existing) > os.path.getmtime(dependent)
-    return True
+THIS_FILE = os.path.abspath(inspect.getsourcefile(lambda: None) or __file__)
+THIS_DIR = os.path.dirname(THIS_FILE)
 
+if THIS_DIR not in sys.path:
+    sys.path.append(THIS_DIR)
+
+import genLightParamDescriptions
 
 TEST_ROOT = "renders"
 WEB_ROOT = "web"
@@ -17,85 +24,6 @@ RENDERERS = [
     "karma",
     "ris",
     "arnold",
-]
-
-TESTS = [
-    (
-        "distant",
-        15,
-        {
-            1: "Angle from 0 to 90, normalize OFF",
-            6: "Angle from 0 to 90, normalize ON",
-            11: "Colour temperature from 2000 to 11000",
-        },
-    ),
-    (
-        "distant-angle",
-        15,
-        {
-            1: "Angle from 0 to 90, normalize OFF",
-            6: "Angle from 0 to 90, normalize ON",
-            11: "Colour temperature from 2000 to 11000",
-        },
-    ),
-    ("dome", 1, {}),
-    (
-        "cylinder",
-        40,
-        {
-            1: "Radius from 0.1 to 0.5, normalize OFF",
-            6: "Radius from 0.1 to 0.5, normalize ON",
-            11: "Colour temperature from 2000 to 11000",
-            16: "Cone angle from 90 to 10",
-            21: "Softness from 0 to 1 (cone 45)",
-            26: "Focus from 0 to 100 (cone 60, focusTint red)",
-            31: "IES angle scale -1 to 1 (IES normalize OFF)",
-            36: "IES angle scale -1 to 1 (IES normalize ON)",
-        },
-    ),
-    (
-        "disk",
-        40,
-        {
-            1: "Radius from 0.1 to 0.5, normalize OFF",
-            6: "Radius from 0.1 to 0.5, normalize ON",
-            11: "Colour temperature from 2000 to 11000",
-            16: "Cone angle from 90 to 10",
-            21: "Softness from 0 to 1 (cone 45)",
-            26: "Focus from 0 to 100 (cone 60, focusTint red)",
-            31: "IES angle scale -1 to 1 (IES normalize OFF)",
-            36: "IES angle scale -1 to 1 (IES normalize ON)",
-        },
-    ),
-    (
-        "rect",
-        40,
-        {
-            1: "Width from 0.1 to 0.5, normalize OFF",
-            6: "Width from 0.1 to 0.5, normalize ON",
-            11: "Colour temperature from 2000 to 11000",
-            16: "Cone angle from 90 to 10",
-            21: "Softness from 0 to 1 (cone 45)",
-            26: "Focus from 0 to 100 (cone 60, focusTint red)",
-            31: "IES angle scale -1 to 1 (IES normalize OFF)",
-            36: "IES angle scale -1 to 1 (IES normalize ON)",
-        },
-    ),
-    (
-        "sphere",
-        40,
-        {
-            1: "Radius from 0.1 to 0.5, normalize OFF",
-            6: "Radius from 0.1 to 0.5, normalize ON",
-            11: "Colour temperature from 2000 to 11000",
-            16: "Cone angle from 90 to 10",
-            21: "Softness from 0 to 1 (cone 45)",
-            26: "Focus from 0 to 100 (cone 60, focusTint red)",
-            31: "IES angle scale -1 to 1 (IES normalize OFF)",
-            36: "IES angle scale -1 to 1 (IES normalize ON)",
-        },
-    ),
-    ("visible-rect", 1, {}),
 ]
 
 OUTPUT_DIR = "diff"
@@ -114,9 +42,24 @@ HTML = """<!DOCTYPE html>
   <body>
 """
 
+###############################################################################
+# Main
+###############################################################################
+
+light_descriptions = genLightParamDescriptions.read_descriptions()
+
+
+def needs_update(existing, dependent):
+    if os.path.exists(dependent):
+        return os.path.getmtime(existing) > os.path.getmtime(dependent)
+    return True
+
+
 os.makedirs(os.path.join(WEB_ROOT, "img"), exist_ok=True)
 
-for name, end, descriptions in TESTS:
+for name, description in light_descriptions.items():
+    start, end = description["frames"]
+    summaries_by_start_frame = genLightParamDescriptions.get_light_group_summaries(name, description)
 
     HTML += f"""<h1>{name}</h1>
 
@@ -135,10 +78,10 @@ for name, end, descriptions in TESTS:
   </tr>
 """
 
-    for frame in range(1, end + 1):
+    for frame in range(start, end + 1):
 
-        if frame in descriptions:
-            desc = descriptions[frame]
+        if frame in summaries_by_start_frame:
+            desc = summaries_by_start_frame[frame]
             HTML += "  <tr></tr>\n"
             HTML += "  <tr>\n"
             HTML += f"    <td></td><td colspan='{len(RENDERERS)+1}'><em>{desc}</em></td>\n"
