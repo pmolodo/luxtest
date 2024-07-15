@@ -12,7 +12,7 @@ import os
 import sys
 import traceback
 
-from typing import Any, Collection, Dict, Iterable, List, Optional, Tuple, TypeAlias, Union
+from typing import Any, Collection, Dict, Iterable, List, Optional, Set, Tuple, TypeAlias, Union
 
 from pxr import Sdf, Usd, UsdLux
 
@@ -409,7 +409,7 @@ def write_light_param_descriptions(path: str, recurse: bool = False, json_out_pa
     for light_name, desc in descriptions.items():
         print()
         print(f"{light_name}:")
-        print(summarize(desc))
+        print(summarize(light_name, desc))
     print("=" * 80)
     print
     print(f"Writing as json: {json_out_path}")
@@ -418,7 +418,26 @@ def write_light_param_descriptions(path: str, recurse: bool = False, json_out_pa
     return
 
 
-def summarize(light_description):
+SUMMARY_OVERRIDES = {
+    "distant": {
+        (21, 25): "cam rotate from 0 to 80 (intensity 3720)",
+        (26, 30): "light rotate from 0 to 80 (intensity 3720)",
+    },
+}
+
+
+def find_summary_override(light_name: str, start: int, end: int):
+    light_overrides = SUMMARY_OVERRIDES.get(light_name)
+    if light_overrides is None:
+        return None
+    for frames, desc in light_overrides.items():
+        override_start, override_end = frames
+        if override_start <= start and end <= override_end:
+            return frames, desc
+    return None
+
+
+def summarize(light_name, light_description):
     groups = light_description.get("frame_groups")
     if not groups:
         return "(no variation)"
@@ -444,29 +463,42 @@ def summarize(light_description):
             del split[0]
         return ":".join(split)
 
+    already_printed_overrides: Set[Tuple[int, int]] = set()
+
     lines = []
     for group in groups:
         start, end = group["frames"]
+
+        override = find_summary_override(light_name, start, end)
+        if override is not None:
+            override_frames, override_desc = override
+            if override_frames in already_printed_overrides:
+                continue
+            already_printed_overrides.add(override_frames)
+            start, end = override_frames
+            frame_desc = override_desc
+        else:
+            varying = group["varying_attr_name"]
+            if not varying:
+                frame_desc = "(constant)"
+            else:
+                vals = group["varying_vals"]
+                varying_desc = f"{format_attr(varying)} from {format_val(vals[start])} to {format_val(vals[end])}"
+                constants = group["non_default_constants"]
+                if not constants:
+                    constants_desc = ""
+                else:
+                    constant_descs = []
+                    for const_name, val in constants.items():
+                        constant_descs.append(f"{format_attr(const_name)}={format_val(val)}")
+                    constants_desc = ", ".join(constant_descs)
+                    constants_desc = f" ({constants_desc})"
+                frame_desc = f"{varying_desc}{constants_desc}"
+
         if start == end:
             frame_str = str(start)
         else:
             frame_str = f"{start}-{end}"
-        varying = group["varying_attr_name"]
-        if not varying:
-            frame_desc = "(constant)"
-        else:
-            vals = group["varying_vals"]
-            varying_desc = f"{format_attr(varying)} from {format_val(vals[start])} to {format_val(vals[end])}"
-            constants = group["non_default_constants"]
-            if not constants:
-                constants_desc = ""
-            else:
-                constant_descs = []
-                for const_name, val in constants.items():
-                    constant_descs.append(f"{format_attr(const_name)}={format_val(val)}")
-                constants_desc = ", ".join(constant_descs)
-                constants_desc = f" ({constants_desc})"
-            frame_desc = f"{varying_desc}{constants_desc}"
         lines.append(f"{frame_str}: {frame_desc}")
     return "\n".join(lines)
 
