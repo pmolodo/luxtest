@@ -433,7 +433,7 @@ def find_summary_override(light_name: str, start: int, end: int):
 def summarize(light_name, light_description):
     groups = light_description.get("frame_groups")
     if not groups:
-        return "(no variation)"
+        return ""
 
     def format_val(val):
         if isinstance(val, float):
