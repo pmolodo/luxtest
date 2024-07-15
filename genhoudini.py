@@ -51,7 +51,7 @@ def filter_lights(rop_nodes: Iterable["hou.Node"], lights: Iterable[str]):
     if not lights:
         return rop_nodes
     light_suffixes = tuple(f"_{l}" for l in lights)
-    return [x for x in rop_nodes if x.name().endsiwth(light_suffixes)]
+    return [x for x in rop_nodes if x.name().endswith(light_suffixes)]
 
 
 def filter_renderers(rop_nodes: Iterable["hou.Node"], renderers: Iterable[str]):
