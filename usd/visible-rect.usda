@@ -262,10 +262,12 @@ def Xform "grid3" (
 def Xform "lights"
 {
     def RectLight "visible_rect_light" (
-        prepend apiSchemas = ["HoudiniViewportLightAPI", "KarmaLightAPI", "HoudiniViewportGuideAPI"]
+        prepend apiSchemas = ["HoudiniViewportLightAPI", "KarmaLightAPI", "HoudiniViewportGuideAPI", "LightAPI"]
     )
     {
+        float3[] extent = [(-0.5, -0.5, -0), (0.5, 0.5, 0)]
         color3f inputs:color = (1, 1, 1)
+        float inputs:colorTemperature = 6500
         float inputs:diffuse = 1
         bool inputs:enableColorTemperature = 0
         float inputs:exposure = 0

@@ -271,7 +271,7 @@ def Scope "Render"
 def Xform "lights"
 {
     def DistantLight "distant_light" (
-        prepend apiSchemas = ["HoudiniViewportLightAPI", "HoudiniViewportGuideAPI"]
+        prepend apiSchemas = ["HoudiniViewportLightAPI", "HoudiniViewportGuideAPI", "LightAPI"]
     )
     {
         float inputs:angle.timeSamples = {
@@ -313,6 +313,36 @@ def Xform "lights"
         }
         color3f inputs:color = (1, 1, 1)
         float inputs:colorTemperature.timeSamples = {
+            1: 6500,
+            2: 6500,
+            3: 6500,
+            4: 6500,
+            5: 6500,
+            6: 6500,
+            7: 6500,
+            8: 6500,
+            9: 6500,
+            10: 6500,
+            11: 6500,
+            12: 6500,
+            13: 6500,
+            14: 6500,
+            15: 6500,
+            16: 6500,
+            17: 6500,
+            18: 6500,
+            19: 6500,
+            20: 6500,
+            21: 6500,
+            22: 6500,
+            23: 6500,
+            24: 6500,
+            25: 6500,
+            26: 6500,
+            27: 6500,
+            28: 6500,
+            29: 6500,
+            30: 6500,
             31: 2000,
             32: 4250,
             33: 6500,
