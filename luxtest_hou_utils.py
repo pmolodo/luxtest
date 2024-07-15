@@ -1,8 +1,18 @@
+import inspect
+import os
 import re
+import sys
 
 from typing import Iterable, Optional, Union
 
 import hou
+
+###############################################################################
+# Constants
+###############################################################################
+
+THIS_FILE = os.path.abspath(inspect.getsourcefile(lambda: None) or __file__)
+THIS_DIR = os.path.dirname(THIS_FILE)
 
 ###############################################################################
 # General Houdini Utilities
@@ -261,3 +271,72 @@ def standardize_output_names(dry_run=True):
     if dry_run:
         print("dry_run=True - nothing changed - to change names, use:")
         print("  standardize_output_names(dry_run=False)")
+
+
+###############################################################################
+# Summaries
+###############################################################################
+
+SUMMARY_LINE_RE = re.compile("^\d+(?:-\d+)?:\s+.+", re.MULTILINE)
+
+
+def reset_net_box_summaries(dry_run=True):
+    if THIS_DIR not in sys.path:
+        sys.path.append(THIS_DIR)
+
+    import genLightParamDescriptions
+
+    param_descriptions = genLightParamDescriptions.read_descriptions()
+
+    stage = hou.node("/stage")
+
+    to_update = []
+    for box in stage.networkBoxes():
+        # find the light
+        lights = [x for x in box.nodes() if is_light(x)]
+        if not lights:
+            continue
+        if len(lights) > 1:
+            raise RuntimeError("more than one light? oh noes!")
+        light = lights[0]
+        light_name = parse_light_name(light)
+        usd_light_name = light_name.replace("-", "_")
+
+        # now find the sticky note with the summary
+        stickies = [x for x in box.stickyNotes() if SUMMARY_LINE_RE.search(x.text())]
+        if len(stickies) != 1:
+            raise RuntimeError(f"can't find right sticky for net box for light {light_name}")
+        sticky = stickies[0]
+
+        # now get the new summary text
+        desc = param_descriptions[usd_light_name]
+        try:
+            summary = genLightParamDescriptions.summarize(light_name, desc)
+        except Exception:
+            print(desc)
+            print(f"error summarizing light: {light_name}")
+            raise
+        if not summary:
+            continue
+
+        if sticky.text() != summary:
+            to_update.append((light_name, sticky, summary))
+
+    print()
+    print("=" * 80)
+    if not to_update:
+        print("Found no network box summaries to update")
+        return
+    to_update.sort()
+    print(f"Found {len(to_update)} network box summaries to update:")
+    print("=" * 80)
+    for light_name, sticky, summary in to_update:
+        print()
+        print(f"{light_name}:")
+        print(summary)
+        if not dry_run:
+            sticky.setText(summary)
+    print("=" * 80)
+    if dry_run:
+        print("dry_run=True - nothing changed - to change summaries, use:")
+        print("  reset_net_box_summaries(dry_run=False)")

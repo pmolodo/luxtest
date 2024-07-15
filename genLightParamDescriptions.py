@@ -480,7 +480,12 @@ def summarize(light_name, light_description):
                 frame_desc = "(constant)"
             else:
                 vals = group["varying_vals"]
-                varying_desc = f"{format_attr(varying)} from {format_val(vals[start])} to {format_val(vals[end])}"
+
+                # if we're dealing with a description we read from json, all keys were stringified
+                def get_val(frame):
+                    return vals.get(frame, vals[str(frame)])
+
+                varying_desc = f"{format_attr(varying)} from {format_val(get_val(start))} to {format_val(get_val(end))}"
                 constants = group["non_default_constants"]
                 if not constants:
                     constants_desc = ""
@@ -571,6 +576,11 @@ def get_light_param_description(light: Usd.Prim) -> Dict[str, any]:
     light_data["frames"] = (frames[0], frames[-1])
     light_data["attrs"] = attr_names
     return light_data
+
+
+def read_descriptions(path=OUTPUT_JSON_PATH):
+    with open(path, "r", encoding="utf8") as reader:
+        return json.load(reader)
 
 
 ###############################################################################
