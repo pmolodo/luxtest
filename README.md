@@ -37,7 +37,7 @@
   - disk
   - cylinder
   - dome
-  - visible-rect
+  - visibleRect
 - Select the USD Render ROP corresponding to the renderer you wish to render
   - will be of format `render_{light}_{renderer}
   - ie, `render_rect_ris`
