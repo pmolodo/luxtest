@@ -255,7 +255,6 @@ class FrameGroup:
         can_combine = False
         this_frame = self.frames()[-1]
         other_frame = other.frames()[0]
-        print(f"combine() - checking frame: {other_frame}")
 
         new_varying = self.find_varying_vals(this_frame, other, other_frame)
         if len(self.frame_vals) == 1:
@@ -276,15 +275,9 @@ class FrameGroup:
                         f"constants ({self.constants}) or defaults ({self.defaults})"
                     )
                 can_combine = True
-                print(f"frame {other_frame} - can combine (two single frames - varying: {self.varying})")
-            else:
-                print(f"frame {other_frame} - can't combine - varying: {new_varying})")
 
         elif len(new_varying) == 1 and list(new_varying.items())[0] == (self.varying, self.increasing):
-            print(f"frame {other_frame} - can combine (added onto {len(self.frame_vals)} others: {self.varying})")
             can_combine = True
-        else:
-            print(f"frame {other_frame} - can't combine")
 
         if can_combine:
             # only thing we should need to do is add in the new frames
