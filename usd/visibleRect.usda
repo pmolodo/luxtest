@@ -261,7 +261,7 @@ def Xform "grid3" (
 
 def Xform "lights"
 {
-    def RectLight "visible_rect_light" (
+    def RectLight "visibleRect_light" (
         prepend apiSchemas = ["HoudiniViewportLightAPI", "KarmaLightAPI", "HoudiniViewportGuideAPI", "LightAPI"]
     )
     {

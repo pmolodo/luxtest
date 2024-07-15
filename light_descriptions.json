@@ -949,7 +949,7 @@
         ],
         "usd_path": "C:\\src\\NVIDIA\\luxtest\\usd\\sphere.usda"
     },
-    "visible_rect": {
-        "usd_path": "C:\\src\\NVIDIA\\luxtest\\usd\\visible-rect.usda"
+    "visibleRect": {
+        "usd_path": "C:\\src\\NVIDIA\\luxtest\\usd\\visibleRect.usda"
     }
 }
