@@ -48,7 +48,7 @@ def filter_renderers(rop_nodes: Iterable["hou.Node"], renderers: Iterable[str]):
         return rop_nodes
 
     renderer_prefixes = tuple(f"render_{r}_" for r in renderers)
-    rop_nodes = [x for x in rop_nodes if x.name().startswith(renderer_prefixes)]
+    return [x for x in rop_nodes if x.name().startswith(renderer_prefixes)]
 
 
 ###############################################################################
