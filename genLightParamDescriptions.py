@@ -69,6 +69,12 @@ def is_sorted(vals: Iterable):
     return True
 
 
+def vals_close(val1, val2):
+    if isinstance(val1, float) or isinstance(val2, float):
+        return math.isclose(val1, val2)
+    return val1 == val2
+
+
 def tuple_remove(tup, item):
     return tuple(x for x in tup if x != item)
 
@@ -96,9 +102,12 @@ def get_light_name(light):
 def get_fallback(attr: Usd.Attribute):
     if not attr.HasFallbackValue():
         # xformOp:transform technically has no fallback, but we assume identity
-        py_type = attr.GetTypeName().type.pythonClass
+        sdf_type = attr.GetTypeName().type
+        py_type = sdf_type.pythonClass
         if py_type and py_type.__module__ == "pxr.Gf":
             return py_type()
+        elif sdf_type.typeName == "SdfAssetPath":
+            return ""
         return None
     prim_def = attr.GetPrim().GetPrimDefinition()
     attr_def = prim_def.GetAttributeDefinition(attr.GetName())
@@ -129,7 +138,7 @@ def find_usds(path: str, recurse=False):
 
 @dataclasses.dataclass
 class FrameGroup:
-    """A frame group is a range over which exactly 1 parameter is varying"""
+    """A frame group is a range over which exactly 1 parameter is varying, and in the same direction"""
 
     # for each frame, dict from attr names to values
     # frames and attrs are both sorted
@@ -137,6 +146,7 @@ class FrameGroup:
     varying: str  # the one varying attribute - "" for a single-frame group, non-empty for multi-frame
     constants: Tuple[str]  # constant, but not at default
     defaults: Tuple[str]  # constant, AND default
+    increasing: bool = True
 
     def __post_init__(self):
         # sort the things...
@@ -219,7 +229,14 @@ class FrameGroup:
     def find_varying_vals(self, this_frame: IntFloat, other: "FrameGroup", other_frame: IntFloat):
         this_vals = self.frame_vals[this_frame]
         other_vals = other.frame_vals[other_frame]
-        return [attr for attr in self.attrs() if this_vals[attr] != other_vals[attr]]
+        # returns dict from attr name to "increasing" bool
+        attr_to_increasing = {}
+        for attr in self.attrs():
+            old = this_vals[attr]
+            new = other_vals[attr]
+            if not vals_close(old, new):
+                attr_to_increasing[attr] = new > old
+        return attr_to_increasing
 
     def combine(self, other: "FrameGroup") -> bool:
         """Adds the frame_vals from single-frame FrameGroup other to this group, if possible
@@ -246,7 +263,7 @@ class FrameGroup:
             assert self.varying == ""
 
             if len(new_varying) == 1:
-                self.varying = new_varying[0]
+                self.varying, self.increasing = list(new_varying.items())[0]
 
                 # remove varying attr from defaults or constants
                 if self.varying in self.constants:
@@ -263,7 +280,7 @@ class FrameGroup:
             else:
                 print(f"frame {other_frame} - can't combine - varying: {new_varying})")
 
-        elif len(new_varying) == 1 and new_varying[0] == self.varying:
+        elif len(new_varying) == 1 and list(new_varying.items())[0] == (self.varying, self.increasing):
             print(f"frame {other_frame} - can combine (added onto {len(self.frame_vals)} others: {self.varying})")
             can_combine = True
         else:
@@ -293,11 +310,7 @@ class FrameGroup:
             if default is MISSING:
                 default = get_fallback(attr)
                 default_vals[name] = default
-            if isinstance(default, float):
-                is_default = math.isclose(val, default)
-            else:
-                is_default = val == default
-            if is_default:
+            if vals_close(val, default):
                 default_attrs.append(name)
             else:
                 constant_attrs.append(name)
@@ -416,6 +429,11 @@ def summarize(light_description):
                 val = int(val)
             else:
                 return f"{val:.1f}".lstrip("0")
+        elif isinstance(val, str):
+            return repr(val)
+        elif isinstance(val, bool):
+            # on/off are shorter than True/False
+            return "on" if val else "off"
         return str(val)
 
     def format_attr(attr_name):
@@ -445,7 +463,7 @@ def summarize(light_description):
             else:
                 constant_descs = []
                 for const_name, val in constants.items():
-                    constant_descs.append(f"{format_attr(const_name)} {format_val(val)}")
+                    constant_descs.append(f"{format_attr(const_name)}={format_val(val)}")
                 constants_desc = ", ".join(constant_descs)
                 constants_desc = f" ({constants_desc})"
             frame_desc = f"{varying_desc}{constants_desc}"
