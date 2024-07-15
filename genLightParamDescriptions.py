@@ -442,6 +442,10 @@ def summarize(light_name, light_description):
             else:
                 return f"{val:.1f}".lstrip("0")
         elif isinstance(val, str):
+            split = val.split("/")
+            while split and split[0] in (".", ".."):
+                del split[0]
+            val = "/".join(split)
             return repr(val)
         elif isinstance(val, bool):
             # on/off are shorter than True/False
