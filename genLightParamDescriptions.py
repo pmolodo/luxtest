@@ -480,7 +480,10 @@ def get_light_group_summaries(light_name, light_description):
 
                 # if we're dealing with a description we read from json, all keys were stringified
                 def get_val(frame):
-                    return vals.get(frame, vals[str(frame)])
+                    val = vals.get(frame)
+                    if val is not None:
+                        return val
+                    return vals[str(frame)]
 
                 varying_desc = f"{format_attr(varying)} from {format_val(get_val(start))} to {format_val(get_val(end))}"
                 constants = group["non_default_constants"]
