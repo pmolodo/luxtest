@@ -9,6 +9,7 @@ karma, and RenderMan RIS)
 
 
 import argparse
+import datetime
 import inspect
 import os
 import shutil
@@ -30,6 +31,9 @@ if THIS_DIR not in sys.path:
     sys.path.append(THIS_DIR)
 
 import genLightParamDescriptions
+import pip_import
+
+tqdm = pip_import.pip_import("tqdm")
 
 RENDERS_DIR_NAME = "renders"
 RENDERS_ROOT = os.path.join(THIS_DIR, RENDERS_DIR_NAME)
@@ -162,7 +166,8 @@ def run(args: Iterable[str], check=False, verbose=False):
 def update_png(exr_path, png_path, verbose=False):
 
     if needs_update(exr_path, png_path):
-        print(f"Creating png: {png_path}")
+        if verbose:
+            print(f"Creating png: {png_path}")
         cmd = [
             OIIOTOOL,
             exr_path,
@@ -182,7 +187,8 @@ def update_png(exr_path, png_path, verbose=False):
 
 def update_diff(exr_path1, exr_path2, diff_path, verbose=False):
     if needs_update(exr_path1, diff_path) or needs_update(exr_path2, diff_path):
-        print(f"Creating diff: {diff_path}")
+        if verbose:
+            print(f"Creating diff: {diff_path}")
         cmd = [
             OIIOTOOL,
             exr_path1,
@@ -206,19 +212,26 @@ def update_diff(exr_path1, exr_path2, diff_path, verbose=False):
 
 
 def gen_images(light_descriptions, verbose=False):
+    flat_frames = []
     for name, description in light_descriptions.items():
         for frame in iter_frames(description):
-            embree_exr_path = get_image_path(name, "embree", frame, "exr")
-            embree_png_path = get_image_path(name, "embree", frame, "png")
-            update_png(embree_exr_path, embree_png_path, verbose=verbose)
+            flat_frames.append((name, description, frame))
 
-            for renderer in RENDERERS:
-                renderer_exr_path = get_image_path(name, renderer, frame, "exr")
-                renderer_png_path = get_image_path(name, renderer, frame, "png")
-                update_png(renderer_exr_path, renderer_png_path, verbose=verbose)
+    print("Updating paths:")
+    progress = tqdm.tqdm(flat_frames)
+    for name, description, frame in progress:
+        progress.set_postfix({"name": name, "frame": frame})
+        embree_exr_path = get_image_path(name, "embree", frame, "exr")
+        embree_png_path = get_image_path(name, "embree", frame, "png")
+        update_png(embree_exr_path, embree_png_path, verbose=verbose)
 
-                diff_png_path = get_image_path(name, renderer, frame, "png", prefix="diff-")
-                update_diff(embree_exr_path, renderer_exr_path, diff_png_path, verbose=verbose)
+        for renderer in RENDERERS:
+            renderer_exr_path = get_image_path(name, renderer, frame, "exr")
+            renderer_png_path = get_image_path(name, renderer, frame, "png")
+            update_png(renderer_exr_path, renderer_png_path, verbose=verbose)
+
+            diff_png_path = get_image_path(name, renderer, frame, "png", prefix="diff-")
+            update_diff(embree_exr_path, renderer_exr_path, diff_png_path, verbose=verbose)
 
 
 def gen_html(light_descriptions):
@@ -278,11 +291,14 @@ def gen_html(light_descriptions):
 
 
 def gen_diffs(verbose=False):
+    start = datetime.datetime.now()
     light_descriptions = genLightParamDescriptions.read_descriptions()
 
     os.makedirs(WEB_IMG_ROOT, exist_ok=True)
     gen_images(light_descriptions, verbose=verbose)
     gen_html(light_descriptions)
+    elapsed = datetime.datetime.now() - start
+    print(f"Done generating diffs - took: {elapsed}")
 
 
 ###############################################################################
