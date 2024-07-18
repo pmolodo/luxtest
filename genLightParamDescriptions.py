@@ -409,7 +409,7 @@ class FrameGroupFinder:
 ###############################################################################
 
 
-def write_light_param_descriptions(path: str, recurse: bool = False, json_out_path=OUTPUT_JSON_PATH):
+def write_light_param_descriptions(path: str, recurse: bool = False, json_out_path=OUTPUT_JSON_PATH, errors="raise"):
     usd_paths = find_usds(path, recurse=recurse)
     if not usd_paths:
         raise ValueError(f"Could not find any USD files at path: {path}")
@@ -417,7 +417,7 @@ def write_light_param_descriptions(path: str, recurse: bool = False, json_out_pa
     for usd_path in usd_paths:
         stage = Usd.Stage.Open(usd_path)
         print(f"Processing: {usd_path}")
-        descriptions.update(gen_light_param_descriptions(stage))
+        descriptions.update(gen_light_param_descriptions(stage, errors=errors))
 
     print(f"Got {len(descriptions)} descriptions")
     print("=" * 80)
@@ -514,7 +514,7 @@ def summarize_light(light_name, light_description):
     return "\n".join(summaries.values())
 
 
-def gen_light_param_descriptions(stage: Usd.Stage):
+def gen_light_param_descriptions(stage: Usd.Stage, errors="raise"):
     lights = [x for x in stage.Traverse() if x.HasAPI(UsdLux.LightAPI)]
     if not lights:
         raise RuntimeError(f"stage had no lights: {stage}")
@@ -533,8 +533,9 @@ def gen_light_param_descriptions(stage: Usd.Stage):
                 raise ValueError(f"Light name appeared twice: {light_name}")
             all_descs[light_name] = light_desc
         except Exception:
-            print(f"Error processing light {light.GetPath()} in stage {stage_path}")
-            raise
+            print(f"WARNING: Error processing light {light.GetPath()} in stage {stage_path}")
+            if errors == "raise":
+                raise
 
     return all_descs
 
@@ -614,6 +615,18 @@ def get_parser():
         action="store_true",
         help="if PATH is a directory, whether to search sub-directories recursively",
     )
+    parser.add_argument(
+        "-e",
+        "--errors",
+        choices=("raise", "warn"),
+        default="raise",
+        help=(
+            "How to handle errors when processing a given usda or light - if "
+            "'raise', then any error will immediately halt; if 'warn', then a "
+            "warning will continue, then processing will continue on other "
+            "lights or usda files"
+        ),
+    )
     return parser
 
 
@@ -623,7 +636,7 @@ def main(argv=None):
     parser = get_parser()
     args = parser.parse_args()
     try:
-        write_light_param_descriptions(args.path, recurse=args.recurse)
+        write_light_param_descriptions(args.path, recurse=args.recurse, errors=args.errors)
     except Exception:  # pylint: disable=broad-except
 
         traceback.print_exc()
