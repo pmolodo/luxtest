@@ -2,6 +2,7 @@
 /.thumbs
 /backup
 /web
+/web.archive
 /renders
 **/*.rat
 **/*.tx
