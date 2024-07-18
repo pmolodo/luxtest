@@ -18,6 +18,11 @@ from typing import Iterable, Optional
 THIS_FILE = os.path.abspath(inspect.getsourcefile(lambda: None) or __file__)
 THIS_DIR = os.path.dirname(THIS_FILE)
 
+if THIS_DIR not in sys.path:
+    sys.path.append(THIS_DIR)
+
+import genLightParamDescriptions
+
 LUXTEST_HIP = os.path.join(THIS_DIR, "luxtest.hip")
 HUSK_PRE_RENDER = os.path.join(THIS_DIR, "husk_pre_render.py")
 
