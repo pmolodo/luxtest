@@ -302,6 +302,7 @@ def gen_images(light_descriptions, verbose=False, max_concurrency=-1):
 
 def gen_html(light_descriptions):
     html = HTML_START
+    num_cols = len(RENDERERS) * 2 + 1
     for name, description in light_descriptions.items():
         summaries_by_start_frame = genLightParamDescriptions.get_light_group_summaries(name, description)
 
@@ -329,7 +330,7 @@ def gen_html(light_descriptions):
                 desc = summaries_by_start_frame[frame]
                 html += "  <tr></tr>\n"
                 html += "  <tr>\n"
-                html += f"    <td></td><td colspan='{len(RENDERERS) + 1}'><em>{desc}</em></td>\n"
+                html += f"    <td></td><td colspan='{num_cols}'><em>{desc}</em></td>\n"
                 html += "  </tr>\n"
 
             html += "  <tr>\n"
