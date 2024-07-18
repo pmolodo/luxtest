@@ -71,6 +71,18 @@ OIIOTOOL = os.environ.get("LUXTEST_OIIOTOOL", "oiiotool")
 
 NUM_CPUS = multiprocessing.cpu_count()
 
+# if we can't read light_descriptions, use this
+FALLBACK_LIGHTS = (
+    "cylinder",
+    "disk",
+    "distant",
+    "dome",
+    "rect",
+    "sphere",
+    "visibleRect",
+)
+
+
 ###############################################################################
 # Utilities
 ###############################################################################
@@ -344,9 +356,11 @@ def gen_html(light_descriptions):
     shutil.copyfile("luxtest.css", os.path.join(WEB_ROOT, "luxtest.css"))
 
 
-def gen_diffs(verbose=False, max_concurrency=-1):
+def gen_diffs(verbose=False, max_concurrency=-1, lights: Iterable[str] = ()):
     start = datetime.datetime.now()
     light_descriptions = genLightParamDescriptions.read_descriptions()
+    if lights:
+        light_descriptions = {light: desc for light, desc in light_descriptions.items() if light in lights}
 
     os.makedirs(WEB_IMG_ROOT, exist_ok=True)
     gen_images(light_descriptions, verbose=verbose, max_concurrency=max_concurrency)
@@ -361,6 +375,15 @@ def gen_diffs(verbose=False, max_concurrency=-1):
 
 
 def get_parser():
+    try:
+        light_descriptions = genLightParamDescriptions.read_descriptions()
+        light_names = sorted(light_descriptions)
+    except Exception as err:
+        print("Error reading light names from light_descriptions.json:")
+        print(err)
+        print("...using fallback light names")
+        light_names = FALLBACK_LIGHTS
+
     parser = argparse.ArgumentParser(
         description=__doc__,
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
@@ -375,7 +398,16 @@ def get_parser():
             " multiprocessing.cpu_count()"
         ),
     )
-
+    parser.add_argument(
+        "-l",
+        "--light",
+        choices=light_names,
+        action="append",
+        dest="lights",
+        help=(
+            "Only render images for the given lights; if not specified, render images for all lights. May be repeated."
+        ),
+    )
     return parser
 
 
@@ -385,7 +417,7 @@ def main(argv=None):
     parser = get_parser()
     args = parser.parse_args(argv)
     try:
-        gen_diffs(verbose=args.verbose, max_concurrency=args.j)
+        gen_diffs(verbose=args.verbose, max_concurrency=args.j, lights=args.lights)
     except Exception:  # pylint: disable=broad-except
 
         traceback.print_exc()
