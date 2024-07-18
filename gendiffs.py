@@ -13,6 +13,7 @@ import asyncio
 import datetime
 import inspect
 import locale
+import multiprocessing
 import os
 import shutil
 import subprocess
@@ -68,6 +69,8 @@ HTML_START = """<!DOCTYPE html>
 
 OIIOTOOL = os.environ.get("LUXTEST_OIIOTOOL", "oiiotool")
 
+NUM_CPUS = multiprocessing.cpu_count()
+
 ###############################################################################
 # Utilities
 ###############################################################################
@@ -112,6 +115,12 @@ def try_decode(input_bytes):
         except UnicodeDecodeError:
             pass
     return input_bytes
+
+
+def normalize_concurrency(concurrency: int):
+    if concurrency < 0:
+        concurrency += NUM_CPUS
+    return max(concurrency, 1)
 
 
 def needs_update(existing, dependent):
@@ -237,7 +246,7 @@ async def update_diff(exr_path1, exr_path2, diff_path, verbose=False):
             raise_proc_error(proc, verbose)
 
 
-async def gen_images_async(light_descriptions, verbose=False):
+async def gen_images_async(light_descriptions, verbose=False, max_concurrency=-1):
     flat_frames = []
     for name, description in light_descriptions.items():
         for frame in iter_frames(description):
@@ -261,11 +270,22 @@ async def gen_images_async(light_descriptions, verbose=False):
             all_tasks.append(update_diff(embree_exr_path, renderer_exr_path, diff_png_path, verbose=verbose))
 
     print(f"Generating {len(all_tasks)} images:")
-    await tqdm.asyncio.tqdm_asyncio.gather(*all_tasks)
+
+    # dont' want to overwhelm system by launching too many subprocess
+    max_concurrency = normalize_concurrency(max_concurrency)
+    proc_limiter = asyncio.Semaphore(max_concurrency)
+
+    async def proc_limited_coroutine(coroutine):
+        async with proc_limiter:
+            return await coroutine
+
+    limited_tasks = [proc_limited_coroutine(x) for x in all_tasks]
+
+    await tqdm.asyncio.tqdm_asyncio.gather(*limited_tasks)
 
 
-def gen_images(light_descriptions, verbose=False):
-    asyncio.run(gen_images_async(light_descriptions, verbose))
+def gen_images(light_descriptions, verbose=False, max_concurrency=-1):
+    asyncio.run(gen_images_async(light_descriptions, verbose, max_concurrency=max_concurrency))
 
 
 def gen_html(light_descriptions):
@@ -324,12 +344,12 @@ def gen_html(light_descriptions):
     shutil.copyfile("luxtest.css", os.path.join(WEB_ROOT, "luxtest.css"))
 
 
-def gen_diffs(verbose=False):
+def gen_diffs(verbose=False, max_concurrency=-1):
     start = datetime.datetime.now()
     light_descriptions = genLightParamDescriptions.read_descriptions()
 
     os.makedirs(WEB_IMG_ROOT, exist_ok=True)
-    gen_images(light_descriptions, verbose=verbose)
+    gen_images(light_descriptions, verbose=verbose, max_concurrency=max_concurrency)
     gen_html(light_descriptions)
     elapsed = datetime.datetime.now() - start
     print(f"Done generating diffs - took: {elapsed}")
@@ -346,6 +366,16 @@ def get_parser():
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     parser.add_argument("-v", "--verbose", action="store_true")
+    parser.add_argument(
+        "-j",
+        type=int,
+        default="-1",
+        help=(
+            "Number of oiiotool procs to run in parallel; negative values are subtracted from"
+            " multiprocessing.cpu_count()"
+        ),
+    )
+
     return parser
 
 
@@ -355,7 +385,7 @@ def main(argv=None):
     parser = get_parser()
     args = parser.parse_args(argv)
     try:
-        gen_diffs(verbose=args.verbose)
+        gen_diffs(verbose=args.verbose, max_concurrency=args.j)
     except Exception:  # pylint: disable=broad-except
 
         traceback.print_exc()
