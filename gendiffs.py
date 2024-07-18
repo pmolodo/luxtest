@@ -1,9 +1,23 @@
 #!/usr/bin/env python
 
+
+"""Generate a web page showing UsdLux image diffs
+
+...between the reference embree implementation and other renderers (ie, arnold,
+karma, and RenderMan RIS)
+"""
+
+
+import argparse
 import inspect
 import os
 import shutil
+import subprocess
 import sys
+import textwrap
+import traceback
+
+from typing import Iterable
 
 ###############################################################################
 # Constants
@@ -17,8 +31,11 @@ if THIS_DIR not in sys.path:
 
 import genLightParamDescriptions
 
-TEST_ROOT = "renders"
-WEB_ROOT = "web"
+RENDERS_DIR_NAME = "renders"
+RENDERS_ROOT = os.path.join(THIS_DIR, RENDERS_DIR_NAME)
+WEB_DIR_NAME = "web"
+WEB_ROOT = os.path.join(THIS_DIR, WEB_DIR_NAME)
+WEB_IMG_ROOT = os.path.join(WEB_ROOT, "img")
 
 RENDERERS = [
     "karma",
@@ -30,7 +47,7 @@ OUTPUT_DIR = "diff"
 
 MAP = "magma"
 
-HTML = """<!DOCTYPE html>
+HTML_START = """<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -42,11 +59,29 @@ HTML = """<!DOCTYPE html>
   <body>
 """
 
+OIIOTOOL = os.environ.get("LUXTEST_OIIOTOOL", "oiiotool")
+
 ###############################################################################
-# Main
+# Utilities
 ###############################################################################
 
-light_descriptions = genLightParamDescriptions.read_descriptions()
+
+def is_ipython():
+    try:
+        __IPYTHON__  # type: ignore
+    except NameError:
+        return False
+    return True
+
+
+if sys.platform == "win32":
+    to_shell_cmd = subprocess.list2cmdline
+else:
+
+    def to_shell_cmd(cmd_list):
+        import shlex
+
+        return " ".join(shlex.quote(x) for x in cmd_list)
 
 
 def needs_update(existing, dependent):
@@ -55,92 +90,189 @@ def needs_update(existing, dependent):
     return True
 
 
-os.makedirs(os.path.join(WEB_ROOT, "img"), exist_ok=True)
-
-for name, description in light_descriptions.items():
-    frames = description.get("frames")
+def iter_frames(light_description):
+    frames = light_description.get("frames")
     if not frames:
         start = end = 1
     else:
         start, end = frames
-    summaries_by_start_frame = genLightParamDescriptions.get_light_group_summaries(name, description)
+    return range(start, end + 1)
 
-    HTML += f"""<h1>{name}</h1>
 
-<table>
-  <tr>
-    <td>Frame</td>
-    <td>Ref</td>
-"""
-    for renderer in RENDERERS:
-        HTML += f"""
-    <td>{renderer}</td>
-    <td>{renderer} diff</td>
-"""
+def get_image_path(light_name, renderer: str, frame: int, ext: str, prefix=""):
+    ext = ext.lstrip(".")
+    filename = f"{prefix}{light_name}-{renderer}.{frame:04}.{ext}"
+    if ext == "png":
+        base_dir = WEB_IMG_ROOT
+    elif ext == "exr":
+        base_dir = os.path.join(RENDERS_ROOT, renderer)
+    else:
+        raise ValueError(f"unrecognized extension: {ext}")
+    return os.path.join(base_dir, filename)
 
-    HTML += """
-  </tr>
-"""
 
-    for frame in range(start, end + 1):
+def get_image_url(light_name, renderer: str, frame: int, ext: str, prefix=""):
+    image_path = get_image_path(light_name, renderer, frame, ext, prefix=prefix)
+    rel_path = os.path.relpath(image_path, WEB_ROOT)
+    return rel_path.replace(os.sep, "/")
 
-        if frame in summaries_by_start_frame:
-            desc = summaries_by_start_frame[frame]
-            HTML += "  <tr></tr>\n"
-            HTML += "  <tr>\n"
-            HTML += f"    <td></td><td colspan='{len(RENDERERS)+1}'><em>{desc}</em></td>\n"
-            HTML += "  </tr>\n"
 
-        HTML += "  <tr>\n"
-        HTML += f"    <td>{frame:04}</td>"
+def run(cmd: Iterable[str]):
+    print(to_shell_cmd(cmd))
+    exit_code = subprocess.call(cmd)
+    print(f"   exit code: {exit_code}")
+    return exit_code
 
-        embree_base = os.path.join(TEST_ROOT, "embree", f"{name}-embree.{frame:04}")
-        embree_exr = f"{embree_base}.exr"
-        embree_png = f"{name}-embree.{frame:04}.png"
-        embree_png_path = os.path.join(WEB_ROOT, "img", embree_png)
 
-        HTML += f'    <td><img src="img/{embree_png}"</td>\n'
+###############################################################################
+# Core functions
+###############################################################################
 
-        oiiotool = os.environ.get("LUXTEST_OIIOTOOL", "oiiotool")
 
-        cmd = f"{oiiotool} {embree_exr} --ch R,G,B --colorconvert linear sRGB -o {embree_png_path}"
-        if needs_update(embree_exr, embree_png_path):
-            print(cmd)
-            result = os.system(cmd)
-            print(result)
-            assert os.path.isfile(embree_png_path)
+def update_png(exr_path, png_path):
+    if needs_update(exr_path, png_path):
+        cmd = [
+            OIIOTOOL,
+            exr_path,
+            "--ch",
+            "R,G,B",
+            "--colorconvert",
+            "linear",
+            "sRGB",
+            "-o",
+            png_path,
+        ]
+        run(cmd)
+        assert os.path.isfile(png_path)
 
+
+def update_diff(exr_path1, exr_path2, diff_path):
+    if needs_update(exr_path1, diff_path) or needs_update(exr_path2, diff_path):
+        cmd = [
+            OIIOTOOL,
+            exr_path1,
+            exr_path2,
+            "--diff",
+            "--absdiff",
+            "--mulc",
+            "2,2,2,1",
+            "--colormap",
+            MAP,
+            "--colorconvert",
+            "linear",
+            "sRGB",
+            diff_path,
+        ]
+        run(cmd)
+        assert os.path.isfile(diff_path)
+
+
+def gen_images(light_descriptions):
+    for name, description in light_descriptions.items():
+        for frame in iter_frames(description):
+            embree_exr_path = get_image_path(name, "embree", frame, "exr")
+            embree_png_path = get_image_path(name, "embree", frame, "png")
+            update_png(embree_exr_path, embree_png_path)
+
+            for renderer in RENDERERS:
+                renderer_exr_path = get_image_path(name, renderer, frame, "exr")
+                renderer_png_path = get_image_path(name, renderer, frame, "png")
+                update_png(renderer_exr_path, renderer_png_path)
+
+                diff_png_path = get_image_path(name, renderer, frame, "png", prefix="diff-")
+                update_diff(embree_exr_path, renderer_exr_path, diff_png_path)
+
+
+def gen_html(light_descriptions):
+    html = HTML_START
+    for name, description in light_descriptions.items():
+        summaries_by_start_frame = genLightParamDescriptions.get_light_group_summaries(name, description)
+
+        html += textwrap.dedent(
+            f"""<h1>{name}</h1>
+
+            <table>
+            <tr>
+                <td>Frame</td>
+                <td>Ref</td>
+            """
+        )
         for renderer in RENDERERS:
-            renderer_base = os.path.join(TEST_ROOT, renderer, f"{name}-{renderer}.{frame:04}")
-            renderer_exr = f"{renderer_base}.exr"
-            renderer_png = f"{name}-{renderer}.{frame:04}.png"
-            renderer_png_path = os.path.join(WEB_ROOT, "img", renderer_png)
+            html += textwrap.dedent(
+                f"""
+                    <td>{renderer}</td>
+                    <td>{renderer} diff</td>
+                """
+            )
 
-            cmd = f"{oiiotool} {renderer_exr} --ch R,G,B --colorconvert linear sRGB -o {renderer_png_path}"
-            if needs_update(renderer_exr, renderer_png_path):
-                print(cmd)
-                os.system(cmd)
-                assert os.path.isfile(renderer_png_path)
+        html += "\n</tr>"
+        for frame in iter_frames(description):
 
-            output_png = f"diff-{name}-{renderer}.{frame:04}.png"
-            output_path = os.path.join(WEB_ROOT, "img", output_png)
+            if frame in summaries_by_start_frame:
+                desc = summaries_by_start_frame[frame]
+                html += "  <tr></tr>\n"
+                html += "  <tr>\n"
+                html += f"    <td></td><td colspan='{len(RENDERERS) + 1}'><em>{desc}</em></td>\n"
+                html += "  </tr>\n"
 
-            HTML += f'    <td><img src="img/{renderer_png}"</td>\n'
-            HTML += f'    <td><img src="img/{output_png}"</td>\n'
+            html += "  <tr>\n"
+            html += f"    <td>{frame:04}</td>"
 
-            if needs_update(renderer_exr, output_path) or needs_update(embree_exr, output_path):
-                cmd = (
-                    f"{oiiotool} {embree_exr} {renderer_exr} --diff --absdiff --mulc 2,2,2,1 --colormap"
-                    f" {MAP} --colorconvert linear sRGB -o {output_path}"
-                )
-                print(cmd)
-                os.system(cmd)
+            embree_url = get_image_url(name, "embree", frame, "png")
 
-        HTML += "  </tr>"
+            html += f'    <td><img src="{embree_url}"</td>\n'
 
-    HTML += "</table>\n"
+            for renderer in RENDERERS:
+                renderer_url = get_image_url(name, renderer, frame, "png")
+                diff_url = get_image_url(name, renderer, frame, "png", prefix="diff-")
 
-with open(os.path.join(WEB_ROOT, "luxtest.html"), "w") as f:
-    f.write(HTML)
+                html += f'    <td><img src="{renderer_url}"</td>\n'
+                html += f'    <td><img src="{diff_url}"</td>\n'
 
-shutil.copyfile("luxtest.css", os.path.join(WEB_ROOT, "luxtest.css"))
+            html += "  </tr>"
+
+        html += "</table>\n"
+
+    with open(os.path.join(WEB_ROOT, "luxtest.html"), "w", encoding="utf8") as f:
+        f.write(html)
+
+    shutil.copyfile("luxtest.css", os.path.join(WEB_ROOT, "luxtest.css"))
+
+
+def gen_diffs():
+    light_descriptions = genLightParamDescriptions.read_descriptions()
+
+    os.makedirs(WEB_IMG_ROOT, exist_ok=True)
+    gen_images(light_descriptions)
+    gen_html(light_descriptions)
+
+
+###############################################################################
+# CLI
+###############################################################################
+
+
+def get_parser():
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+    )
+    return parser
+
+
+def main(argv=None):
+    if argv is None:
+        argv = sys.argv[1:]
+    parser = get_parser()
+    parser.parse_args(argv)
+    try:
+        gen_diffs()
+    except Exception:  # pylint: disable=broad-except
+
+        traceback.print_exc()
+        return 1
+    return 0
+
+
+if __name__ == "__main__" and not is_ipython():
+    sys.exit(main())
