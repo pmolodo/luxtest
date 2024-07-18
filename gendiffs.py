@@ -9,8 +9,10 @@ karma, and RenderMan RIS)
 
 
 import argparse
+import asyncio
 import datetime
 import inspect
+import locale
 import os
 import shutil
 import subprocess
@@ -33,7 +35,8 @@ if THIS_DIR not in sys.path:
 import genLightParamDescriptions
 import pip_import
 
-tqdm = pip_import.pip_import("tqdm")
+pip_import.pip_import("tqdm")
+import tqdm.asyncio
 
 RENDERS_DIR_NAME = "renders"
 RENDERS_ROOT = os.path.join(THIS_DIR, RENDERS_DIR_NAME)
@@ -88,6 +91,29 @@ else:
         return " ".join(shlex.quote(x) for x in cmd_list)
 
 
+def make_unique(*objs):
+    return tuple(dict.fromkeys(objs))
+
+
+CODEC_LIST = make_unique(
+    # list of codecs to try, in order...
+    sys.stdout.encoding,
+    sys.stderr.encoding,
+    sys.stdin.encoding,
+    locale.getpreferredencoding(),
+    "utf8",
+)
+
+
+def try_decode(input_bytes):
+    for codec in CODEC_LIST:
+        try:
+            return input_bytes.decode(codec)
+        except UnicodeDecodeError:
+            pass
+    return input_bytes
+
+
 def needs_update(existing, dependent):
     if os.path.exists(dependent):
         return os.path.getmtime(existing) > os.path.getmtime(dependent)
@@ -127,7 +153,7 @@ def print_streams(proc: subprocess.CompletedProcess):
         print("=" * 80)
         print(f"{stream_name}:")
         print()
-        print(stream)
+        print(try_decode(stream))
 
 
 def raise_proc_error(proc: subprocess.CompletedProcess, verbose: bool):
@@ -143,19 +169,21 @@ def raise_proc_error(proc: subprocess.CompletedProcess, verbose: bool):
     raise subprocess.CalledProcessError(proc.returncode, proc.args, proc.stdout, proc.stderr)
 
 
-def run(args: Iterable[str], check=False, verbose=False):
+async def run(args: Iterable[str], check=False, verbose=False):
     if verbose:
         print(f"Running: {to_shell_cmd(args)}")
-    proc = subprocess.run(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    proc = await asyncio.create_subprocess_exec(args[0], *args[1:], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    stdout, stderr = await proc.communicate()
+    completed_proc = subprocess.CompletedProcess(args=args, returncode=proc.returncode, stdout=stdout, stderr=stderr)
     if verbose:
-        print_streams(proc)
+        print_streams(completed_proc)
         print("=" * 80)
-    if proc.returncode:
+    if completed_proc.returncode:
         if check:
-            raise_proc_error(proc, verbose)
+            raise_proc_error(completed_proc, verbose)
         if verbose:
-            print(f"Exitcode: {proc.returncode}")
-    return proc
+            print(f"Exitcode: {completed_proc.returncode}")
+    return completed_proc
 
 
 ###############################################################################
@@ -163,7 +191,7 @@ def run(args: Iterable[str], check=False, verbose=False):
 ###############################################################################
 
 
-def update_png(exr_path, png_path, verbose=False):
+async def update_png(exr_path, png_path, verbose=False):
 
     if needs_update(exr_path, png_path):
         if verbose:
@@ -179,16 +207,14 @@ def update_png(exr_path, png_path, verbose=False):
             "-o",
             png_path,
         ]
-        proc = run(cmd, verbose=verbose, check=True)
+        proc = await run(cmd, verbose=verbose, check=True)
         if not os.path.isfile:
             print(f"Error - output png did not exist: {png_path}")
             raise_proc_error(proc, verbose)
 
 
-def update_diff(exr_path1, exr_path2, diff_path, verbose=False):
+async def update_diff(exr_path1, exr_path2, diff_path, verbose=False):
     if needs_update(exr_path1, diff_path) or needs_update(exr_path2, diff_path):
-        if verbose:
-            print(f"Creating diff: {diff_path}")
         cmd = [
             OIIOTOOL,
             exr_path1,
@@ -205,33 +231,41 @@ def update_diff(exr_path1, exr_path2, diff_path, verbose=False):
             "-o",
             diff_path,
         ]
-        proc = run(cmd, verbose=verbose)
+        proc = await run(cmd, verbose=verbose)
         if not os.path.isfile:
             print(f"Error - output diff png did not exist: {diff_path}")
             raise_proc_error(proc, verbose)
 
 
-def gen_images(light_descriptions, verbose=False):
+async def gen_images_async(light_descriptions, verbose=False):
     flat_frames = []
     for name, description in light_descriptions.items():
         for frame in iter_frames(description):
             flat_frames.append((name, description, frame))
 
-    print("Updating paths:")
+    all_tasks = []
+    print("Finding how many images need to be updated:")
     progress = tqdm.tqdm(flat_frames)
     for name, description, frame in progress:
         progress.set_postfix({"name": name, "frame": frame})
         embree_exr_path = get_image_path(name, "embree", frame, "exr")
         embree_png_path = get_image_path(name, "embree", frame, "png")
-        update_png(embree_exr_path, embree_png_path, verbose=verbose)
+        all_tasks.append(update_png(embree_exr_path, embree_png_path, verbose=verbose))
 
         for renderer in RENDERERS:
             renderer_exr_path = get_image_path(name, renderer, frame, "exr")
             renderer_png_path = get_image_path(name, renderer, frame, "png")
-            update_png(renderer_exr_path, renderer_png_path, verbose=verbose)
+            all_tasks.append(update_png(renderer_exr_path, renderer_png_path, verbose=verbose))
 
             diff_png_path = get_image_path(name, renderer, frame, "png", prefix="diff-")
-            update_diff(embree_exr_path, renderer_exr_path, diff_png_path, verbose=verbose)
+            all_tasks.append(update_diff(embree_exr_path, renderer_exr_path, diff_png_path, verbose=verbose))
+
+    print(f"Generating {len(all_tasks)} images:")
+    await tqdm.asyncio.tqdm_asyncio.gather(*all_tasks)
+
+
+def gen_images(light_descriptions, verbose=False):
+    asyncio.run(gen_images_async(light_descriptions, verbose))
 
 
 def gen_html(light_descriptions):
