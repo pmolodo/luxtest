@@ -235,27 +235,26 @@ async def update_png(exr_path, png_path, verbose=False):
 
 
 async def update_diff(exr_path1, exr_path2, diff_path, verbose=False):
-    if needs_update(exr_path1, diff_path) or needs_update(exr_path2, diff_path):
-        cmd = [
-            OIIOTOOL,
-            exr_path1,
-            exr_path2,
-            "--diff",
-            "--absdiff",
-            "--mulc",
-            "2,2,2,1",
-            "--colormap",
-            MAP,
-            "--colorconvert",
-            "linear",
-            "sRGB",
-            "-o",
-            diff_path,
-        ]
-        proc = await run(cmd, verbose=verbose)
-        if not os.path.isfile:
-            print(f"Error - output diff png did not exist: {diff_path}")
-            raise_proc_error(proc, verbose)
+    cmd = [
+        OIIOTOOL,
+        exr_path1,
+        exr_path2,
+        "--diff",
+        "--absdiff",
+        "--mulc",
+        "2,2,2,1",
+        "--colormap",
+        MAP,
+        "--colorconvert",
+        "linear",
+        "sRGB",
+        "-o",
+        diff_path,
+    ]
+    proc = await run(cmd, verbose=verbose)
+    if not os.path.isfile:
+        print(f"Error - output diff png did not exist: {diff_path}")
+        raise_proc_error(proc, verbose)
 
 
 async def gen_images_async(light_descriptions, verbose=False, max_concurrency=-1):
@@ -265,23 +264,33 @@ async def gen_images_async(light_descriptions, verbose=False, max_concurrency=-1
             flat_frames.append((name, description, frame))
 
     all_tasks = []
+
+    def queue_png_update(exr_path, png_path):
+        if needs_update(exr_path, png_path):
+            all_tasks.append(update_png(exr_path, png_path, verbose=verbose))
+
+    def queue_diff_update(exr_path1, exr_path2, diff_path):
+        if needs_update(exr_path1, diff_path) or needs_update(exr_path2, diff_path):
+            all_tasks.append(update_diff(exr_path1, exr_path2, diff_path, verbose=verbose))
+
     print("Finding how many images need to be updated:")
     progress = tqdm.tqdm(flat_frames)
     for name, description, frame in progress:
         progress.set_postfix({"name": name, "frame": frame})
         embree_exr_path = get_image_path(name, "embree", frame, "exr")
         embree_png_path = get_image_path(name, "embree", frame, "png")
-        all_tasks.append(update_png(embree_exr_path, embree_png_path, verbose=verbose))
+        queue_png_update(embree_exr_path, embree_png_path)
 
         for renderer in RENDERERS:
             renderer_exr_path = get_image_path(name, renderer, frame, "exr")
             renderer_png_path = get_image_path(name, renderer, frame, "png")
-            all_tasks.append(update_png(renderer_exr_path, renderer_png_path, verbose=verbose))
+            queue_png_update(renderer_exr_path, renderer_png_path)
 
             diff_png_path = get_image_path(name, renderer, frame, "png", prefix="diff-")
-            all_tasks.append(update_diff(embree_exr_path, renderer_exr_path, diff_png_path, verbose=verbose))
+            queue_diff_update(embree_exr_path, renderer_exr_path, diff_png_path)
 
-    print(f"Generating {len(all_tasks)} images:")
+    num_possible_images = 5 * len(flat_frames)
+    print(f"Generating {len(all_tasks)} images (out of possible {num_possible_images}):")
 
     # dont' want to overwhelm system by launching too many subprocess
     max_concurrency = normalize_concurrency(max_concurrency)
