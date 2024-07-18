@@ -117,11 +117,41 @@ def get_image_url(light_name, renderer: str, frame: int, ext: str, prefix=""):
     return rel_path.replace(os.sep, "/")
 
 
-def run(cmd: Iterable[str]):
-    print(to_shell_cmd(cmd))
-    exit_code = subprocess.call(cmd)
-    print(f"   exit code: {exit_code}")
-    return exit_code
+def print_streams(proc: subprocess.CompletedProcess):
+    for stream_name in ("stdout", "stderr"):
+        stream = getattr(proc, stream_name, None)
+        print("=" * 80)
+        print(f"{stream_name}:")
+        print()
+        print(stream)
+
+
+def raise_proc_error(proc: subprocess.CompletedProcess, verbose: bool):
+    print()
+    if not verbose:
+        # if not verbose, we haven't printed output yet - do so now
+        print_streams(proc)
+    print("=" * 80)
+    print("Error running commmand:")
+    print(to_shell_cmd(proc.args))
+    print(f"Exitcode: {proc.returncode}")
+    print("=" * 80)
+    raise subprocess.CalledProcessError(proc.returncode, proc.args, proc.stdout, proc.stderr)
+
+
+def run(args: Iterable[str], check=False, verbose=False):
+    if verbose:
+        print(f"Running: {to_shell_cmd(args)}")
+    proc = subprocess.run(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    if verbose:
+        print_streams(proc)
+        print("=" * 80)
+    if proc.returncode:
+        if check:
+            raise_proc_error(proc, verbose)
+        if verbose:
+            print(f"Exitcode: {proc.returncode}")
+    return proc
 
 
 ###############################################################################
@@ -129,8 +159,10 @@ def run(cmd: Iterable[str]):
 ###############################################################################
 
 
-def update_png(exr_path, png_path):
+def update_png(exr_path, png_path, verbose=False):
+
     if needs_update(exr_path, png_path):
+        print(f"Creating png: {png_path}")
         cmd = [
             OIIOTOOL,
             exr_path,
@@ -142,12 +174,15 @@ def update_png(exr_path, png_path):
             "-o",
             png_path,
         ]
-        run(cmd)
-        assert os.path.isfile(png_path)
+        proc = run(cmd, verbose=verbose, check=True)
+        if not os.path.isfile:
+            print(f"Error - output png did not exist: {png_path}")
+            raise_proc_error(proc, verbose)
 
 
-def update_diff(exr_path1, exr_path2, diff_path):
+def update_diff(exr_path1, exr_path2, diff_path, verbose=False):
     if needs_update(exr_path1, diff_path) or needs_update(exr_path2, diff_path):
+        print(f"Creating diff: {diff_path}")
         cmd = [
             OIIOTOOL,
             exr_path1,
@@ -161,26 +196,29 @@ def update_diff(exr_path1, exr_path2, diff_path):
             "--colorconvert",
             "linear",
             "sRGB",
+            "-o",
             diff_path,
         ]
-        run(cmd)
-        assert os.path.isfile(diff_path)
+        proc = run(cmd, verbose=verbose)
+        if not os.path.isfile:
+            print(f"Error - output diff png did not exist: {diff_path}")
+            raise_proc_error(proc, verbose)
 
 
-def gen_images(light_descriptions):
+def gen_images(light_descriptions, verbose=False):
     for name, description in light_descriptions.items():
         for frame in iter_frames(description):
             embree_exr_path = get_image_path(name, "embree", frame, "exr")
             embree_png_path = get_image_path(name, "embree", frame, "png")
-            update_png(embree_exr_path, embree_png_path)
+            update_png(embree_exr_path, embree_png_path, verbose=verbose)
 
             for renderer in RENDERERS:
                 renderer_exr_path = get_image_path(name, renderer, frame, "exr")
                 renderer_png_path = get_image_path(name, renderer, frame, "png")
-                update_png(renderer_exr_path, renderer_png_path)
+                update_png(renderer_exr_path, renderer_png_path, verbose=verbose)
 
                 diff_png_path = get_image_path(name, renderer, frame, "png", prefix="diff-")
-                update_diff(embree_exr_path, renderer_exr_path, diff_png_path)
+                update_diff(embree_exr_path, renderer_exr_path, diff_png_path, verbose=verbose)
 
 
 def gen_html(light_descriptions):
@@ -239,11 +277,11 @@ def gen_html(light_descriptions):
     shutil.copyfile("luxtest.css", os.path.join(WEB_ROOT, "luxtest.css"))
 
 
-def gen_diffs():
+def gen_diffs(verbose=False):
     light_descriptions = genLightParamDescriptions.read_descriptions()
 
     os.makedirs(WEB_IMG_ROOT, exist_ok=True)
-    gen_images(light_descriptions)
+    gen_images(light_descriptions, verbose=verbose)
     gen_html(light_descriptions)
 
 
@@ -257,6 +295,7 @@ def get_parser():
         description=__doc__,
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
+    parser.add_argument("-v", "--verbose", action="store_true")
     return parser
 
 
@@ -264,9 +303,9 @@ def main(argv=None):
     if argv is None:
         argv = sys.argv[1:]
     parser = get_parser()
-    parser.parse_args(argv)
+    args = parser.parse_args(argv)
     try:
-        gen_diffs()
+        gen_diffs(verbose=args.verbose)
     except Exception:  # pylint: disable=broad-except
 
         traceback.print_exc()
