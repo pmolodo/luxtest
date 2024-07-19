@@ -3,7 +3,7 @@ import os
 import re
 import sys
 
-from typing import Iterable, Optional, Union
+from typing import Iterable, NamedTuple, Optional, Union
 
 import hou
 
@@ -35,6 +35,64 @@ RENDERER_SHORT_NAMES = {
 }
 
 
+# Because dealing with encoded parm names (but with not-encoded-tuple-member-suffixes) is annoying...
+# ie, you can't just reliably do hou.text.decode(parm.name())!
+class ParmName(NamedTuple):
+    tuplename: str
+    suffix: str = ""
+
+    def __str__(self):
+        return self.encoded
+
+    def __repr__(self):
+        # want to get a compact repr...
+        if self.suffix == "":
+            return f"PN({self.tuplename!r})"
+        return f"PN{tuple(self)!r}"
+
+    @property
+    def pretty(self):
+        if self.suffix:
+            return f"{self.tuplename},{self.suffix}"
+        else:
+            return self.tuplename
+
+    @property
+    def encoded_tuplename(self):
+        return hou.text.encode(self.tuplename)
+
+    @property
+    def encoded(self):
+        return self.encoded_tuplename + self.suffix
+
+    @classmethod
+    def from_parm(cls, parm: hou.Parm):
+        encoded = parm.name()
+        encoded_tuplename = parm.tuple().name()
+        assert encoded.startswith(encoded_tuplename)
+        suffix = encoded[len(encoded_tuplename) :]
+        return cls(hou.text.decode(encoded_tuplename), suffix)
+
+
+PN = ParmName
+
+
+def pretty_parm_path(parm: hou.Parm):
+    parmName = ParmName.from_parm(parm)
+    return f"{parm.node().path()}/{parmName.pretty}"
+
+
+def get_parm_tuple(node, name, error=True):
+    parmTuple = node.parmTuple(name)
+    if not parmTuple:
+        parmTuple = node.parmTuple(hou.text.encode(name))
+        if not parmTuple:
+            # ok, it couldn't be easy - try tuple names...
+            if error:
+                raise ValueError(f"node {node.path()!r} has no parmTuple {name!r}")
+    return parmTuple
+
+
 def get_renderer(node):
     return RENDERER_SHORT_NAMES[node.parm("renderer").eval()]
 
@@ -53,8 +111,51 @@ def is_light_type(nodetype):
     return base_type(nodetype) in ("light", "distantlight", "domelight")
 
 
+def is_area_light_type(nodetype):
+    return base_type(nodetype) == "light"
+
+
 def is_light(node):
     return is_light_type(node.type())
+
+
+def is_area_light(node):
+    return is_area_light_type(node.type())
+
+
+def get_nodes_referencing(node, include_self=False, node_refs=True, parm_refs=True):
+    all_refs = set()
+    if node_refs:
+        all_refs.update(x.node() for x in node.parmsReferencingThis())
+    if parm_refs:
+        for parm in node.parms():
+            all_refs.update(x.node() for x in parm.parmsReferencingThis())
+    if not include_self:
+        all_refs.discard(node)
+    return all_refs
+
+
+def make_parm_refs(parm_name, source_node, dest_nodes):
+    source_parm_tuple = get_parm_tuple(source_node, parm_name)
+
+    for dest_node in dest_nodes:
+        dest_parm_tuple = get_parm_tuple(dest_node, source_parm_tuple.name())
+        assert len(source_parm_tuple) == len(dest_parm_tuple)
+        for source_parm, dest_parm in zip(source_parm_tuple, dest_parm_tuple):
+            source_parm_name = pretty_parm_path(source_parm)
+            dest_parm_name = pretty_parm_path(dest_parm)
+            if dest_parm.getReferencedParm() == source_parm:
+                print(f"{dest_parm_name} already connected to {source_parm_name} - skipped")
+            else:
+                ref_exp = dest_parm.referenceExpression(source_parm)
+                dest_parm.setExpression(ref_exp, language=hou.exprLanguage.Hscript)
+                print(f"{dest_parm_name} now references {source_parm_name}")
+
+
+def make_sphere_refs(parm_name):
+    sphere = hou.node("/stage/sphere_light")
+    sphere_refs = [x for x in get_nodes_referencing(sphere) if is_light(x)]
+    make_parm_refs(parm_name, sphere, sphere_refs)
 
 
 def get_connected_recursive(node, predicate, direction, visited=None):
@@ -131,10 +232,24 @@ def get_non_default_parms(nodeOrParms, frames: Optional[Iterable[Union[float, in
     return non_default
 
 
-def parmgrep(node, input):
-    regex = re.compile(input, re.IGNORECASE)
-    names = [hou.text.decode(x.name()) for x in node.parms()]
-    return [x for x in names if regex.search(x)]
+def parmgrep(node, pattern):
+    regex = re.compile(pattern, re.IGNORECASE)
+    parms = parm_tuple_dict(node)
+    return {name: node for name, node in parms.items() if regex.search(name) or regex.search(hou.text.encode(name))}
+
+
+def parm_tuple_dict(node, controls=False):
+    """Returns a dict from decoded parm tuple name to the parmTuple"""
+    pairs = [(hou.text.decode(p.name()), p) for p in node.parmTuples()]
+    if not controls:
+        pairs = [(name, node) for name, node in pairs if not name.endswith("_control")]
+    pairs.sort(key=lambda pair: pair[0])
+    return dict(pairs)
+
+
+def input_parm_tuples(node, controls=False):
+    all_parms_dict = parm_tuple_dict(node, controls=controls)
+    return {name: node for name, node in all_parms_dict.items() if name.startswith("inputs:")}
 
 
 def houdini_range(start, stop=None, step=1):
