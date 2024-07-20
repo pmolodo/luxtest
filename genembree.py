@@ -16,7 +16,6 @@ from typing import Iterable, List, Optional
 # Constants
 ###############################################################################
 
-
 THIS_FILE = os.path.abspath(inspect.getsourcefile(lambda: None) or __file__)
 THIS_DIR = os.path.dirname(THIS_FILE)
 
@@ -31,6 +30,8 @@ DEFAULT_INPUT_GLOBS = (os.path.join(THIS_DIR, "usd", "*.usda"),)
 DEFAULT_OUTPUT_DIR = os.path.join(THIS_DIR, "renders")
 DEFAULT_RESOLUTION = 512
 DEFAULT_CAMERA = "/cameras/camera1"
+
+DEFAULT_SEED = 1
 
 ###############################################################################
 # Utilities
@@ -67,6 +68,7 @@ def run_tests(
     resolution=DEFAULT_RESOLUTION,
     camera=DEFAULT_CAMERA,
     frames: Optional[str] = None,
+    seed: int = DEFAULT_SEED,
 ) -> List[str]:
     """Runs tests on input usds matching given glob, for all given delegates
 
@@ -129,6 +131,7 @@ def run_tests(
                 resolution=resolution,
                 camera=camera,
                 frames=test_frames,
+                seed=seed,
             )
             if exitcode:
                 failures.append(layer)
@@ -142,6 +145,7 @@ def run_test(
     resolution: int,
     camera: str,
     frames: str,
+    seed: int,
 ):
 
     usdrecord = "usdrecord"
@@ -168,7 +172,8 @@ def run_test(
     except Exception:
         print(cmd)
         raise
-    return subprocess.check_call(cmd)
+    env = {"HDEMBREE_RANDOM_NUMBER_SEED": str(seed)}
+    return subprocess.check_call(cmd, env=env)
 
 
 ###############################################################################
@@ -226,6 +231,13 @@ def get_parser():
         "--frames",
         help="Frame string, in FRAMESPEC format used by usdrecord (see --frames arg in `usdrecord --help`).",
     )
+    parser.add_argument(
+        "-s",
+        "--seed",
+        type=int,
+        default=DEFAULT_SEED,
+        help="Set a random number seed, for repeatable results; set to -1 to use a different seed on each invocation",
+    )
 
     return parser
 
@@ -245,6 +257,7 @@ def main(argv=None):
             resolution=args.resolution,
             camera=args.camera,
             frames=args.frames,
+            seed=args.seed,
         )
     except Exception:  # pylint: disable=broad-except
         traceback.print_exc()
