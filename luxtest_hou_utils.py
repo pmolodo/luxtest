@@ -1,11 +1,28 @@
 import inspect
+import math
 import os
 import re
 import sys
 
-from typing import Iterable, NamedTuple, Optional, Union
+from typing import Iterable, NamedTuple, Optional, TypeAlias, Union
 
 import hou
+
+NodeOrRe: TypeAlias = Union[hou.Node, re.Pattern]
+NodeOrReOrIterable = Union[NodeOrRe, Iterable[NodeOrRe]]
+
+
+THIS_FILE = os.path.abspath(inspect.getsourcefile(lambda: None) or __file__)
+THIS_DIR = os.path.dirname(THIS_FILE)
+
+if THIS_DIR not in sys.path:
+    sys.path.append(THIS_DIR)
+
+import luxtest_hou_utils
+
+reload(luxtest_hou_utils)
+
+from luxtest_hou_utils import *
 
 ###############################################################################
 # Constants
@@ -82,15 +99,61 @@ def pretty_parm_path(parm: hou.Parm):
     return f"{parm.node().path()}/{parmName.pretty}"
 
 
-def get_parm_tuple(node, name, error=True):
+def get_parm_tuple(node, name):
     parmTuple = node.parmTuple(name)
     if not parmTuple:
         parmTuple = node.parmTuple(hou.text.encode(name))
         if not parmTuple:
             # ok, it couldn't be easy - try tuple names...
-            if error:
-                raise ValueError(f"node {node.path()!r} has no parmTuple {name!r}")
+            raise ValueError(f"node {node.path()!r} has no parmTuple {name!r}")
     return parmTuple
+
+
+def get_parm(node, name, suffix=""):
+    if isinstance(node, str):
+        result = hou.node(node)
+        if result:
+            node = result
+        else:
+            result = get_light(node)
+            if not result:
+                raise ValueError(f"could not find node: {node}")
+            node = result
+    try:
+        parmTuple = node.parmTuple(name)
+    except ValueError:
+        parmTuple = None
+    if not parmTuple:
+        if suffix:
+            raise ValueError(
+                f"could not find parmTuple for node {node.path()}: {name} (so cannot find suffix {suffix})"
+            )
+        # could have been given an encoded name with suffix...
+        parm = node.parm(name)
+        if parm:
+            return parm
+        # last ditch - try encoded?
+        parm = node.parm(hou.text.encode(name))
+        if parm:
+            return parm
+        raise ValueError(f"Could not find a parmTuple for node {node.path()} with name: {name}")
+    if len(parmTuple) > 1:
+        if not suffix:
+            raise ValueError(f"{parmTuple.path()} was a parmTuple - specify a suffix, or use get_parm_tuple")
+        full_encoded_name = parmTuple.name() + suffix
+        parm = node.parm(full_encoded_name)
+        if not parm:
+            raise ValueError(
+                f"Found parmTuple {parmTuple.name()} for node {node.path()}, but could not find with suffix {suffix}"
+            )
+        return parm
+
+    if suffix:
+        raise ValueError(
+            f"Found parmTuple {parmTuple.name()} for node {node.path()}, but only had one member, so could not find"
+            f" suffix {suffix}"
+        )
+    return parmTuple[0]
 
 
 def get_renderer(node):
@@ -150,6 +213,145 @@ def make_parm_refs(parm_name, source_node, dest_nodes):
                 ref_exp = dest_parm.referenceExpression(source_parm)
                 dest_parm.setExpression(ref_exp, language=hou.exprLanguage.Hscript)
                 print(f"{dest_parm_name} now references {source_parm_name}")
+
+
+def get_all_animated_parms(root_node="/", include: NodeOrReOrIterable = (), exclude: NodeOrReOrIterable = ()):
+    if isinstance(root_node, str):
+        root_node = hou.node(root_node)
+    all = []
+
+    def make_matcher(obj: NodeOrRe):
+        if isinstance(obj, hou.Node):
+            return lambda x: x == obj
+        elif isinstance(obj, re.Pattern):
+            return lambda x: obj.search(x.path())
+        raise TypeError(f"obj must be hou.Node or re.Pattern - got: {obj}")
+
+    if include:
+        if isinstance(include, (re.Pattern, hou.Node)):
+            include = [include]
+        include_matchers = [make_matcher(x) for x in include]
+
+        def is_included(obj):
+            return any(x(obj) for x in include_matchers)
+
+    else:
+
+        def is_included(obj):
+            return True
+
+    if exclude:
+        if isinstance(exclude, (re.Pattern, hou.Node)):
+            exclude = [exclude]
+        exclude_matchers = [make_matcher(x) for x in exclude]
+
+        def is_excluded(obj):
+            return any(x(obj) for x in exclude_matchers)
+
+    else:
+
+        def is_excluded(obj):
+            return False
+
+    for node in (root_node,) + root_node.allSubChildren():
+        if is_excluded(node) or not is_included(node):
+            continue
+        all.extend(parm for parm in node.parms() if len(parm.keyframes()) > 1)
+    return all
+
+
+def select_all_animated_parms(root_node="/"):
+    parms = get_all_animated_parms(root_node)
+    for p in parms:
+        p.setSelect(True)
+    return parms
+
+
+def get_keyframe_value(keyframe):
+    if isinstance(keyframe, hou.StringKeyframe):
+        return keyframe.expression()
+    return keyframe.value()
+
+
+def insert_anim_gap(frame, num_frames, include: Iterable[NodeOrRe] = (), exclude: Iterable[NodeOrRe] = ()):
+    """Shifts all keyframes >= frame by num_frames.
+
+    Sets new keyframe at the frame to keep animation constant
+    during it (if needed)
+    """
+    to_shift = {}
+    to_key = {}
+    debug_parm = hou.text.encode("inputs:shaping:cone:angle")
+    debug_parm = hou.text.encode("inputs:shaping:ies:file")
+
+    for parm in get_all_animated_parms(include=include, exclude=exclude):
+        do_print = parm.name() == debug_parm
+
+        before_keys = parm.keyframesBefore(frame)
+        after_keys = parm.keyframesAfter(frame)
+        if before_keys and before_keys[-1].frame() == frame:
+            if not after_keys or after_keys[0].frame() != frame:
+                after_keys.insert(0, before_keys[-1])
+            before_keys = before_keys[:-1]
+        if not after_keys:
+            # nothing to move, carry on!
+            if do_print:
+                print(f"parm had no after_keys - skipping: {parm.path()}")
+            continue
+        if do_print:
+            print(after_keys)
+        to_shift[parm] = after_keys
+        if not before_keys:
+            if do_print:
+                print(f"parm had no before_keys - skipping new key creation: {parm.path()}")
+            # no before keys, don't need a new keyframe
+            continue
+        # we have both before and after keys...
+        before = before_keys[-1]
+        after = after_keys[0]
+        after_val = get_keyframe_value(after)
+        if get_keyframe_value(before) == after_val:
+            if do_print:
+                print(f"parm had constant values- skipping new key creation: {parm.path()}")
+
+            # constant value, don't need a new keyframe
+            continue
+        # different values - abort, don't want to insert gap in the middle
+        # of an animated value change
+        if not math.isclose(after.frame(), frame):
+            raise RuntimeError(f"Cannot insert anim gap at frame {frame} - {parm.path()} has animation")
+        new_keys = []
+        for new_frame in (frame, frame + num_frames - 1):
+            if isinstance(after, hou.StringKeyframe):
+                keyframe = hou.StringKeyframe(after)
+                keyframe.setFrame(new_frame)
+            else:
+                keyframe = hou.Keyframe(after_val, hou.frameToTime(new_frame))
+                keyframe.setExpression("linear()")
+            new_keys.append(keyframe)
+        if do_print:
+            print(f"Adding new keys for {parm.path()}: {[x.frame() for x in new_keys]}")
+
+        to_key[parm] = new_keys
+    for parm, keys in to_shift.items():
+        do_print = parm.name() == debug_parm
+        if do_print:
+            print(f"shifting keys for {parm.path()}")
+        for key in keys:
+            frame = key.frame()
+            if do_print:
+                print(f"Deleting frame {frame}")
+            parm.deleteKeyframeAtFrame(frame)
+            key.setFrame(frame + num_frames)
+        if do_print:
+            print(f"set shifted keyframes at {[x.frame() for x in new_keys]}")
+        parm.setKeyframes(keys)
+
+    for parm, keys in to_key.items():
+        do_print = parm.name() == debug_parm
+        if do_print:
+            print(f"inserting new key for {parm.path()} at {[key.frame() for key in keys]}")
+        parm.setKeyframes(keys)
 
 
 def make_sphere_refs(parm_name):
@@ -299,6 +501,10 @@ def parse_light_name(node_or_name):
     else:
         nodename = node_or_name
     return LIGHT_NAME_RE.match(nodename).group("name")
+
+
+def get_light(name):
+    return hou.node(f"/stage/{name}_light")
 
 
 def get_standardized_name(node, associated_light_node):
