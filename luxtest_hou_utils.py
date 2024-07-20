@@ -83,11 +83,19 @@ class ParmName(NamedTuple):
         return self.encoded_tuplename + self.suffix
 
     @classmethod
-    def from_parm(cls, parm: hou.Parm):
-        encoded = parm.name()
-        encoded_tuplename = parm.tuple().name()
-        assert encoded.startswith(encoded_tuplename)
-        suffix = encoded[len(encoded_tuplename) :]
+    def from_parm(cls, parm: Union[hou.Parm, hou.ParmTuple]):
+        if isinstance(parm, hou.ParmTuple):
+            parm_tuple = parm
+            parm = None
+        else:
+            parm_tuple = parm.tuple()
+        encoded_tuplename = parm_tuple.name()
+        if parm is None:
+            suffix = ""
+        else:
+            encoded = parm.name()
+            assert encoded.startswith(encoded_tuplename)
+            suffix = encoded[len(encoded_tuplename) :]
         return cls(hou.text.decode(encoded_tuplename), suffix)
 
 
