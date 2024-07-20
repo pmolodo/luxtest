@@ -264,12 +264,17 @@ async def gen_images_async(light_descriptions, verbose=False, max_concurrency=-1
             flat_frames.append((name, description, frame))
 
     all_tasks = []
+    num_possible_images = 0
 
     def queue_png_update(exr_path, png_path):
+        nonlocal num_possible_images
+        num_possible_images += 1
         if needs_update(exr_path, png_path):
             all_tasks.append(update_png(exr_path, png_path, verbose=verbose))
 
     def queue_diff_update(exr_path1, exr_path2, diff_path):
+        nonlocal num_possible_images
+        num_possible_images += 1
         if needs_update(exr_path1, diff_path) or needs_update(exr_path2, diff_path):
             all_tasks.append(update_diff(exr_path1, exr_path2, diff_path, verbose=verbose))
 
@@ -289,7 +294,6 @@ async def gen_images_async(light_descriptions, verbose=False, max_concurrency=-1
             diff_png_path = get_image_path(name, renderer, frame, "png", prefix="diff-")
             queue_diff_update(embree_exr_path, renderer_exr_path, diff_png_path)
 
-    num_possible_images = 5 * len(flat_frames)
     print(f"Generating {len(all_tasks)} images (out of possible {num_possible_images}):")
 
     # dont' want to overwhelm system by launching too many subprocess
