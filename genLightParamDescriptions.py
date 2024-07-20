@@ -38,6 +38,21 @@ USD_EXTENSIONS = (".usd", ".usda", ".usdc")
 
 MISSING = object()
 
+AREA_LIGHT_SUMMARY_OVERRIDES = {
+    (1, 5): "light rotate worldZ from 0 to 80",
+    (46, 50): "focusTint from black to green to white",
+}
+
+SUMMARY_OVERRIDES = {
+    "distant": {
+        (1, 5): "light rotate worldZ from 0 to 80 (intensity 3720)",
+        (6, 10): "cam rotate from 0 to 80 (intensity 3720)",
+    },
+}
+
+for light in ("sphere", "disk", "cylinder", "rect"):
+    SUMMARY_OVERRIDES[light] = dict(AREA_LIGHT_SUMMARY_OVERRIDES)
+
 ###############################################################################
 # Utilities
 ###############################################################################
@@ -439,14 +454,6 @@ def write_light_param_descriptions(path: str, recurse: bool = False, json_out_pa
     with open(json_out_path, "w", encoding="utf8") as writer:
         json.dump(descriptions, writer, sort_keys=True, indent=4)
     return
-
-
-SUMMARY_OVERRIDES = {
-    "distant": {
-        (21, 25): "cam rotate from 0 to 80 (intensity 3720)",
-        (26, 30): "light rotate from 0 to 80 (intensity 3720)",
-    },
-}
 
 
 def find_summary_override(light_name: str, start: int, end: int):
