@@ -210,8 +210,8 @@ def get_nodes_referencing(node, include_self=False, node_refs=True, parm_refs=Tr
     return all_refs
 
 
-def make_parm_refs(parm_name, source_node, dest_nodes):
-    source_parm_tuple = get_parm_tuple(source_node, parm_name)
+def make_parm_tuple_refs(tuple_name, source_node, dest_nodes):
+    source_parm_tuple = get_parm_tuple(source_node, tuple_name)
 
     for dest_node in dest_nodes:
         dest_parm_tuple = get_parm_tuple(dest_node, source_parm_tuple.name())
@@ -366,10 +366,10 @@ def insert_anim_gap(frame, num_frames, include: Iterable[NodeOrRe] = (), exclude
         parm.setKeyframes(keys)
 
 
-def make_sphere_refs(parm_name):
+def make_sphere_tuple_refs(tuple_name):
     sphere = hou.node("/stage/sphere_light")
     sphere_refs = [x for x in get_nodes_referencing(sphere) if is_light(x)]
-    make_parm_refs(parm_name, sphere, sphere_refs)
+    make_parm_tuple_refs(tuple_name, sphere, sphere_refs)
 
 
 def get_connected_recursive(node, predicate, direction, visited=None):

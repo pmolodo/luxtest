@@ -10,6 +10,7 @@
             "inputs:shaping:cone:angle",
             "inputs:shaping:cone:softness",
             "inputs:shaping:focus",
+            "inputs:shaping:focusTint",
             "inputs:shaping:ies:angleScale",
             "inputs:shaping:ies:file",
             "inputs:shaping:ies:normalize"
@@ -21,7 +22,8 @@
                     5
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 5.0
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:cone:angle": 180.0
                 },
                 "varying_attr_name": "inputs:radius",
                 "varying_vals": {
@@ -39,7 +41,8 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 5.0,
-                    "inputs:normalize": true
+                    "inputs:normalize": true,
+                    "inputs:shaping:cone:angle": 180.0
                 },
                 "varying_attr_name": "inputs:radius",
                 "varying_vals": {
@@ -57,7 +60,8 @@
                 ],
                 "non_default_constants": {
                     "inputs:enableColorTemperature": true,
-                    "inputs:intensity": 5.0
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:cone:angle": 180.0
                 },
                 "varying_attr_name": "inputs:colorTemperature",
                 "varying_vals": {
@@ -78,10 +82,10 @@
                 },
                 "varying_attr_name": "inputs:shaping:cone:angle",
                 "varying_vals": {
-                    "16": 90.0,
-                    "17": 70.0,
-                    "18": 50.0,
-                    "19": 30.0,
+                    "16": 170.0,
+                    "17": 130.0,
+                    "18": 90.0,
+                    "19": 50.0,
                     "20": 10.0
                 }
             },
@@ -110,14 +114,14 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 5.0,
-                    "inputs:shaping:cone:angle": 60.0
+                    "inputs:shaping:cone:angle": 180.0
                 },
                 "varying_attr_name": "inputs:shaping:focus",
                 "varying_vals": {
-                    "26": 0.0,
-                    "27": 1.25,
-                    "28": 2.5,
-                    "29": 3.75,
+                    "26": -5.0,
+                    "27": -2.5,
+                    "28": 0.0,
+                    "29": 2.5,
                     "30": 5.0
                 }
             },
@@ -127,17 +131,21 @@
                     35
                 ],
                 "non_default_constants": {
-                    "inputs:exposure": -11.0,
                     "inputs:intensity": 5.0,
-                    "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies"
+                    "inputs:shaping:cone:angle": 180.0,
+                    "inputs:shaping:focusTint": [
+                        1.0,
+                        0.0,
+                        0.0
+                    ]
                 },
-                "varying_attr_name": "inputs:shaping:ies:angleScale",
+                "varying_attr_name": "inputs:shaping:focus",
                 "varying_vals": {
-                    "31": -1.0,
-                    "32": -0.5,
-                    "33": -1.3322676295501878e-15,
-                    "34": 0.5,
-                    "35": 1.0
+                    "31": -5.0,
+                    "32": -2.5,
+                    "33": -7.105427357601002e-15,
+                    "34": 2.5,
+                    "35": 5.0
                 }
             },
             {
@@ -146,22 +154,106 @@
                     40
                 ],
                 "non_default_constants": {
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:cone:angle": 60.0,
+                    "inputs:shaping:focusTint": [
+                        1.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "varying_attr_name": "inputs:shaping:focus",
+                "varying_vals": {
+                    "36": 0.0,
+                    "37": 1.25,
+                    "38": 2.5,
+                    "39": 3.75,
+                    "40": 5.0
+                }
+            },
+            {
+                "frames": [
+                    41,
+                    45
+                ],
+                "non_default_constants": {
+                    "inputs:exposure": -11.0,
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:cone:angle": 180.0,
+                    "inputs:shaping:focus": 3.0
+                },
+                "varying_attr_name": "inputs:shaping:focusTint",
+                "varying_vals": {
+                    "41": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "42": [
+                        0.0,
+                        0.5,
+                        0.0
+                    ],
+                    "43": [
+                        0.0,
+                        1.0,
+                        0.0
+                    ],
+                    "44": [
+                        0.5,
+                        1.0,
+                        0.5
+                    ],
+                    "45": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            {
+                "frames": [
+                    46,
+                    50
+                ],
+                "non_default_constants": {
+                    "inputs:exposure": -11.0,
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:cone:angle": 180.0,
+                    "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies"
+                },
+                "varying_attr_name": "inputs:shaping:ies:angleScale",
+                "varying_vals": {
+                    "46": -1.0,
+                    "47": -0.5,
+                    "48": 0.0,
+                    "49": 0.5,
+                    "50": 1.0
+                }
+            },
+            {
+                "frames": [
+                    51,
+                    55
+                ],
+                "non_default_constants": {
+                    "inputs:shaping:cone:angle": 180.0,
                     "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies",
                     "inputs:shaping:ies:normalize": true
                 },
                 "varying_attr_name": "inputs:shaping:ies:angleScale",
                 "varying_vals": {
-                    "36": -1.0,
-                    "37": -0.5,
-                    "38": 1.3322676295501878e-15,
-                    "39": 0.5,
-                    "40": 1.0
+                    "51": -1.0,
+                    "52": -0.5,
+                    "53": -2.6645352591003757e-15,
+                    "54": 0.5,
+                    "55": 1.0
                 }
             }
         ],
         "frames": [
             1,
-            40
+            55
         ],
         "usd_path": "C:\\src\\NVIDIA\\luxtest\\usd\\cylinder.usda"
     },
@@ -176,6 +268,7 @@
             "inputs:shaping:cone:angle",
             "inputs:shaping:cone:softness",
             "inputs:shaping:focus",
+            "inputs:shaping:focusTint",
             "inputs:shaping:ies:angleScale",
             "inputs:shaping:ies:file",
             "inputs:shaping:ies:normalize"
@@ -187,7 +280,8 @@
                     5
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 2.0
+                    "inputs:intensity": 2.0,
+                    "inputs:shaping:cone:angle": 180.0
                 },
                 "varying_attr_name": "inputs:radius",
                 "varying_vals": {
@@ -205,7 +299,8 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 2.0,
-                    "inputs:normalize": true
+                    "inputs:normalize": true,
+                    "inputs:shaping:cone:angle": 180.0
                 },
                 "varying_attr_name": "inputs:radius",
                 "varying_vals": {
@@ -223,7 +318,8 @@
                 ],
                 "non_default_constants": {
                     "inputs:enableColorTemperature": true,
-                    "inputs:intensity": 2.0
+                    "inputs:intensity": 2.0,
+                    "inputs:shaping:cone:angle": 180.0
                 },
                 "varying_attr_name": "inputs:colorTemperature",
                 "varying_vals": {
@@ -244,10 +340,10 @@
                 },
                 "varying_attr_name": "inputs:shaping:cone:angle",
                 "varying_vals": {
-                    "16": 90.0,
-                    "17": 70.0,
-                    "18": 50.0,
-                    "19": 30.0,
+                    "16": 170.0,
+                    "17": 130.0,
+                    "18": 90.0,
+                    "19": 50.0,
                     "20": 10.0
                 }
             },
@@ -276,14 +372,14 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 2.0,
-                    "inputs:shaping:cone:angle": 60.0
+                    "inputs:shaping:cone:angle": 180.0
                 },
                 "varying_attr_name": "inputs:shaping:focus",
                 "varying_vals": {
-                    "26": 0.0,
-                    "27": 1.25,
-                    "28": 2.5,
-                    "29": 3.75,
+                    "26": -5.0,
+                    "27": -2.5,
+                    "28": 0.0,
+                    "29": 2.5,
                     "30": 5.0
                 }
             },
@@ -293,17 +389,21 @@
                     35
                 ],
                 "non_default_constants": {
-                    "inputs:exposure": -11.0,
                     "inputs:intensity": 2.0,
-                    "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies"
+                    "inputs:shaping:cone:angle": 180.0,
+                    "inputs:shaping:focusTint": [
+                        1.0,
+                        0.0,
+                        0.0
+                    ]
                 },
-                "varying_attr_name": "inputs:shaping:ies:angleScale",
+                "varying_attr_name": "inputs:shaping:focus",
                 "varying_vals": {
-                    "31": -1.0,
-                    "32": -0.5,
-                    "33": -1.3322676295501878e-15,
-                    "34": 0.5,
-                    "35": 1.0
+                    "31": -5.0,
+                    "32": -2.5,
+                    "33": -7.105427357601002e-15,
+                    "34": 2.5,
+                    "35": 5.0
                 }
             },
             {
@@ -312,22 +412,106 @@
                     40
                 ],
                 "non_default_constants": {
+                    "inputs:intensity": 2.0,
+                    "inputs:shaping:cone:angle": 60.0,
+                    "inputs:shaping:focusTint": [
+                        1.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "varying_attr_name": "inputs:shaping:focus",
+                "varying_vals": {
+                    "36": 0.0,
+                    "37": 1.25,
+                    "38": 2.5,
+                    "39": 3.75,
+                    "40": 5.0
+                }
+            },
+            {
+                "frames": [
+                    41,
+                    45
+                ],
+                "non_default_constants": {
+                    "inputs:exposure": -11.0,
+                    "inputs:intensity": 2.0,
+                    "inputs:shaping:cone:angle": 180.0,
+                    "inputs:shaping:focus": 3.0
+                },
+                "varying_attr_name": "inputs:shaping:focusTint",
+                "varying_vals": {
+                    "41": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "42": [
+                        0.0,
+                        0.5,
+                        0.0
+                    ],
+                    "43": [
+                        0.0,
+                        1.0,
+                        0.0
+                    ],
+                    "44": [
+                        0.5,
+                        1.0,
+                        0.5
+                    ],
+                    "45": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            {
+                "frames": [
+                    46,
+                    50
+                ],
+                "non_default_constants": {
+                    "inputs:exposure": -11.0,
+                    "inputs:intensity": 2.0,
+                    "inputs:shaping:cone:angle": 180.0,
+                    "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies"
+                },
+                "varying_attr_name": "inputs:shaping:ies:angleScale",
+                "varying_vals": {
+                    "46": -1.0,
+                    "47": -0.5,
+                    "48": 0.0,
+                    "49": 0.5,
+                    "50": 1.0
+                }
+            },
+            {
+                "frames": [
+                    51,
+                    55
+                ],
+                "non_default_constants": {
+                    "inputs:shaping:cone:angle": 180.0,
                     "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies",
                     "inputs:shaping:ies:normalize": true
                 },
                 "varying_attr_name": "inputs:shaping:ies:angleScale",
                 "varying_vals": {
-                    "36": -1.0,
-                    "37": -0.5,
-                    "38": 1.3322676295501878e-15,
-                    "39": 0.5,
-                    "40": 1.0
+                    "51": -1.0,
+                    "52": -0.5,
+                    "53": -2.6645352591003757e-15,
+                    "54": 0.5,
+                    "55": 1.0
                 }
             }
         ],
         "frames": [
             1,
-            40
+            55
         ],
         "usd_path": "C:\\src\\NVIDIA\\luxtest\\usd\\disk.usda"
     },
@@ -621,6 +805,7 @@
             "inputs:shaping:cone:angle",
             "inputs:shaping:cone:softness",
             "inputs:shaping:focus",
+            "inputs:shaping:focusTint",
             "inputs:shaping:ies:angleScale",
             "inputs:shaping:ies:file",
             "inputs:shaping:ies:normalize",
@@ -633,7 +818,8 @@
                     5
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 2.0
+                    "inputs:intensity": 2.0,
+                    "inputs:shaping:cone:angle": 180.0
                 },
                 "varying_attr_name": "inputs:width",
                 "varying_vals": {
@@ -651,7 +837,8 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 2.0,
-                    "inputs:normalize": true
+                    "inputs:normalize": true,
+                    "inputs:shaping:cone:angle": 180.0
                 },
                 "varying_attr_name": "inputs:width",
                 "varying_vals": {
@@ -670,6 +857,7 @@
                 "non_default_constants": {
                     "inputs:enableColorTemperature": true,
                     "inputs:intensity": 2.0,
+                    "inputs:shaping:cone:angle": 180.0,
                     "inputs:width": 2.0
                 },
                 "varying_attr_name": "inputs:colorTemperature",
@@ -692,10 +880,10 @@
                 },
                 "varying_attr_name": "inputs:shaping:cone:angle",
                 "varying_vals": {
-                    "16": 90.0,
-                    "17": 70.0,
-                    "18": 50.0,
-                    "19": 30.0,
+                    "16": 170.0,
+                    "17": 130.0,
+                    "18": 90.0,
+                    "19": 50.0,
                     "20": 10.0
                 }
             },
@@ -725,15 +913,15 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 2.0,
-                    "inputs:shaping:cone:angle": 60.0,
+                    "inputs:shaping:cone:angle": 180.0,
                     "inputs:width": 2.0
                 },
                 "varying_attr_name": "inputs:shaping:focus",
                 "varying_vals": {
-                    "26": 0.0,
-                    "27": 1.25,
-                    "28": 2.5,
-                    "29": 3.75,
+                    "26": -5.0,
+                    "27": -2.5,
+                    "28": 0.0,
+                    "29": 2.5,
                     "30": 5.0
                 }
             },
@@ -743,18 +931,22 @@
                     35
                 ],
                 "non_default_constants": {
-                    "inputs:exposure": -11.0,
                     "inputs:intensity": 2.0,
-                    "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies",
+                    "inputs:shaping:cone:angle": 180.0,
+                    "inputs:shaping:focusTint": [
+                        1.0,
+                        0.0,
+                        0.0
+                    ],
                     "inputs:width": 2.0
                 },
-                "varying_attr_name": "inputs:shaping:ies:angleScale",
+                "varying_attr_name": "inputs:shaping:focus",
                 "varying_vals": {
-                    "31": -1.0,
-                    "32": -0.5,
-                    "33": -1.3322676295501878e-15,
-                    "34": 0.5,
-                    "35": 1.0
+                    "31": -5.0,
+                    "32": -2.5,
+                    "33": -7.105427357601002e-15,
+                    "34": 2.5,
+                    "35": 5.0
                 }
             },
             {
@@ -763,23 +955,110 @@
                     40
                 ],
                 "non_default_constants": {
+                    "inputs:intensity": 2.0,
+                    "inputs:shaping:cone:angle": 60.0,
+                    "inputs:shaping:focusTint": [
+                        1.0,
+                        0.0,
+                        0.0
+                    ],
+                    "inputs:width": 2.0
+                },
+                "varying_attr_name": "inputs:shaping:focus",
+                "varying_vals": {
+                    "36": 0.0,
+                    "37": 1.25,
+                    "38": 2.5,
+                    "39": 3.75,
+                    "40": 5.0
+                }
+            },
+            {
+                "frames": [
+                    41,
+                    45
+                ],
+                "non_default_constants": {
+                    "inputs:exposure": -11.0,
+                    "inputs:intensity": 2.0,
+                    "inputs:shaping:cone:angle": 180.0,
+                    "inputs:shaping:focus": 3.0,
+                    "inputs:width": 2.0
+                },
+                "varying_attr_name": "inputs:shaping:focusTint",
+                "varying_vals": {
+                    "41": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "42": [
+                        0.0,
+                        0.5,
+                        0.0
+                    ],
+                    "43": [
+                        0.0,
+                        1.0,
+                        0.0
+                    ],
+                    "44": [
+                        0.5,
+                        1.0,
+                        0.5
+                    ],
+                    "45": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            {
+                "frames": [
+                    46,
+                    50
+                ],
+                "non_default_constants": {
+                    "inputs:exposure": -11.0,
+                    "inputs:intensity": 2.0,
+                    "inputs:shaping:cone:angle": 180.0,
+                    "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies",
+                    "inputs:width": 2.0
+                },
+                "varying_attr_name": "inputs:shaping:ies:angleScale",
+                "varying_vals": {
+                    "46": -1.0,
+                    "47": -0.5,
+                    "48": 0.0,
+                    "49": 0.5,
+                    "50": 1.0
+                }
+            },
+            {
+                "frames": [
+                    51,
+                    55
+                ],
+                "non_default_constants": {
+                    "inputs:shaping:cone:angle": 180.0,
                     "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies",
                     "inputs:shaping:ies:normalize": true,
                     "inputs:width": 2.0
                 },
                 "varying_attr_name": "inputs:shaping:ies:angleScale",
                 "varying_vals": {
-                    "36": -1.0,
-                    "37": -0.5,
-                    "38": 1.3322676295501878e-15,
-                    "39": 0.5,
-                    "40": 1.0
+                    "51": -1.0,
+                    "52": -0.5,
+                    "53": -2.6645352591003757e-15,
+                    "54": 0.5,
+                    "55": 1.0
                 }
             }
         ],
         "frames": [
             1,
-            40
+            55
         ],
         "usd_path": "C:\\src\\NVIDIA\\luxtest\\usd\\rect.usda"
     },
@@ -794,6 +1073,7 @@
             "inputs:shaping:cone:angle",
             "inputs:shaping:cone:softness",
             "inputs:shaping:focus",
+            "inputs:shaping:focusTint",
             "inputs:shaping:ies:angleScale",
             "inputs:shaping:ies:file",
             "inputs:shaping:ies:normalize"
@@ -805,7 +1085,8 @@
                     5
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 5.0
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:cone:angle": 180.0
                 },
                 "varying_attr_name": "inputs:radius",
                 "varying_vals": {
@@ -823,7 +1104,8 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 5.0,
-                    "inputs:normalize": true
+                    "inputs:normalize": true,
+                    "inputs:shaping:cone:angle": 180.0
                 },
                 "varying_attr_name": "inputs:radius",
                 "varying_vals": {
@@ -841,7 +1123,8 @@
                 ],
                 "non_default_constants": {
                     "inputs:enableColorTemperature": true,
-                    "inputs:intensity": 5.0
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:cone:angle": 180.0
                 },
                 "varying_attr_name": "inputs:colorTemperature",
                 "varying_vals": {
@@ -862,10 +1145,10 @@
                 },
                 "varying_attr_name": "inputs:shaping:cone:angle",
                 "varying_vals": {
-                    "16": 90.0,
-                    "17": 70.0,
-                    "18": 50.0,
-                    "19": 30.0,
+                    "16": 170.0,
+                    "17": 130.0,
+                    "18": 90.0,
+                    "19": 50.0,
                     "20": 10.0
                 }
             },
@@ -894,14 +1177,14 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 5.0,
-                    "inputs:shaping:cone:angle": 60.0
+                    "inputs:shaping:cone:angle": 180.0
                 },
                 "varying_attr_name": "inputs:shaping:focus",
                 "varying_vals": {
-                    "26": 0.0,
-                    "27": 1.25,
-                    "28": 2.5,
-                    "29": 3.75,
+                    "26": -5.0,
+                    "27": -2.5,
+                    "28": 0.0,
+                    "29": 2.5,
                     "30": 5.0
                 }
             },
@@ -911,17 +1194,21 @@
                     35
                 ],
                 "non_default_constants": {
-                    "inputs:exposure": -11.0,
                     "inputs:intensity": 5.0,
-                    "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies"
+                    "inputs:shaping:cone:angle": 180.0,
+                    "inputs:shaping:focusTint": [
+                        1.0,
+                        0.0,
+                        0.0
+                    ]
                 },
-                "varying_attr_name": "inputs:shaping:ies:angleScale",
+                "varying_attr_name": "inputs:shaping:focus",
                 "varying_vals": {
-                    "31": -1.0,
-                    "32": -0.5,
-                    "33": -1.3322676295501878e-15,
-                    "34": 0.5,
-                    "35": 1.0
+                    "31": -5.0,
+                    "32": -2.5,
+                    "33": -7.105427357601002e-15,
+                    "34": 2.5,
+                    "35": 5.0
                 }
             },
             {
@@ -930,22 +1217,106 @@
                     40
                 ],
                 "non_default_constants": {
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:cone:angle": 60.0,
+                    "inputs:shaping:focusTint": [
+                        1.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "varying_attr_name": "inputs:shaping:focus",
+                "varying_vals": {
+                    "36": 0.0,
+                    "37": 1.25,
+                    "38": 2.5,
+                    "39": 3.75,
+                    "40": 5.0
+                }
+            },
+            {
+                "frames": [
+                    41,
+                    45
+                ],
+                "non_default_constants": {
+                    "inputs:exposure": -11.0,
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:cone:angle": 180.0,
+                    "inputs:shaping:focus": 3.0
+                },
+                "varying_attr_name": "inputs:shaping:focusTint",
+                "varying_vals": {
+                    "41": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "42": [
+                        0.0,
+                        0.5,
+                        0.0
+                    ],
+                    "43": [
+                        0.0,
+                        1.0,
+                        0.0
+                    ],
+                    "44": [
+                        0.5,
+                        1.0,
+                        0.5
+                    ],
+                    "45": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            {
+                "frames": [
+                    46,
+                    50
+                ],
+                "non_default_constants": {
+                    "inputs:exposure": -11.0,
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:cone:angle": 180.0,
+                    "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies"
+                },
+                "varying_attr_name": "inputs:shaping:ies:angleScale",
+                "varying_vals": {
+                    "46": -1.0,
+                    "47": -0.5,
+                    "48": 0.0,
+                    "49": 0.5,
+                    "50": 1.0
+                }
+            },
+            {
+                "frames": [
+                    51,
+                    55
+                ],
+                "non_default_constants": {
+                    "inputs:shaping:cone:angle": 180.0,
                     "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies",
                     "inputs:shaping:ies:normalize": true
                 },
                 "varying_attr_name": "inputs:shaping:ies:angleScale",
                 "varying_vals": {
-                    "36": -1.0,
-                    "37": -0.5,
-                    "38": 1.3322676295501878e-15,
-                    "39": 0.5,
-                    "40": 1.0
+                    "51": -1.0,
+                    "52": -0.5,
+                    "53": -2.6645352591003757e-15,
+                    "54": 0.5,
+                    "55": 1.0
                 }
             }
         ],
         "frames": [
             1,
-            40
+            55
         ],
         "usd_path": "C:\\src\\NVIDIA\\luxtest\\usd\\sphere.usda"
     },
