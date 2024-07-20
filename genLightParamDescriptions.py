@@ -23,6 +23,11 @@ THIS_DIR = os.path.dirname(THIS_FILE)
 USD_DIR = os.path.join(THIS_DIR, "usd")
 
 
+if THIS_DIR not in sys.path:
+    sys.path.append(THIS_DIR)
+
+import luxtest_const
+
 ###############################################################################
 # Constants
 ###############################################################################
@@ -122,6 +127,9 @@ def get_light_name(light):
 
 
 def get_fallback(attr: Usd.Attribute):
+    override = luxtest_const.DEFAULT_OVERRIDES.get(attr.GetName())
+    if override is not None:
+        return override
     if not attr.HasFallbackValue():
         # xformOp:transform technically has no fallback, but we assume identity
         sdf_type = attr.GetTypeName().type

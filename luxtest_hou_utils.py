@@ -18,11 +18,7 @@ THIS_DIR = os.path.dirname(THIS_FILE)
 if THIS_DIR not in sys.path:
     sys.path.append(THIS_DIR)
 
-import luxtest_hou_utils
-
-reload(luxtest_hou_utils)
-
-from luxtest_hou_utils import *
+import luxtest_const
 
 ###############################################################################
 # Constants
@@ -30,10 +26,6 @@ from luxtest_hou_utils import *
 
 THIS_FILE = os.path.abspath(inspect.getsourcefile(lambda: None) or __file__)
 THIS_DIR = os.path.dirname(THIS_FILE)
-
-DEFAULT_OVERRIDES = {
-    "inputs:shaping:cone:angle": 180,
-}
 
 ###############################################################################
 # General Houdini Utilities
@@ -400,12 +392,14 @@ def get_rop_out_parm(node):
 
 
 def parm_at_default(parm):
-    parm_tuple = parm.tuple()
     tuple_name = ParmName.from_parm(parm).tuplename
     missing = object()
-    default = DEFAULT_OVERRIDES.get(tuple_name, missing)
+    default = luxtest_const.DEFAULT_OVERRIDES.get(tuple_name, missing)
     if default is not missing:
-        return parm.eval() == default
+        current = parm.eval()
+        if isinstance(current, float) or isinstance(default, float):
+            return math.isclose(current, default)
+        return current == default
     return parm.isAtDefault()
 
 
