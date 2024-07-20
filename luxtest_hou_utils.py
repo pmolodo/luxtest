@@ -293,12 +293,8 @@ def insert_anim_gap(frame, num_frames, include: Iterable[NodeOrRe] = (), exclude
     """
     to_shift = {}
     to_key = {}
-    debug_parm = hou.text.encode("inputs:shaping:cone:angle")
-    debug_parm = hou.text.encode("inputs:shaping:ies:file")
 
     for parm in get_all_animated_parms(include=include, exclude=exclude):
-        do_print = parm.name() == debug_parm
-
         before_keys = parm.keyframesBefore(frame)
         after_keys = parm.keyframesAfter(frame)
         if before_keys and before_keys[-1].frame() == frame:
@@ -307,15 +303,9 @@ def insert_anim_gap(frame, num_frames, include: Iterable[NodeOrRe] = (), exclude
             before_keys = before_keys[:-1]
         if not after_keys:
             # nothing to move, carry on!
-            if do_print:
-                print(f"parm had no after_keys - skipping: {parm.path()}")
             continue
-        if do_print:
-            print(after_keys)
         to_shift[parm] = after_keys
         if not before_keys:
-            if do_print:
-                print(f"parm had no before_keys - skipping new key creation: {parm.path()}")
             # no before keys, don't need a new keyframe
             continue
         # we have both before and after keys...
@@ -323,9 +313,6 @@ def insert_anim_gap(frame, num_frames, include: Iterable[NodeOrRe] = (), exclude
         after = after_keys[0]
         after_val = get_keyframe_value(after)
         if get_keyframe_value(before) == after_val:
-            if do_print:
-                print(f"parm had constant values- skipping new key creation: {parm.path()}")
-
             # constant value, don't need a new keyframe
             continue
         # different values - abort, don't want to insert gap in the middle
@@ -341,28 +328,16 @@ def insert_anim_gap(frame, num_frames, include: Iterable[NodeOrRe] = (), exclude
                 keyframe = hou.Keyframe(after_val, hou.frameToTime(new_frame))
                 keyframe.setExpression("linear()")
             new_keys.append(keyframe)
-        if do_print:
-            print(f"Adding new keys for {parm.path()}: {[x.frame() for x in new_keys]}")
 
         to_key[parm] = new_keys
     for parm, keys in to_shift.items():
-        do_print = parm.name() == debug_parm
-        if do_print:
-            print(f"shifting keys for {parm.path()}")
         for key in keys:
             frame = key.frame()
-            if do_print:
-                print(f"Deleting frame {frame}")
             parm.deleteKeyframeAtFrame(frame)
             key.setFrame(frame + num_frames)
-        if do_print:
-            print(f"set shifted keyframes at {[x.frame() for x in new_keys]}")
         parm.setKeyframes(keys)
 
     for parm, keys in to_key.items():
-        do_print = parm.name() == debug_parm
-        if do_print:
-            print(f"inserting new key for {parm.path()} at {[key.frame() for key in keys]}")
         parm.setKeyframes(keys)
 
 
