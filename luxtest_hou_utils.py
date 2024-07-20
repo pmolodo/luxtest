@@ -31,6 +31,10 @@ from luxtest_hou_utils import *
 THIS_FILE = os.path.abspath(inspect.getsourcefile(lambda: None) or __file__)
 THIS_DIR = os.path.dirname(THIS_FILE)
 
+DEFAULT_OVERRIDES = {
+    "inputs:shaping:cone:angle": 180,
+}
+
 ###############################################################################
 # General Houdini Utilities
 ###############################################################################
@@ -420,13 +424,24 @@ def get_rop_out_parm(node):
         raise TypeError(f"Unrecognized rop node type: {node} - {node.type()}")
 
 
+def parm_at_default(parm):
+    parm_tuple = parm.tuple()
+    tuple_name = ParmName.from_parm(parm).tuplename
+    missing = object()
+    default = DEFAULT_OVERRIDES.get(tuple_name, missing)
+    if default is not missing:
+        return parm.eval() == default
+    return parm.isAtDefault()
+
+
 def get_non_default_parms(nodeOrParms, frames: Optional[Iterable[Union[float, int]]] = None):
     if isinstance(nodeOrParms, hou.Node):
         parms = nodeOrParms.parms()
     else:
         parms = list(nodeOrParms)
+
     if frames is None:
-        return set([x for x in parms if not x.isAtDefault()])
+        return set([x for x in parms if not parm_at_default(x)])
     orig_frame = hou.frame()
     non_default = None
     try:
