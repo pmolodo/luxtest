@@ -142,11 +142,7 @@ def needs_update(existing, dependent):
 
 
 def iter_frames(light_description):
-    frames = light_description.get("frames")
-    if not frames:
-        start = end = 1
-    else:
-        start, end = frames
+    start, end = light_description.frames
     return range(start, end + 1)
 
 
