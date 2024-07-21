@@ -547,19 +547,28 @@ class LightParamDescription:
         attrs.sort(key=lambda x: x.GetPath())
 
         all_samples = Usd.Attribute.GetUnionedTimeSamples(attrs)
+
+        start = math.inf
+        end = -math.inf
+
+        if all_samples:
+            all_samples.sort()
+            # we render at fixed frames, no at samples - so get first / last, then iterate over range
+            start = math.floor(all_samples[0])
+            end = int(all_samples[-1])
+        light_overrides = SUMMARY_OVERRIDES.get(light_name, {})
+        for override_start, override_end in light_overrides:
+            start = min(start, override_start)
+            end = max(end, override_end)
+        if start == math.inf:
+            start = end = 1
+
         if not all_samples:
             # constant
-            return cls(usd_path=usd_path, frame_groups=[], frames=(1, 1), attrs=[])
+            return cls(usd_path=usd_path, frame_groups=[], frames=(start, end), attrs=[])
 
-        all_samples.sort()
-
-        # we render at fixes frames, no at samples - so get first / last, then iterate over range
-        start = math.floor(all_samples[0])
-        # want end to be the value to pass to range, which needs to be > the last sample
-        end_plus_one = int(all_samples[-1]) + 1
-        frames = list(range(start, end_plus_one))
-
-        frame_groups = FrameGroupFinder.find(light_name, all_attrs=attrs, all_frames=frames)
+        frames_list = list(range(start, end + 1))
+        frame_groups = FrameGroupFinder.find(light_name, all_attrs=attrs, all_frames=frames_list)
         attr_names = [x.GetName() for x in attrs]
 
         # xformOps are commonly set to non-default, and uninteresting for us - only
@@ -569,7 +578,7 @@ class LightParamDescription:
             all_varying.update(group.varying)
         attr_names = [x for x in attr_names if not x.startswith("xformOp:") or x in all_varying]
 
-        return cls(usd_path=usd_path, frame_groups=frame_groups, frames=(frames[0], frames[-1]), attrs=attr_names)
+        return cls(usd_path=usd_path, frame_groups=frame_groups, frames=(start, end), attrs=attr_names)
 
 
 class DataclassJsonEncoder(json.JSONEncoder):
