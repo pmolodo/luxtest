@@ -139,6 +139,32 @@
     upAxis = "Y"
 )
 
+def Scope "Render"
+{
+    def RenderSettings "Settings" (
+        prepend apiSchemas = ["KarmaRenderSettingsAPI"]
+    )
+    {
+        custom int arnold:global:AA_samples = 6
+        custom bool arnold:global:enable_progressive_render = 1
+        custom int arnold:global:GI_total_depth = 0
+        rel camera = </cameras/camera1>
+        float4 dataWindowNDC = (0, 0, 1, 1)
+        token[] includedPurposes = ["default", "render"]
+        bool instantaneousShutter = 1
+        int karma:global:pathtracedsamples = 64
+        int karma:global:samplesperpixel = 9
+        custom float karma:object:diffuselimit = 0
+        custom float karma:object:reflectlimit = 0
+        custom float karma:object:refractlimit = 0
+        custom float karma:object:ssslimit = 0
+        token[] materialBindingPurposes = ["full", "allPurpose"]
+        float pixelAspectRatio = 1
+        int2 resolution = (512, 512)
+        custom string ri:integrator:name = "PxrDirectLighting"
+    }
+}
+
 def Xform "cameras"
 {
     matrix4d xformOp:transform.timeSamples = {
@@ -198,32 +224,6 @@ def Xform "cameras"
         float verticalApertureOffset = 0
         matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 0, -1, 0), (0, 1, 0, 0), (0, 30, 0, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
-    }
-}
-
-def Scope "Render"
-{
-    def RenderSettings "Settings" (
-        prepend apiSchemas = ["KarmaRenderSettingsAPI"]
-    )
-    {
-        custom int arnold:global:AA_samples = 6
-        custom bool arnold:global:enable_progressive_render = 1
-        custom int arnold:global:GI_total_depth = 0
-        rel camera = </cameras/camera1>
-        float4 dataWindowNDC = (0, 0, 1, 1)
-        token[] includedPurposes = ["default", "render"]
-        bool instantaneousShutter = 1
-        int karma:global:pathtracedsamples = 64
-        int karma:global:samplesperpixel = 9
-        custom float karma:object:diffuselimit = 0
-        custom float karma:object:reflectlimit = 0
-        custom float karma:object:refractlimit = 0
-        custom float karma:object:ssslimit = 0
-        token[] materialBindingPurposes = ["full", "allPurpose"]
-        float pixelAspectRatio = 1
-        int2 resolution = (512, 512)
-        custom string ri:integrator:name = "PxrDirectLighting"
     }
 }
 

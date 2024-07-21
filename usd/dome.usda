@@ -138,30 +138,6 @@
     upAxis = "Y"
 )
 
-def Xform "cameras"
-{
-    def Camera "camera1" (
-        prepend apiSchemas = ["HoudiniCameraPlateAPI", "HoudiniViewportGuideAPI"]
-    )
-    {
-        float2 clippingRange = (1, 1000000)
-        float exposure = 0
-        float focalLength = 0.5
-        float focusDistance = 5
-        float fStop = 0
-        float horizontalAperture = 0.20955
-        float horizontalApertureOffset = 0
-        token projection = "perspective"
-        double shutter:close = 0.25
-        double shutter:open = -0.25
-        float verticalAperture = 0.20955
-        float verticalApertureOffset = 0
-        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 0, -1, 0), (0, 1, 0, 0), (0, 30, 0, 1) )
-        matrix4d xformOp:transform:xform1 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
-        uniform token[] xformOpOrder = ["xformOp:transform:xform1"]
-    }
-}
-
 def Scope "Render"
 {
     def RenderSettings "Settings" (
@@ -185,6 +161,30 @@ def Scope "Render"
         float pixelAspectRatio = 1
         int2 resolution = (512, 512)
         custom string ri:integrator:name = "PxrDirectLighting"
+    }
+}
+
+def Xform "cameras"
+{
+    def Camera "camera1" (
+        prepend apiSchemas = ["HoudiniCameraPlateAPI", "HoudiniViewportGuideAPI"]
+    )
+    {
+        float2 clippingRange = (1, 1000000)
+        float exposure = 0
+        float focalLength = 0.5
+        float focusDistance = 5
+        float fStop = 0
+        float horizontalAperture = 0.20955
+        float horizontalApertureOffset = 0
+        token projection = "perspective"
+        double shutter:close = 0.25
+        double shutter:open = -0.25
+        float verticalAperture = 0.20955
+        float verticalApertureOffset = 0
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 0, -1, 0), (0, 1, 0, 0), (0, 30, 0, 1) )
+        matrix4d xformOp:transform:xform1 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform:xform1"]
     }
 }
 

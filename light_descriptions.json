@@ -766,6 +766,15 @@
         ],
         "usd_path": "C:\\src\\NVIDIA\\luxtest\\usd\\dome.usda"
     },
+    "iesTest": {
+        "attrs": [],
+        "frame_groups": [],
+        "frames": [
+            1,
+            5
+        ],
+        "usd_path": "C:\\src\\NVIDIA\\luxtest\\usd\\iesTest.usda"
+    },
     "rect": {
         "attrs": [
             "inputs:colorTemperature",
