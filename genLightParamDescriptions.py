@@ -54,6 +54,14 @@ for light_name in ("sphere", "disk", "cylinder", "rect"):
     SUMMARY_OVERRIDES[light_name] = dict(AREA_LIGHT_SUMMARY_OVERRIDES)
 del light_name
 
+COLOR_NAMES = {
+    (0.0, 0.0, 0.0): "black",
+    (1.0, 1.0, 1.0): "white",
+    (1.0, 0.0, 0.0): "red",
+    (0.0, 1.0, 0.0): "green",
+    (0.0, 0.0, 1.0): "blue",
+}
+
 ###############################################################################
 # Utilities
 ###############################################################################
@@ -129,6 +137,12 @@ def format_val(val):
     elif isinstance(val, bool):
         # on/off are shorter than True/False
         return "on" if val else "off"
+    elif isinstance(val, (list, tuple)) and len(val) == 3:
+        # we assume color for now
+        val = tuple(val)
+        for color3, name in COLOR_NAMES.items():
+            if all(math.isclose(a, b, rel_tol=1e-7) for (a, b) in zip(color3, val)):
+                return name
     return str(val)
 
 
