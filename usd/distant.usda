@@ -130,7 +130,7 @@
             float3 "rtx:sceneDb:ambientLightColor" = (0.1, 0.1, 0.1)
         }
     }
-    defaultPrim = "grid1"
+    defaultPrim = "floor_plane"
     endTimeCode = 35
     framesPerSecond = 24
     metersPerUnit = 1
@@ -227,7 +227,7 @@ def Scope "Render"
     }
 }
 
-def Xform "grid1" (
+def Xform "floor_plane" (
     prepend apiSchemas = ["MaterialBindingAPI"]
     kind = "component"
 )
