@@ -172,9 +172,7 @@ def run_test(
     except Exception:
         print(cmd)
         raise
-    env = dict(os.environ)
-    env["HDEMBREE_RANDOM_NUMBER_SEED"] = str(seed)
-    return subprocess.check_call(cmd, env=env)
+    return subprocess.check_call(cmd)
 
 
 ###############################################################################
