@@ -111,7 +111,7 @@ def run_tests(
             output_file = f"{base}-{delegate.lower()}.####.exr"
             output_path = os.path.join(delegate_output_dir, output_file)
             if frames is None:
-                test_frames = light_descriptions.get(base, {}).get("frames")
+                test_frames = light_descriptions.get(base, {}).frames
                 if test_frames:
                     start, end = test_frames
                     if start == end:
