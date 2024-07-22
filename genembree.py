@@ -150,8 +150,8 @@ def run_tests(
                 if exitcode:
                     failures.append(layer)
 
-            # auto-combine iesTest images if we did all frames + all cameras
-            if base == "iesTest" and not cameras and frames is None:
+            # auto-combine iesTest images if we did all cameras
+            if base == "iesTest" and not cameras:
                 print(f"Combining {base} images")
                 combine_ies_test_images.combine_ies_test_images(renderers=["embree"])
 

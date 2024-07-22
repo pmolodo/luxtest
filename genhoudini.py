@@ -154,15 +154,25 @@ def render_images(
     }
     if frame_range is not None:
         render_kwargs["frame_range"] = frame_range
+
+    ies_renderer_count = {}
     for rop_node in rop_nodes:
         rop_node.parm("husk_prerender").set(HUSK_PRE_RENDER)
         rop_node.render(**render_kwargs)
 
-        # auto-combine iesTest images if we did all frames + all cameras
         light_name = rop_node.name().rsplit("_", 1)[-1]
-        if light_name == "iesTest" and frame_range is None:
+
+        # auto-combine iesTest images if this is the second time we're render
+        # an iesTest image for this renderer (which should mean it's the
+        # second camera)
+        if light_name == "iesTest":
             renderer = luxtest_hou_utils.get_renderer(rop_node)
-            combine_ies_test_images.combine_ies_test_images(renderers=[renderer])
+            new_renderer_count = ies_renderer_count.get(renderer, 0) + 1
+            ies_renderer_count[renderer] = new_renderer_count
+            if new_renderer_count == 2:
+                combine_ies_test_images.combine_ies_test_images(renderers=[renderer])
+            elif new_renderer_count > 2:
+                raise RuntimeError("Unexpected result - should only have 2 cameras per iesTest per renderer")
 
 
 ###############################################################################
