@@ -19,8 +19,8 @@ Content-Disposition: attachment; filename=".variables"
 Content-Type: text/plain
 
 set -g ACTIVETAKE = 'Main'
-set -g DRIVER = 'usd_rop_iesTest'
-set -g DRIVERPATH = '/stage/usd_rop_iesTest'
+set -g DRIVER = 'render_karma_rect'
+set -g DRIVERPATH = '/stage/render_karma_rect'
 set -g E = '2.7182818284590452354'
 set -g EYE = 'stereo'
 set -g HANDLE_STATUS = '-1'
@@ -31,7 +31,7 @@ set -g JOB = 'C:/Users/alanglands/Desktop/light_comparison'
 set -g PI = '3.1415926535897932384'
 set -g POSE = 'C:/Users/alanglands/Documents/houdini19.5/poselib'
 set -g _HIP_SAVEPLATFORM = 'windows-x86_64-cl19.35'
-set -g _HIP_SAVETIME = 'Mon Jul 22 13:29:03 2024'
+set -g _HIP_SAVETIME = 'Mon Jul 22 15:31:55 2024'
 set -g _HIP_SAVEVERSION = '20.0.653'
 set -g status = '0'
 
@@ -130,21 +130,21 @@ Content-Disposition: attachment; filename=".OPdummydefs"
 Content-Type: application/octet-stream
 Content-Transfer-Encoding: base64
 
-SU5EWAAAAAAAAAAAAAAACwAAAA1JTkRFWF9TRUNUSU9OAAAAAAAABftmnsEPAAAAEmhvdWRpbmkuaGRhbGlicmFyeQAABfsAAAAAZp7BDwAAAApMb3AvY2FtZXJhAAAF+wAAjSlmnlymAAAAD0xvcC9jcmVhdGV4Zm9ybQAAkyQ=
+SU5EWAAAAAAAAAAAAAAACwAAAA1JTkRFWF9TRUNUSU9OAAAAAAAABftmnt3bAAAAEmhvdWRpbmkuaGRhbGlicmFyeQAABfsAAAAAZp7d2wAAAApMb3AvY2FtZXJhAAAF+wAAjSlmnlymAAAAD0xvcC9jcmVhdGV4Zm9ybQAAkyQ=
 AAAnSmaeXKYAAAAVTG9wL2Rpc3RhbnRsaWdodDo6Mi4wAAC6bgAAu85mnlymAAAAEkxvcC9kb21lbGlnaHQ6OjIuMAABdjwAAGv8Zp5cpgAAAA5Mb3AvbGlnaHQ6OjIuMAAB4jgAANtUZp5cpgAAABJUb3AvbG9jYWxzY2hlZHU=
 bGVyAAK9jAAAS6FmnlymAAAAGkxvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzAAMJLQAAEDlmnlymAAAADUxvcC9zb3BjcmVhdGUAAxlmAACEv2aeXKUAAAAVVm9wL3VzZHByZXZpZXdzdXJmYWNlAAOeJQAAEkZmnlylAAAACQA=
 AAAEAAAABmNhbWVyYQAAAAZDYW1lcmEAAAAcb3BsaWI6L0xvcC9jYW1lcmE/TG9wL2NhbWVyYQAAAApMT1BfY2FtZXJhAAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAE3N1YnR5cGU9cHJvcGVkaXRvciAAAAAAAAAAAWY=
-nsEPAAEAAAAABAAAAAtjcmVhdGV4Zm9ybQAAAAVYZm9ybQAAACZvcGxpYjovTG9wL2NyZWF0ZXhmb3JtP0xvcC9jcmVhdGV4Zm9ybQAAAA9MT1BfY3JlYXRleGZvcm0AAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3U=
-YnR5cGU9cHJvcGVkaXRvciAAAAAAAAAAAWaewQ8AAQAAAAAEAAAAEWRpc3RhbnRsaWdodDo6Mi4wAAAADURpc3RhbnQgTGlnaHQAAAAyb3BsaWI6L0xvcC9kaXN0YW50bGlnaHQ6OjIuMD9Mb3AvZGlzdGFudGxpZ2h0OjoyLjA=
-AAAAEExPUF9kaXN0YW50bGlnaHQAAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3VidHlwZT1wcm9wZWRpdG9yIAAAAAAAAAABZp7BDwABAAAAAAQAAAAOZG9tZWxpZ2h0OjoyLjAAAAAKRG9tZSBMaWdodAAAACxvcGw=
-aWI6L0xvcC9kb21lbGlnaHQ6OjIuMD9Mb3AvZG9tZWxpZ2h0OjoyLjAAAAANTE9QX2RvbWVsaWdodAAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAAAAAAFmnsEPAAEAAAAABAA=
+nt3bAAEAAAAABAAAAAtjcmVhdGV4Zm9ybQAAAAVYZm9ybQAAACZvcGxpYjovTG9wL2NyZWF0ZXhmb3JtP0xvcC9jcmVhdGV4Zm9ybQAAAA9MT1BfY3JlYXRleGZvcm0AAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3U=
+YnR5cGU9cHJvcGVkaXRvciAAAAAAAAAAAWae3dsAAQAAAAAEAAAAEWRpc3RhbnRsaWdodDo6Mi4wAAAADURpc3RhbnQgTGlnaHQAAAAyb3BsaWI6L0xvcC9kaXN0YW50bGlnaHQ6OjIuMD9Mb3AvZGlzdGFudGxpZ2h0OjoyLjA=
+AAAAEExPUF9kaXN0YW50bGlnaHQAAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3VidHlwZT1wcm9wZWRpdG9yIAAAAAAAAAABZp7d2wABAAAAAAQAAAAOZG9tZWxpZ2h0OjoyLjAAAAAKRG9tZSBMaWdodAAAACxvcGw=
+aWI6L0xvcC9kb21lbGlnaHQ6OjIuMD9Mb3AvZG9tZWxpZ2h0OjoyLjAAAAANTE9QX2RvbWVsaWdodAAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAAAAAAFmnt3bAAEAAAAABAA=
 AAAKbGlnaHQ6OjIuMAAAAAVMaWdodAAAACRvcGxpYjovTG9wL2xpZ2h0OjoyLjA/TG9wL2xpZ2h0OjoyLjAAAAAJTE9QX2xpZ2h0AAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAE3N1YnR5cGU9cHJvcGVkaXRvciAAAAA=
-AAAAAAFmnsEPAAEAAAAABQAAAA5sb2NhbHNjaGVkdWxlcgAAAA9Mb2NhbCBTY2hlZHVsZXIAAAAsb3BsaWI6L1RvcC9sb2NhbHNjaGVkdWxlcj9Ub3AvbG9jYWxzY2hlZHVsZXIAAAASVE9QX2xvY2Fsc2NoZWR1bGVyAAAAAAA=
-AAAAAAAAA1RvcAAAAAAAAAAAAAAAAAAAADxwZGd0eXBlPSdzY2hlZHVsZXInIHN1YnR5cGU9bG9jYWxzY2hlZHVsZXIgdmlzaWJsZW91dHB1dHM9MCAAAAAAAAAAAGaewQ8AAQAAAAAAAAAABAAAABZyZW5kZXJnZW9tZXRyeXM=
+AAAAAAFmnt3bAAEAAAAABQAAAA5sb2NhbHNjaGVkdWxlcgAAAA9Mb2NhbCBTY2hlZHVsZXIAAAAsb3BsaWI6L1RvcC9sb2NhbHNjaGVkdWxlcj9Ub3AvbG9jYWxzY2hlZHVsZXIAAAASVE9QX2xvY2Fsc2NoZWR1bGVyAAAAAAA=
+AAAAAAAAA1RvcAAAAAAAAAAAAAAAAAAAADxwZGd0eXBlPSdzY2hlZHVsZXInIHN1YnR5cGU9bG9jYWxzY2hlZHVsZXIgdmlzaWJsZW91dHB1dHM9MCAAAAAAAAAAAGae3dsAAQAAAAAAAAAABAAAABZyZW5kZXJnZW9tZXRyeXM=
 ZXR0aW5ncwAAABhSZW5kZXIgR2VvbWV0cnkgU2V0dGluZ3MAAAA8b3BsaWI6L0xvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzP0xvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzAAAAGkxPUF9yZW5kZXJnZW9tZXRyeXNldHRpbmc=
-cwAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAQAAAAFmnsEPAAEAAAAABAAAAAlzb3BjcmVhdGUAAAAKU09QIENyZWF0ZQAAACJvcGxpYjovTG9wL3NvcGNyZWF0ZT9Mb3Avc28=
-cGNyZWF0ZQAAAA1MT1Bfc29wY3JlYXRlAAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABZp7BDwEBAAAAAAQAAAARdXNkcHJldmlld3N1cmZhY2UAAAATVVNEIFByZXZpZXcgU3VyZmFjZQAAADJvcGxpYjo=
-L1ZvcC91c2RwcmV2aWV3c3VyZmFjZT9Wb3AvdXNkcHJldmlld3N1cmZhY2UAAAAVVk9QX3VzZHByZXZpZXdzdXJmYWNlAAAAAAAAAAAAAAADVm9wAAAAAAAAAAAAAAAAAAAAA3VzZAAAAAAAAAAAZp7BDwABAElORFgAAAAAAAA=
+cwAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAQAAAAFmnt3bAAEAAAAABAAAAAlzb3BjcmVhdGUAAAAKU09QIENyZWF0ZQAAACJvcGxpYjovTG9wL3NvcGNyZWF0ZT9Mb3Avc28=
+cGNyZWF0ZQAAAA1MT1Bfc29wY3JlYXRlAAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABZp7d2wEBAAAAAAQAAAARdXNkcHJldmlld3N1cmZhY2UAAAATVVNEIFByZXZpZXcgU3VyZmFjZQAAADJvcGxpYjo=
+L1ZvcC91c2RwcmV2aWV3c3VyZmFjZT9Wb3AvdXNkcHJldmlld3N1cmZhY2UAAAAVVk9QX3VzZHByZXZpZXdzdXJmYWNlAAAAAAAAAAAAAAADVm9wAAAAAAAAAAAAAAAAAAAAA3VzZAAAAAAAAAAAZp7d2wABAElORFgAAAAAAAA=
 AAAAAAABAAAADERpYWxvZ1NjcmlwdAAAAAAAAIz9ZQ5nxCMgRGlhbG9nIHNjcmlwdCBmb3IgY2FtZXJhIGF1dG9tYXRpY2FsbHkgZ2VuZXJhdGVkCgp7CiAgICBuYW1lCWNhbWVyYQogICAgc2NyaXB0CWNhbWVyYQogICAgbGE=
 YmVsCUNhbWVyYQoKICAgIGhlbHAgewoJIiIKICAgIH0KCiAgICBpbnB1dGxhYmVsCTEJIklucHV0IFN0YWdlIgoKICAgIGdyb3VwY29sbGFwc2libGUgewogICAgICAgIG5hbWUgICAgInNhbXBsZV9ncm91cDIiCiAgICAgICA=
 IGxhYmVsICAgIkZyYW1lIFJhbmdlL1N1YmZyYW1lcyIKICAgICAgICBwYXJtdGFnIHsgInNpZGVmeDo6aGVhZGVyX3Bhcm0iICJzYW1wbGVfYmVoYXZpb3IiIH0KCiAgICAgICAgcGFybSB7CiAgICAgICAgICAgIG5hbWUgICA=
@@ -2156,7 +2156,7 @@ inputs
 stat
 {
   create 1680755038
-  modify 1721680132
+  modify 1721687474
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -2408,7 +2408,7 @@ flags = minimize off
 stat
 {
   create 1686112034
-  modify 1720204781
+  modify 1721687409
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -20923,7 +20923,7 @@ inputs
 stat
 {
   create 1680838012
-  modify 1721679658
+  modify 1721687339
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -23573,7 +23573,7 @@ xn__inputsshadowdistance_n8ag	[ 0	locks=0 ]	(	1	)
 handlefocus	[ 0	locks=0 ]	(	3.34887	)
 sample_group3	[ 0	locks=0 ]	(	0	)
 sample_subframegroup3	[ 0	locks=0 ]	(	0	)
-folder_transform5	[ 0	locks=0 ]	(	1	1	1	1	1	1	)
+folder_transform5	[ 0	locks=0 ]	(	0	0	0	0	0	0	)
 pivotxform2	[ 0	locks=0 ]	(	0	)
 folder1	[ 0	locks=0 ]	(	0	)
 arnold_light_group	[ 0	locks=0 ]	(	1	)
@@ -24245,7 +24245,7 @@ inputs
 stat
 {
   create 1697492429
-  modify 1721622853
+  modify 1721687506
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -25433,7 +25433,7 @@ inputs
 stat
 {
   create 1680838012
-  modify 1721622853
+  modify 1721687400
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -27835,7 +27835,7 @@ xn__inputsshadowdistance_n8ag	[ 0	locks=0 ]	(	1	)
 handlefocus	[ 0	locks=0 ]	(	3.34887	)
 sample_group3	[ 0	locks=0 ]	(	0	)
 sample_subframegroup3	[ 0	locks=0 ]	(	0	)
-folder_transform5	[ 0	locks=0 ]	(	2	2	2	2	2	2	)
+folder_transform5	[ 0	locks=0 ]	(	1	1	1	1	1	1	)
 pivotxform2	[ 0	locks=0 ]	(	0	)
 folder1	[ 0	locks=0 ]	(	0	)
 arnold_light_group	[ 0	locks=0 ]	(	1	)
@@ -63544,7 +63544,7 @@ inputs
 stat
 {
   create 1721010894
-  modify 1721678051
+  modify 1721687430
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -63846,7 +63846,7 @@ inputs
 stat
 {
   create 1721010894
-  modify 1721622853
+  modify 1721687430
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -65036,8 +65036,8 @@ Content-Disposition: attachment; filename="stage/lights.def"
 Content-Type: text/plain
 
 comment ""
-position -6.74077 -28.6936
-connectornextid 0
+position -6.74077 -28.669
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
 {
@@ -65045,14 +65045,16 @@ outputsNamed3
 }
 inputsNamed3
 {
+0 	assignmaterial5 1 1 "input1"
 }
 inputs
 {
+0 	assignmaterial5 0 1
 }
 stat
 {
   create 1721510053
-  modify 1721604889
+  modify 1721687227
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -65137,7 +65139,7 @@ xn__xformOptransform_control_6fb	[ 0	locks=0 ]	(	set	)
 xn__xformOptransform_51a	[ 0	locks=0 ]	(	append	)
 xOrd	[ 0	locks=0 ]	(	"srt"	)
 rOrd	[ 0	locks=0 ]	(	"xyz"	)
-t	[ 0	locks=0 ]	(	0	0	0	)
+t	[ 8	locks=0 ]	(	0	0	0	)
 r	[ 0	locks=0	autoscope=4	autosel=4294967295 ]	(	0	0	[ rz	0 ] 	)
 s	[ 0	locks=0 ]	(	1	1	1	)
 shear	[ 0	locks=0 ]	(	0	0	0	)
@@ -67473,7 +67475,7 @@ inputs
 stat
 {
   create 1680758826
-  modify 1721622853
+  modify 1721687294
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -69907,7 +69909,7 @@ inputs
 stat
 {
   create 1680838012
-  modify 1721622853
+  modify 1721687281
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -72127,7 +72129,7 @@ return xform.extractRotates()[2]
       righttype = extend
       default = 0.002
       flags = 0
-      segment { length = 0 value = 0.002 0.002 expr = "(ch(\"../sphere_light/xn__inputsintensity_i0a\") - 1) / 4 + 1" }
+      segment { length = 0 value = 0.002 0.002 expr = ch(\"../sphere_light/xn__inputsintensity_i0a\") }
     }
     channel xn__inputsshapingfocusTint_wcbhr {
       lefttype = extend
@@ -72157,9 +72159,15 @@ return xform.extractRotates()[2]
     channel xn__inputswidth_zta {
       lefttype = extend
       righttype = extend
-      default = 2
+      default = 0.5
       flags = 0
-      start = 0.20833333333333334
+      segment { options = {	 untie  is os ia oa }
+
+	 length = 0.16666666666666666 value = 1 1 accel = 0.055555555555555552 0.055555555555555552 expr = linear() }
+      segment { options = {	 untie  is os ia oa }
+
+	 length = 0.041666666666666685 value = 1 0.20000000000000001 slope = -19.199999999999992 -19.199999999999992 accel = 0.26702811152700573 0.26702811152700573
+	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
 	 length = 0.16666666666666666 value = 0.20000000000000001 2 slope = 10.800000000000001 10.800000000000001 accel = 0.60256652724249993 0.60256652724249993
@@ -72174,7 +72182,7 @@ return xform.extractRotates()[2]
 	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0 value = 2 0.20000000000000001 accel = 0.33333333333333331 0.33333333333333331 expr = linear() }
+	 length = 0 value = 2 1 accel = 0.33333333333333331 0.33333333333333331 expr = linear() }
     }
   }
 
@@ -72325,7 +72333,7 @@ xn__inputsshadowdistance_n8ag	[ 0	locks=0 ]	(	1	)
 handlefocus	[ 0	locks=0 ]	(	3.34887	)
 sample_group3	[ 0	locks=0 ]	(	0	)
 sample_subframegroup3	[ 0	locks=0 ]	(	0	)
-folder_transform5	[ 0	locks=0 ]	(	2	2	2	2	2	2	)
+folder_transform5	[ 0	locks=0 ]	(	1	1	1	1	1	1	)
 pivotxform2	[ 0	locks=0 ]	(	0	)
 folder1	[ 0	locks=0 ]	(	0	)
 arnold_light_group	[ 0	locks=0 ]	(	1	)
@@ -85347,7 +85355,7 @@ Content-Type: text/plain
 	"posy":-31.8848597729257683,
 	"pinned":false,
 	"color":"FROMOUTPUT",
-	"input":"assignmaterial5 0 1"
+	"input":"lights 0 1"
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
