@@ -10,7 +10,7 @@ import sys
 import traceback
 
 from glob import glob
-from typing import Iterable, List, Optional
+from typing import Iterable, List, NamedTuple, Optional, Tuple
 
 ###############################################################################
 # Constants
@@ -61,6 +61,35 @@ else:
 
 
 ###############################################################################
+# Dataclasses
+###############################################################################
+
+
+class UsdRecordCommand(NamedTuple):
+    """Data needed for a single invocation of usdrecord"""
+
+    name: str  # base name of the file - ie, the light name
+    usd_path: str
+    output_path: str
+    renderer: str
+    camera: str
+    frames: Tuple[int, int]
+    resolution: int
+    seed: int
+
+    def render(self):
+        return run_test(
+            self.usd_path,
+            self.output_path,
+            delegate=self.renderer,
+            resolution=self.resolution,
+            camera=self.camera,
+            frames=self.frames,
+            seed=self.seed,
+        )
+
+
+###############################################################################
 # Core functions
 ###############################################################################
 
@@ -78,7 +107,7 @@ def run_tests(
 
     Returns
     -------
-    failures: List[str]
+    failures: List[UsdRecordCommand]
     """
     light_descriptions = genLightParamDescriptions.read_descriptions()
 
@@ -103,7 +132,9 @@ def run_tests(
         print(errmsg)
         return [errmsg]
 
-    failures = []
+    flat_list: List[UsdRecordCommand] = []
+    unique_cameras = set()
+
     for delegate in delegates:
         delegate_output_dir = os.path.join(output_dir, delegate.lower())
         os.makedirs(delegate_output_dir, exist_ok=True)
@@ -112,10 +143,25 @@ def run_tests(
             input_file = os.path.basename(layer)
             base = os.path.splitext(input_file)[0]
 
+            if frames is None:
+                test_frames = light_descriptions.get(base, {}).frames
+                if test_frames:
+                    start, end = test_frames
+                    if start == end:
+                        test_frames = f"{start}"
+                    else:
+                        test_frames = f"{start}:{end}"
+                else:
+                    test_frames = "1"
+            else:
+                test_frames = frames
+
             if cameras:
                 light_cameras = cameras
             else:
                 light_cameras = DEFAULT_CAMERAS_BY_USD.get(base, DEFAULT_CAMERAS)
+            unique_cameras.update(light_cameras)
+
             for camera in light_cameras:
                 if len(light_cameras) > 1:
                     camera_filename_part = "." + os.path.basename(camera)
@@ -124,36 +170,40 @@ def run_tests(
                 output_file = f"{base}-{delegate.lower()}{camera_filename_part}.####.exr"
                 output_path = os.path.join(delegate_output_dir, output_file)
 
-                if frames is None:
-                    test_frames = light_descriptions.get(base, {}).frames
-                    if test_frames:
-                        start, end = test_frames
-                        if start == end:
-                            test_frames = f"{start}"
-                        else:
-                            test_frames = f"{start}:{end}"
-                    else:
-                        test_frames = "1"
-                else:
-                    test_frames = frames
-
-                print("-" * 80)
-                exitcode = run_test(
-                    layer,
-                    output_path,
-                    delegate=delegate,
-                    resolution=resolution,
-                    camera=camera,
-                    frames=test_frames,
-                    seed=seed,
+                flat_list.append(
+                    UsdRecordCommand(
+                        name=base,
+                        usd_path=layer,
+                        output_path=output_path,
+                        renderer=delegate,
+                        camera=camera,
+                        frames=test_frames,
+                        resolution=resolution,
+                        seed=seed,
+                    )
                 )
-                if exitcode:
-                    failures.append(layer)
 
-            # auto-combine iesTest images if we did all cameras
-            if base == "iesTest" and not cameras:
-                print(f"Combining {base} images")
-                combine_ies_test_images.combine_ies_test_images(renderers=["embree"])
+    num_commands = len(flat_list)
+    print(f"Found: {len(delegates)} delegates - {len(input_layers)} files - {len(unique_cameras)} cameras")
+    print(f"Total usdrecord render commands: {num_commands}")
+    print()
+
+    failures = []
+    for i, command in enumerate(flat_list):
+        print()
+        print("=" * 80)
+        print(f"Render {i + 1}/{num_commands}")
+        print()
+
+        print("-" * 80)
+        exitcode = command.render()
+        if exitcode:
+            failures.append(command)
+
+        # auto-combine iesTest images if we did all cameras
+        if base == "iesTest" and not cameras:
+            print(f"Combining {base} images")
+            combine_ies_test_images.combine_ies_test_images(renderers=["embree"])
 
     return failures
 
