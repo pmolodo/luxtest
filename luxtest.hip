@@ -31,7 +31,7 @@ set -g JOB = 'C:/Users/alanglands/Desktop/light_comparison'
 set -g PI = '3.1415926535897932384'
 set -g POSE = 'C:/Users/alanglands/Documents/houdini19.5/poselib'
 set -g _HIP_SAVEPLATFORM = 'windows-x86_64-cl19.35'
-set -g _HIP_SAVETIME = 'Mon Jul 22 08:59:46 2024'
+set -g _HIP_SAVETIME = 'Mon Jul 22 10:20:34 2024'
 set -g _HIP_SAVEVERSION = '20.0.653'
 set -g status = '0'
 
@@ -130,21 +130,21 @@ Content-Disposition: attachment; filename=".OPdummydefs"
 Content-Type: application/octet-stream
 Content-Transfer-Encoding: base64
 
-SU5EWAAAAAAAAAAAAAAACwAAAA1JTkRFWF9TRUNUSU9OAAAAAAAABftmnoHyAAAAEmhvdWRpbmkuaGRhbGlicmFyeQAABfsAAAAAZp6B8gAAAApMb3AvY2FtZXJhAAAF+wAAjSlmnlymAAAAD0xvcC9jcmVhdGV4Zm9ybQAAkyQ=
+SU5EWAAAAAAAAAAAAAAACwAAAA1JTkRFWF9TRUNUSU9OAAAAAAAABftmnpTiAAAAEmhvdWRpbmkuaGRhbGlicmFyeQAABfsAAAAAZp6U4gAAAApMb3AvY2FtZXJhAAAF+wAAjSlmnlymAAAAD0xvcC9jcmVhdGV4Zm9ybQAAkyQ=
 AAAnSmaeXKYAAAAVTG9wL2Rpc3RhbnRsaWdodDo6Mi4wAAC6bgAAu85mnlymAAAAEkxvcC9kb21lbGlnaHQ6OjIuMAABdjwAAGv8Zp5cpgAAAA5Mb3AvbGlnaHQ6OjIuMAAB4jgAANtUZp5cpgAAABJUb3AvbG9jYWxzY2hlZHU=
 bGVyAAK9jAAAS6FmnlymAAAAGkxvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzAAMJLQAAEDlmnlymAAAADUxvcC9zb3BjcmVhdGUAAxlmAACEv2aeXKUAAAAVVm9wL3VzZHByZXZpZXdzdXJmYWNlAAOeJQAAEkZmnlylAAAACQA=
 AAAEAAAABmNhbWVyYQAAAAZDYW1lcmEAAAAcb3BsaWI6L0xvcC9jYW1lcmE/TG9wL2NhbWVyYQAAAApMT1BfY2FtZXJhAAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAE3N1YnR5cGU9cHJvcGVkaXRvciAAAAAAAAAAAWY=
-noHyAAEAAAAABAAAAAtjcmVhdGV4Zm9ybQAAAAVYZm9ybQAAACZvcGxpYjovTG9wL2NyZWF0ZXhmb3JtP0xvcC9jcmVhdGV4Zm9ybQAAAA9MT1BfY3JlYXRleGZvcm0AAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3U=
-YnR5cGU9cHJvcGVkaXRvciAAAAAAAAAAAWaegfIAAQAAAAAEAAAAEWRpc3RhbnRsaWdodDo6Mi4wAAAADURpc3RhbnQgTGlnaHQAAAAyb3BsaWI6L0xvcC9kaXN0YW50bGlnaHQ6OjIuMD9Mb3AvZGlzdGFudGxpZ2h0OjoyLjA=
-AAAAEExPUF9kaXN0YW50bGlnaHQAAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3VidHlwZT1wcm9wZWRpdG9yIAAAAAAAAAABZp6B8gABAAAAAAQAAAAOZG9tZWxpZ2h0OjoyLjAAAAAKRG9tZSBMaWdodAAAACxvcGw=
-aWI6L0xvcC9kb21lbGlnaHQ6OjIuMD9Mb3AvZG9tZWxpZ2h0OjoyLjAAAAANTE9QX2RvbWVsaWdodAAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAAAAAAFmnoHyAAEAAAAABAA=
+npTiAAEAAAAABAAAAAtjcmVhdGV4Zm9ybQAAAAVYZm9ybQAAACZvcGxpYjovTG9wL2NyZWF0ZXhmb3JtP0xvcC9jcmVhdGV4Zm9ybQAAAA9MT1BfY3JlYXRleGZvcm0AAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3U=
+YnR5cGU9cHJvcGVkaXRvciAAAAAAAAAAAWaelOIAAQAAAAAEAAAAEWRpc3RhbnRsaWdodDo6Mi4wAAAADURpc3RhbnQgTGlnaHQAAAAyb3BsaWI6L0xvcC9kaXN0YW50bGlnaHQ6OjIuMD9Mb3AvZGlzdGFudGxpZ2h0OjoyLjA=
+AAAAEExPUF9kaXN0YW50bGlnaHQAAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3VidHlwZT1wcm9wZWRpdG9yIAAAAAAAAAABZp6U4gABAAAAAAQAAAAOZG9tZWxpZ2h0OjoyLjAAAAAKRG9tZSBMaWdodAAAACxvcGw=
+aWI6L0xvcC9kb21lbGlnaHQ6OjIuMD9Mb3AvZG9tZWxpZ2h0OjoyLjAAAAANTE9QX2RvbWVsaWdodAAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAAAAAAFmnpTiAAEAAAAABAA=
 AAAKbGlnaHQ6OjIuMAAAAAVMaWdodAAAACRvcGxpYjovTG9wL2xpZ2h0OjoyLjA/TG9wL2xpZ2h0OjoyLjAAAAAJTE9QX2xpZ2h0AAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAE3N1YnR5cGU9cHJvcGVkaXRvciAAAAA=
-AAAAAAFmnoHyAAEAAAAABQAAAA5sb2NhbHNjaGVkdWxlcgAAAA9Mb2NhbCBTY2hlZHVsZXIAAAAsb3BsaWI6L1RvcC9sb2NhbHNjaGVkdWxlcj9Ub3AvbG9jYWxzY2hlZHVsZXIAAAASVE9QX2xvY2Fsc2NoZWR1bGVyAAAAAAA=
-AAAAAAAAA1RvcAAAAAAAAAAAAAAAAAAAADxwZGd0eXBlPSdzY2hlZHVsZXInIHN1YnR5cGU9bG9jYWxzY2hlZHVsZXIgdmlzaWJsZW91dHB1dHM9MCAAAAAAAAAAAGaegfIAAQAAAAAAAAAABAAAABZyZW5kZXJnZW9tZXRyeXM=
+AAAAAAFmnpTiAAEAAAAABQAAAA5sb2NhbHNjaGVkdWxlcgAAAA9Mb2NhbCBTY2hlZHVsZXIAAAAsb3BsaWI6L1RvcC9sb2NhbHNjaGVkdWxlcj9Ub3AvbG9jYWxzY2hlZHVsZXIAAAASVE9QX2xvY2Fsc2NoZWR1bGVyAAAAAAA=
+AAAAAAAAA1RvcAAAAAAAAAAAAAAAAAAAADxwZGd0eXBlPSdzY2hlZHVsZXInIHN1YnR5cGU9bG9jYWxzY2hlZHVsZXIgdmlzaWJsZW91dHB1dHM9MCAAAAAAAAAAAGaelOIAAQAAAAAAAAAABAAAABZyZW5kZXJnZW9tZXRyeXM=
 ZXR0aW5ncwAAABhSZW5kZXIgR2VvbWV0cnkgU2V0dGluZ3MAAAA8b3BsaWI6L0xvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzP0xvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzAAAAGkxPUF9yZW5kZXJnZW9tZXRyeXNldHRpbmc=
-cwAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAQAAAAFmnoHyAAEAAAAABAAAAAlzb3BjcmVhdGUAAAAKU09QIENyZWF0ZQAAACJvcGxpYjovTG9wL3NvcGNyZWF0ZT9Mb3Avc28=
-cGNyZWF0ZQAAAA1MT1Bfc29wY3JlYXRlAAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABZp6B8gEBAAAAAAQAAAARdXNkcHJldmlld3N1cmZhY2UAAAATVVNEIFByZXZpZXcgU3VyZmFjZQAAADJvcGxpYjo=
-L1ZvcC91c2RwcmV2aWV3c3VyZmFjZT9Wb3AvdXNkcHJldmlld3N1cmZhY2UAAAAVVk9QX3VzZHByZXZpZXdzdXJmYWNlAAAAAAAAAAAAAAADVm9wAAAAAAAAAAAAAAAAAAAAA3VzZAAAAAAAAAAAZp6B8gABAElORFgAAAAAAAA=
+cwAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAQAAAAFmnpTiAAEAAAAABAAAAAlzb3BjcmVhdGUAAAAKU09QIENyZWF0ZQAAACJvcGxpYjovTG9wL3NvcGNyZWF0ZT9Mb3Avc28=
+cGNyZWF0ZQAAAA1MT1Bfc29wY3JlYXRlAAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABZp6U4gEBAAAAAAQAAAARdXNkcHJldmlld3N1cmZhY2UAAAATVVNEIFByZXZpZXcgU3VyZmFjZQAAADJvcGxpYjo=
+L1ZvcC91c2RwcmV2aWV3c3VyZmFjZT9Wb3AvdXNkcHJldmlld3N1cmZhY2UAAAAVVk9QX3VzZHByZXZpZXdzdXJmYWNlAAAAAAAAAAAAAAADVm9wAAAAAAAAAAAAAAAAAAAAA3VzZAAAAAAAAAAAZp6U4gABAElORFgAAAAAAAA=
 AAAAAAABAAAADERpYWxvZ1NjcmlwdAAAAAAAAIz9ZQ5nxCMgRGlhbG9nIHNjcmlwdCBmb3IgY2FtZXJhIGF1dG9tYXRpY2FsbHkgZ2VuZXJhdGVkCgp7CiAgICBuYW1lCWNhbWVyYQogICAgc2NyaXB0CWNhbWVyYQogICAgbGE=
 YmVsCUNhbWVyYQoKICAgIGhlbHAgewoJIiIKICAgIH0KCiAgICBpbnB1dGxhYmVsCTEJIklucHV0IFN0YWdlIgoKICAgIGdyb3VwY29sbGFwc2libGUgewogICAgICAgIG5hbWUgICAgInNhbXBsZV9ncm91cDIiCiAgICAgICA=
 IGxhYmVsICAgIkZyYW1lIFJhbmdlL1N1YmZyYW1lcyIKICAgICAgICBwYXJtdGFnIHsgInNpZGVmeDo6aGVhZGVyX3Bhcm0iICJzYW1wbGVfYmVoYXZpb3IiIH0KCiAgICAgICAgcGFybSB7CiAgICAgICAgICAgIG5hbWUgICA=
@@ -2156,7 +2156,7 @@ inputs
 stat
 {
   create 1680755038
-  modify 1721663931
+  modify 1721668820
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -2928,13 +2928,15 @@ matchesdef = 0
 Content-Disposition: attachment; filename="stage/__stickynote22.postitdef"
 Content-Type: text/plain
 
-text "1: ies:angleScale=0 ref (ies:file='test_stripes_nonuniform.ies')
-2-10: ies:angleScale from -1 to 1 (ies:file='test_stripes_nonuniform.ies')
-11: ies:angleScale=0 ref (ies:file='test_stripes_uniform.ies')
-12-20: ies:angleScale from -1 to 1 (ies:file='test_stripes_uniform.ies')
-21: ies:angleScale=0 ref (ies:file='test_stripes_uniform.ies', ies:normalize=on)
-22-30: ies:angleScale from -1 to 1 (ies:file='test_stripes_uniform.ies', ies:normalize=on)
-31: no ies:file ref"
+text "1: ies:angleScale=0 ref (intensity=1000, ies:file='test_stripes_nonuniform.ies')
+2-10: ies:angleScale from -1 to 1 (intensity=1000, ies:file='test_stripes_nonuniform.ies')
+11: ies:angleScale=0 ref (intensity=1000, ies:file='test_stripes_uniform.ies')
+12-20: ies:angleScale from -1 to 1 (intensity=1000, ies:file='test_stripes_uniform.ies')
+21: ies:angleScale=0 ref (intensity=1000, ies:file='test_stripes_uniform.ies', ies:normalize=on)
+22-30: ies:angleScale from -1 to 1 (intensity=1000, ies:file='test_stripes_uniform.ies', ies:normalize=on)
+31: no ies:file ref (intensity=1000000, ies:file='test_stripes_uniform.ies')
+32-40: ies:angleScale from -1 to 1 (intensity=1000000, ies:file='test_stripes_uniform.ies')
+41: (constant)"
 position 11.4437 3.75614
 size 14.6424 16.0346
 textsize 1
@@ -2942,7 +2944,7 @@ flags = minimize off
 stat
 {
   create 1686112034
-  modify 1721663930
+  modify 1721668820
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -8749,7 +8751,7 @@ inputs
 stat
 {
   create 1680837817
-  modify 1721658541
+  modify 1721668725
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -9167,7 +9169,7 @@ execute	[ 0	locks=0 ]	(	0	)
 executebackground	[ 0	locks=0 ]	(	0	)
 renderdialog	[ 0	locks=0 ]	(	0	)
 trange	[ 0	locks=0 ]	(	"normal"	)
-f	[ 8	locks=0 ]	(	1	31	1	)
+f	[ 8	locks=0 ]	(	1	41	1	)
 foffset	[ 0	locks=0 ]	(	0	0	1	)
 take	[ 0	locks=0 ]	(	_current_	)
 loppath	[ 0	locks=0 ]	(	"../`opinput(\".\", 0)`"	)
@@ -13144,7 +13146,7 @@ inputs
 stat
 {
   create 1721598557
-  modify 1721658913
+  modify 1721668649
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -15748,7 +15750,7 @@ return xform.extractRotates()[2]
 	 length = 0.41666666666666669 accel = 0.1388888888888889 0.1388888888888889 expr = \"C:/src/NVIDIA/luxtest/test_stripes_uniform.ies\" }
       segment { options = {	 untie  is ia autoslope  ao }
 
-	 length = 0.41666666666666663 accel = 0.13888888888888887 0.13888888888888887 expr = \"C:/src/NVIDIA/luxtest/test_stripes_uniform.ies\" }
+	 length = 0.83333333333333337 accel = 0.27777777777777779 0.27777777777777779 expr = \"C:/src/NVIDIA/luxtest/test_stripes_uniform.ies\" }
       segment { options = {	 untie  os oa autoslope  ai }
 
 	 length = 0 accel = 0.33333333333333331 0.33333333333333331 expr = \"\" }
@@ -15792,7 +15794,19 @@ return xform.extractRotates()[2]
 	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.041666666666666519 value = 1 0 slope = -24.000000000000085 -24.000000000000085 accel = 0.33362255970734206 0.33362255970734206
+	 length = 0.041666666666666512 value = 1 0 slope = -24.000000000000089 -24.000000000000089 accel = 0.33362255970734206 0.33362255970734206
+	 expr = linear() }
+      segment { options = {	 untie  is os ia oa }
+
+	 length = 0.041666666666666741 value = 0 -1 slope = -23.999999999999957 -23.999999999999957 accel = 0.333622559707342 0.333622559707342
+	 expr = linear() }
+      segment { options = {	 untie  is os ia oa }
+
+	 length = 0.33333333333333326 value = -1 1 slope = 6.0000000000000018 6.0000000000000018 accel = 0.6758625033664688 0.6758625033664688
+	 expr = linear() }
+      segment { options = {	 untie  is os ia oa }
+
+	 length = 0.041666666666666768 value = 1 0 slope = -23.999999999999943 -23.999999999999943 accel = 0.33362255970734206 0.33362255970734206
 	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
@@ -15812,11 +15826,28 @@ return xform.extractRotates()[2]
 	 length = 0.37499999999999994 value = 1 1 accel = 0.12499999999999997 0.12499999999999997 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.041666666666666699 value = 1 0 slope = -23.999999999999982 -23.999999999999982 accel = 0.33362255970734206 0.33362255970734206
+	 length = 0.041666666666666685 value = 1 0 slope = -23.999999999999989 -23.999999999999989 accel = 0.33362255970734211 0.33362255970734211
 	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
+	 length = 0.41666666666666674 accel = 0.1388888888888889 0.1388888888888889 expr = linear() }
+      segment { options = {	 untie  is os ia oa }
+
 	 length = 0 slope = 0 -0.88888888888888884 accel = 0.33333333333333331 0.44598498439971462 expr = linear() }
+    }
+    channel xn__inputsintensity_i0a {
+      lefttype = extend
+      righttype = extend
+      default = 1000
+      flags = 0
+      start = 1.2083333333333333
+      segment { options = {	 untie  is os ia oa }
+
+	 length = 0.041666666666666741 value = 1000 1000000 slope = 23975999.999999959 23975999.999999959 accel = 333000.00000000023 333000.00000000023
+	 expr = linear() }
+      segment { options = {	 untie  is os ia oa }
+
+	 length = 0 value = 1000000 1000 accel = 0.33333333333333331 0.33333333333333331 expr = linear() }
     }
   }
 
@@ -15883,7 +15914,7 @@ upvecmethod	[ 0	locks=0 ]	(	yaxis	)
 upvec	[ 0	locks=0 ]	(	0	1	0	)
 twist	[ 0	locks=0 ]	(	0	)
 xn__inputsintensity_control_jeb	[ 0	locks=0 ]	(	set	)
-xn__inputsintensity_i0a	[ 0	locks=0 ]	(	1000	)
+xn__inputsintensity_i0a	[ 0	locks=0	autoscope=1	autosel=4294967295 ]	(	[ xn__inputsintensity_i0a	1 ] 	)
 xn__inputsexposure_control_wcb	[ 0	locks=0 ]	(	set	)
 xn__inputsexposure_vya	[ 0	locks=0 ]	(	0	)
 xn__inputscolor_control_06a	[ 0	locks=0 ]	(	set	)
@@ -63517,7 +63548,7 @@ inputs
 stat
 {
   create 1721010894
-  modify 1721658980
+  modify 1721668733
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -73338,7 +73369,7 @@ inputs
 stat
 {
   create 1721622852
-  modify 1721658980
+  modify 1721668733
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -86483,7 +86514,7 @@ viewmaskoverlay -o 0.4 Solaris.pane1.solaris.right1
 viewsnapshotoption -s off -h off -a 1 -v '*' -m 0 Solaris.pane1.solaris
 cplane -o 0 0 0 -n 4.37114e-08 1 -4.37114e-08 -x 1.91069e-15 4.37114e-08 1 -l n -s 0.1 0.1 -c 40 40 -r 10 10 -d off Solaris.pane1.solaris
 glcache -t 9828 -v 39312
-sceneviewopts -C on -c on -e on -F on -g on -H on -i -1 -k """" -l on -m on -M off -p /Render/Settings -P off -s on -S 1 -r "HdPrmanLoaderRendererPlugin" -K off -R 512 512 -V off Solaris.pane1.solaris
+sceneviewopts -C on -c on -e on -F on -g on -H on -i -1 -k """" -l on -m on -M off -p /Render/Settings -P off -s on -S 1 -r "HdArnoldRendererPlugin" -K off -R 512 512 -V off Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -r -m "Normal Lighting" "RenderMan XPU - CPU" Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -g -p -m "Normal Lighting" Storm Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -r -m "Normal Lighting" "Karma XPU" Solaris.pane1.solaris
@@ -86540,6 +86571,7 @@ panepath -d Solaris -f -p panetab1 /stage/sphere_light
 panepath -d Solaris -f -p panetab3 /stage/sphere_light
 panepath -d Solaris -f -p panetab4 /stage/
 panepath -d Solaris -f -p panetab2 /stage/sphere_light
+panepath -d Solaris -f -p "Animation Editor" /obj/
 desk set Solaris
 viewupdate -u always
 audiopanel -s p ''

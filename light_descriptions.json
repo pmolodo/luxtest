@@ -768,6 +768,7 @@
     },
     "iesTest": {
         "attrs": [
+            "inputs:intensity",
             "inputs:shaping:ies:angleScale",
             "inputs:shaping:ies:file",
             "inputs:shaping:ies:normalize"
@@ -779,6 +780,7 @@
                     1
                 ],
                 "non_default_constants": {
+                    "inputs:intensity": 1000.0,
                     "inputs:shaping:ies:file": "../test_stripes_nonuniform.ies"
                 },
                 "varying": {}
@@ -789,6 +791,7 @@
                     10
                 ],
                 "non_default_constants": {
+                    "inputs:intensity": 1000.0,
                     "inputs:shaping:ies:file": "../test_stripes_nonuniform.ies"
                 },
                 "varying": {
@@ -811,6 +814,7 @@
                     11
                 ],
                 "non_default_constants": {
+                    "inputs:intensity": 1000.0,
                     "inputs:shaping:ies:file": "../test_stripes_uniform.ies"
                 },
                 "varying": {}
@@ -821,6 +825,7 @@
                     20
                 ],
                 "non_default_constants": {
+                    "inputs:intensity": 1000.0,
                     "inputs:shaping:ies:file": "../test_stripes_uniform.ies"
                 },
                 "varying": {
@@ -843,6 +848,7 @@
                     21
                 ],
                 "non_default_constants": {
+                    "inputs:intensity": 1000.0,
                     "inputs:shaping:ies:file": "../test_stripes_uniform.ies",
                     "inputs:shaping:ies:normalize": true
                 },
@@ -854,6 +860,7 @@
                     30
                 ],
                 "non_default_constants": {
+                    "inputs:intensity": 1000.0,
                     "inputs:shaping:ies:file": "../test_stripes_uniform.ies",
                     "inputs:shaping:ies:normalize": true
                 },
@@ -876,13 +883,49 @@
                     31,
                     31
                 ],
-                "non_default_constants": {},
+                "non_default_constants": {
+                    "inputs:intensity": 1000000.0,
+                    "inputs:shaping:ies:file": "../test_stripes_uniform.ies"
+                },
+                "varying": {}
+            },
+            {
+                "frames": [
+                    32,
+                    40
+                ],
+                "non_default_constants": {
+                    "inputs:intensity": 1000000.0,
+                    "inputs:shaping:ies:file": "../test_stripes_uniform.ies"
+                },
+                "varying": {
+                    "inputs:shaping:ies:angleScale": {
+                        "32": -1.0,
+                        "33": -0.75,
+                        "34": -0.5,
+                        "35": -0.25,
+                        "36": -6.661338147750939e-16,
+                        "37": 0.25,
+                        "38": 0.5,
+                        "39": 0.75,
+                        "40": 1.0
+                    }
+                }
+            },
+            {
+                "frames": [
+                    41,
+                    41
+                ],
+                "non_default_constants": {
+                    "inputs:intensity": 1000000.0
+                },
                 "varying": {}
             }
         ],
         "frames": [
             1,
-            31
+            41
         ],
         "usd_path": "C:\\src\\NVIDIA\\luxtest\\usd\\iesTest.usda"
     },

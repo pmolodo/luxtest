@@ -1,7 +1,7 @@
 #usda 1.0
 (
     defaultPrim = "sopcreate_iesTest"
-    endTimeCode = 31
+    endTimeCode = 41
     framesPerSecond = 24
     metersPerUnit = 1
     startTimeCode = 1
@@ -139,7 +139,49 @@ def Xform "lights"
         float inputs:diffuse = 1
         bool inputs:enableColorTemperature = 0
         float inputs:exposure = 0
-        float inputs:intensity = 1000
+        float inputs:intensity.timeSamples = {
+            1: 1000,
+            2: 1000,
+            3: 1000,
+            4: 1000,
+            5: 1000,
+            6: 1000,
+            7: 1000,
+            8: 1000,
+            9: 1000,
+            10: 1000,
+            11: 1000,
+            12: 1000,
+            13: 1000,
+            14: 1000,
+            15: 1000,
+            16: 1000,
+            17: 1000,
+            18: 1000,
+            19: 1000,
+            20: 1000,
+            21: 1000,
+            22: 1000,
+            23: 1000,
+            24: 1000,
+            25: 1000,
+            26: 1000,
+            27: 1000,
+            28: 1000,
+            29: 1000,
+            30: 1000,
+            31: 1000000,
+            32: 1000000,
+            33: 1000000,
+            34: 1000000,
+            35: 1000000,
+            36: 1000000,
+            37: 1000000,
+            38: 1000000,
+            39: 1000000,
+            40: 1000000,
+            41: 1000000,
+        }
         bool inputs:normalize = 0
         float inputs:radius = 0.005
         float inputs:shaping:cone:angle = 180
@@ -176,6 +218,16 @@ def Xform "lights"
             29: 0.75,
             30: 1,
             31: 0,
+            32: -1,
+            33: -0.75,
+            34: -0.5,
+            35: -0.25,
+            36: -6.661338e-16,
+            37: 0.25,
+            38: 0.5,
+            39: 0.75,
+            40: 1,
+            41: 0,
         }
         asset inputs:shaping:ies:file.timeSamples = {
             1: @../test_stripes_nonuniform.ies@,
@@ -208,7 +260,17 @@ def Xform "lights"
             28: @../test_stripes_uniform.ies@,
             29: @../test_stripes_uniform.ies@,
             30: @../test_stripes_uniform.ies@,
-            31: @@,
+            31: @../test_stripes_uniform.ies@,
+            32: @../test_stripes_uniform.ies@,
+            33: @../test_stripes_uniform.ies@,
+            34: @../test_stripes_uniform.ies@,
+            35: @../test_stripes_uniform.ies@,
+            36: @../test_stripes_uniform.ies@,
+            37: @../test_stripes_uniform.ies@,
+            38: @../test_stripes_uniform.ies@,
+            39: @../test_stripes_uniform.ies@,
+            40: @../test_stripes_uniform.ies@,
+            41: @@,
         }
         bool inputs:shaping:ies:normalize.timeSamples = {
             1: 0,
@@ -242,6 +304,16 @@ def Xform "lights"
             29: 1,
             30: 1,
             31: 0,
+            32: 0,
+            33: 0,
+            34: 0,
+            35: 0,
+            36: 0,
+            37: 0,
+            38: 0,
+            39: 0,
+            40: 0,
+            41: 0,
         }
         float inputs:specular = 1
         rel light:filters = None
