@@ -156,7 +156,12 @@ def render_images(
         render_kwargs["frame_range"] = frame_range
 
     ies_renderer_count = {}
-    for rop_node in rop_nodes:
+    for i, rop_node in enumerate(rop_nodes):
+        print()
+        print("=" * 80)
+        print(f"Rendering node {i + 1}/{num_rops}: {rop_node.path()}")
+        print()
+
         rop_node.parm("husk_prerender").set(HUSK_PRE_RENDER)
         rop_node.render(**render_kwargs)
 
