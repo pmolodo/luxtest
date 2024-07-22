@@ -31,7 +31,7 @@ set -g JOB = 'C:/Users/alanglands/Desktop/light_comparison'
 set -g PI = '3.1415926535897932384'
 set -g POSE = 'C:/Users/alanglands/Documents/houdini19.5/poselib'
 set -g _HIP_SAVEPLATFORM = 'windows-x86_64-cl19.35'
-set -g _HIP_SAVETIME = 'Mon Jul 22 10:20:34 2024'
+set -g _HIP_SAVETIME = 'Mon Jul 22 13:25:29 2024'
 set -g _HIP_SAVEVERSION = '20.0.653'
 set -g status = '0'
 
@@ -130,21 +130,21 @@ Content-Disposition: attachment; filename=".OPdummydefs"
 Content-Type: application/octet-stream
 Content-Transfer-Encoding: base64
 
-SU5EWAAAAAAAAAAAAAAACwAAAA1JTkRFWF9TRUNUSU9OAAAAAAAABftmnpTiAAAAEmhvdWRpbmkuaGRhbGlicmFyeQAABfsAAAAAZp6U4gAAAApMb3AvY2FtZXJhAAAF+wAAjSlmnlymAAAAD0xvcC9jcmVhdGV4Zm9ybQAAkyQ=
+SU5EWAAAAAAAAAAAAAAACwAAAA1JTkRFWF9TRUNUSU9OAAAAAAAABftmnsA5AAAAEmhvdWRpbmkuaGRhbGlicmFyeQAABfsAAAAAZp7AOQAAAApMb3AvY2FtZXJhAAAF+wAAjSlmnlymAAAAD0xvcC9jcmVhdGV4Zm9ybQAAkyQ=
 AAAnSmaeXKYAAAAVTG9wL2Rpc3RhbnRsaWdodDo6Mi4wAAC6bgAAu85mnlymAAAAEkxvcC9kb21lbGlnaHQ6OjIuMAABdjwAAGv8Zp5cpgAAAA5Mb3AvbGlnaHQ6OjIuMAAB4jgAANtUZp5cpgAAABJUb3AvbG9jYWxzY2hlZHU=
 bGVyAAK9jAAAS6FmnlymAAAAGkxvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzAAMJLQAAEDlmnlymAAAADUxvcC9zb3BjcmVhdGUAAxlmAACEv2aeXKUAAAAVVm9wL3VzZHByZXZpZXdzdXJmYWNlAAOeJQAAEkZmnlylAAAACQA=
 AAAEAAAABmNhbWVyYQAAAAZDYW1lcmEAAAAcb3BsaWI6L0xvcC9jYW1lcmE/TG9wL2NhbWVyYQAAAApMT1BfY2FtZXJhAAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAE3N1YnR5cGU9cHJvcGVkaXRvciAAAAAAAAAAAWY=
-npTiAAEAAAAABAAAAAtjcmVhdGV4Zm9ybQAAAAVYZm9ybQAAACZvcGxpYjovTG9wL2NyZWF0ZXhmb3JtP0xvcC9jcmVhdGV4Zm9ybQAAAA9MT1BfY3JlYXRleGZvcm0AAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3U=
-YnR5cGU9cHJvcGVkaXRvciAAAAAAAAAAAWaelOIAAQAAAAAEAAAAEWRpc3RhbnRsaWdodDo6Mi4wAAAADURpc3RhbnQgTGlnaHQAAAAyb3BsaWI6L0xvcC9kaXN0YW50bGlnaHQ6OjIuMD9Mb3AvZGlzdGFudGxpZ2h0OjoyLjA=
-AAAAEExPUF9kaXN0YW50bGlnaHQAAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3VidHlwZT1wcm9wZWRpdG9yIAAAAAAAAAABZp6U4gABAAAAAAQAAAAOZG9tZWxpZ2h0OjoyLjAAAAAKRG9tZSBMaWdodAAAACxvcGw=
-aWI6L0xvcC9kb21lbGlnaHQ6OjIuMD9Mb3AvZG9tZWxpZ2h0OjoyLjAAAAANTE9QX2RvbWVsaWdodAAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAAAAAAFmnpTiAAEAAAAABAA=
+nsA5AAEAAAAABAAAAAtjcmVhdGV4Zm9ybQAAAAVYZm9ybQAAACZvcGxpYjovTG9wL2NyZWF0ZXhmb3JtP0xvcC9jcmVhdGV4Zm9ybQAAAA9MT1BfY3JlYXRleGZvcm0AAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3U=
+YnR5cGU9cHJvcGVkaXRvciAAAAAAAAAAAWaewDkAAQAAAAAEAAAAEWRpc3RhbnRsaWdodDo6Mi4wAAAADURpc3RhbnQgTGlnaHQAAAAyb3BsaWI6L0xvcC9kaXN0YW50bGlnaHQ6OjIuMD9Mb3AvZGlzdGFudGxpZ2h0OjoyLjA=
+AAAAEExPUF9kaXN0YW50bGlnaHQAAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3VidHlwZT1wcm9wZWRpdG9yIAAAAAAAAAABZp7AOQABAAAAAAQAAAAOZG9tZWxpZ2h0OjoyLjAAAAAKRG9tZSBMaWdodAAAACxvcGw=
+aWI6L0xvcC9kb21lbGlnaHQ6OjIuMD9Mb3AvZG9tZWxpZ2h0OjoyLjAAAAANTE9QX2RvbWVsaWdodAAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAAAAAAFmnsA5AAEAAAAABAA=
 AAAKbGlnaHQ6OjIuMAAAAAVMaWdodAAAACRvcGxpYjovTG9wL2xpZ2h0OjoyLjA/TG9wL2xpZ2h0OjoyLjAAAAAJTE9QX2xpZ2h0AAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAE3N1YnR5cGU9cHJvcGVkaXRvciAAAAA=
-AAAAAAFmnpTiAAEAAAAABQAAAA5sb2NhbHNjaGVkdWxlcgAAAA9Mb2NhbCBTY2hlZHVsZXIAAAAsb3BsaWI6L1RvcC9sb2NhbHNjaGVkdWxlcj9Ub3AvbG9jYWxzY2hlZHVsZXIAAAASVE9QX2xvY2Fsc2NoZWR1bGVyAAAAAAA=
-AAAAAAAAA1RvcAAAAAAAAAAAAAAAAAAAADxwZGd0eXBlPSdzY2hlZHVsZXInIHN1YnR5cGU9bG9jYWxzY2hlZHVsZXIgdmlzaWJsZW91dHB1dHM9MCAAAAAAAAAAAGaelOIAAQAAAAAAAAAABAAAABZyZW5kZXJnZW9tZXRyeXM=
+AAAAAAFmnsA5AAEAAAAABQAAAA5sb2NhbHNjaGVkdWxlcgAAAA9Mb2NhbCBTY2hlZHVsZXIAAAAsb3BsaWI6L1RvcC9sb2NhbHNjaGVkdWxlcj9Ub3AvbG9jYWxzY2hlZHVsZXIAAAASVE9QX2xvY2Fsc2NoZWR1bGVyAAAAAAA=
+AAAAAAAAA1RvcAAAAAAAAAAAAAAAAAAAADxwZGd0eXBlPSdzY2hlZHVsZXInIHN1YnR5cGU9bG9jYWxzY2hlZHVsZXIgdmlzaWJsZW91dHB1dHM9MCAAAAAAAAAAAGaewDkAAQAAAAAAAAAABAAAABZyZW5kZXJnZW9tZXRyeXM=
 ZXR0aW5ncwAAABhSZW5kZXIgR2VvbWV0cnkgU2V0dGluZ3MAAAA8b3BsaWI6L0xvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzP0xvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzAAAAGkxPUF9yZW5kZXJnZW9tZXRyeXNldHRpbmc=
-cwAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAQAAAAFmnpTiAAEAAAAABAAAAAlzb3BjcmVhdGUAAAAKU09QIENyZWF0ZQAAACJvcGxpYjovTG9wL3NvcGNyZWF0ZT9Mb3Avc28=
-cGNyZWF0ZQAAAA1MT1Bfc29wY3JlYXRlAAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABZp6U4gEBAAAAAAQAAAARdXNkcHJldmlld3N1cmZhY2UAAAATVVNEIFByZXZpZXcgU3VyZmFjZQAAADJvcGxpYjo=
-L1ZvcC91c2RwcmV2aWV3c3VyZmFjZT9Wb3AvdXNkcHJldmlld3N1cmZhY2UAAAAVVk9QX3VzZHByZXZpZXdzdXJmYWNlAAAAAAAAAAAAAAADVm9wAAAAAAAAAAAAAAAAAAAAA3VzZAAAAAAAAAAAZp6U4gABAElORFgAAAAAAAA=
+cwAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAQAAAAFmnsA5AAEAAAAABAAAAAlzb3BjcmVhdGUAAAAKU09QIENyZWF0ZQAAACJvcGxpYjovTG9wL3NvcGNyZWF0ZT9Mb3Avc28=
+cGNyZWF0ZQAAAA1MT1Bfc29wY3JlYXRlAAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABZp7AOQEBAAAAAAQAAAARdXNkcHJldmlld3N1cmZhY2UAAAATVVNEIFByZXZpZXcgU3VyZmFjZQAAADJvcGxpYjo=
+L1ZvcC91c2RwcmV2aWV3c3VyZmFjZT9Wb3AvdXNkcHJldmlld3N1cmZhY2UAAAAVVk9QX3VzZHByZXZpZXdzdXJmYWNlAAAAAAAAAAAAAAADVm9wAAAAAAAAAAAAAAAAAAAAA3VzZAAAAAAAAAAAZp7AOQABAElORFgAAAAAAAA=
 AAAAAAABAAAADERpYWxvZ1NjcmlwdAAAAAAAAIz9ZQ5nxCMgRGlhbG9nIHNjcmlwdCBmb3IgY2FtZXJhIGF1dG9tYXRpY2FsbHkgZ2VuZXJhdGVkCgp7CiAgICBuYW1lCWNhbWVyYQogICAgc2NyaXB0CWNhbWVyYQogICAgbGE=
 YmVsCUNhbWVyYQoKICAgIGhlbHAgewoJIiIKICAgIH0KCiAgICBpbnB1dGxhYmVsCTEJIklucHV0IFN0YWdlIgoKICAgIGdyb3VwY29sbGFwc2libGUgewogICAgICAgIG5hbWUgICAgInNhbXBsZV9ncm91cDIiCiAgICAgICA=
 IGxhYmVsICAgIkZyYW1lIFJhbmdlL1N1YmZyYW1lcyIKICAgICAgICBwYXJtdGFnIHsgInNpZGVmeDo6aGVhZGVyX3Bhcm0iICJzYW1wbGVfYmVoYXZpb3IiIH0KCiAgICAgICAgcGFybSB7CiAgICAgICAgICAgIG5hbWUgICA=
@@ -2156,7 +2156,7 @@ inputs
 stat
 {
   create 1680755038
-  modify 1721668820
+  modify 1721679926
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -2668,8 +2668,7 @@ text "1-5: light rotate worldZ from 0 to 80 (intensity=2, width=.2)
 26-30: cone:softness from 0 to 1 (intensity=2, cone:angle=45, width=2)
 31-35: focus from 0 to 5 (intensity=2, width=2)
 36-40: focus from 0 to 5 (intensity=2, cone:angle=60, focusTint=red, width=2)
-41-44: focusTint from black to (0.5, 1.0, 0.5) (intensity=2, focus=3, width=2)
-45: (constant)
+41-45: focusTint from black to white (intensity=2, focus=3, width=2)
 46-50: focusTint from black to green to white (exposure=-11, intensity=2, ies:file='bega_omni002_4777lm.ies', width=2)
 51-55: ies:angleScale from -1 to 1 (ies:file='bega_omni002_4777lm.ies', ies:normalize=on, width=2)"
 position -95.2612 -37.7741
@@ -2679,7 +2678,7 @@ flags = minimize off
 stat
 {
   create 1686112034
-  modify 1721601637
+  modify 1721679923
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -2711,8 +2710,7 @@ text "1-5: light rotate worldZ from 0 to 80 (intensity=5)
 26-30: cone:softness from 0 to 1 (intensity=5, cone:angle=45)
 31-35: focus from 0 to 5 (intensity=5)
 36-40: focus from 0 to 5 (intensity=5, cone:angle=60, focusTint=red)
-41-44: focusTint from black to (0.5, 1.0, 0.5) (intensity=5, focus=3)
-45: (constant)
+41-45: focusTint from black to white (intensity=5, focus=3)
 46-50: focusTint from black to green to white (exposure=-11, intensity=5, ies:file='bega_omni002_4777lm.ies')
 51-55: ies:angleScale from -1 to 1 (ies:file='bega_omni002_4777lm.ies', ies:normalize=on)"
 position -84.2882 -58.8975
@@ -2722,7 +2720,7 @@ flags = minimize off
 stat
 {
   create 1686112034
-  modify 1721601637
+  modify 1721679923
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -2754,8 +2752,7 @@ text "1-5: light rotate worldZ from 0 to 80 (intensity=2)
 26-30: cone:softness from 0 to 1 (intensity=2, cone:angle=45)
 31-35: focus from 0 to 5 (intensity=2)
 36-40: focus from 0 to 5 (intensity=2, cone:angle=60, focusTint=red)
-41-44: focusTint from black to (0.5, 1.0, 0.5) (intensity=2, focus=3)
-45: (constant)
+41-45: focusTint from black to white (intensity=2, focus=3)
 46-50: focusTint from black to green to white (exposure=-11, intensity=2, ies:file='bega_omni002_4777lm.ies')
 51-55: ies:angleScale from -1 to 1 (ies:file='bega_omni002_4777lm.ies', ies:normalize=on)"
 position -88.703 -79.5623
@@ -2765,7 +2762,7 @@ flags = minimize off
 stat
 {
   create 1686112034
-  modify 1721601637
+  modify 1721679923
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -2797,8 +2794,7 @@ text "1-5: light rotate worldZ from 0 to 80 (intensity=5)
 26-30: cone:softness from 0 to 1 (intensity=5, cone:angle=45)
 31-35: focus from 0 to 5 (intensity=5)
 36-40: focus from 0 to 5 (intensity=5, cone:angle=60, focusTint=red)
-41-44: focusTint from black to (0.5, 1.0, 0.5) (intensity=5, focus=3)
-45: (constant)
+41-45: focusTint from black to white (intensity=5, focus=3)
 46-50: focusTint from black to green to white (exposure=-11, intensity=5, ies:file='bega_omni002_4777lm.ies')
 51-55: ies:angleScale from -1 to 1 (ies:file='bega_omni002_4777lm.ies', ies:normalize=on)"
 position -90.433 -100.765
@@ -2808,7 +2804,7 @@ flags = minimize off
 stat
 {
   create 1686112034
-  modify 1721601637
+  modify 1721679923
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -20927,7 +20923,7 @@ inputs
 stat
 {
   create 1680838012
-  modify 1721655322
+  modify 1721679658
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -23091,10 +23087,10 @@ return xform.extractRotates()[2]
       righttype = extend
       flags = 0
       start = 1.833333333333333
-      segment { options = {	 untie  is os ia oa }
+      segment { options = {	 untie  is os ia oa autoslope  ai }
 
-	 length = 0.041666666666666963 value = 0 -11 slope = -263.99999999999812 -263.99999999999812 accel = 3.6666929712861167 3.6666929712861167
-	 expr = linear() }
+	 length = 0.041666666666666963 value = 0 -11 slope = 0 -263.99999999999812 accel = 0.013888888888888987 3.6666929712861167
+	 expr = bezier() }
       segment { options = {	 untie  is os ia oa }
 
 	 length = 0.16666666666666652 value = -11 -11 accel = 0.055555555555555504 0.055555555555555504 expr = linear() }
@@ -23102,9 +23098,9 @@ return xform.extractRotates()[2]
 
 	 length = 0.041666666666666519 value = -11 0 slope = 264.00000000000097 264.00000000000097 accel = 3.6666929712861172 3.6666929712861172
 	 expr = linear() }
-      segment { options = {	 untie  is os ia oa }
+      segment { options = {	 untie  is os ia oa autoslope  ao }
 
-	 length = 0 accel = 0.33333333333333331 0.33333333333333331 expr = linear() }
+	 length = 0 accel = 0.33333333333333331 0.33333333333333331 expr = bezier() }
     }
     channel xn__inputsenableColorTemperature_omb {
       lefttype = extend
@@ -23407,10 +23403,10 @@ return xform.extractRotates()[2]
       righttype = extend
       flags = 0
       start = 1.833333333333333
-      segment { options = {	 untie  is os ia oa }
+      segment { options = {	 untie  is os ia oa autoslope  ai }
 
-	 length = 0.041666666666666963 value = 0 -1 slope = -23.999999999999829 -23.999999999999829 accel = 0.333622559707342 0.333622559707342
-	 expr = linear() }
+	 length = 0.041666666666666963 value = 0 -1 slope = 0 -23.999999999999829 accel = 0.013888888888888987 0.333622559707342
+	 expr = bezier() }
       segment { options = {	 untie  is os ia oa }
 
 	 length = 0.16666666666666652 value = -1 1 slope = 12.000000000000011 12.000000000000011 accel = 0.66897747659957196 0.66897747659957196
@@ -23423,10 +23419,10 @@ return xform.extractRotates()[2]
 
 	 length = 0.16666666666666696 value = -1 1 slope = 11.999999999999979 11.999999999999979 accel = 0.66897747659957196 0.66897747659957196
 	 expr = linear() }
-      segment { options = {	 untie  is os ia oa }
+      segment { options = {	 untie  is os ia oa autoslope  ao }
 
 	 length = 0 value = 1 0 slope = -23.999999999999957 0 accel = 8.0069414329761948 0.33333333333333331
-	 expr = linear() }
+	 expr = bezier() }
     }
   }
 
@@ -63548,7 +63544,7 @@ inputs
 stat
 {
   create 1721010894
-  modify 1721668733
+  modify 1721678051
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -65336,7 +65332,7 @@ inputs
 stat
 {
   create 1693531338
-  modify 1721622853
+  modify 1721678109
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -65513,31 +65509,6 @@ Content-Type: text/plain
         disablewhen "{ doubleSided_control == block } { doubleSided_control == none }"
         parmtag { "usdvaluetype" "bool" }
     }
-    parm {
-        name    "visibility_control"
-        label   "visibility"
-        type    string
-        default { "set" }
-        menujoin {
-            [ "import loputils" ]
-            [ "return loputils.createEditPropertiesControlMenu(kwargs, 'token')" ]
-            language python
-        }
-        parmtag { "sidefx::look" "icon" }
-    }
-    parm {
-        name    "visibility"
-        label   "visibility"
-        type    string
-        default { "inherited" }
-        help    "Visibility is meant to be the simplest form of \"pruning\" \n        visibility that is supported by most DCC apps.  Visibility is \n        animatable, allowing a sub-tree of geometry to be present for some \n        segment of a shot, and absent from others; unlike the action of \n        deactivating geometry prims, invisible geometry is still \n        available for inspection, for positioning, for defining volumes, etc."
-        disablewhen "{ visibility_control == block } { visibility_control == none }"
-        menu {
-            "inherited" "inherited"
-            "invisible" "invisible"
-        }
-        parmtag { "usdvaluetype" "token" }
-    }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="stage/editproperties3.chn"
@@ -65564,25 +65535,6 @@ Content-Type: text/plain
       default = 1
       flags = 0
       segment { length = 0 value = 1 1 expr = @ropinc }
-    }
-    channel visibility {
-      lefttype = extend
-      righttype = extend
-      defaultString = \"invisible\"
-      flags = 0
-      start = 0.79166666666666663
-      segment { options = {	 untie  is ia autoslope  ao }
-
-	 length = 0.041666666666666741 accel = 0.013888888888888912 0.013888888888888912 expr = \"invisible\" }
-      segment { options = {	 autoslope  ai ao }
-
-	 length = 0.16666666666666663 accel = 0.055555555555555539 0.055555555555555539 expr = \"inherited\" }
-      segment { options = {	 autoslope  ai ao }
-
-	 length = 0.041666666666666741 accel = 0.013888888888888912 0.013888888888888912 expr = \"inherited\" }
-      segment { options = {	 untie  os oa autoslope  ai }
-
-	 length = 0 accel = 0.33333333333333331 0.33333333333333331 expr = \"invisible\" }
     }
   }
 
@@ -65620,8 +65572,6 @@ sample_subframegroup2	[ 0	locks=0 ]	(	0	)
 createprimsgroup2	[ 0	locks=0 ]	(	1	)
 doubleSided_control	[ 0	locks=0 ]	(	set	)
 doubleSided	[ 0	locks=0 ]	(	"on"	)
-visibility_control	[ 0	locks=0 ]	(	set	)
-visibility	[ 0	locks=0	autoscope=1	autosel=4294967295 ]	(	[ visibility	inherited ] 	)
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -65665,7 +65615,7 @@ inputs
 stat
 {
   create 1721519284
-  modify 1721622853
+  modify 1721678194
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -65700,6 +65650,27 @@ Content-Type: text/plain
       flags = 0
       segment { length = 0 value = 1 1 expr = @finc }
     }
+    channel tz {
+      lefttype = extend
+      righttype = extend
+      default = 100
+      flags = 0
+      start = 0.79166666666666663
+      segment { options = {	 untie  is os ia oa }
+
+	 length = 0.041666666666666741 value = 100 0 slope = -2399.9999999999959 -2399.9999999999959 accel = 33.333336226851728 33.333336226851728
+	 expr = linear() }
+      segment { options = {	 untie  is os ia oa }
+
+	 length = 0.16666666666666663 accel = 0.055555555555555539 0.055555555555555539 expr = linear() }
+      segment { options = {	 untie  is os ia oa }
+
+	 length = 0.041666666666666741 value = 0 100 slope = 2399.9999999999959 2399.9999999999959 accel = 33.333336226851728 33.333336226851728
+	 expr = linear() }
+      segment { options = {	 untie  is os ia oa }
+
+	 length = 0 value = 100 100 accel = 0.33333333333333331 0.33333333333333331 expr = linear() }
+    }
   }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -65733,7 +65704,7 @@ xn__xformOptransform_control_6fb	[ 0	locks=0 ]	(	set	)
 xn__xformOptransform_51a	[ 0	locks=0 ]	(	append	)
 xOrd	[ 0	locks=0 ]	(	"srt"	)
 rOrd	[ 0	locks=0 ]	(	"xyz"	)
-t	[ 0	locks=0 ]	(	0	1	0	)
+t	[ 0	locks=0	autoscope=4	autosel=4294967295 ]	(	0	1	[ tz	0 ] 	)
 r	[ 0	locks=0 ]	(	-45	0	0	)
 s	[ 0	locks=0 ]	(	1	1	1	)
 shear	[ 0	locks=0 ]	(	0	0	0	)
@@ -73369,7 +73340,7 @@ inputs
 stat
 {
   create 1721622852
-  modify 1721668733
+  modify 1721678051
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -86369,7 +86340,7 @@ viewroto  -S file -F '$HH/pic/uvgrid_grey.pic' -C '' -a on -f 'scale' -o 0 0 -s 
 viewroto  -S file -F '' -C '' -a on -f 'scale' -o 0 0 -s 1 1 -O 1 -B 1 -e off image Solaris.pane1.solaris.persp1
 viewforeground -d on -f on -D Pz -s 0 Solaris.pane1.solaris.persp1
 viewforeground -o 1 Solaris.pane1.solaris.persp1
-viewtransform Solaris.pane1.solaris.persp1 version ( 3 )  flag ( Fax )  orthowidth ( 11.1111 )  focal ( 0.05 )  aperture ( 0.020955 )  window ( 0 1 0 1 )  winroll ( 0 )  clear ( 1 )  nearfar ( 1 1e+06 )  aspect ( 1 )  pixelaspect ( 1 )  txyz ( 0 0.00287802 29.9971 )  pxyz ( 0.00406591 0.00289597 -1.79502e-05 )  rotation ( 1 0 -0 -0 6.12323e-17 1 0 -1 6.12323e-17  )  homedistance ( 18.4123 )  homeadjboxwidth ( 11.1111 )  homeorthowidth ( 11.1111 )  homeradius ( 14.2829 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612372 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 3 )  fov (45)  
+viewtransform Solaris.pane1.solaris.persp1 version ( 3 )  flag ( Fax )  orthowidth ( 2.53023 )  focal ( 0.05 )  aperture ( 0.020955 )  window ( 0 1 0 1 )  winroll ( 0 )  clear ( 1 )  nearfar ( 1 1e+06 )  aspect ( 1 )  pixelaspect ( 1 )  txyz ( 0 5.23974 29.144 )  pxyz ( -3.21241 3.04788 2.19186 )  rotation ( 1 0 -0 -0 6.12323e-17 1 0 -1 6.12323e-17  )  homedistance ( 3.5551 )  homeadjboxwidth ( 2.53023 )  homeorthowidth ( 2.53023 )  homeradius ( 2.68124 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612372 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 3 )  fov (45)  
 viewcamera -c /cameras/camera1 Solaris.pane1.solaris.persp1
 vieworthogrid -d on -o 0 0 0 -s 0.2 0.2 -r 5 5 -R 1 Solaris.pane1.solaris.persp1
 viewuvgrid -r on -s 0.1 0.1 -P off -S 64 64 -O 0 0 -C on -t on Solaris.pane1.solaris.persp1
@@ -86514,7 +86485,7 @@ viewmaskoverlay -o 0.4 Solaris.pane1.solaris.right1
 viewsnapshotoption -s off -h off -a 1 -v '*' -m 0 Solaris.pane1.solaris
 cplane -o 0 0 0 -n 4.37114e-08 1 -4.37114e-08 -x 1.91069e-15 4.37114e-08 1 -l n -s 0.1 0.1 -c 40 40 -r 10 10 -d off Solaris.pane1.solaris
 glcache -t 9828 -v 39312
-sceneviewopts -C on -c on -e on -F on -g on -H on -i -1 -k """" -l on -m on -M off -p /Render/Settings -P off -s on -S 1 -r "HdArnoldRendererPlugin" -K off -R 512 512 -V off Solaris.pane1.solaris
+sceneviewopts -C on -c on -e on -F on -g on -H on -i -1 -k """" -l on -m on -M off -p /Render/Settings -P off -s on -S 1 -r "BRAY_HdKarma" -K off -R 512 512 -V off Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -r -m "Normal Lighting" "RenderMan XPU - CPU" Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -g -p -m "Normal Lighting" Storm Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -r -m "Normal Lighting" "Karma XPU" Solaris.pane1.solaris

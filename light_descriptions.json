@@ -165,7 +165,7 @@
             {
                 "frames": [
                     41,
-                    44
+                    45
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 5.0,
@@ -192,27 +192,14 @@
                             0.5,
                             1.0,
                             0.5
+                        ],
+                        "45": [
+                            1.0,
+                            1.0,
+                            1.0
                         ]
                     }
                 }
-            },
-            {
-                "frames": [
-                    45,
-                    45
-                ],
-                "non_default_constants": {
-                    "inputs:exposure": -5.861977570020827e-14,
-                    "inputs:intensity": 5.0,
-                    "inputs:shaping:focus": 3.0,
-                    "inputs:shaping:focusTint": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "inputs:shaping:ies:angleScale": -5.329070518200751e-15
-                },
-                "varying": {}
             },
             {
                 "frames": [
@@ -426,7 +413,7 @@
             {
                 "frames": [
                     41,
-                    44
+                    45
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 2.0,
@@ -453,27 +440,14 @@
                             0.5,
                             1.0,
                             0.5
+                        ],
+                        "45": [
+                            1.0,
+                            1.0,
+                            1.0
                         ]
                     }
                 }
-            },
-            {
-                "frames": [
-                    45,
-                    45
-                ],
-                "non_default_constants": {
-                    "inputs:exposure": -5.861977570020827e-14,
-                    "inputs:intensity": 2.0,
-                    "inputs:shaping:focus": 3.0,
-                    "inputs:shaping:focusTint": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "inputs:shaping:ies:angleScale": -5.329070518200751e-15
-                },
-                "varying": {}
             },
             {
                 "frames": [
@@ -1100,7 +1074,7 @@
             {
                 "frames": [
                     41,
-                    44
+                    45
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 2.0,
@@ -1128,28 +1102,14 @@
                             0.5,
                             1.0,
                             0.5
+                        ],
+                        "45": [
+                            1.0,
+                            1.0,
+                            1.0
                         ]
                     }
                 }
-            },
-            {
-                "frames": [
-                    45,
-                    45
-                ],
-                "non_default_constants": {
-                    "inputs:exposure": -5.861977570020827e-14,
-                    "inputs:intensity": 2.0,
-                    "inputs:shaping:focus": 3.0,
-                    "inputs:shaping:focusTint": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "inputs:shaping:ies:angleScale": -5.329070518200751e-15,
-                    "inputs:width": 2.0
-                },
-                "varying": {}
             },
             {
                 "frames": [
@@ -1365,7 +1325,7 @@
             {
                 "frames": [
                     41,
-                    44
+                    45
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 5.0,
@@ -1392,27 +1352,14 @@
                             0.5,
                             1.0,
                             0.5
+                        ],
+                        "45": [
+                            1.0,
+                            1.0,
+                            1.0
                         ]
                     }
                 }
-            },
-            {
-                "frames": [
-                    45,
-                    45
-                ],
-                "non_default_constants": {
-                    "inputs:exposure": -5.861977570020827e-14,
-                    "inputs:intensity": 5.0,
-                    "inputs:shaping:focus": 3.0,
-                    "inputs:shaping:focusTint": [
-                        1.0,
-                        1.0,
-                        1.0
-                    ],
-                    "inputs:shaping:ies:angleScale": -5.329070518200751e-15
-                },
-                "varying": {}
             },
             {
                 "frames": [
