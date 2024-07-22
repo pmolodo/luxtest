@@ -164,6 +164,25 @@ def Scope "Render"
     }
 }
 
+def Scope "materials"
+{
+    def Material "usdpreviewsurface1"
+    {
+        token outputs:displacement.connect = </materials/usdpreviewsurface1/usdpreviewsurface1.outputs:displacement>
+        token outputs:surface.connect = </materials/usdpreviewsurface1/usdpreviewsurface1.outputs:surface>
+
+        def Shader "usdpreviewsurface1"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor = (1, 1, 1)
+            float inputs:ior = 1
+            int inputs:useSpecularWorkflow = 1
+            token outputs:displacement
+            token outputs:surface
+        }
+    }
+}
+
 def Xform "cameras"
 {
     def Camera "camera1" (

@@ -31,7 +31,7 @@ set -g JOB = 'C:/Users/alanglands/Desktop/light_comparison'
 set -g PI = '3.1415926535897932384'
 set -g POSE = 'C:/Users/alanglands/Documents/houdini19.5/poselib'
 set -g _HIP_SAVEPLATFORM = 'windows-x86_64-cl19.35'
-set -g _HIP_SAVETIME = 'Sun Jul 21 15:41:36 2024'
+set -g _HIP_SAVETIME = 'Sun Jul 21 19:23:24 2024'
 set -g _HIP_SAVEVERSION = '20.0.653'
 set -g status = '0'
 
@@ -130,21 +130,21 @@ Content-Disposition: attachment; filename=".OPdummydefs"
 Content-Type: application/octet-stream
 Content-Transfer-Encoding: base64
 
-SU5EWAAAAAAAAAAAAAAACwAAAA1JTkRFWF9TRUNUSU9OAAAAAAAABalmnY6gAAAAEmhvdWRpbmkuaGRhbGlicmFyeQAABakAAAAAZp2OoAAAAApMb3AvY2FtZXJhAAAFqQAAjSlmnYdSAAAAD0xvcC9jcmVhdGV4Zm9ybQAAktI=
-AAAnSmadh1IAAAAVTG9wL2Rpc3RhbnRsaWdodDo6Mi4wAAC6HAAAu85mnYdSAAAAEkxvcC9kb21lbGlnaHQ6OjIuMAABdeoAAGv8Zp2HUgAAAA5Mb3AvbGlnaHQ6OjIuMAAB4eYAANtUZp2HUgAAABJUb3AvbG9jYWxzY2hlZHU=
-bGVyAAK9OgAAS6FmnYdSAAAADUxvcC9zb3BjcmVhdGUAAwjbAACEv2adh1IAAAAKTG9wL3NwaGVyZQADjZoAADJIZp2HwAAAABVWb3AvdXNkcHJldmlld3N1cmZhY2UAA7/iAAASRmadh1IAAAAJAAAABAAAAAZjYW1lcmEAAAA=
-BkNhbWVyYQAAABxvcGxpYjovTG9wL2NhbWVyYT9Mb3AvY2FtZXJhAAAACkxPUF9jYW1lcmEAAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3VidHlwZT1wcm9wZWRpdG9yIAAAAAAAAAABZp2OoAABAAAAAAQAAAALY3I=
+SU5EWAAAAAAAAAAAAAAACwAAAA1JTkRFWF9TRUNUSU9OAAAAAAAABalmncKcAAAAEmhvdWRpbmkuaGRhbGlicmFyeQAABakAAAAAZp3CnAAAAApMb3AvY2FtZXJhAAAFqQAAjSlmncIFAAAAD0xvcC9jcmVhdGV4Zm9ybQAAktI=
+AAAnSmadwgUAAAAVTG9wL2Rpc3RhbnRsaWdodDo6Mi4wAAC6HAAAu85mncIFAAAAEkxvcC9kb21lbGlnaHQ6OjIuMAABdeoAAGv8Zp3CBQAAAA5Mb3AvbGlnaHQ6OjIuMAAB4eYAANtUZp3CBQAAABJUb3AvbG9jYWxzY2hlZHU=
+bGVyAAK9OgAAS6FmncIFAAAADUxvcC9zb3BjcmVhdGUAAwjbAACEv2adwgUAAAAKTG9wL3NwaGVyZQADjZoAADJIZp3CBQAAABVWb3AvdXNkcHJldmlld3N1cmZhY2UAA7/iAAASRmadwgUAAAAJAAAABAAAAAZjYW1lcmEAAAA=
+BkNhbWVyYQAAABxvcGxpYjovTG9wL2NhbWVyYT9Mb3AvY2FtZXJhAAAACkxPUF9jYW1lcmEAAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3VidHlwZT1wcm9wZWRpdG9yIAAAAAAAAAABZp3CnAABAAAAAAQAAAALY3I=
 ZWF0ZXhmb3JtAAAABVhmb3JtAAAAJm9wbGliOi9Mb3AvY3JlYXRleGZvcm0/TG9wL2NyZWF0ZXhmb3JtAAAAD0xPUF9jcmVhdGV4Zm9ybQAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3I=
-IAAAAAAAAAABZp2OoAABAAAAAAQAAAARZGlzdGFudGxpZ2h0OjoyLjAAAAANRGlzdGFudCBMaWdodAAAADJvcGxpYjovTG9wL2Rpc3RhbnRsaWdodDo6Mi4wP0xvcC9kaXN0YW50bGlnaHQ6OjIuMAAAABBMT1BfZGlzdGFudGw=
-aWdodAAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAAAAAAFmnY6gAAEAAAAABAAAAA5kb21lbGlnaHQ6OjIuMAAAAApEb21lIExpZ2h0AAAALG9wbGliOi9Mb3AvZG9tZWxpZ2g=
-dDo6Mi4wP0xvcC9kb21lbGlnaHQ6OjIuMAAAAA1MT1BfZG9tZWxpZ2h0AAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAE3N1YnR5cGU9cHJvcGVkaXRvciAAAAAAAAAAAWadjqAAAQAAAAAEAAAACmxpZ2h0OjoyLjAAAAA=
-BUxpZ2h0AAAAJG9wbGliOi9Mb3AvbGlnaHQ6OjIuMD9Mb3AvbGlnaHQ6OjIuMAAAAAlMT1BfbGlnaHQAAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3VidHlwZT1wcm9wZWRpdG9yIAAAAAAAAAABZp2OoAABAAAAAAU=
+IAAAAAAAAAABZp3CnAABAAAAAAQAAAARZGlzdGFudGxpZ2h0OjoyLjAAAAANRGlzdGFudCBMaWdodAAAADJvcGxpYjovTG9wL2Rpc3RhbnRsaWdodDo6Mi4wP0xvcC9kaXN0YW50bGlnaHQ6OjIuMAAAABBMT1BfZGlzdGFudGw=
+aWdodAAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAAAAAAFmncKcAAEAAAAABAAAAA5kb21lbGlnaHQ6OjIuMAAAAApEb21lIExpZ2h0AAAALG9wbGliOi9Mb3AvZG9tZWxpZ2g=
+dDo6Mi4wP0xvcC9kb21lbGlnaHQ6OjIuMAAAAA1MT1BfZG9tZWxpZ2h0AAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAE3N1YnR5cGU9cHJvcGVkaXRvciAAAAAAAAAAAWadwpwAAQAAAAAEAAAACmxpZ2h0OjoyLjAAAAA=
+BUxpZ2h0AAAAJG9wbGliOi9Mb3AvbGlnaHQ6OjIuMD9Mb3AvbGlnaHQ6OjIuMAAAAAlMT1BfbGlnaHQAAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3VidHlwZT1wcm9wZWRpdG9yIAAAAAAAAAABZp3CnAABAAAAAAU=
 AAAADmxvY2Fsc2NoZWR1bGVyAAAAD0xvY2FsIFNjaGVkdWxlcgAAACxvcGxpYjovVG9wL2xvY2Fsc2NoZWR1bGVyP1RvcC9sb2NhbHNjaGVkdWxlcgAAABJUT1BfbG9jYWxzY2hlZHVsZXIAAAAAAAAAAAAAAANUb3AAAAAAAAA=
-AAAAAAAAAAAAPHBkZ3R5cGU9J3NjaGVkdWxlcicgc3VidHlwZT1sb2NhbHNjaGVkdWxlciB2aXNpYmxlb3V0cHV0cz0wIAAAAAAAAAAAZp2OoAABAAAAAAAAAAAEAAAACXNvcGNyZWF0ZQAAAApTT1AgQ3JlYXRlAAAAIm9wbGk=
-YjovTG9wL3NvcGNyZWF0ZT9Mb3Avc29wY3JlYXRlAAAADUxPUF9zb3BjcmVhdGUAAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFmnY6gAQEAAAAABAAAAAZzcGhlcmUAAAAGU3BoZXJlAAAAHG9wbGliOi8=
-TG9wL3NwaGVyZT9Mb3Avc3BoZXJlAAAACkxPUF9zcGhlcmUAAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3VidHlwZT1wcm9wZWRpdG9yIAAAAAAAAAABZp2OoAABAAAAAAQAAAARdXNkcHJldmlld3N1cmZhY2UAAAA=
+AAAAAAAAAAAAPHBkZ3R5cGU9J3NjaGVkdWxlcicgc3VidHlwZT1sb2NhbHNjaGVkdWxlciB2aXNpYmxlb3V0cHV0cz0wIAAAAAAAAAAAZp3CnAABAAAAAAAAAAAEAAAACXNvcGNyZWF0ZQAAAApTT1AgQ3JlYXRlAAAAIm9wbGk=
+YjovTG9wL3NvcGNyZWF0ZT9Mb3Avc29wY3JlYXRlAAAADUxPUF9zb3BjcmVhdGUAAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFmncKcAQEAAAAABAAAAAZzcGhlcmUAAAAGU3BoZXJlAAAAHG9wbGliOi8=
+TG9wL3NwaGVyZT9Mb3Avc3BoZXJlAAAACkxPUF9zcGhlcmUAAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3VidHlwZT1wcm9wZWRpdG9yIAAAAAAAAAABZp3CnAABAAAAAAQAAAARdXNkcHJldmlld3N1cmZhY2UAAAA=
 E1VTRCBQcmV2aWV3IFN1cmZhY2UAAAAyb3BsaWI6L1ZvcC91c2RwcmV2aWV3c3VyZmFjZT9Wb3AvdXNkcHJldmlld3N1cmZhY2UAAAAVVk9QX3VzZHByZXZpZXdzdXJmYWNlAAAAAAAAAAAAAAADVm9wAAAAAAAAAAAAAAAAAAA=
-AAN1c2QAAAAAAAAADWadjqAAAQBJTkRYAAAAAAAAAAAAAAABAAAADERpYWxvZ1NjcmlwdAAAAAAAAIz9ZQ5nxCMgRGlhbG9nIHNjcmlwdCBmb3IgY2FtZXJhIGF1dG9tYXRpY2FsbHkgZ2VuZXJhdGVkCgp7CiAgICBuYW1lCWM=
+AAN1c2QAAAAAAAAAAGadwpwAAQBJTkRYAAAAAAAAAAAAAAABAAAADERpYWxvZ1NjcmlwdAAAAAAAAIz9ZQ5nxCMgRGlhbG9nIHNjcmlwdCBmb3IgY2FtZXJhIGF1dG9tYXRpY2FsbHkgZ2VuZXJhdGVkCgp7CiAgICBuYW1lCWM=
 YW1lcmEKICAgIHNjcmlwdAljYW1lcmEKICAgIGxhYmVsCUNhbWVyYQoKICAgIGhlbHAgewoJIiIKICAgIH0KCiAgICBpbnB1dGxhYmVsCTEJIklucHV0IFN0YWdlIgoKICAgIGdyb3VwY29sbGFwc2libGUgewogICAgICAgIG4=
 YW1lICAgICJzYW1wbGVfZ3JvdXAyIgogICAgICAgIGxhYmVsICAgIkZyYW1lIFJhbmdlL1N1YmZyYW1lcyIKICAgICAgICBwYXJtdGFnIHsgInNpZGVmeDo6aGVhZGVyX3Bhcm0iICJzYW1wbGVfYmVoYXZpb3IiIH0KCiAgICA=
 ICAgIHBhcm0gewogICAgICAgICAgICBuYW1lICAgICJzYW1wbGVfYmVoYXZpb3IiCiAgICAgICAgICAgIGJhc2VwYXJtCiAgICAgICAgICAgIGxhYmVsICAgIlNhbXBsaW5nIEJlaGF2aW9yIgogICAgICAgICAgICBleHBvcnQ=
@@ -1686,8 +1686,8 @@ bGxiYWNrX2xhbmd1YWdlIiAiaHNjcmlwdCIgfQoKICAgICAgICAgICAgICAgIHBhcm0gewogICAgICAg
 YW1lIgogICAgICAgICAgICAgICAgICAgIHR5cGUgICAgc3RyaW5nCiAgICAgICAgICAgICAgICAgICAgam9pbm5leHQKICAgICAgICAgICAgICAgICAgICBkZWZhdWx0IHsgIiIgfQogICAgICAgICAgICAgICAgICAgIHBhcm0=
 dGFnIHsgInBkZzo6c2NoZWR1bGVyIiAiIiB9CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBwYXJtIHsKICAgICAgICAgICAgICAgICAgICBuYW1lICAgICJsb2NhbF9lbnZ2YWx1ZSMiCiAgICAgICAgICAgICA=
 ICAgICAgIGxhYmVsICAgIlZhbHVlIgogICAgICAgICAgICAgICAgICAgIHR5cGUgICAgc3RyaW5nCiAgICAgICAgICAgICAgICAgICAgZGVmYXVsdCB7ICIiIH0KICAgICAgICAgICAgICAgICAgICBwYXJtdGFnIHsgInBkZzo=
-OnNjaGVkdWxlciIgIiIgfQogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CgogICAgICAgIH0KCiAgICB9Cgp9CklORFgAAAAAAAAAAAAAAAIAAAAIQ29udGVudHMAAAAAAAAAV2adh1IAAAAMRGlhbG9nU2NyaXB0AAA=
-AFcAAIQkZQ5nyjA3MDcwNzAwMDAwMTAwMDAwMDAwMDY2NjAwMDAwMDAwMDAwMDAwMDAwMTAwMDAwMDE0NjQ3MzAzNTIyMDAwMDEzMDAwMDAwMDAwMDBUUkFJTEVSISEhACMgRGlhbG9nIHNjcmlwdCBmb3Igc29wY3JlYXRlIGE=
+OnNjaGVkdWxlciIgIiIgfQogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CgogICAgICAgIH0KCiAgICB9Cgp9CklORFgAAAAAAAAAAAAAAAIAAAAIQ29udGVudHMAAAAAAAAAV2adwgUAAAAMRGlhbG9nU2NyaXB0AAA=
+AFcAAIQkZQ5nyjA3MDcwNzAwMDAwMTAwMDAwMDAwMDY2NjAwMDAwMDAwMDAwMDAwMDAwMTAwMDAwMDE0NjQ3MzQxMDA1MDAwMDEzMDAwMDAwMDAwMDBUUkFJTEVSISEhACMgRGlhbG9nIHNjcmlwdCBmb3Igc29wY3JlYXRlIGE=
 dXRvbWF0aWNhbGx5IGdlbmVyYXRlZAoKewogICAgbmFtZQlzb3BjcmVhdGUKICAgIHNjcmlwdAlzb3BjcmVhdGUKICAgIGxhYmVsCSJTT1AgQ3JlYXRlIgoKICAgIGhlbHAgewoJIiIKICAgIH0KICAgIGJpbmRoYW5kbGUgcHI=
 eCB4Zm9ybSAiVHJhbnNmb3JtZXIiIHBpdm90X3J4ICIiCiAgICBiaW5kaGFuZGxlIHByeSB4Zm9ybSAiVHJhbnNmb3JtZXIiIHBpdm90X3J5ICIiCiAgICBiaW5kaGFuZGxlIHByeiB4Zm9ybSAiVHJhbnNmb3JtZXIiIHBpdm8=
 dF9yeiAiIgogICAgYmluZGhhbmRsZSBweCB4Zm9ybSAiVHJhbnNmb3JtZXIiIHB4ICIiCiAgICBiaW5kaGFuZGxlIHB5IHhmb3JtICJUcmFuc2Zvcm1lciIgcHkgIiIKICAgIGJpbmRoYW5kbGUgcHogeGZvcm0gIlRyYW5zZm8=
@@ -2224,7 +2224,7 @@ inputs
 stat
 {
   create 1680755038
-  modify 1721601640
+  modify 1721612680
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -2287,11 +2287,11 @@ Content-Type: text/plain
 	minimized := 0;
 	width := 46.268619620839715;
 	x_position := -54.92023508686933;
-	y_position := -18.232534020296537;
+	y_position := -17.338334020296536;
 }
 {
   create 1720203512
-  modify 1721599836
+  modify 1721614863
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2310,11 +2310,11 @@ Content-Type: text/plain
 	minimized := 0;
 	width := 87.14706725874511;
 	x_position := -96.54881030091049;
-	y_position := -39.18178826737737;
+	y_position := -38.28758826737737;
 }
 {
   create 1720203512
-  modify 1721599835
+  modify 1721614862
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2333,11 +2333,11 @@ Content-Type: text/plain
 	minimized := 0;
 	width := 73.27181015936357;
 	x_position := -85.14821715486565;
-	y_position := -61.86015324623605;
+	y_position := -60.965953246236054;
 }
 {
   create 1720203512
-  modify 1721599835
+  modify 1721614862
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2356,11 +2356,11 @@ Content-Type: text/plain
 	minimized := 0;
 	width := 88.82367118848519;
 	x_position := -101.23984597044219;
-	y_position := -81.49899456881029;
+	y_position := -80.60479456881029;
 }
 {
   create 1720203512
-  modify 1721599835
+  modify 1721614862
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2379,11 +2379,11 @@ Content-Type: text/plain
 	minimized := 0;
 	width := 82.845025218043;
 	x_position := -95.2612;
-	y_position := -102.7694480641455;
+	y_position := -101.8752480641455;
 }
 {
   create 1720203512
-  modify 1721599834
+  modify 1721614861
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2402,11 +2402,11 @@ Content-Type: text/plain
 	minimized := 0;
 	width := 34.49889385931993;
 	x_position := 9.57291600196305;
-	y_position := -35.376699999547;
+	y_position := -34.482499999547;
 }
 {
   create 1720203512
-  modify 1721599836
+  modify 1721614863
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2425,11 +2425,11 @@ Content-Type: text/plain
 	minimized := 0;
 	width := 36.12458232483392;
 	x_position := 8.21565288298133;
-	y_position := -54.61837296605255;
+	y_position := -53.72417296605255;
 }
 {
   create 1720203512
-  modify 1721599835
+  modify 1721614862
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2444,15 +2444,15 @@ Content-Type: text/plain
 	autofit := 0;
 	color := "UT_Color RGB 0 0 0 ";
 	comment := "";
-	height := 19.07585776979972;
+	height := 19.075904881644377;
 	minimized := 0;
-	width := 73.27181015936357;
-	x_position := 8.627916587992573;
-	y_position := -0.08892789422309555;
+	width := 42.009125831930774;
+	x_position := 8.880035009988006;
+	y_position := 1.687639470916237;
 }
 {
   create 1720203512
-  modify 1721600048
+  modify 1721614864
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2469,7 +2469,7 @@ Content-Disposition: attachment; filename="stage/__stickynote1.postitdef"
 Content-Type: text/plain
 
 text RECT
-position -40.2485 -34.5171
+position -40.2485 -33.6229
 size 18.735 8.2073
 textsize 3
 flags = minimize off
@@ -2501,7 +2501,7 @@ Content-Disposition: attachment; filename="stage/__stickynote3.postitdef"
 Content-Type: text/plain
 
 text "DISTANT "
-position -37.2267 -16.1662
+position -37.2267 -15.272
 size 12.6929 4.16257
 textsize 3
 flags = minimize off
@@ -2533,7 +2533,7 @@ Content-Disposition: attachment; filename="stage/__stickynote4.postitdef"
 Content-Type: text/plain
 
 text SPHERE
-position -35.8448 -53.4171
+position -35.8448 -52.5229
 size 11.7408 7.78069
 textsize 3
 flags = minimize off
@@ -2565,7 +2565,7 @@ Content-Disposition: attachment; filename="stage/__stickynote5.postitdef"
 Content-Type: text/plain
 
 text DISK
-position -41.529 -73.5447
+position -41.529 -72.6505
 size 18.735 8.19845
 textsize 3
 flags = minimize off
@@ -2597,7 +2597,7 @@ Content-Disposition: attachment; filename="stage/__stickynote6.postitdef"
 Content-Type: text/plain
 
 text CYLINDER
-position -41.3588 -98.3792
+position -41.3588 -97.485
 size 18.735 11.2024
 textsize 3
 flags = minimize off
@@ -2629,7 +2629,7 @@ Content-Disposition: attachment; filename="stage/__stickynote7.postitdef"
 Content-Type: text/plain
 
 text DOME
-position 11.7646 -30.2449
+position 11.7646 -29.3507
 size 18.735 5.95574
 textsize 3
 flags = minimize off
@@ -2661,7 +2661,7 @@ Content-Disposition: attachment; filename="stage/__stickynote8.postitdef"
 Content-Type: text/plain
 
 text VISIBLERECT
-position 11.8387 -52.6399
+position 11.8387 -51.7457
 size 18.735 6.22715
 textsize 3
 flags = minimize off
@@ -2697,7 +2697,7 @@ text "1-5: light rotate worldZ from 0 to 80 (intensity 3720) (intensity=3720)
 11-20: angle from 0 to 180 (intensity=.3)
 21-30: angle from 0 to 180 (intensity=.3, normalize=on)
 31-35: colorTemperature from 2000 to 11000 (enableColorTemperature=on, intensity=3720)"
-position -50.4832 -10.3999
+position -50.4832 -9.5057
 size 39.9841 8.1596
 textsize 1
 flags = minimize off
@@ -2740,7 +2740,7 @@ text "1-5: light rotate worldZ from 0 to 80 (intensity=2, width=.2)
 45: (constant)
 46-50: focusTint from black to green to white (exposure=-11, intensity=2, ies:file='bega_omni002_4777lm.ies', width=2)
 51-55: ies:angleScale from -1 to 1 (ies:file='bega_omni002_4777lm.ies', ies:normalize=on, width=2)"
-position -95.2612 -38.6683
+position -95.2612 -37.7741
 size 52.127 15.6222
 textsize 1
 flags = minimize off
@@ -2783,7 +2783,7 @@ text "1-5: light rotate worldZ from 0 to 80 (intensity=5)
 45: (constant)
 46-50: focusTint from black to green to white (exposure=-11, intensity=5, ies:file='bega_omni002_4777lm.ies')
 51-55: ies:angleScale from -1 to 1 (ies:file='bega_omni002_4777lm.ies', ies:normalize=on)"
-position -84.2882 -59.7917
+position -84.2882 -58.8975
 size 47.6087 16.0346
 textsize 1
 flags = minimize off
@@ -2826,7 +2826,7 @@ text "1-5: light rotate worldZ from 0 to 80 (intensity=2)
 45: (constant)
 46-50: focusTint from black to green to white (exposure=-11, intensity=2, ies:file='bega_omni002_4777lm.ies')
 51-55: ies:angleScale from -1 to 1 (ies:file='bega_omni002_4777lm.ies', ies:normalize=on)"
-position -88.703 -80.4565
+position -88.703 -79.5623
 size 45.6695 15.7789
 textsize 1
 flags = minimize off
@@ -2869,7 +2869,7 @@ text "1-5: light rotate worldZ from 0 to 80 (intensity=5)
 45: (constant)
 46-50: focusTint from black to green to white (exposure=-11, intensity=5, ies:file='bega_omni002_4777lm.ies')
 51-55: ies:angleScale from -1 to 1 (ies:file='bega_omni002_4777lm.ies', ies:normalize=on)"
-position -90.433 -101.659
+position -90.433 -100.765
 size 46.8295 15.9905
 textsize 1
 flags = minimize off
@@ -2901,7 +2901,7 @@ Content-Disposition: attachment; filename="stage/__stickynote19.postitdef"
 Content-Type: text/plain
 
 text "1: one frame only - textured"
-position 12.2527 -23.1979
+position 12.2527 -22.3037
 size 13.7462 2.73928
 textsize 1
 flags = minimize off
@@ -2933,7 +2933,7 @@ Content-Disposition: attachment; filename="stage/__stickynote20.postitdef"
 Content-Type: text/plain
 
 text "1: one frame only"
-position 16.7193 -44.6149
+position 16.7193 -43.7207
 size 8.52352 2.50394
 textsize 1
 flags = minimize off
@@ -2965,7 +2965,7 @@ Content-Disposition: attachment; filename="stage/__stickynote21.postitdef"
 Content-Type: text/plain
 
 text iesTest
-position 57.9313 8.35413
+position 26.9207 10.1307
 size 11.7408 7.78069
 textsize 3
 flags = minimize off
@@ -2997,7 +2997,7 @@ Content-Disposition: attachment; filename="stage/__stickynote22.postitdef"
 Content-Type: text/plain
 
 text "1-5: cam rotateX, 0-180"
-position 42.4543 1.97953
+position 11.4437 3.75614
 size 14.6424 16.0346
 textsize 1
 flags = minimize off
@@ -3029,7 +3029,7 @@ Content-Disposition: attachment; filename="stage/small_angled_rect.def"
 Content-Type: text/plain
 
 comment ""
-position -6.74077 -15.7939
+position -6.74077 -14.8997
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -3047,7 +3047,7 @@ inputs
 stat
 {
   create 1693529537
-  modify 1721583706
+  modify 1721604889
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -3178,7 +3178,7 @@ Content-Disposition: attachment; filename="stage/assignmaterial4.def"
 Content-Type: text/plain
 
 comment ""
-position -6.74077 -17.7144
+position -6.74077 -16.8202
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -3196,7 +3196,7 @@ inputs
 stat
 {
   create 1693529582
-  modify 1721583706
+  modify 1721604889
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -3260,7 +3260,7 @@ Content-Disposition: attachment; filename="stage/backward_light_catcher.def"
 Content-Type: text/plain
 
 comment ""
-position -6.74077 -23.1918
+position -6.74077 -22.2976
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -3278,7 +3278,7 @@ inputs
 stat
 {
   create 1680758693
-  modify 1721583701
+  modify 1721604889
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -3409,7 +3409,7 @@ Content-Disposition: attachment; filename="stage/assignmaterial5.def"
 Content-Type: text/plain
 
 comment ""
-position -6.74077 -25.9565
+position -6.74077 -25.0623
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -3427,7 +3427,7 @@ inputs
 stat
 {
   create 1680758878
-  modify 1721583701
+  modify 1721604889
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -3491,7 +3491,7 @@ Content-Disposition: attachment; filename="stage/floor_plane.def"
 Content-Type: text/plain
 
 comment ""
-position -6.52988 -8.28458
+position -6.52988 -7.39038
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -3509,7 +3509,7 @@ inputs
 stat
 {
   create 1680758693
-  modify 1721519086
+  modify 1721604889
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -3640,7 +3640,7 @@ Content-Disposition: attachment; filename="stage/assignmaterial1.def"
 Content-Type: text/plain
 
 comment ""
-position -6.52988 -10.4545
+position -6.52988 -8.53419
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -3649,16 +3649,16 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	materiallibrary1 1 1 "input1"
+0 	floor_plane 0 1 "input1"
 }
 inputs
 {
-0 	materiallibrary1 0 1
+0 	floor_plane 0 1
 }
 stat
 {
   create 1680758878
-  modify 1721519086
+  modify 1721604889
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -3722,7 +3722,7 @@ Content-Disposition: attachment; filename="stage/materiallibrary1.def"
 Content-Type: text/plain
 
 comment ""
-position -6.52988 -9.4516
+position -6.5666 0.296438
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -3731,16 +3731,16 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	floor_plane 0 1 "input1"
+0 	inlineusd_rendersettings 1 1 "input1"
 }
 inputs
 {
-0 	floor_plane 0 1
+0 	inlineusd_rendersettings 0 1
 }
 stat
 {
   create 1680758906
-  modify 1721519086
+  modify 1721605078
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -3838,7 +3838,7 @@ inputs
 stat
 {
   create 1680758920
-  modify 1693528875
+  modify 1721605077
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -3878,6 +3878,94 @@ Content-Type: text/plain
 	"___Version___":{
 		"type":"string",
 		"value":""
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="stage/assignmaterial6.init"
+Content-Type: text/plain
+
+type = assignmaterial
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="stage/assignmaterial6.def"
+Content-Type: text/plain
+
+comment ""
+position 42.8864 13.3959
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
+outputsNamed3
+{
+1 "output1"
+}
+inputsNamed3
+{
+0 	sphere_iesTest 1 1 "input1"
+}
+inputs
+{
+0 	sphere_iesTest 0 1
+}
+stat
+{
+  create 1693529582
+  modify 1721605111
+  author alanglands@DESKTOP-9RVQ9GM
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="stage/assignmaterial6.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+nummaterials	[ 0	locks=0 ]	(	1	)
+enable1	[ 0	locks=0 ]	(	"on"	)
+primpattern1	[ 0	locks=0 ]	(	"`lopinputprims('.', 0)`"	)
+matspecmethod1	[ 0	locks=0 ]	(	"path"	)
+matspecpath1	[ 0	locks=0 ]	(	/materials/usdpreviewsurface1	)
+matspeccvex1	[ 0	locks=0 ]	(	""	)
+matspecvexpr1	[ 0	locks=0 ]	(	""	)
+parmsovermethod1	[ 0	locks=0 ]	(	"none"	)
+parmsovercvex1	[ 0	locks=0 ]	(	""	)
+parmsovervexpr1	[ 0	locks=0 ]	(	""	)
+parmsoverexports1	[ 0	locks=0 ]	(	*	)
+matparentpath1	[ 0	locks=0 ]	(	/materials	)
+matparenttype1	[ 0	locks=0 ]	(	UsdGeomScope	)
+cvexbindingsfolder1	[ 0	locks=0 ]	(	0	)
+cvexautobind1	[ 0	locks=0 ]	(	"on"	)
+cvexbindings1	[ 0	locks=0 ]	(	0	)
+matbindingfolder1	[ 0	locks=0 ]	(	0	)
+geosubset1	[ 0	locks=0 ]	(	"off"	)
+bindpurpose1	[ 0	locks=0 ]	(	""	)
+bindstrength1	[ 0	locks=0 ]	(	"fallback"	)
+bindmethod1	[ 0	locks=0 ]	(	"direct"	)
+bindcollectionexpand1	[ 0	locks=0 ]	(	"off"	)
+bindpath1	[ 0	locks=0 ]	(	""	)
+bindname1	[ 0	locks=0 ]	(	""	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="stage/assignmaterial6.netbox"
+Content-Type: text/plain
+
+__netbox10
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="stage/assignmaterial6.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"20.0.653"
 	}
 }
 
@@ -8551,7 +8639,7 @@ Content-Disposition: attachment; filename="stage/usd_rop_iesTest.def"
 Content-Type: text/plain
 
 comment ""
-position 72.5052 2.53413
+position 41.4946 4.31074
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -8568,7 +8656,7 @@ inputs
 stat
 {
   create 1680837817
-  modify 1721601309
+  modify 1721611750
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -8993,7 +9081,7 @@ Content-Type: text/plain
       righttype = extend
       default = 40
       flags = 0
-      segment { length = 0 value = 240 240 expr = 5 }
+      segment { length = 0 value = 240 240 expr = 22 }
     }
   }
 
@@ -9103,7 +9191,7 @@ Content-Disposition: attachment; filename="stage/render_karma_iesTest.def"
 Content-Type: text/plain
 
 comment ""
-position 76.447 2.53413
+position 45.4364 4.31074
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -9120,7 +9208,7 @@ inputs
 stat
 {
   create 1697492429
-  modify 1721599435
+  modify 1721605111
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -10290,7 +10378,7 @@ Content-Disposition: attachment; filename="stage/render_arnold_iesTest.def"
 Content-Type: text/plain
 
 comment ""
-position 76.6162 0.166225
+position 45.6056 1.94284
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -10307,7 +10395,7 @@ inputs
 stat
 {
   create 1697492429
-  modify 1721599435
+  modify 1721605111
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -11477,7 +11565,7 @@ Content-Disposition: attachment; filename="stage/render_ris_iesTest.def"
 Content-Type: text/plain
 
 comment ""
-position 76.447 1.52753
+position 45.4364 3.30414
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -11494,7 +11582,7 @@ inputs
 stat
 {
   create 1697492429
-  modify 1721599435
+  modify 1721605111
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -12664,7 +12752,7 @@ Content-Disposition: attachment; filename="stage/editproperties_iesTest.def"
 Content-Type: text/plain
 
 comment ""
-position 73.7948 5.43193
+position 42.7842 7.20854
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -12682,7 +12770,7 @@ inputs
 stat
 {
   create 1721010894
-  modify 1721599324
+  modify 1721605111
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -12966,7 +13054,7 @@ Content-Disposition: attachment; filename="stage/iesTest_light.def"
 Content-Type: text/plain
 
 comment ""
-position 73.7949 8.37829
+position 42.7843 10.1549
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -12975,16 +13063,16 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	sphere_iesTest 1 1 "input1"
+0 	assignmaterial6 1 1 "input1"
 }
 inputs
 {
-0 	sphere_iesTest 0 1
+0 	assignmaterial6 0 1
 }
 stat
 {
   create 1721598557
-  modify 1721600048
+  modify 1721614935
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -15575,6 +15663,58 @@ return xform.extractRotates()[2]
       flags = 0
       segment { length = 0 expr = "1 / __import__('loputils').getMetersPerUnit(pwd())" language = python }
     }
+    channel xn__inputsshapingiesfile_n8ahd {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { options = {	 untie  os oa autoslope  ai }
+
+	 length = 0.041666666666666664 accel = 0.013888888888888888 0.013888888888888888 expr = \"\" }
+      segment { options = {	 untie  is ia autoslope  ao }
+
+	 length = 0.41666666666666663 accel = 0.13888888888888887 0.13888888888888887 expr = \"C:/src/NVIDIA/luxtest/test_vertical_bands2.ies\" }
+      segment { options = {	 untie  os oa autoslope  ai }
+
+	 length = 0.041666666666666685 accel = 0.013888888888888895 0.013888888888888895 expr = \"\" }
+      segment { options = {	 untie  is ia autoslope  ao }
+
+	 length = 0 accel = 0.33333333333333331 0.33333333333333331 expr = \"C:/src/NVIDIA/luxtest/test_vertical_bands2.ies\" }
+    }
+    channel xn__inputsshapingiesangleScale_fjbhd {
+      lefttype = extend
+      righttype = extend
+      default = -1
+      flags = 0
+      start = 0.041666666666666664
+      segment { options = {	 untie  is os ia oa }
+
+	 length = 0.041666666666666664 value = 0 -1 slope = -24 -24 accel = 0.333622559707342 0.333622559707342
+	 expr = linear() }
+      segment { options = {	 untie  is os ia oa }
+
+	 length = 0.33333333333333331 value = -1 1 slope = 6 6 accel = 0.6758625033664688 0.6758625033664688
+	 expr = linear() }
+      segment { options = {	 untie  is os ia oa }
+
+	 length = 0.04166666666666663 value = 1 0 slope = -24.000000000000021 -24.000000000000021 accel = 0.333622559707342 0.333622559707342
+	 expr = linear() }
+      segment { options = {	 untie  is os ia oa }
+
+	 length = 0.041666666666666685 accel = 0.013888888888888895 0.013888888888888895 expr = linear() }
+      segment { options = {	 untie  is os ia oa }
+
+	 length = 0.04166666666666663 value = 0 -1 slope = -24.000000000000021 -24.000000000000021 accel = 0.333622559707342 0.333622559707342
+	 expr = linear() }
+      segment { options = {	 untie  is os ia oa }
+
+	 length = 0.33333333333333343 value = -1 1 slope = 5.9999999999999982 5.9999999999999982 accel = 0.6758625033664688 0.6758625033664688
+	 expr = linear() }
+      segment { options = {	 untie  is os ia oa }
+
+	 length = 0 value = 1 0 slope = -24.000000000000021 0 accel = 8.0069414329762161 0.33333333333333331
+	 expr = linear() }
+    }
   }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -15620,7 +15760,7 @@ xn__xformOptransform_51a	[ 0	locks=0 ]	(	append	)
 xOrd	[ 0	locks=0 ]	(	"srt"	)
 rOrd	[ 0	locks=0 ]	(	"xyz"	)
 t	[ 0	locks=0 ]	(	0	0	0	)
-r	[ 0	locks=0 ]	(	0	0	0	)
+r	[ 0	locks=0	autoscope=0	autosel=4294967295 ]	(	0	0	0	)
 s	[ 0	locks=0 ]	(	1	1	1	)
 pret	[ 0	locks=0 ]	(	0	0	0	)
 prer	[ 0	locks=0 ]	(	0	-0	0	)
@@ -15640,9 +15780,9 @@ upvecmethod	[ 0	locks=0 ]	(	yaxis	)
 upvec	[ 0	locks=0 ]	(	0	1	0	)
 twist	[ 0	locks=0 ]	(	0	)
 xn__inputsintensity_control_jeb	[ 0	locks=0 ]	(	set	)
-xn__inputsintensity_i0a	[ 0	locks=0 ]	(	10000	)
+xn__inputsintensity_i0a	[ 0	locks=0 ]	(	1e8	)
 xn__inputsexposure_control_wcb	[ 0	locks=0 ]	(	set	)
-xn__inputsexposure_vya	[ 0	locks=0 ]	(	0	)
+xn__inputsexposure_vya	[ 0	locks=0 ]	(	1	)
 xn__inputscolor_control_06a	[ 0	locks=0 ]	(	set	)
 xn__inputscolor_zta	[ 0	locks=0 ]	(	1	1	1	)
 xn__inputsenableColorTemperature_control_pzb	[ 0	locks=0 ]	(	set	)
@@ -15654,7 +15794,7 @@ xn__inputstexturefile_r3ah	[ 0	locks=0 ]	(	""	)
 geometry_control	[ 0	locks=0 ]	(	set	)
 geometry	[ 0	locks=0 ]	(	""	)
 xn__inputsradius_control_n8a	[ 0	locks=0 ]	(	set	)
-xn__inputsradius_mva	[ 0	locks=0 ]	(	0.5	)
+xn__inputsradius_mva	[ 8	locks=0 ]	(	0.005	)
 xn__inputswidth_control_06a	[ 0	locks=0 ]	(	set	)
 xn__inputswidth_zta	[ 0	locks=0 ]	(	1	)
 xn__inputsheight_control_n8a	[ 0	locks=0 ]	(	set	)
@@ -15677,10 +15817,10 @@ xn__houdiniinviewermenu_control_2kb	[ 0	locks=0 ]	(	set	)
 xn__houdiniinviewermenu_16a	[ 0	locks=0 ]	(	"on"	)
 xn__lightfilters_control_m8a	[ 0	locks=0 ]	(	set	)
 xn__lightfilters_lva	[ 0	locks=0 ]	(	""	)
-spotlightenable	[ 0	locks=0 ]	(	"off"	)
+spotlightenable	[ 0	locks=0 ]	(	"on"	)
 spotlightdist	[ 0	locks=0 ]	(	0	)
 xn__inputsshapingconeangle_control_xpbhe	[ 0	locks=0 ]	(	set	)
-xn__inputsshapingconeangle_wcbhe	[ 0	locks=0 ]	(	90	)
+xn__inputsshapingconeangle_wcbhe	[ 0	locks=0 ]	(	180	)
 xn__inputsshapingconesoftness_control_tubhe	[ 0	locks=0 ]	(	set	)
 xn__inputsshapingconesoftness_shbhe	[ 0	locks=0 ]	(	0	)
 barndoorleft_control	[ 0	locks=0 ]	(	set	)
@@ -15706,11 +15846,11 @@ xn__inputsshapingfocusTint_control_xpbh	[ 0	locks=0 ]	(	set	)
 xn__inputsshapingfocusTint_wcbh	[ 0	locks=0 ]	(	0	0	0	)
 iesenable	[ 0	locks=0 ]	(	"on"	)
 xn__inputsshapingiesfile_control_ombhd	[ 0	locks=0 ]	(	set	)
-xn__inputsshapingiesfile_n8ahd	[ 0	locks=0 ]	(	C:/src/NVIDIA/luxtest/test_linear_vertical.ies	)
+xn__inputsshapingiesfile_n8ahd	[ 0	locks=0	autoscope=1	autosel=4294967295 ]	(	[ xn__inputsshapingiesfile_n8ahd	"" ] 	)
 xn__inputsshapingiesnormalize_control_tubhd	[ 0	locks=0 ]	(	set	)
 xn__inputsshapingiesnormalize_shbhd	[ 0	locks=0 ]	(	"off"	)
 xn__inputsshapingiesangleScale_control_gwbhd	[ 0	locks=0 ]	(	set	)
-xn__inputsshapingiesangleScale_fjbhd	[ 0	locks=0 ]	(	0	)
+xn__inputsshapingiesangleScale_fjbhd	[ 0	locks=0	autoscope=1	autosel=4294967295 ]	(	[ xn__inputsshapingiesangleScale_fjbhd	0 ] 	)
 xn__inputsshadowenable_control_fjbg	[ 0	locks=0 ]	(	none	)
 xn__inputsshadowenable_e5ag	[ 0	locks=0 ]	(	"on"	)
 xn__inputsshadowcolor_control_shbg	[ 0	locks=0 ]	(	none	)
@@ -15892,7 +16032,7 @@ Content-Disposition: attachment; filename="stage/sphere_iesTest.def"
 Content-Type: text/plain
 
 comment ""
-position 73.897 13.0794
+position 42.8864 14.856
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -15910,7 +16050,7 @@ inputs
 stat
 {
   create 1721598614
-  modify 1721599324
+  modify 1721605111
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -16032,7 +16172,7 @@ Content-Disposition: attachment; filename="stage/camera_edit_iesTest.def"
 Content-Type: text/plain
 
 comment ""
-position 73.897 15.2323
+position 42.8864 17.0089
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render on highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -16050,7 +16190,7 @@ inputs
 stat
 {
   create 1721598878
-  modify 1721601402
+  modify 1721611683
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -17657,15 +17797,16 @@ return xform.extractRotates()[2]" language = python }
     channel rx {
       lefttype = extend
       righttype = extend
-      default = 360
+      default = 45
       flags = 0
+      start = 0.41666666666666669
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.33333333333333331 value = 0 360 slope = 1080 1080 accel = 120.0000514403182 120.0000514403182
+	 length = 0.04166666666666663 value = 45 135 slope = 2160.0000000000018 2160.0000000000018 accel = 30.000003215020403 30.000003215020403
 	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0 value = 360 0 accel = 0.33333333333333331 0.33333333333333331 expr = linear() }
+	 length = 0 value = 135 45 accel = 0.33333333333333331 0.33333333333333331 expr = linear() }
     }
   }
 
@@ -17702,8 +17843,8 @@ xn__xformOptransform_control_6fb	[ 0	locks=0 ]	(	set	)
 xn__xformOptransform_51a	[ 0	locks=0 ]	(	append	)
 xOrd	[ 0	locks=0 ]	(	"srt"	)
 rOrd	[ 0	locks=0 ]	(	"xyz"	)
-t	[ 0	locks=0 ]	(	0	0	0	)
-r	[ 0	locks=0	autoscope=1	autosel=4294967295 ]	(	[ rx	0 ] 	0	0	)
+t	[ 0	locks=0 ]	(	0	0	-0.01	)
+r	[ 0	locks=0	autoscope=7	autosel=4294967295 ]	(	[ rx	0 ] 	0	0	)
 s	[ 0	locks=0 ]	(	1	1	1	)
 shear	[ 0	locks=0 ]	(	0	0	0	)
 scale	[ 0	locks=0 ]	(	1	)
@@ -17723,14 +17864,14 @@ twist	[ 0	locks=0 ]	(	0	)
 projection_control	[ 0	locks=0 ]	(	set	)
 projection	[ 0	locks=0 ]	(	perspective	)
 clippingRange_control	[ 0	locks=0 ]	(	set	)
-clippingRange	[ 0	locks=0 ]	(	1e-5	1e6	)
+clippingRange	[ 0	locks=0 ]	(	0.001	1e6	)
 focalLength_control	[ 0	locks=0 ]	(	set	)
-focalLength	[ 0	locks=0 ]	(	0.001	)
+focalLength	[ 0	locks=0 ]	(	0.01	)
 focalLengthConverted	[ 0	locks=0 ]	(	[ focalLengthConverted	0 ] 	)
 aperture_folder	[ 0	locks=0 ]	(	0	)
 aperture	[ 0	locks=0 ]	(	setratio	)
 horizontalAperture_control	[ 0	locks=0 ]	(	[ horizontalAperture_control	"ifs(!strcmp(chs(\"aperture\"), \"setratio\"), \"set\", chs(\"aperture\"))" ] 	)
-horizontalAperture	[ 0	locks=0 ]	(	0.002	)
+horizontalAperture	[ 0	locks=0 ]	(	0.02	)
 horizontalApertureConverted	[ 0	locks=0 ]	(	[ horizontalApertureConverted	0 ] 	)
 verticalAperture_control	[ 0	locks=0 ]	(	[ verticalAperture_control	"ifs(!strcmp(chs(\"aperture\"), \"setratio\"), \"set\", chs(\"aperture\"))" ] 	)
 verticalAperture	[ 0	locks=0 ]	(	15.2908	)
@@ -17759,7 +17900,7 @@ xn__shutteropen_0ta	[ 0	locks=0 ]	(	0	)
 xn__shutterclose_control_o8a	[ 0	locks=0 ]	(	set	)
 xn__shutterclose_nva	[ 0	locks=0 ]	(	0	)
 focusDistance_control	[ 0	locks=0 ]	(	set	)
-focusDistance	[ 0	locks=0 ]	(	0	)
+focusDistance	[ 0	locks=0 ]	(	5	)
 fStop_control	[ 0	locks=0 ]	(	set	)
 fStop	[ 0	locks=0 ]	(	0	)
 exposure_control	[ 0	locks=0 ]	(	set	)
@@ -17870,7 +18011,7 @@ Content-Disposition: attachment; filename="stage/usd_rop_distant.def"
 Content-Type: text/plain
 
 comment ""
-position -23.8571 -19.1498
+position -23.8571 -18.2556
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -17887,7 +18028,7 @@ inputs
 stat
 {
   create 1697423283
-  modify 1721519086
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -18418,7 +18559,7 @@ Content-Disposition: attachment; filename="stage/render_karma_rect.def"
 Content-Type: text/plain
 
 comment ""
-position -13.2504 -38.3416
+position -13.2504 -37.4474
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -18435,7 +18576,7 @@ inputs
 stat
 {
   create 1697492429
-  modify 1721520022
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -19605,7 +19746,7 @@ Content-Disposition: attachment; filename="stage/render_karma_distant.def"
 Content-Type: text/plain
 
 comment ""
-position -20.7507 -19.1498
+position -20.7507 -18.2556
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -19622,7 +19763,7 @@ inputs
 stat
 {
   create 1697493034
-  modify 1721519086
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -20788,7 +20929,7 @@ Content-Disposition: attachment; filename="stage/sphere_light.def"
 Content-Type: text/plain
 
 comment ""
-position -19.9612 -54.9978
+position -19.9612 -54.1036
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -20806,7 +20947,7 @@ inputs
 stat
 {
   create 1680838012
-  modify 1721572503
+  modify 1721604889
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -23580,7 +23721,7 @@ Content-Disposition: attachment; filename="stage/usd_rop_sphere.def"
 Content-Type: text/plain
 
 comment ""
-position -21.2709 -59.2371
+position -21.2709 -58.3429
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -23597,7 +23738,7 @@ inputs
 stat
 {
   create 1680837817
-  modify 1721572503
+  modify 1721604889
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -24132,7 +24273,7 @@ Content-Disposition: attachment; filename="stage/render_karma_sphere.def"
 Content-Type: text/plain
 
 comment ""
-position -17.3291 -59.2371
+position -17.3291 -58.3429
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -24149,7 +24290,7 @@ inputs
 stat
 {
   create 1697492429
-  modify 1721572503
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -25319,7 +25460,7 @@ Content-Disposition: attachment; filename="stage/disk_light.def"
 Content-Type: text/plain
 
 comment ""
-position -19.4199 -75.0784
+position -19.4199 -74.1842
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -25337,7 +25478,7 @@ inputs
 stat
 {
   create 1680838012
-  modify 1721572484
+  modify 1721604889
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -27863,7 +28004,7 @@ Content-Disposition: attachment; filename="stage/usd_rop_disk.def"
 Content-Type: text/plain
 
 comment ""
-position -20.7198 -78.6666
+position -20.7198 -77.7724
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -27880,7 +28021,7 @@ inputs
 stat
 {
   create 1680837817
-  modify 1721572484
+  modify 1721604889
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -28428,7 +28569,7 @@ Content-Disposition: attachment; filename="stage/render_karma_disk.def"
 Content-Type: text/plain
 
 comment ""
-position -16.778 -78.6666
+position -16.778 -77.7724
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -28445,7 +28586,7 @@ inputs
 stat
 {
   create 1697492429
-  modify 1721572484
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -29759,7 +29900,7 @@ Content-Disposition: attachment; filename="stage/editproperties2.def"
 Content-Type: text/plain
 
 comment ""
-position -6.74077 -16.6457
+position -6.74077 -15.7515
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -29777,7 +29918,7 @@ inputs
 stat
 {
   create 1693531338
-  modify 1721583706
+  modify 1721604889
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -30042,7 +30183,7 @@ Content-Disposition: attachment; filename="stage/cylinder_light.def"
 Content-Type: text/plain
 
 comment ""
-position -19.164 -97.5252
+position -19.164 -96.631
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -30060,7 +30201,7 @@ inputs
 stat
 {
   create 1680838012
-  modify 1721572477
+  modify 1721604889
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -32590,7 +32731,7 @@ Content-Disposition: attachment; filename="stage/usd_rop_cylinder.def"
 Content-Type: text/plain
 
 comment ""
-position -20.5684 -101.221
+position -20.5684 -100.327
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -32607,7 +32748,7 @@ inputs
 stat
 {
   create 1680837817
-  modify 1721572477
+  modify 1721604889
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -33155,7 +33296,7 @@ Content-Disposition: attachment; filename="stage/render_karma_cylinder.def"
 Content-Type: text/plain
 
 comment ""
-position -16.6266 -101.221
+position -16.6266 -100.327
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -33172,7 +33313,7 @@ inputs
 stat
 {
   create 1697492429
-  modify 1721572477
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -34342,7 +34483,7 @@ Content-Disposition: attachment; filename="stage/render_ris_distant.def"
 Content-Type: text/plain
 
 comment ""
-position -20.7507 -20.0727
+position -20.7507 -19.1785
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -34359,7 +34500,7 @@ inputs
 stat
 {
   create 1697493034
-  modify 1721519086
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -35525,7 +35666,7 @@ Content-Disposition: attachment; filename="stage/render_arnold_distant.def"
 Content-Type: text/plain
 
 comment ""
-position -20.7507 -20.9523
+position -20.7507 -20.0581
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -35542,7 +35683,7 @@ inputs
 stat
 {
   create 1697493034
-  modify 1721519086
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -36708,7 +36849,7 @@ Content-Disposition: attachment; filename="stage/render_ris_rect.def"
 Content-Type: text/plain
 
 comment ""
-position -13.2504 -39.4337
+position -13.2504 -38.5395
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -36725,7 +36866,7 @@ inputs
 stat
 {
   create 1697492429
-  modify 1721520022
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -37895,7 +38036,7 @@ Content-Disposition: attachment; filename="stage/render_arnold_rect.def"
 Content-Type: text/plain
 
 comment ""
-position -13.2504 -40.5106
+position -13.2504 -39.6164
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -37912,7 +38053,7 @@ inputs
 stat
 {
   create 1697492429
-  modify 1721520022
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -39082,7 +39223,7 @@ Content-Disposition: attachment; filename="stage/render_arnold_sphere.def"
 Content-Type: text/plain
 
 comment ""
-position -17.1599 -61.605
+position -17.1599 -60.7108
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -39099,7 +39240,7 @@ inputs
 stat
 {
   create 1697492429
-  modify 1721572503
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -40269,7 +40410,7 @@ Content-Disposition: attachment; filename="stage/render_ris_sphere.def"
 Content-Type: text/plain
 
 comment ""
-position -17.3291 -60.2437
+position -17.3291 -59.3495
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -40286,7 +40427,7 @@ inputs
 stat
 {
   create 1697492429
-  modify 1721572503
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -41456,7 +41597,7 @@ Content-Disposition: attachment; filename="stage/render_ris_disk.def"
 Content-Type: text/plain
 
 comment ""
-position -16.778 -79.8724
+position -16.778 -78.9782
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -41473,7 +41614,7 @@ inputs
 stat
 {
   create 1697492429
-  modify 1721572484
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -42643,7 +42784,7 @@ Content-Disposition: attachment; filename="stage/render_arnold_disk.def"
 Content-Type: text/plain
 
 comment ""
-position -16.6643 -80.8786
+position -16.6643 -79.9844
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -42660,7 +42801,7 @@ inputs
 stat
 {
   create 1697492429
-  modify 1721572484
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -43830,7 +43971,7 @@ Content-Disposition: attachment; filename="stage/render_ris_cylinder.def"
 Content-Type: text/plain
 
 comment ""
-position -16.6266 -102.176
+position -16.6266 -101.282
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -43847,7 +43988,7 @@ inputs
 stat
 {
   create 1697492429
-  modify 1721572477
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -45017,7 +45158,7 @@ Content-Disposition: attachment; filename="stage/render_arnold_cylinder.def"
 Content-Type: text/plain
 
 comment ""
-position -16.6266 -103.327
+position -16.6266 -102.433
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -45034,7 +45175,7 @@ inputs
 stat
 {
   create 1697492429
-  modify 1721572477
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -46204,7 +46345,7 @@ Content-Disposition: attachment; filename="stage/dome_light.def"
 Content-Type: text/plain
 
 comment ""
-position 33.1092 -30.5156
+position 33.1092 -29.6214
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -46222,7 +46363,7 @@ inputs
 stat
 {
   create 1680839539
-  modify 1721519086
+  modify 1721604889
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -47960,7 +48101,7 @@ Content-Disposition: attachment; filename="stage/usd_rop_dome.def"
 Content-Type: text/plain
 
 comment ""
-position 33.0892 -34.2456
+position 33.0892 -33.3514
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -47977,7 +48118,7 @@ inputs
 stat
 {
   create 1680837817
-  modify 1721519086
+  modify 1721604889
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -48508,7 +48649,7 @@ Content-Disposition: attachment; filename="stage/visibleRect_light.def"
 Content-Type: text/plain
 
 comment ""
-position 32.884 -47.7426
+position 32.884 -46.8484
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -48526,7 +48667,7 @@ inputs
 stat
 {
   create 1696797164
-  modify 1721519086
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -51377,7 +51518,7 @@ Content-Disposition: attachment; filename="stage/usd_rop_visibleRect.def"
 Content-Type: text/plain
 
 comment ""
-position 32.8639 -53.0116
+position 32.8639 -52.1174
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -51394,7 +51535,7 @@ inputs
 stat
 {
   create 1696797365
-  modify 1721519086
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -51925,7 +52066,7 @@ Content-Disposition: attachment; filename="stage/camera_edit_dome.def"
 Content-Type: text/plain
 
 comment ""
-position 33.0892 -29.3136
+position 33.0892 -28.4194
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -51943,7 +52084,7 @@ inputs
 stat
 {
   create 1698186580
-  modify 1721519086
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -53748,7 +53889,7 @@ Content-Disposition: attachment; filename="stage/render_karma_dome.def"
 Content-Type: text/plain
 
 comment ""
-position 37.2508 -32.8336
+position 37.2508 -31.9394
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -53765,7 +53906,7 @@ inputs
 stat
 {
   create 1697492429
-  modify 1721519086
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -54935,7 +55076,7 @@ Content-Disposition: attachment; filename="stage/render_ris_dome.def"
 Content-Type: text/plain
 
 comment ""
-position 37.2508 -33.7886
+position 37.2508 -32.8944
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -54952,7 +55093,7 @@ inputs
 stat
 {
   create 1697492429
-  modify 1721519086
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -56122,7 +56263,7 @@ Content-Disposition: attachment; filename="stage/render_arnold_dome.def"
 Content-Type: text/plain
 
 comment ""
-position 37.2508 -34.9396
+position 37.2508 -34.0454
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -56139,7 +56280,7 @@ inputs
 stat
 {
   create 1697492429
-  modify 1721519086
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -57309,7 +57450,7 @@ Content-Disposition: attachment; filename="stage/camera_edit_visibleRect.def"
 Content-Type: text/plain
 
 comment ""
-position 32.8639 -46.7406
+position 32.8639 -45.8464
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -57327,7 +57468,7 @@ inputs
 stat
 {
   create 1698186580
-  modify 1721519086
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -59132,7 +59273,7 @@ Content-Disposition: attachment; filename="stage/render_karma_visibleRect.def"
 Content-Type: text/plain
 
 comment ""
-position 37.9811 -53.6446
+position 37.9811 -52.7504
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -59149,7 +59290,7 @@ inputs
 stat
 {
   create 1697492429
-  modify 1721519086
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -60319,7 +60460,7 @@ Content-Disposition: attachment; filename="stage/render_ris_visibleRect.def"
 Content-Type: text/plain
 
 comment ""
-position 37.9811 -54.5996
+position 37.9811 -53.7054
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -60336,7 +60477,7 @@ inputs
 stat
 {
   create 1697492429
-  modify 1721519086
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -61506,7 +61647,7 @@ Content-Disposition: attachment; filename="stage/render_arnold_visibleRect.def"
 Content-Type: text/plain
 
 comment ""
-position 37.9811 -55.7506
+position 37.9811 -54.8564
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -61523,7 +61664,7 @@ inputs
 stat
 {
   create 1697492429
-  modify 1721519086
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -62693,7 +62834,7 @@ Content-Disposition: attachment; filename="stage/xform_cameras_distant.def"
 Content-Type: text/plain
 
 comment ""
-position -23.8997 -12.0786
+position -23.8997 -11.1844
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -62711,7 +62852,7 @@ inputs
 stat
 {
   create 1719901384
-  modify 1721519086
+  modify 1721604889
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -62826,7 +62967,7 @@ Content-Disposition: attachment; filename="stage/editproperties_cylinder.def"
 Content-Type: text/plain
 
 comment ""
-position -19.184 -98.5056
+position -19.184 -97.6114
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -62844,7 +62985,7 @@ inputs
 stat
 {
   create 1721010894
-  modify 1721572477
+  modify 1721604889
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -63128,7 +63269,7 @@ Content-Disposition: attachment; filename="stage/editproperties_disk.def"
 Content-Type: text/plain
 
 comment ""
-position -19.44 -76.356
+position -19.44 -75.4618
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -63146,7 +63287,7 @@ inputs
 stat
 {
   create 1721010894
-  modify 1721572484
+  modify 1721604889
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -63430,7 +63571,7 @@ Content-Disposition: attachment; filename="stage/editproperties_sphere.def"
 Content-Type: text/plain
 
 comment ""
-position -19.9813 -56.3393
+position -19.9813 -55.4451
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -63448,7 +63589,7 @@ inputs
 stat
 {
   create 1721010894
-  modify 1721572503
+  modify 1721604889
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -63732,7 +63873,7 @@ Content-Disposition: attachment; filename="stage/editproperties_rect.def"
 Content-Type: text/plain
 
 comment ""
-position -15.4414 -35.6241
+position -15.4414 -34.7299
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -63750,7 +63891,7 @@ inputs
 stat
 {
   create 1721010894
-  modify 1721520022
+  modify 1721604889
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -64034,7 +64175,7 @@ Content-Disposition: attachment; filename="stage/editproperties_distant.def"
 Content-Type: text/plain
 
 comment ""
-position -23.8571 -16.8672
+position -23.8571 -15.973
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -64052,7 +64193,7 @@ inputs
 stat
 {
   create 1721010894
-  modify 1721519086
+  modify 1721604889
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -64336,7 +64477,7 @@ Content-Disposition: attachment; filename="stage/editproperties_dome.def"
 Content-Type: text/plain
 
 comment ""
-position 33.0892 -31.7116
+position 33.0892 -30.8174
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -64354,7 +64495,7 @@ inputs
 stat
 {
   create 1721010894
-  modify 1721519086
+  modify 1721604889
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -64638,7 +64779,7 @@ Content-Disposition: attachment; filename="stage/editproperties_visibleRect.def"
 Content-Type: text/plain
 
 comment ""
-position 32.8639 -49.3596
+position 32.8639 -48.4654
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -64656,7 +64797,7 @@ inputs
 stat
 {
   create 1721010894
-  modify 1721519086
+  modify 1721604889
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -64940,7 +65081,7 @@ Content-Disposition: attachment; filename="stage/lights.def"
 Content-Type: text/plain
 
 comment ""
-position -6.74077 -29.5878
+position -6.74077 -28.6936
 connectornextid 0
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -64956,7 +65097,7 @@ inputs
 stat
 {
   create 1721510053
-  modify 1721583668
+  modify 1721604889
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -65218,7 +65359,7 @@ Content-Disposition: attachment; filename="stage/editproperties3.def"
 Content-Type: text/plain
 
 comment ""
-position -6.74077 -25.2364
+position -6.74077 -24.3422
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -65236,7 +65377,7 @@ inputs
 stat
 {
   create 1693531338
-  modify 1721583701
+  modify 1721604889
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -65547,7 +65688,7 @@ Content-Disposition: attachment; filename="stage/light_xform_match.def"
 Content-Type: text/plain
 
 comment ""
-position -6.74077 -22.2913
+position -6.74077 -21.3971
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -65565,7 +65706,7 @@ inputs
 stat
 {
   create 1721519284
-  modify 1721583701
+  modify 1721604889
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -65666,7 +65807,7 @@ Content-Disposition: attachment; filename="stage/createxform_edit1.def"
 Content-Type: text/plain
 
 comment ""
-position -6.74077 -24.2364
+position -6.74077 -23.3422
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -65684,7 +65825,7 @@ inputs
 stat
 {
   create 1721520022
-  modify 1721583701
+  modify 1721604889
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -65923,7 +66064,7 @@ Content-Disposition: attachment; filename="stage/camera1.def"
 Content-Type: text/plain
 
 comment ""
-position -6.49359 -4.28604
+position -6.49359 -3.39184
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -65941,7 +66082,7 @@ inputs
 stat
 {
   create 1680758709
-  modify 1721599971
+  modify 1721604889
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -67384,7 +67525,7 @@ Content-Disposition: attachment; filename="stage/distant_light.def"
 Content-Type: text/plain
 
 comment ""
-position -23.837 -15.7598
+position -23.837 -14.8656
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug on
 outputsNamed3
@@ -67402,7 +67543,7 @@ inputs
 stat
 {
   create 1680758826
-  modify 1721519086
+  modify 1721604889
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -69818,7 +69959,7 @@ Content-Disposition: attachment; filename="stage/rect_light.def"
 Content-Type: text/plain
 
 comment ""
-position -15.4213 -34.0929
+position -15.4213 -33.1987
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -69836,7 +69977,7 @@ inputs
 stat
 {
   create 1680838012
-  modify 1721572143
+  modify 1721604889
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -72378,7 +72519,7 @@ Content-Disposition: attachment; filename="stage/usd_rop_rect.def"
 Content-Type: text/plain
 
 comment ""
-position -17.1922 -38.3416
+position -17.1922 -37.4474
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -72395,7 +72536,7 @@ inputs
 stat
 {
   create 1680837817
-  modify 1721520022
+  modify 1721604889
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -72943,7 +73084,7 @@ Content-Disposition: attachment; filename="stage/inlineusd_rendersettings.def"
 Content-Type: text/plain
 
 comment ""
-position -6.5666 0.451054
+position -6.5666 1.34525
 connectornextid 0
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
@@ -72959,7 +73100,7 @@ inputs
 stat
 {
   create 1694395523
-  modify 1721599846
+  modify 1721604889
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -73023,13 +73164,19 @@ Content-Type: text/plain
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="stage/assignmaterial6.net"
+Content-Type: text/plain
+
+1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="stage/__dot4.networkdotinit"
 Content-Type: text/plain
 
 {
 	"version":1,
 	"posx":-6.24077349251260305,
-	"posy":-31.8942712287549277,
+	"posy":-31.0000712287549263,
 	"pinned":false,
 	"color":"FROMOUTPUT",
 	"input":"assignmaterial5 0 1"
@@ -73042,7 +73189,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":-14.9413363250072422,
-	"posy":-32.5865232261573041,
+	"posy":-31.6923232261573062,
 	"pinned":true,
 	"color":"FROMOUTPUT",
 	"input":"(__dot4) 0 1",
@@ -73056,7 +73203,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":-6.02988000000000035,
-	"posy":-11.1205213389206587,
+	"posy":-10.2263213389206591,
 	"pinned":false,
 	"color":"FROMOUTPUT",
 	"input":"assignmaterial1 0 1"
@@ -73069,7 +73216,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":-19.3791047696518781,
-	"posy":-51.2891500875870747,
+	"posy":-50.3949500875870768,
 	"pinned":true,
 	"color":"FROMOUTPUT",
 	"input":"(__dot1) 0 1",
@@ -73083,7 +73230,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":-5.64878390219032678,
-	"posy":-51.9331103047353366,
+	"posy":-51.0389103047353387,
 	"pinned":false,
 	"color":"FROMOUTPUT",
 	"input":"(__dot4) 0 1"
@@ -73096,7 +73243,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":-18.9399288735117857,
-	"posy":-69.7365924050637034,
+	"posy":-68.8423924050637055,
 	"pinned":true,
 	"color":"FROMOUTPUT",
 	"input":"(__dot5) 0 1",
@@ -73110,7 +73257,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":-5.13370869730370849,
-	"posy":-67.480912540929026,
+	"posy":-66.5867125409290281,
 	"pinned":false,
 	"color":"FROMOUTPUT",
 	"input":"(__dot1) 0 1"
@@ -73123,7 +73270,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":-18.7884422803718216,
-	"posy":-92.2899823853980052,
+	"posy":-91.3957823853980074,
 	"pinned":true,
 	"color":"FROMOUTPUT",
 	"input":"(__dot2) 0 1",
@@ -73137,7 +73284,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":-4.78918009815286894,
-	"posy":-92.054390246742031,
+	"posy":-91.1601902467420331,
 	"pinned":false,
 	"color":"FROMOUTPUT",
 	"input":"(__dot5) 0 1"
@@ -73150,7 +73297,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":33.233755816774476,
-	"posy":-7.07104079278143338,
+	"posy":-6.17684079278143372,
 	"pinned":false,
 	"color":"FROMOUTPUT",
 	"input":"(__dot21) 0 1"
@@ -73163,7 +73310,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":33.3638598774592907,
-	"posy":-37.1864387747867511,
+	"posy":-36.2922387747867532,
 	"pinned":false,
 	"color":"FROMOUTPUT",
 	"input":"(__dot13) 0 1"
@@ -73176,7 +73323,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":2.31345315549985475,
-	"posy":-36.7398870989379986,
+	"posy":-35.8456870989380008,
 	"pinned":false,
 	"color":"FROMOUTPUT",
 	"input":"(__dot21) 0 1"
@@ -73189,7 +73336,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":33.4848368238870506,
-	"posy":-26.3370595483792158,
+	"posy":-25.4428595483792179,
 	"pinned":false,
 	"color":"FROMOUTPUT",
 	"input":"(__dot3) 0 1",
@@ -73203,7 +73350,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":-23.3997009388460881,
-	"posy":-10.8649626023820307,
+	"posy":-9.97076260238202927,
 	"pinned":false,
 	"color":"FROMOUTPUT",
 	"input":"(__dot15) 0 1",
@@ -73217,7 +73364,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":-18.6521225082670448,
-	"posy":-99.7476664377659858,
+	"posy":-98.853466437765988,
 	"pinned":true,
 	"color":"FROMOUTPUT",
 	"input":"editproperties_cylinder 0 1"
@@ -73230,7 +73377,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":-18.939953611495941,
-	"posy":-77.4551449967044476,
+	"posy":-76.5609449967044497,
 	"pinned":true,
 	"color":"FROMOUTPUT",
 	"input":"editproperties_disk 0 1",
@@ -73244,7 +73391,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":-19.4812407753952179,
-	"posy":-57.443446725195443,
+	"posy":-56.5492467251954452,
 	"pinned":false,
 	"color":"FROMOUTPUT",
 	"input":"editproperties_sphere 0 1",
@@ -73258,7 +73405,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":-14.9413488926977465,
-	"posy":-36.8382280553226593,
+	"posy":-35.9440280553226614,
 	"pinned":false,
 	"color":"FROMOUTPUT",
 	"input":"editproperties_rect 0 1",
@@ -73272,7 +73419,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":-23.3570988848478223,
-	"posy":-17.6572764682931336,
+	"posy":-16.7630764682931321,
 	"pinned":false,
 	"color":"FROMOUTPUT",
 	"input":"editproperties_distant 0 1",
@@ -73286,7 +73433,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":33.5891598774592879,
-	"posy":-32.5242671117833311,
+	"posy":-31.6300671117833332,
 	"pinned":false,
 	"color":"FROMOUTPUT",
 	"input":"editproperties_dome 0 1",
@@ -73300,7 +73447,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":33.3638598774592907,
-	"posy":-50.8642661078234255,
+	"posy":-49.9700661078234276,
 	"pinned":false,
 	"color":"FROMOUTPUT",
 	"input":"editproperties_visibleRect 0 1",
@@ -73314,7 +73461,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":-5.99359203344893121,
-	"posy":-6.43748686328618103,
+	"posy":-5.54328686328618137,
 	"pinned":false,
 	"color":"FROMOUTPUT",
 	"input":"camera1 0 1"
@@ -73327,7 +73474,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":1.90293386909584861,
-	"posy":-6.43748686328618103,
+	"posy":-5.54328686328618137,
 	"pinned":false,
 	"color":"FROMOUTPUT",
 	"input":"(__dot8) 0 1"
@@ -73339,8 +73486,8 @@ Content-Type: text/plain
 
 {
 	"version":1,
-	"posx":74.2948929674629994,
-	"posy":4.3277786268175138,
+	"posx":43.2843270620256391,
+	"posy":6.10439310380150335,
 	"pinned":false,
 	"color":"FROMOUTPUT",
 	"input":"editproperties_iesTest 0 1",
@@ -73354,10 +73501,10 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":-6.05626192027983912,
-	"posy":-1.50297347132636538,
+	"posy":-0.60877347132636539,
 	"pinned":true,
 	"color":"FROMOUTPUT",
-	"input":"inlineusd_rendersettings 0 1"
+	"input":"materiallibrary1 0 1"
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -73367,7 +73514,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":6.50521684310819737,
-	"posy":-1.74831485342378912,
+	"posy":-0.854114853423789122,
 	"pinned":true,
 	"color":"FROMOUTPUT",
 	"input":"(__dot26) 0 1"
@@ -73380,7 +73527,7 @@ Content-Type: text/plain
 {
 	"version":1,
 	"posx":6.35237806570744112,
-	"posy":23.2484945692953033,
+	"posy":24.1426945692953048,
 	"pinned":true,
 	"color":"FROMOUTPUT",
 	"input":"(__dot27) 0 1"
@@ -73392,8 +73539,8 @@ Content-Type: text/plain
 
 {
 	"version":1,
-	"posx":74.5073793021076085,
-	"posy":22.5270335734073655,
+	"posx":43.4968133966702482,
+	"posy":24.3036480503913559,
 	"pinned":false,
 	"color":"FROMOUTPUT",
 	"input":"(__dot28) 0 1"
@@ -73403,7 +73550,7 @@ Content-Type: text/plain
 Content-Disposition: attachment; filename="stage.order"
 Content-Type: text/plain
 
-67
+68
 usd_rop_iesTest
 render_karma_iesTest
 render_arnold_iesTest
@@ -73471,6 +73618,7 @@ materiallibrary1
 rect_light
 usd_rop_rect
 inlineusd_rendersettings
+assignmaterial6
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="stage.net"
@@ -73984,13 +74132,13 @@ viewname -l off -n persp1 Solaris.pane1.solaris.`vpname("Solaris.pane1.solaris",
 viewname -l off -n top1 Solaris.pane1.solaris.`vpname("Solaris.pane1.solaris",1)`
 viewname -l off -n front1 Solaris.pane1.solaris.`vpname("Solaris.pane1.solaris",3)`
 viewname -l off -n right1 Solaris.pane1.solaris.`vpname("Solaris.pane1.solaris",4)`
-viewdispset -m off always -n off always -c off always -u off always -x off always -N off always -C off always -b off always -M off always -v off always -V off always -U off always -h off -P off -p off -f off -o off -w off -s shade -F off -l on -L on -G off -B none -d uv -r unique scene Solaris.pane1.solaris.persp1
+viewdispset -m off always -n off always -c off always -u off always -x off always -N off always -C off always -b off always -M off always -v off always -V off always -U off always -h off -P off -p off -f off -o off -w off -s wire_ghost -F off -l on -L on -G off -B none -d uv -r unique scene Solaris.pane1.solaris.persp1
 viewdispset -t off  scene Solaris.pane1.solaris.persp1
-viewdispset -m off always -n off always -c off always -u off always -x off always -N off always -C off always -b off always -M off always -v off always -V off always -U off always -h off -P off -p off -f off -o off -w off -s shade -F off -l on -L on -G off -B none -d uv -r scene selectscene Solaris.pane1.solaris.persp1
+viewdispset -m off always -n off always -c off always -u off always -x off always -N off always -C off always -b off always -M off always -v off always -V off always -U off always -h off -P off -p off -f off -o off -w off -s wire_ghost -F off -l on -L on -G off -B none -d uv -r scene selectscene Solaris.pane1.solaris.persp1
 viewdispset -t off  selectscene Solaris.pane1.solaris.persp1
-viewdispset -m off always -n off always -c off always -u off always -x off always -N off always -C off always -b off always -M off always -v off always -V off always -U off always -h off -P off -p off -f off -o off -w off -s shade -F off -l on -L off -G on -B none -d uv -r unique ghostscene Solaris.pane1.solaris.persp1
+viewdispset -m off always -n off always -c off always -u off always -x off always -N off always -C off always -b off always -M off always -v off always -V off always -U off always -h off -P off -p off -f off -o off -w off -s wire_ghost -F off -l on -L off -G on -B none -d uv -r unique ghostscene Solaris.pane1.solaris.persp1
 viewdispset -t off  ghostscene Solaris.pane1.solaris.persp1
-viewdispset -m off always -n off always -c off always -u off always -x off always -N off always -C off always -b off always -M off always -v off always -V off always -U off always -h off -P on -p off -f off -o off -w on -s shade -F off -l on -L on -G off -B none -d uv -r unique display Solaris.pane1.solaris.persp1
+viewdispset -m off always -n off always -c off always -u off always -x off always -N off always -C off always -b off always -M off always -v off always -V off always -U off always -h off -P on -p off -f off -o off -w on -s wire_ghost -F off -l on -L on -G off -B none -d uv -r unique display Solaris.pane1.solaris.persp1
 viewdispset -t on  display Solaris.pane1.solaris.persp1
 viewdispset -m off always -n off always -c off always -u off always -x off always -N off always -C off always -b off always -M off always -v off always -V off always -U off always -h off -P on -p off -f off -o off -w off -s wire -F off -l on -L off -G off -B none -d uv -r unique current Solaris.pane1.solaris.persp1
 viewdispset -t off  current Solaris.pane1.solaris.persp1
@@ -74019,8 +74167,8 @@ viewroto  -S file -F '$HH/pic/uvgrid_grey.pic' -C '' -a on -f 'scale' -o 0 0 -s 
 viewroto  -S file -F '' -C '' -a on -f 'scale' -o 0 0 -s 1 1 -O 1 -B 1 -e off image Solaris.pane1.solaris.persp1
 viewforeground -d on -f on -D Pz -s 0 Solaris.pane1.solaris.persp1
 viewforeground -o 1 Solaris.pane1.solaris.persp1
-viewtransform Solaris.pane1.solaris.persp1 version ( 3 )  flag ( Fax )  orthowidth ( 17.9493 )  focal ( 1e-06 )  aperture ( 2e-06 )  window ( 0 1 0 1 )  winroll ( 0 )  clear ( 1 )  nearfar ( 1e-05 1e+06 )  aspect ( 1 )  pixelaspect ( 1 )  txyz ( 0 0 0 )  pxyz ( 48.8337 7.14268 -83.0408 )  rotation ( 1 0 -0 -0 1 -0 0 -0 1  )  homedistance ( 39.0808 )  homeadjboxwidth ( 17.9493 )  homeorthowidth ( 17.9493 )  homeradius ( 39.0423 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612372 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 3 )  fov (45)  
-viewcamera -c /cameras/camera1 Solaris.pane1.solaris.persp1
+viewtransform Solaris.pane1.solaris.persp1 version ( 3 )  flag ( Fax )  orthowidth ( 11.1111 )  focal ( 1e-05 )  aperture ( 2e-05 )  window ( 0 1 0 1 )  winroll ( 0 )  clear ( 1 )  nearfar ( 0.001 1e+06 )  aspect ( 2.27721 )  pixelaspect ( 1 )  txyz ( 0 -0.152286 -0.347474 )  pxyz ( 2.51176 -0.48351 0.00508899 )  rotation ( 1 -0 0 -0 0.707107 -0.707107 0 0.707107 0.707107  )  homedistance ( 18.4123 )  homeadjboxwidth ( 11.1111 )  homeorthowidth ( 11.1111 )  homeradius ( 14.2829 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612372 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 3 )  fov (45)  
+viewcamera -c '' Solaris.pane1.solaris.persp1
 vieworthogrid -d on -o 0 0 0 -s 0.2 0.2 -r 5 5 -R 1 Solaris.pane1.solaris.persp1
 viewuvgrid -r on -s 0.1 0.1 -P off -S 64 64 -O 0 0 -C on -t on Solaris.pane1.solaris.persp1
 viewagentopts  -L on -b 0 -d 1 -l 0 -m 4 -p 1000 -w 1 -B 1 Solaris.pane1.solaris.persp1
@@ -74164,7 +74312,8 @@ viewmaskoverlay -o 0.4 Solaris.pane1.solaris.right1
 viewsnapshotoption -s off -h off -a 1 -v '*' -m 0 Solaris.pane1.solaris
 cplane -o 0 0 0 -n 4.37114e-08 1 -4.37114e-08 -x 1.91069e-15 4.37114e-08 1 -l n -s 0.1 0.1 -c 40 40 -r 10 10 -d off Solaris.pane1.solaris
 glcache -t 9828 -v 39312
-sceneviewopts -C on -c on -e on -F on -g on -H on -i -1 -k """" -l on -m on -M off -p /Render/Settings -P off -s on -S 1 -r "BRAY_HdKarma" -K off -R 512 512 -V off Solaris.pane1.solaris
+sceneviewopts -C on -c on -e on -F on -g on -H on -i -1 -k """" -l on -m on -M off -p /Render/Settings -P off -s on -S 1 -r "HdPrmanLoaderRendererPlugin" -K off -R 512 512 -V off Solaris.pane1.solaris
+sceneviewconfig -y 1 -l 1 -o 1 -g -p -m "Normal Lighting" Storm Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -r -m "Normal Lighting" "Karma XPU" Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -r -m "Normal Lighting" Arnold Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -r -m "Normal Lighting" "RenderMan RIS" Solaris.pane1.solaris
@@ -74210,16 +74359,15 @@ imgviewhist -V on -L on -G on -H on -P off -c -1 -h 0 -i on imgview2 13
 imgviewhist -V on -L on -G on -H on -P off -c -1 -h 0 -i on imgview2 14
 imgviewhist -V on -L on -G on -H on -P off -c -1 -h 0 -i on imgview2 15
 imgviewhist -V on -L on -G on -H on -P off -c -1 -h 0 -i on imgview2 16
-panepath -d Solaris -f -p pane1 /stage/usd_rop_iesTest
+panepath -d Solaris -f -p pane1 /stage/iesTest_light
 panepath -d Solaris -f -p panetab9 /stage/
-panepath -d Solaris -f -p panetab10 /stage/usd_rop_iesTest
-panepath -d Solaris -f -p panetab8 /stage/usd_rop_iesTest
-panepath -d Solaris -f -p panetab7 /stage/usd_rop_iesTest
-panepath -d Solaris -f -p panetab1 /stage/usd_rop_iesTest
-panepath -d Solaris -f -p panetab3 /stage/usd_rop_iesTest
+panepath -d Solaris -f -p panetab10 /stage/iesTest_light
+panepath -d Solaris -f -p panetab8 /stage/iesTest_light
+panepath -d Solaris -f -p panetab7 /stage/iesTest_light
+panepath -d Solaris -f -p panetab1 /stage/iesTest_light
+panepath -d Solaris -f -p panetab3 /stage/iesTest_light
 panepath -d Solaris -f -p panetab4 /stage/
-panepath -d Solaris -f -p panetab2 /stage/usd_rop_iesTest
-panepath -d Solaris -f -p "Animation Editor" /obj/
+panepath -d Solaris -f -p panetab2 /stage/iesTest_light
 desk set Solaris
 viewupdate -u always
 audiopanel -s p ''
@@ -74242,39 +74390,39 @@ audiopanel -f 1
 audiopanel -O 0
 colorsettings -D -A 
 compproject -r 1920 1080 -a 1 -d fp16 -p 0 1 -P full -f 0 -F 0 -l on
-omparm brect_handle boundingrect /stage/iesTest_light "invisible(1) rotate(1)"
-omparm barndoor sidefx_barndoor_handle /stage/iesTest_light "invisible(1) handle_parameter_group(10) tx(0) ty(0) tz(0) rx(0) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
+omparm barndoor sidefx_barndoor_handle /stage/visibleRect_light "invisible(1) handle_parameter_group(10) tx(0) ty(0) tz(0) rx(0) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
+omparm bbox_handle boundingbox /stage/iesTest_light "rotate(1)"
+omparm mycamera_handle camera /stage/camera_edit_iesTest "camera_handletype(0) camera_gimbal(0) camera_anchor(1) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) camera_clip(0)"
 omparm barndoor sidefx_barndoor_handle /stage/distant_light "invisible(1) handle_parameter_group(10) tx(0) ty(4.5685529708862305) tz(0) rx(-90) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
+omparm bbox_handle boundingbox /stage/rect_light "invisible(1) rotate(1)"
+omparm mylight_handle light /stage/cylinder_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
+omparm brect_handle boundingrect /stage/rect_light "rotate(1)"
+omparm brect_handle boundingrect /stage/disk_light "rotate(1)"
+omparm bbox_handle boundingbox /stage/cylinder_light "rotate(1)"
+omparm brect_handle boundingrect /stage/iesTest_light "invisible(1) rotate(1)"
+omparm brect_handle boundingrect /stage/visibleRect_light "rotate(1)"
+omparm bbox_handle boundingbox /stage/distant_light "invisible(1) rotate(1)"
+omparm brect_handle boundingrect /stage/sphere_light "invisible(1) rotate(1)"
+omparm bbox_handle boundingbox /stage/sphere_light "rotate(1)"
+omparm mycamera_handle camera /stage/camera_edit_dome "camera_handletype(0) camera_gimbal(0) camera_anchor(1) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) camera_clip(0)"
+omparm brect_handle boundingrect /stage/cylinder_light "invisible(1) rotate(1)"
+omparm mylight_handle light /stage/sphere_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
+omparm mycamera_handle camera /stage/camera1 "camera_handletype(2) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) camera_clip(0)"
+omparm barndoor sidefx_barndoor_handle /stage/iesTest_light "invisible(1) handle_parameter_group(10) tx(0) ty(0) tz(0) rx(0) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
+omparm bbox_handle boundingbox /stage/disk_light "invisible(1) rotate(1)"
+omparm barndoor sidefx_barndoor_handle /stage/rect_light "invisible(1) handle_parameter_group(10) tx(0) ty(1) tz(0) rx(-45.000000000000007) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
+omparm mylight_handle light /stage/disk_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
+omparm Transformer xform /stage/backward_light_catcher "translate(1)"
+omparm mycamera_handle camera /stage/camera_edit_visibleRect "camera_handletype(0) camera_gimbal(0) camera_anchor(1) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) camera_clip(0)"
+omparm mylight_handle light /stage/iesTest_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
+omparm barndoor sidefx_barndoor_handle /stage/sphere_light "invisible(1) handle_parameter_group(10) tx(0) ty(1) tz(0) rx(-45.000000000000007) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
+omparm mylight_handle light /stage/rect_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
+omparm mylight_handle light /stage/distant_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
+omparm barndoor sidefx_barndoor_handle /stage/cylinder_light "invisible(1) handle_parameter_group(10) tx(0) ty(1) tz(0) rx(-45.000000000000007) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
+omparm mylight_handle light /stage/visibleRect_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
 omparm bbox_handle boundingbox /stage/visibleRect_light "invisible(1) rotate(1)"
 omparm brect_handle boundingrect /stage/distant_light "invisible(1) rotate(1)"
 omparm barndoor sidefx_barndoor_handle /stage/disk_light "invisible(1) handle_parameter_group(10) tx(0) ty(1) tz(0) rx(-45.000000000000007) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
-omparm brect_handle boundingrect /stage/sphere_light "invisible(1) rotate(1)"
-omparm mylight_handle light /stage/cylinder_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
-omparm barndoor sidefx_barndoor_handle /stage/rect_light "invisible(1) handle_parameter_group(10) tx(0) ty(1) tz(0) rx(-45.000000000000007) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
-omparm mycamera_handle camera /stage/camera_edit_visibleRect "camera_handletype(0) camera_gimbal(0) camera_anchor(1) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) camera_clip(0)"
-omparm mycamera_handle camera /stage/camera_edit_dome "camera_handletype(0) camera_gimbal(0) camera_anchor(1) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) camera_clip(0)"
-omparm barndoor sidefx_barndoor_handle /stage/cylinder_light "invisible(1) handle_parameter_group(10) tx(0) ty(1) tz(0) rx(-45.000000000000007) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
-omparm mylight_handle light /stage/disk_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
-omparm mylight_handle light /stage/visibleRect_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
-omparm bbox_handle boundingbox /stage/disk_light "invisible(1) rotate(1)"
-omparm mylight_handle light /stage/rect_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
-omparm mycamera_handle camera /stage/camera1 "camera_handletype(2) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) camera_clip(0)"
-omparm mylight_handle light /stage/distant_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
-omparm mylight_handle light /stage/sphere_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
-omparm brect_handle boundingrect /stage/cylinder_light "invisible(1) rotate(1)"
-omparm bbox_handle boundingbox /stage/sphere_light "rotate(1)"
-omparm bbox_handle boundingbox /stage/distant_light "invisible(1) rotate(1)"
-omparm bbox_handle boundingbox /stage/iesTest_light "rotate(1)"
-omparm brect_handle boundingrect /stage/visibleRect_light "rotate(1)"
-omparm bbox_handle boundingbox /stage/cylinder_light "rotate(1)"
-omparm brect_handle boundingrect /stage/disk_light "rotate(1)"
-omparm barndoor sidefx_barndoor_handle /stage/sphere_light "invisible(1) handle_parameter_group(10) tx(0) ty(1) tz(0) rx(-45.000000000000007) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
-omparm brect_handle boundingrect /stage/rect_light "rotate(1)"
-omparm mycamera_handle camera /stage/camera_edit_iesTest "camera_handletype(0) camera_gimbal(0) camera_anchor(1) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) camera_clip(0)"
-omparm barndoor sidefx_barndoor_handle /stage/visibleRect_light "invisible(1) handle_parameter_group(10) tx(0) ty(0) tz(0) rx(0) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
-omparm bbox_handle boundingbox /stage/rect_light "invisible(1) rotate(1)"
-omparm mylight_handle light /stage/iesTest_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
-omparm Transformer xform /stage/backward_light_catcher "translate(1)"
 texcache  -a off -r 2147483647 2147483647 -m 10000 -M 32728
 shopvisible +I3D +VMantra +RIB
 

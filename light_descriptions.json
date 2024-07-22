@@ -767,11 +767,85 @@
         "usd_path": "C:\\src\\NVIDIA\\luxtest\\usd\\dome.usda"
     },
     "iesTest": {
-        "attrs": [],
-        "frame_groups": [],
+        "attrs": [
+            "inputs:shaping:ies:angleScale",
+            "inputs:shaping:ies:file"
+        ],
+        "frame_groups": [
+            {
+                "frames": [
+                    1,
+                    2
+                ],
+                "non_default_constants": {},
+                "varying": {
+                    "inputs:shaping:ies:file": {
+                        "1": "",
+                        "2": "../test_linear_vertical.ies"
+                    }
+                }
+            },
+            {
+                "frames": [
+                    3,
+                    11
+                ],
+                "non_default_constants": {
+                    "inputs:shaping:ies:file": "../test_linear_vertical.ies"
+                },
+                "varying": {
+                    "inputs:shaping:ies:angleScale": {
+                        "3": -1.0,
+                        "4": -0.75,
+                        "5": -0.5,
+                        "6": -0.25,
+                        "7": 2.220446049250313e-16,
+                        "8": 0.25,
+                        "9": 0.5,
+                        "10": 0.75,
+                        "11": 1.0
+                    }
+                }
+            },
+            {
+                "frames": [
+                    12,
+                    13
+                ],
+                "non_default_constants": {},
+                "varying": {
+                    "inputs:shaping:ies:file": {
+                        "12": "",
+                        "13": "../test_linear_vertical.ies"
+                    }
+                }
+            },
+            {
+                "frames": [
+                    14,
+                    22
+                ],
+                "non_default_constants": {
+                    "inputs:shaping:ies:file": "../test_linear_vertical.ies"
+                },
+                "varying": {
+                    "inputs:shaping:ies:angleScale": {
+                        "14": -1.0,
+                        "15": -0.75,
+                        "16": -0.5,
+                        "17": -0.25,
+                        "18": 4.440892098500626e-16,
+                        "19": 0.25,
+                        "20": 0.5,
+                        "21": 0.75,
+                        "22": 1.0
+                    }
+                }
+            }
+        ],
         "frames": [
             1,
-            5
+            22
         ],
         "usd_path": "C:\\src\\NVIDIA\\luxtest\\usd\\iesTest.usda"
     },

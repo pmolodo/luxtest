@@ -48,9 +48,6 @@ SUMMARY_OVERRIDES = {
         (1, 5): "light rotate worldZ from 0 to 80 (intensity 3720)",
         (6, 10): "cam rotate from 0 to 80 (intensity 3720)",
     },
-    "iesTest": {
-        (1, 5): "1-5: cam rotateX, 0-180",
-    },
 }
 
 for light_name in ("sphere", "disk", "cylinder", "rect"):
