@@ -470,7 +470,7 @@ def get_frames(node):
 NODE_BASE_TYPE_TO_CATEGORY = {
     "usd_rop": "usd_rop",
     "usdrender_rop": "render",
-    "camera": "camera_edit",
+    "camera": "camera",
     "distantlight": "light",
     "domelight": "light",
     "light": "light",
@@ -499,6 +499,10 @@ def get_light(name):
     return hou.node(f"/stage/{name}_light")
 
 
+def get_rop_override_cam(rop):
+    return rop.parm("override_camera").eval().rstrip("/").rsplit("/", 1)[-1]
+
+
 def get_standardized_name(node, associated_light_node):
     light_name = parse_light_name(associated_light_node)
     category = node_category(node)
@@ -506,7 +510,22 @@ def get_standardized_name(node, associated_light_node):
         return f"{light_name}_light"
     elif category == "render":
         renderer = get_renderer(node)
-        return f"{category}_{renderer}_{light_name}"
+        cam = get_rop_override_cam(node)
+        if cam:
+            cam = f"_{cam}"
+        return f"{category}{cam}_{renderer}_{light_name}"
+    elif category == "camera":
+        cam_node_type = {
+            0: "edit",
+            1: "create",
+            2: "forceedit",
+        }[node.parm("createprims").eval()]
+        if cam_node_type == "create":
+            prim_path = node.parm("primpath").eval()
+        else:
+            prim_path = node.parm("primpattern").eval()
+        prim_name = prim_path.rstrip("/").rsplit("/", 1)[-1]
+        return f"{category}_{cam_node_type}_{prim_name}_{light_name}"
     elif category == "xform":
         prim_name = node.parm("primpattern").eval().rstrip("/").rsplit("/", 1)[-1]
         return f"{category}_{prim_name}_{light_name}"
@@ -549,7 +568,10 @@ def get_standardized_output_path(node, light_node):
         return f"$HIP/usd/{light_name}.usda"
     elif node.type() == lop_type("usdrender_rop"):
         renderer = get_renderer(node)
-        return f"$HIP/renders/{renderer}/{light_name}-{renderer}.$F4.exr"
+        cam = get_rop_override_cam(node)
+        if cam:
+            cam = f".{cam}"
+        return f"$HIP/renders/{renderer}/{light_name}-{renderer}{cam}.$F4.exr"
 
 
 def standardize_output_names(dry_run=True):

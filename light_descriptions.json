@@ -769,83 +769,120 @@
     "iesTest": {
         "attrs": [
             "inputs:shaping:ies:angleScale",
-            "inputs:shaping:ies:file"
+            "inputs:shaping:ies:file",
+            "inputs:shaping:ies:normalize"
         ],
         "frame_groups": [
             {
                 "frames": [
                     1,
-                    2
+                    1
                 ],
-                "non_default_constants": {},
+                "non_default_constants": {
+                    "inputs:shaping:ies:file": "../test_stripes_nonuniform.ies"
+                },
+                "varying": {}
+            },
+            {
+                "frames": [
+                    2,
+                    10
+                ],
+                "non_default_constants": {
+                    "inputs:shaping:ies:file": "../test_stripes_nonuniform.ies"
+                },
                 "varying": {
-                    "inputs:shaping:ies:file": {
-                        "1": "",
-                        "2": "../test_linear_vertical.ies"
+                    "inputs:shaping:ies:angleScale": {
+                        "2": -1.0,
+                        "3": -0.75,
+                        "4": -0.5,
+                        "5": -0.25,
+                        "6": 4.440892098500626e-16,
+                        "7": 0.25,
+                        "8": 0.5,
+                        "9": 0.75,
+                        "10": 1.0
                     }
                 }
             },
             {
                 "frames": [
-                    3,
+                    11,
                     11
                 ],
                 "non_default_constants": {
-                    "inputs:shaping:ies:file": "../test_linear_vertical.ies"
+                    "inputs:shaping:ies:file": "../test_stripes_uniform.ies"
                 },
-                "varying": {
-                    "inputs:shaping:ies:angleScale": {
-                        "3": -1.0,
-                        "4": -0.75,
-                        "5": -0.5,
-                        "6": -0.25,
-                        "7": 2.220446049250313e-16,
-                        "8": 0.25,
-                        "9": 0.5,
-                        "10": 0.75,
-                        "11": 1.0
-                    }
-                }
+                "varying": {}
             },
             {
                 "frames": [
                     12,
-                    13
+                    20
                 ],
-                "non_default_constants": {},
+                "non_default_constants": {
+                    "inputs:shaping:ies:file": "../test_stripes_uniform.ies"
+                },
                 "varying": {
-                    "inputs:shaping:ies:file": {
-                        "12": "",
-                        "13": "../test_linear_vertical.ies"
+                    "inputs:shaping:ies:angleScale": {
+                        "12": -1.0,
+                        "13": -0.75,
+                        "14": -0.5,
+                        "15": -0.25,
+                        "16": 0.0,
+                        "17": 0.25,
+                        "18": 0.5,
+                        "19": 0.75,
+                        "20": 1.0
                     }
                 }
             },
             {
                 "frames": [
-                    14,
-                    22
+                    21,
+                    21
                 ],
                 "non_default_constants": {
-                    "inputs:shaping:ies:file": "../test_linear_vertical.ies"
+                    "inputs:shaping:ies:file": "../test_stripes_uniform.ies",
+                    "inputs:shaping:ies:normalize": true
+                },
+                "varying": {}
+            },
+            {
+                "frames": [
+                    22,
+                    30
+                ],
+                "non_default_constants": {
+                    "inputs:shaping:ies:file": "../test_stripes_uniform.ies",
+                    "inputs:shaping:ies:normalize": true
                 },
                 "varying": {
                     "inputs:shaping:ies:angleScale": {
-                        "14": -1.0,
-                        "15": -0.75,
-                        "16": -0.5,
-                        "17": -0.25,
-                        "18": 4.440892098500626e-16,
-                        "19": 0.25,
-                        "20": 0.5,
-                        "21": 0.75,
-                        "22": 1.0
+                        "22": -1.0,
+                        "23": -0.75,
+                        "24": -0.5,
+                        "25": -0.25,
+                        "26": 0.0,
+                        "27": 0.25,
+                        "28": 0.5,
+                        "29": 0.75,
+                        "30": 1.0
                     }
                 }
+            },
+            {
+                "frames": [
+                    31,
+                    31
+                ],
+                "non_default_constants": {},
+                "varying": {}
             }
         ],
         "frames": [
             1,
-            22
+            31
         ],
         "usd_path": "C:\\src\\NVIDIA\\luxtest\\usd\\iesTest.usda"
     },

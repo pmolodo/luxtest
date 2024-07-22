@@ -21,7 +21,9 @@ THIS_DIR = os.path.dirname(THIS_FILE)
 if THIS_DIR not in sys.path:
     sys.path.append(THIS_DIR)
 
+import combine_ies_test_images
 import genLightParamDescriptions
+import luxtest_hou_utils
 
 LUXTEST_HIP = os.path.join(THIS_DIR, "luxtest.hip")
 HUSK_PRE_RENDER = os.path.join(THIS_DIR, "husk_pre_render.py")
@@ -60,11 +62,11 @@ def filter_lights(rop_nodes: Iterable["hou.Node"], lights: Iterable[str]):
 
 
 def filter_renderers(rop_nodes: Iterable["hou.Node"], renderers: Iterable[str]):
+    renderers = set(renderers)
     if not renderers:
         return rop_nodes
 
-    renderer_prefixes = tuple(f"render_{r}_" for r in renderers)
-    return [x for x in rop_nodes if x.name().startswith(renderer_prefixes)]
+    return [x for x in rop_nodes if luxtest_hou_utils.get_renderer(x) in renderers]
 
 
 ###############################################################################
@@ -152,10 +154,15 @@ def render_images(
     }
     if frame_range is not None:
         render_kwargs["frame_range"] = frame_range
-    for i, rop_node in enumerate(rop_nodes):
-        print(f"Rendering node {i + 1}/{num_rops}: {rop_node.name()}")
+    for rop_node in rop_nodes:
         rop_node.parm("husk_prerender").set(HUSK_PRE_RENDER)
         rop_node.render(**render_kwargs)
+
+        # auto-combine iesTest images if we did all frames + all cameras
+        light_name = rop_node.name().rsplit("_", 1)[-1]
+        if light_name == "iesTest" and frame_range is None:
+            renderer = luxtest_hou_utils.get_renderer(rop_node)
+            combine_ies_test_images.combine_ies_test_images(renderers=[renderer])
 
 
 ###############################################################################

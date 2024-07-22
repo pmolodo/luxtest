@@ -45,14 +45,20 @@ AREA_LIGHT_SUMMARY_OVERRIDES = {
 
 SUMMARY_OVERRIDES = {
     "distant": {
-        (1, 5): "light rotate worldZ from 0 to 80 (intensity 3720)",
-        (6, 10): "cam rotate from 0 to 80 (intensity 3720)",
+        (1, 5): "light rotate worldZ from 0 to 80",
+        (6, 10): "cam rotate from 0 to 80",
+    },
+    "iesTest": {
+        (1, 1): "ies:angleScale=0 ref",
+        (11, 11): "ies:angleScale=0 ref",
+        (21, 21): "ies:angleScale=0 ref",
+        (31, 31): "no ies:file ref",
     },
 }
 
-for light_name in ("sphere", "disk", "cylinder", "rect"):
-    SUMMARY_OVERRIDES[light_name] = dict(AREA_LIGHT_SUMMARY_OVERRIDES)
-del light_name
+for area_light in ("sphere", "disk", "cylinder", "rect"):
+    SUMMARY_OVERRIDES[area_light] = dict(AREA_LIGHT_SUMMARY_OVERRIDES)
+del area_light
 
 COLOR_NAMES = {
     (0.0, 0.0, 0.0): "black",
@@ -370,7 +376,10 @@ class FrameGroupTracker:
 
         new_varying = self.find_varying_vals(this_frame, other, other_frame)
 
-        if not (None == self.override_group == other.override_group):
+        if self.light_name == "iesTest" and other_frame == 22:
+            print(f"{new_varying=}")
+            print(f"{self.varying=}")
+        if self.override_group is not None or other.override_group is not None:
             # at least one is an an override group - we can definitely say whether they should be grouped based on that
             can_combine = self.override_group == other.override_group
         elif not self.varying:

@@ -22,6 +22,7 @@ THIS_DIR = os.path.dirname(THIS_FILE)
 if THIS_DIR not in sys.path:
     sys.path.append(THIS_DIR)
 
+import combine_ies_test_images
 import genLightParamDescriptions
 
 EMBREE_DELEGATE = "Embree"
@@ -29,7 +30,10 @@ DEFAULT_DELEGATES = (EMBREE_DELEGATE,)
 DEFAULT_INPUT_GLOBS = (os.path.join(THIS_DIR, "usd", "*.usda"),)
 DEFAULT_OUTPUT_DIR = os.path.join(THIS_DIR, "renders")
 DEFAULT_RESOLUTION = 512
-DEFAULT_CAMERA = "/cameras/camera1"
+DEFAULT_CAMERAS = ("/cameras/camera1",)
+DEFAULT_CAMERAS_BY_USD = {
+    "iesTest": ("/cameras/iesTop", "/cameras/iesBottom"),
+}
 
 DEFAULT_SEED = 1
 
@@ -66,7 +70,7 @@ def run_tests(
     output_dir=DEFAULT_OUTPUT_DIR,
     delegates=DEFAULT_DELEGATES,
     resolution=DEFAULT_RESOLUTION,
-    camera=DEFAULT_CAMERA,
+    cameras: Iterable[str] = (),
     frames: Optional[str] = None,
     seed: int = DEFAULT_SEED,
 ) -> List[str]:
@@ -76,7 +80,6 @@ def run_tests(
     -------
     failures: List[str]
     """
-
     light_descriptions = genLightParamDescriptions.read_descriptions()
 
     if not input_usd_globs:
@@ -108,33 +111,50 @@ def run_tests(
         for layer in input_layers:
             input_file = os.path.basename(layer)
             base = os.path.splitext(input_file)[0]
-            output_file = f"{base}-{delegate.lower()}.####.exr"
-            output_path = os.path.join(delegate_output_dir, output_file)
-            if frames is None:
-                test_frames = light_descriptions.get(base, {}).frames
-                if test_frames:
-                    start, end = test_frames
-                    if start == end:
-                        test_frames = f"{start}"
-                    else:
-                        test_frames = f"{start}:{end}"
-                else:
-                    test_frames = "1"
-            else:
-                test_frames = frames
 
-            print("-" * 80)
-            exitcode = run_test(
-                layer,
-                output_path,
-                delegate=delegate,
-                resolution=resolution,
-                camera=camera,
-                frames=test_frames,
-                seed=seed,
-            )
-            if exitcode:
-                failures.append(layer)
+            if cameras:
+                light_cameras = cameras
+            else:
+                light_cameras = DEFAULT_CAMERAS_BY_USD.get(base, DEFAULT_CAMERAS)
+            for camera in light_cameras:
+                if len(light_cameras) > 1:
+                    camera_filename_part = "." + os.path.basename(camera)
+                else:
+                    camera_filename_part = ""
+                output_file = f"{base}-{delegate.lower()}{camera_filename_part}.####.exr"
+                output_path = os.path.join(delegate_output_dir, output_file)
+
+                if frames is None:
+                    test_frames = light_descriptions.get(base, {}).frames
+                    if test_frames:
+                        start, end = test_frames
+                        if start == end:
+                            test_frames = f"{start}"
+                        else:
+                            test_frames = f"{start}:{end}"
+                    else:
+                        test_frames = "1"
+                else:
+                    test_frames = frames
+
+                print("-" * 80)
+                exitcode = run_test(
+                    layer,
+                    output_path,
+                    delegate=delegate,
+                    resolution=resolution,
+                    camera=camera,
+                    frames=test_frames,
+                    seed=seed,
+                )
+                if exitcode:
+                    failures.append(layer)
+
+            # auto-combine iesTest images if we did all frames + all cameras
+            if base == "iesTest" and not cameras and frames is None:
+                print(f"Combining {base} images")
+                combine_ies_test_images.combine_ies_test_images(renderers=["embree"])
+
     return failures
 
 
@@ -172,7 +192,7 @@ def run_test(
     except Exception:
         print(cmd)
         raise
-    return subprocess.check_call(cmd)
+    return subprocess.call(cmd)
 
 
 ###############################################################################
@@ -204,9 +224,9 @@ def get_parser():
     )
     parser.add_argument(
         "-c",
-        "--camera",
-        default=DEFAULT_CAMERA,
-        help="Prim path to camera to render from",
+        "--cameras",
+        nargs="+",
+        help="Prim paths to cameras to render from",
     )
     parser.add_argument(
         "-i",
@@ -246,7 +266,6 @@ def main(argv=None):
         argv = sys.argv[1:]
     parser = get_parser()
     args = parser.parse_args(argv)
-    print(args)
 
     try:
         failures = run_tests(
@@ -254,7 +273,7 @@ def main(argv=None):
             output_dir=args.output_dir,
             delegates=args.delegates,
             resolution=args.resolution,
-            camera=args.camera,
+            cameras=args.cameras,
             frames=args.frames,
             seed=args.seed,
         )
