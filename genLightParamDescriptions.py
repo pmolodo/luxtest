@@ -14,7 +14,7 @@ import traceback
 
 from typing import Any, Dict, Iterable, List, Optional, Tuple, TypeAlias, Union
 
-from pxr import Sdf, Usd, UsdLux
+from pxr import Gf, Sdf, Usd, UsdLux
 
 IntFloat: TypeAlias = Union[int, float]
 
@@ -52,7 +52,8 @@ SUMMARY_OVERRIDES = {
         (1, 1): "ies:angleScale=0 ref",
         (11, 11): "ies:angleScale=0 ref",
         (21, 21): "ies:angleScale=0 ref",
-        (31, 31): "no ies:file ref",
+        (31, 21): "ies:angleScale=0 ref",
+        (41, 31): "no ies:file ref",
     },
 }
 
@@ -102,6 +103,22 @@ def is_sorted(vals: Iterable):
 def vals_close(val1, val2):
     if isinstance(val1, float) or isinstance(val2, float):
         return math.isclose(val1, val2)
+    elif type(val1) != type(val2):
+        return False
+    elif type(val1).__name__.startswith("Matrix") or type(val1).__name__.startswith("Vec"):
+        return Gf.IsClose(val1, val2)
+    elif isinstance(val1, (list, tuple)):
+        if len(val1) != len(val2):
+            return False
+        return all(vals_close(v1, v2) for v1, v2 in zip(val1, val2))
+    elif isinstance(val1, dict):
+        if set(val1) != set(val2):
+            return False
+        for key, v1 in val1.items():
+            v2 = val2[key]
+            if not vals_close(v1, v2):
+                return False
+        return True
     return val1 == val2
 
 
@@ -376,9 +393,6 @@ class FrameGroupTracker:
 
         new_varying = self.find_varying_vals(this_frame, other, other_frame)
 
-        if self.light_name == "iesTest" and other_frame == 22:
-            print(f"{new_varying=}")
-            print(f"{self.varying=}")
         if self.override_group is not None or other.override_group is not None:
             # at least one is an an override group - we can definitely say whether they should be grouped based on that
             can_combine = self.override_group == other.override_group
