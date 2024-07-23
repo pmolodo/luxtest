@@ -39,7 +39,7 @@ USD_EXTENSIONS = (".usd", ".usda", ".usdc")
 MISSING = object()
 
 AREA_LIGHT_SUMMARY_OVERRIDES = {
-    (1, 5): "light rotate worldZ from 0 to 80",
+    (1, 5): "light rotate worldZ from 0 to 60",
     (41, 45): "focusTint from black to green to white",
 }
 
