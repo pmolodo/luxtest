@@ -22,7 +22,12 @@
                     5
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 5.0
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {}
             },
@@ -32,7 +37,12 @@
                     10
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 5.0
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {
                     "inputs:radius": {
@@ -51,7 +61,12 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 5.0,
-                    "inputs:normalize": true
+                    "inputs:normalize": true,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {
                     "inputs:radius": {
@@ -70,7 +85,12 @@
                 ],
                 "non_default_constants": {
                     "inputs:enableColorTemperature": true,
-                    "inputs:intensity": 5.0
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {
                     "inputs:colorTemperature": {
@@ -89,7 +109,12 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 125.0,
-                    "inputs:radius": 0.10000000149011612
+                    "inputs:radius": 0.10000000149011612,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {
                     "inputs:shaping:cone:angle": {
@@ -108,7 +133,12 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 5.0,
-                    "inputs:shaping:cone:angle": 45.0
+                    "inputs:shaping:cone:angle": 45.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {
                     "inputs:shaping:cone:softness": {
@@ -126,7 +156,12 @@
                     35
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 5.0
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {
                     "inputs:shaping:focus": {
@@ -209,6 +244,11 @@
                 "non_default_constants": {
                     "inputs:exposure": -11.0,
                     "inputs:intensity": 5.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
                     "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies"
                 },
                 "varying": {
@@ -227,6 +267,11 @@
                     55
                 ],
                 "non_default_constants": {
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
                     "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies",
                     "inputs:shaping:ies:normalize": true
                 },
@@ -270,7 +315,12 @@
                     5
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 2.0
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {}
             },
@@ -280,7 +330,12 @@
                     10
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 2.0
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {
                     "inputs:radius": {
@@ -298,8 +353,13 @@
                     15
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 2.0,
-                    "inputs:normalize": true
+                    "inputs:intensity": 5.0,
+                    "inputs:normalize": true,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {
                     "inputs:radius": {
@@ -318,7 +378,12 @@
                 ],
                 "non_default_constants": {
                     "inputs:enableColorTemperature": true,
-                    "inputs:intensity": 2.0
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {
                     "inputs:colorTemperature": {
@@ -336,8 +401,13 @@
                     25
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 32.0,
-                    "inputs:radius": 0.10000000149011612
+                    "inputs:intensity": 125.0,
+                    "inputs:radius": 0.10000000149011612,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {
                     "inputs:shaping:cone:angle": {
@@ -355,8 +425,13 @@
                     30
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 2.0,
-                    "inputs:shaping:cone:angle": 45.0
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:cone:angle": 45.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {
                     "inputs:shaping:cone:softness": {
@@ -374,7 +449,12 @@
                     35
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 2.0
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {
                     "inputs:shaping:focus": {
@@ -392,7 +472,7 @@
                     40
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 2.0,
+                    "inputs:intensity": 5.0,
                     "inputs:shaping:cone:angle": 60.0,
                     "inputs:shaping:focusTint": [
                         1.0,
@@ -416,7 +496,7 @@
                     45
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 2.0,
+                    "inputs:intensity": 5.0,
                     "inputs:shaping:focus": 3.0
                 },
                 "varying": {
@@ -456,7 +536,12 @@
                 ],
                 "non_default_constants": {
                     "inputs:exposure": -11.0,
-                    "inputs:intensity": 2.0,
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
                     "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies"
                 },
                 "varying": {
@@ -475,6 +560,11 @@
                     55
                 ],
                 "non_default_constants": {
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
                     "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies",
                     "inputs:shaping:ies:normalize": true
                 },
@@ -855,17 +945,22 @@
             {
                 "frames": [
                     31,
-                    31
+                    32
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 1000000.0,
                     "inputs:shaping:ies:file": "../test_stripes_uniform.ies"
                 },
-                "varying": {}
+                "varying": {
+                    "inputs:shaping:ies:angleScale": {
+                        "31": 0.0,
+                        "32": -1.0
+                    }
+                }
             },
             {
                 "frames": [
-                    32,
+                    33,
                     40
                 ],
                 "non_default_constants": {
@@ -874,7 +969,6 @@
                 },
                 "varying": {
                     "inputs:shaping:ies:angleScale": {
-                        "32": -1.0,
                         "33": -0.75,
                         "34": -0.5,
                         "35": -0.25,
@@ -926,8 +1020,12 @@
                     5
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 2.0,
-                    "inputs:width": 0.20000000298023224
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {}
             },
@@ -937,7 +1035,12 @@
                     10
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 2.0
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {
                     "inputs:width": {
@@ -955,8 +1058,13 @@
                     15
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 2.0,
-                    "inputs:normalize": true
+                    "inputs:intensity": 5.0,
+                    "inputs:normalize": true,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {
                     "inputs:width": {
@@ -975,7 +1083,12 @@
                 ],
                 "non_default_constants": {
                     "inputs:enableColorTemperature": true,
-                    "inputs:intensity": 2.0,
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
                     "inputs:width": 2.0
                 },
                 "varying": {
@@ -994,7 +1107,12 @@
                     25
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 32.0,
+                    "inputs:intensity": 125.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
                     "inputs:width": 2.0
                 },
                 "varying": {
@@ -1013,8 +1131,13 @@
                     30
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 2.0,
+                    "inputs:intensity": 5.0,
                     "inputs:shaping:cone:angle": 45.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
                     "inputs:width": 2.0
                 },
                 "varying": {
@@ -1033,7 +1156,12 @@
                     35
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 2.0,
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
                     "inputs:width": 2.0
                 },
                 "varying": {
@@ -1052,7 +1180,7 @@
                     40
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 2.0,
+                    "inputs:intensity": 5.0,
                     "inputs:shaping:cone:angle": 60.0,
                     "inputs:shaping:focusTint": [
                         1.0,
@@ -1077,7 +1205,7 @@
                     45
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 2.0,
+                    "inputs:intensity": 5.0,
                     "inputs:shaping:focus": 3.0,
                     "inputs:width": 2.0
                 },
@@ -1118,7 +1246,12 @@
                 ],
                 "non_default_constants": {
                     "inputs:exposure": -11.0,
-                    "inputs:intensity": 2.0,
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
                     "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies",
                     "inputs:width": 2.0
                 },
@@ -1138,6 +1271,11 @@
                     55
                 ],
                 "non_default_constants": {
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
                     "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies",
                     "inputs:shaping:ies:normalize": true,
                     "inputs:width": 2.0
@@ -1182,7 +1320,12 @@
                     5
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 5.0
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {}
             },
@@ -1192,7 +1335,12 @@
                     10
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 5.0
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {
                     "inputs:radius": {
@@ -1211,7 +1359,12 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 5.0,
-                    "inputs:normalize": true
+                    "inputs:normalize": true,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {
                     "inputs:radius": {
@@ -1230,7 +1383,12 @@
                 ],
                 "non_default_constants": {
                     "inputs:enableColorTemperature": true,
-                    "inputs:intensity": 5.0
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {
                     "inputs:colorTemperature": {
@@ -1249,7 +1407,12 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 125.0,
-                    "inputs:radius": 0.10000000149011612
+                    "inputs:radius": 0.10000000149011612,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {
                     "inputs:shaping:cone:angle": {
@@ -1268,7 +1431,12 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 5.0,
-                    "inputs:shaping:cone:angle": 45.0
+                    "inputs:shaping:cone:angle": 45.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {
                     "inputs:shaping:cone:softness": {
@@ -1286,7 +1454,12 @@
                     35
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 5.0
+                    "inputs:intensity": 5.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
                 },
                 "varying": {
                     "inputs:shaping:focus": {
@@ -1369,6 +1542,11 @@
                 "non_default_constants": {
                     "inputs:exposure": -11.0,
                     "inputs:intensity": 5.0,
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
                     "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies"
                 },
                 "varying": {
@@ -1387,6 +1565,11 @@
                     55
                 ],
                 "non_default_constants": {
+                    "inputs:shaping:focusTint": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
                     "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies",
                     "inputs:shaping:ies:normalize": true
                 },
