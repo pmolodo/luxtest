@@ -3,8 +3,10 @@
 """Run the UsdLux_2 test suite"""
 
 import argparse
+import fnmatch
 import inspect
 import os
+import re
 import subprocess
 import sys
 import traceback
@@ -27,7 +29,8 @@ import genLightParamDescriptions
 
 EMBREE_DELEGATE = "Embree"
 DEFAULT_DELEGATES = (EMBREE_DELEGATE,)
-DEFAULT_INPUT_GLOBS = (os.path.join(THIS_DIR, "usd", "*.usda"),)
+DEFAULT_INCLUDE_GLOBS = (os.path.join(THIS_DIR, "usd", "*.usda"),)
+DEFAULT_EXCLUDE_GLOBS = ()
 DEFAULT_OUTPUT_DIR = os.path.join(THIS_DIR, "renders")
 DEFAULT_RESOLUTION = 512
 DEFAULT_CAMERAS = ("/cameras/camera1",)
@@ -95,7 +98,8 @@ class UsdRecordCommand(NamedTuple):
 
 
 def run_tests(
-    input_usd_globs: Iterable[str] = DEFAULT_INPUT_GLOBS,
+    include_globs: Iterable[str] = DEFAULT_INCLUDE_GLOBS,
+    exclude_globs: Iterable[str] = DEFAULT_EXCLUDE_GLOBS,
     output_dir=DEFAULT_OUTPUT_DIR,
     delegates=DEFAULT_DELEGATES,
     resolution=DEFAULT_RESOLUTION,
@@ -109,9 +113,20 @@ def run_tests(
     -------
     failures: List[UsdRecordCommand]
     """
+    nullLight = genLightParamDescriptions.LightParamDescription.empty()
+
     light_descriptions = genLightParamDescriptions.read_descriptions()
 
-    if not input_usd_globs:
+    # strip empty globs, and convert iterables into tuples
+    include_globs = tuple(x for x in include_globs if x)
+    exclude_globs = tuple(x for x in exclude_globs if x)
+
+    exclude_res = [re.compile(fnmatch.translate(x)) for x in exclude_globs]
+
+    def is_excluded(path):
+        return any(x.match(path) for x in exclude_res)
+
+    if not include_globs:
         errmsg = (
             "ERROR: no input usd glob patterns specified. Please specify a glob pattern to match usd layers to render"
         )
@@ -119,16 +134,20 @@ def run_tests(
         return [errmsg]
 
     input_layers = []
-    for pattern in input_usd_globs:
+    for pattern in include_globs:
         print(f"globbing: {pattern}")
-        new_layers = glob(pattern)
+        new_layers = []
+        new_layers = [x for x in glob(pattern) if not is_excluded(x)]
+
         print(f"found {len(new_layers)} layers")
         for f in new_layers:
             print(f"  {f}")
         input_layers.extend(new_layers)
 
     if not input_layers:
-        errmsg = f"ERROR: input patterns {input_usd_globs} did not match any files"
+        errmsg = f"ERROR: input glob patterns {include_globs} did not match any files"
+        if exclude_res:
+            errmsg += f", after excluding glob patterns {exclude_globs}"
         print(errmsg)
         return [errmsg]
 
@@ -196,14 +215,14 @@ def run_tests(
         print()
 
         print("-" * 80)
-        exitcode = command.render()
-        if exitcode:
-            failures.append(command)
+    exitcode = command.render()
+    if exitcode:
+        failures.append(command)
 
-        # auto-combine iesTest images if we did all cameras
-        if base == "iesTest" and not cameras:
-            print(f"Combining {base} images")
-            combine_ies_test_images.combine_ies_test_images(renderers=["embree"])
+    # auto-combine iesTest images if we did all cameras
+    if base == "iesTest" and not cameras:
+        print(f"Combining {base} images")
+        combine_ies_test_images.combine_ies_test_images(renderers=["embree"])
 
     return failures
 
@@ -280,12 +299,18 @@ def get_parser():
     )
     parser.add_argument(
         "-i",
-        "--input",
+        "--include",
         nargs="+",
-        default=DEFAULT_INPUT_GLOBS,
+        default=DEFAULT_INCLUDE_GLOBS,
         help="Glob pattern(s) to match input usd filepaths to render",
     )
-
+    parser.add_argument(
+        "-e",
+        "--exclude",
+        nargs="+",
+        default=DEFAULT_EXCLUDE_GLOBS,
+        help="Glob pattern(s) that will exclude usd filepaths to render - overrides a match against an include pattern",
+    )
     parser.add_argument(
         "-o",
         "--output-dir",
@@ -319,7 +344,8 @@ def main(argv=None):
 
     try:
         failures = run_tests(
-            args.input,
+            include_globs=args.include,
+            exclude_globs=args.exclude,
             output_dir=args.output_dir,
             delegates=args.delegates,
             resolution=args.resolution,
