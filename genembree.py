@@ -144,7 +144,7 @@ def run_tests(
             base = os.path.splitext(input_file)[0]
 
             if frames is None:
-                test_frames = light_descriptions.get(base, {}).frames
+                test_frames = light_descriptions.get(base, nullLight).frames
                 if test_frames:
                     start, end = test_frames
                     if start == end:
