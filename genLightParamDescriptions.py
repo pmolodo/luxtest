@@ -550,6 +550,10 @@ class LightParamDescription:
     attrs: List[str]
 
     @classmethod
+    def empty(cls):
+        return cls("", [], (1, 1), [])
+
+    @classmethod
     def from_dict(cls, data):
         data = dict(data)
         data["frame_groups"] = [FrameGroup.from_dict(x) for x in data["frame_groups"]]
