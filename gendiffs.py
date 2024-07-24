@@ -1,12 +1,49 @@
-import os, shutil
+#!/usr/bin/env python
 
-def needs_update(existing, dependent):
-    if os.path.exists(dependent):
-        return os.path.getmtime(existing) > os.path.getmtime(dependent)
-    return True
 
-TEST_ROOT = "renders"
-WEB_ROOT = "web"
+"""Generate a web page showing UsdLux image diffs
+
+...between the reference embree implementation and other renderers (ie, arnold,
+karma, and RenderMan RIS)
+"""
+
+
+import argparse
+import asyncio
+import datetime
+import inspect
+import locale
+import multiprocessing
+import os
+import shutil
+import subprocess
+import sys
+import textwrap
+import traceback
+
+from typing import Iterable
+
+###############################################################################
+# Constants
+###############################################################################
+
+THIS_FILE = os.path.abspath(inspect.getsourcefile(lambda: None) or __file__)
+THIS_DIR = os.path.dirname(THIS_FILE)
+
+if THIS_DIR not in sys.path:
+    sys.path.append(THIS_DIR)
+
+import genLightParamDescriptions
+import pip_import
+
+pip_import.pip_import("tqdm")
+import tqdm.asyncio
+
+RENDERS_DIR_NAME = "renders"
+RENDERS_ROOT = os.path.join(THIS_DIR, RENDERS_DIR_NAME)
+WEB_DIR_NAME = "web"
+WEB_ROOT = os.path.join(THIS_DIR, WEB_DIR_NAME)
+WEB_IMG_ROOT = os.path.join(WEB_ROOT, "img")
 
 RENDERERS = [
     "karma",
@@ -14,62 +51,11 @@ RENDERERS = [
     "arnold",
 ]
 
-TESTS = [
-    ("distant", 15, {
-        1: "Angle from 0 to 90, normalize OFF", 
-        6: "Angle from 0 to 90, normalize ON", 
-        11: "Colour temperature from 2000 to 11000",
-    }),
-    ("dome", 1, {}),
-    ("cylinder", 40, {
-        1: "Radius from 0.1 to 0.5, normalize OFF", 
-        6: "Radius from 0.1 to 0.5, normalize ON", 
-        11: "Colour temperature from 2000 to 11000",
-        16: "Cone angle from 90 to 10",
-        21: "Softness from 0 to 1 (cone 45)",
-        26: "Focus from 0 to 100 (cone 60, focusTint red)",
-        31: "IES angle scale -1 to 1 (IES normalize OFF)",
-        36: "IES angle scale -1 to 1 (IES normalize ON)",
-    }),
-    ("disk", 40, {
-        1: "Radius from 0.1 to 0.5, normalize OFF", 
-        6: "Radius from 0.1 to 0.5, normalize ON", 
-        11: "Colour temperature from 2000 to 11000",
-        16: "Cone angle from 90 to 10",
-        21: "Softness from 0 to 1 (cone 45)",
-        26: "Focus from 0 to 100 (cone 60, focusTint red)",
-        31: "IES angle scale -1 to 1 (IES normalize OFF)",
-        36: "IES angle scale -1 to 1 (IES normalize ON)",
-    }),
-    ("rect", 40, {
-        1: "Width from 0.1 to 0.5, normalize OFF", 
-        6: "Width from 0.1 to 0.5, normalize ON", 
-        11: "Colour temperature from 2000 to 11000",
-        16: "Cone angle from 90 to 10",
-        21: "Softness from 0 to 1 (cone 45)",
-        26: "Focus from 0 to 100 (cone 60, focusTint red)",
-        31: "IES angle scale -1 to 1 (IES normalize OFF)",
-        36: "IES angle scale -1 to 1 (IES normalize ON)",
-    }),
-    ("sphere", 40, {
-        1: "Radius from 0.1 to 0.5, normalize OFF", 
-        6: "Radius from 0.1 to 0.5, normalize ON", 
-        11: "Colour temperature from 2000 to 11000",
-        16: "Cone angle from 90 to 10",
-        21: "Softness from 0 to 1 (cone 45)",
-        26: "Focus from 0 to 100 (cone 60, focusTint red)",
-        31: "IES angle scale -1 to 1 (IES normalize OFF)",
-        36: "IES angle scale -1 to 1 (IES normalize ON)",
-    }),
-    ("visible-rect", 1, {}),
-]
-
 OUTPUT_DIR = "diff"
 
 MAP = "magma"
 
-HTML = \
-"""<!DOCTYPE html>
+HTML_START = """<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -81,76 +67,373 @@ HTML = \
   <body>
 """
 
-os.makedirs(os.path.join(WEB_ROOT, "img"), exist_ok=True)
+OIIOTOOL = os.environ.get("LUXTEST_OIIOTOOL", "oiiotool")
 
-for name, end, descriptions in TESTS:
+NUM_CPUS = multiprocessing.cpu_count()
 
-    HTML += f"""<h1>{name}</h1>
+# if we can't read light_descriptions, use this
+FALLBACK_LIGHTS = (
+    "cylinder",
+    "disk",
+    "distant",
+    "dome",
+    "rect",
+    "sphere",
+    "visibleRect",
+)
 
-<table>
-  <tr>
-    <td>Frame</td>
-    <td>Ref</td>
-"""
-    for renderer in RENDERERS:
-        HTML += f"""
-    <td>{renderer}</td>
-    <td>{renderer} diff</td>
-"""
 
-    HTML += """
-  </tr>
-"""
+###############################################################################
+# Utilities
+###############################################################################
 
-    for frame in range(1, end+1):
 
-        if frame in descriptions:
-            desc = descriptions[frame]
-            HTML += "  <tr></tr>\n"
-            HTML += "  <tr>\n"
-            HTML += f"    <td></td><td colspan='{len(RENDERERS)+1}'><em>{desc}</em></td>\n"
-            HTML += "  </tr>\n"
+def is_ipython():
+    try:
+        __IPYTHON__  # type: ignore
+    except NameError:
+        return False
+    return True
 
-        HTML += "  <tr>\n"
-        HTML += f"    <td>{frame:04}</td>"
 
-        embree_base = os.path.join(TEST_ROOT, "embree", f"{name}-embree.{frame:04}")
-        embree_exr = f"{embree_base}.exr"
-        embree_png = f"{name}-embree.{frame:04}.png"
-        embree_png_path = os.path.join(WEB_ROOT, "img", embree_png)
+if sys.platform == "win32":
+    to_shell_cmd = subprocess.list2cmdline
+else:
 
-        HTML += f'    <td><img src="img/{embree_png}"</td>\n'
+    def to_shell_cmd(cmd_list):
+        import shlex
 
-        cmd = f"oiiotool {embree_exr} --ch R,G,B --colorconvert linear sRGB -o {embree_png_path}"
-        if needs_update(embree_exr, embree_png_path):
-            os.system(cmd)
+        return " ".join(shlex.quote(x) for x in cmd_list)
+
+
+def make_unique(*objs):
+    return tuple(dict.fromkeys(objs))
+
+
+CODEC_LIST = make_unique(
+    # list of codecs to try, in order...
+    sys.stdout.encoding,
+    sys.stderr.encoding,
+    sys.stdin.encoding,
+    locale.getpreferredencoding(),
+    "utf8",
+)
+
+
+def try_decode(input_bytes):
+    for codec in CODEC_LIST:
+        try:
+            return input_bytes.decode(codec)
+        except UnicodeDecodeError:
+            pass
+    return input_bytes
+
+
+def normalize_concurrency(concurrency: int):
+    if concurrency < 0:
+        concurrency += NUM_CPUS
+    return max(concurrency, 1)
+
+
+def needs_update(existing, dependent):
+    if os.path.exists(dependent):
+        return os.path.getmtime(existing) > os.path.getmtime(dependent)
+    return True
+
+
+def iter_frames(light_description):
+    start, end = light_description.frames
+    return range(start, end + 1)
+
+
+def get_image_path(light_name, renderer: str, frame: int, ext: str, prefix=""):
+    ext = ext.lstrip(".")
+    filename = f"{prefix}{light_name}-{renderer}.{frame:04}.{ext}"
+    if ext == "png":
+        base_dir = WEB_IMG_ROOT
+    elif ext == "exr":
+        base_dir = os.path.join(RENDERS_ROOT, renderer)
+    else:
+        raise ValueError(f"unrecognized extension: {ext}")
+    return os.path.join(base_dir, filename)
+
+
+def get_image_url(light_name, renderer: str, frame: int, ext: str, prefix=""):
+    image_path = get_image_path(light_name, renderer, frame, ext, prefix=prefix)
+    rel_path = os.path.relpath(image_path, WEB_ROOT)
+    return rel_path.replace(os.sep, "/")
+
+
+def print_streams(proc: subprocess.CompletedProcess):
+    for stream_name in ("stdout", "stderr"):
+        stream = getattr(proc, stream_name, None)
+        print("=" * 80)
+        print(f"{stream_name}:")
+        print()
+        print(try_decode(stream))
+
+
+def raise_proc_error(proc: subprocess.CompletedProcess, verbose: bool):
+    print()
+    if not verbose:
+        # if not verbose, we haven't printed output yet - do so now
+        print_streams(proc)
+    print("=" * 80)
+    print("Error running commmand:")
+    print(to_shell_cmd(proc.args))
+    print(f"Exitcode: {proc.returncode}")
+    print("=" * 80)
+    raise subprocess.CalledProcessError(proc.returncode, proc.args, proc.stdout, proc.stderr)
+
+
+async def run(args: Iterable[str], check=False, verbose=False):
+    if verbose:
+        print(f"Running: {to_shell_cmd(args)}")
+    proc = await asyncio.create_subprocess_exec(args[0], *args[1:], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    stdout, stderr = await proc.communicate()
+    completed_proc = subprocess.CompletedProcess(args=args, returncode=proc.returncode, stdout=stdout, stderr=stderr)
+    if verbose:
+        print_streams(completed_proc)
+        print("=" * 80)
+    if completed_proc.returncode:
+        if check:
+            raise_proc_error(completed_proc, verbose)
+        if verbose:
+            print(f"Exitcode: {completed_proc.returncode}")
+    return completed_proc
+
+
+###############################################################################
+# Core functions
+###############################################################################
+
+
+async def update_png(exr_path, png_path, verbose=False):
+
+    if needs_update(exr_path, png_path):
+        if verbose:
+            print(f"Creating png: {png_path}")
+        cmd = [
+            OIIOTOOL,
+            exr_path,
+            "--ch",
+            "R,G,B",
+            "--colorconvert",
+            "linear",
+            "sRGB",
+            "-o",
+            png_path,
+        ]
+        proc = await run(cmd, verbose=verbose, check=True)
+        if not os.path.isfile:
+            print(f"Error - output png did not exist: {png_path}")
+            raise_proc_error(proc, verbose)
+
+
+async def update_diff(exr_path1, exr_path2, diff_path, verbose=False):
+    cmd = [
+        OIIOTOOL,
+        exr_path1,
+        exr_path2,
+        "--diff",
+        "--absdiff",
+        "--mulc",
+        "2,2,2,1",
+        "--colormap",
+        MAP,
+        "--colorconvert",
+        "linear",
+        "sRGB",
+        "-o",
+        diff_path,
+    ]
+    proc = await run(cmd, verbose=verbose)
+    if not os.path.isfile:
+        print(f"Error - output diff png did not exist: {diff_path}")
+        raise_proc_error(proc, verbose)
+
+
+async def gen_images_async(light_descriptions, verbose=False, max_concurrency=-1):
+    flat_frames = []
+    for name, description in light_descriptions.items():
+        for frame in iter_frames(description):
+            flat_frames.append((name, description, frame))
+
+    all_tasks = []
+    num_possible_images = 0
+
+    def queue_png_update(exr_path, png_path):
+        nonlocal num_possible_images
+        num_possible_images += 1
+        if needs_update(exr_path, png_path):
+            all_tasks.append(update_png(exr_path, png_path, verbose=verbose))
+
+    def queue_diff_update(exr_path1, exr_path2, diff_path):
+        nonlocal num_possible_images
+        num_possible_images += 1
+        if needs_update(exr_path1, diff_path) or needs_update(exr_path2, diff_path):
+            all_tasks.append(update_diff(exr_path1, exr_path2, diff_path, verbose=verbose))
+
+    print("Finding how many images need to be updated:")
+    progress = tqdm.tqdm(flat_frames)
+    for name, description, frame in progress:
+        progress.set_postfix({"name": name, "frame": frame})
+        embree_exr_path = get_image_path(name, "embree", frame, "exr")
+        embree_png_path = get_image_path(name, "embree", frame, "png")
+        queue_png_update(embree_exr_path, embree_png_path)
 
         for renderer in RENDERERS:
-            renderer_base = os.path.join(TEST_ROOT, renderer, f"{name}-{renderer}.{frame:04}")
-            renderer_exr = f"{renderer_base}.exr"
-            renderer_png = f"{name}-{renderer}.{frame:04}.png"
-            renderer_png_path = os.path.join(WEB_ROOT, "img", renderer_png)
+            renderer_exr_path = get_image_path(name, renderer, frame, "exr")
+            renderer_png_path = get_image_path(name, renderer, frame, "png")
+            queue_png_update(renderer_exr_path, renderer_png_path)
 
-            cmd = f"oiiotool {renderer_exr} --ch R,G,B --colorconvert linear sRGB -o {renderer_png_path}"
-            if needs_update(renderer_exr, renderer_png_path):
-                os.system(cmd)
+            diff_png_path = get_image_path(name, renderer, frame, "png", prefix="diff-")
+            queue_diff_update(embree_exr_path, renderer_exr_path, diff_png_path)
 
-            output_png = f"diff-{name}-{renderer}.{frame:04}.png"
-            output_path = os.path.join(WEB_ROOT, "img", output_png)
+    print(f"Generating {len(all_tasks)} images (out of possible {num_possible_images}):")
 
-            HTML += f'    <td><img src="img/{renderer_png}"</td>\n'
-            HTML += f'    <td><img src="img/{output_png}"</td>\n'
+    # dont' want to overwhelm system by launching too many subprocess
+    max_concurrency = normalize_concurrency(max_concurrency)
+    proc_limiter = asyncio.Semaphore(max_concurrency)
 
-            if needs_update(renderer_exr, output_path) or needs_update(embree_exr, output_path):
-                cmd = f"oiiotool {embree_exr} {renderer_exr} --diff --absdiff --mulc 2,2,2,1 --colormap {MAP} --colorconvert linear sRGB -o {output_path}"
-                print(cmd)
-                os.system(cmd)
+    async def proc_limited_coroutine(coroutine):
+        async with proc_limiter:
+            return await coroutine
 
-        HTML += "  </tr>"
+    limited_tasks = [proc_limited_coroutine(x) for x in all_tasks]
 
-    HTML += "</table>\n"
+    await tqdm.asyncio.tqdm_asyncio.gather(*limited_tasks)
 
-with open(os.path.join(WEB_ROOT, "luxtest.html"), "w") as f:
-    f.write(HTML)
 
-shutil.copyfile("luxtest.css", os.path.join(WEB_ROOT, "luxtest.css"))
+def gen_images(light_descriptions, verbose=False, max_concurrency=-1):
+    asyncio.run(gen_images_async(light_descriptions, verbose, max_concurrency=max_concurrency))
+
+
+def gen_html(light_descriptions):
+    html = HTML_START
+    num_cols = len(RENDERERS) * 2 + 1
+    for name, description in light_descriptions.items():
+        summaries_by_start_frame = genLightParamDescriptions.get_light_group_summaries(name, description)
+
+        html += textwrap.dedent(
+            f"""<h1>{name}</h1>
+
+            <table>
+            <tr>
+                <td>Frame</td>
+                <td>Ref</td>
+            """
+        )
+        for renderer in RENDERERS:
+            html += textwrap.dedent(
+                f"""
+                    <td>{renderer}</td>
+                    <td>{renderer} diff</td>
+                """
+            )
+
+        html += "\n</tr>"
+        for frame in iter_frames(description):
+
+            if frame in summaries_by_start_frame:
+                desc = summaries_by_start_frame[frame]
+                html += "  <tr></tr>\n"
+                html += "  <tr>\n"
+                html += f"    <td></td><td colspan='{num_cols}'><em>{desc}</em></td>\n"
+                html += "  </tr>\n"
+
+            html += "  <tr>\n"
+            html += f"    <td>{frame:04}</td>"
+
+            embree_url = get_image_url(name, "embree", frame, "png")
+
+            html += f'    <td><img src="{embree_url}"</td>\n'
+
+            for renderer in RENDERERS:
+                renderer_url = get_image_url(name, renderer, frame, "png")
+                diff_url = get_image_url(name, renderer, frame, "png", prefix="diff-")
+
+                html += f'    <td><img src="{renderer_url}"</td>\n'
+                html += f'    <td><img src="{diff_url}"</td>\n'
+
+            html += "  </tr>"
+
+        html += "</table>\n"
+
+    with open(os.path.join(WEB_ROOT, "luxtest.html"), "w", encoding="utf8") as f:
+        f.write(html)
+
+    shutil.copyfile("luxtest.css", os.path.join(WEB_ROOT, "luxtest.css"))
+
+
+def gen_diffs(verbose=False, max_concurrency=-1, lights: Iterable[str] = ()):
+    start = datetime.datetime.now()
+    light_descriptions = genLightParamDescriptions.read_descriptions()
+    if lights:
+        light_descriptions = {light: desc for light, desc in light_descriptions.items() if light in lights}
+
+    os.makedirs(WEB_IMG_ROOT, exist_ok=True)
+    gen_images(light_descriptions, verbose=verbose, max_concurrency=max_concurrency)
+    gen_html(light_descriptions)
+    elapsed = datetime.datetime.now() - start
+    print(f"Done generating diffs - took: {elapsed}")
+
+
+###############################################################################
+# CLI
+###############################################################################
+
+
+def get_parser():
+    try:
+        light_descriptions = genLightParamDescriptions.read_descriptions()
+        light_names = sorted(light_descriptions)
+    except Exception as err:
+        print("Error reading light names from light_descriptions.json:")
+        print(err)
+        print("...using fallback light names")
+        light_names = FALLBACK_LIGHTS
+
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+    )
+    parser.add_argument("-v", "--verbose", action="store_true")
+    parser.add_argument(
+        "-j",
+        type=int,
+        default="-1",
+        help=(
+            "Number of oiiotool procs to run in parallel; negative values are subtracted from"
+            " multiprocessing.cpu_count()"
+        ),
+    )
+    parser.add_argument(
+        "-l",
+        "--light",
+        choices=light_names,
+        action="append",
+        dest="lights",
+        help=(
+            "Only render images for the given lights; if not specified, render images for all lights. May be repeated."
+        ),
+    )
+    return parser
+
+
+def main(argv=None):
+    if argv is None:
+        argv = sys.argv[1:]
+    parser = get_parser()
+    args = parser.parse_args(argv)
+    try:
+        gen_diffs(verbose=args.verbose, max_concurrency=args.j, lights=args.lights)
+    except Exception:  # pylint: disable=broad-except
+
+        traceback.print_exc()
+        return 1
+    return 0
+
+
+if __name__ == "__main__" and not is_ipython():
+    sys.exit(main())
