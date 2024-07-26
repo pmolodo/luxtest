@@ -215,14 +215,14 @@ def run_tests(
         print()
 
         print("-" * 80)
-    exitcode = command.render()
-    if exitcode:
-        failures.append(command)
+        exitcode = command.render()
+        if exitcode:
+            failures.append(command)
 
-    # auto-combine iesTest images if we did all cameras
-    if base == "iesTest" and not cameras:
-        print(f"Combining {base} images")
-        combine_ies_test_images.combine_ies_test_images(renderers=["embree"])
+        # auto-combine iesTest images if we did all cameras
+        if command.name == "iesTest" and not cameras:
+            print(f"Combining {base} images")
+            combine_ies_test_images.combine_ies_test_images(renderers=["embree"])
 
     return failures
 
