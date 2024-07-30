@@ -65,6 +65,20 @@ HTML_START = """<!DOCTYPE html>
     <link rel="stylesheet" href="luxtest.css">
   </head>
   <body>
+
+    <div class="wrapper">
+      <div class="navbar">
+"""
+
+HTML_NAVBAR_END = """\
+      </div> <!-- navbar -->
+      <div class="main">
+"""
+
+HTML_END = """<!DOCTYPE html>
+      </div> <!-- main -->
+    </div> <!-- wrapper -->
+  </body>
 """
 
 OIIOTOOL = os.environ.get("LUXTEST_OIIOTOOL", "oiiotool")
@@ -324,10 +338,17 @@ def gen_html(light_descriptions: Dict[str, genLightParamDescriptions.LightParamD
     sorted_lights = sorted(light_descriptions.items(), key=sort_key)
 
     for name, description in sorted_lights:
+        # add navbar links first
+        html += f"""<p><a href="#{name}">{name}</a></p>"""
+
+    html += HTML_NAVBAR_END
+
+    for name, description in sorted_lights:
+        # now add main body
         summaries_by_start_frame = genLightParamDescriptions.get_light_group_summaries(name, description)
 
         html += textwrap.dedent(
-            f"""<h1>{name}</h1>
+            f"""<h1 id="{name}">{name}</h1>
 
             <table>
             <tr>
@@ -370,6 +391,7 @@ def gen_html(light_descriptions: Dict[str, genLightParamDescriptions.LightParamD
             html += "  </tr>"
 
         html += "</table>\n"
+    html += HTML_END
 
     with open(os.path.join(WEB_ROOT, "luxtest.html"), "w", encoding="utf8") as f:
         f.write(html)
