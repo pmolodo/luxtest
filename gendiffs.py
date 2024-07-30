@@ -82,6 +82,8 @@ FALLBACK_LIGHTS = (
     "visibleRect",
 )
 
+SKIP_LIGHTS = ("ies_scale",)
+
 
 ###############################################################################
 # Utilities
@@ -368,7 +370,9 @@ def gen_html(light_descriptions):
 
 def gen_diffs(verbose=False, max_concurrency=-1, lights: Iterable[str] = ()):
     start = datetime.datetime.now()
+    lights = tuple(lights)  # in case it's an iterable
     light_descriptions = genLightParamDescriptions.read_descriptions()
+    light_descriptions = {light: desc for light, desc in light_descriptions.items() if light not in SKIP_LIGHTS}
     if lights:
         light_descriptions = {light: desc for light, desc in light_descriptions.items() if light in lights}
 
@@ -427,7 +431,7 @@ def main(argv=None):
     parser = get_parser()
     args = parser.parse_args(argv)
     try:
-        gen_diffs(verbose=args.verbose, max_concurrency=args.j, lights=args.lights)
+        gen_diffs(verbose=args.verbose, max_concurrency=args.j, lights=args.lights or ())
     except Exception:  # pylint: disable=broad-except
 
         traceback.print_exc()
