@@ -78,6 +78,7 @@ class UsdRecordCommand(NamedTuple):
     camera: str
     frames: Tuple[int, int]
     resolution: int
+    samples: Optional[int]
     seed: int
 
     def render(self):
@@ -86,6 +87,7 @@ class UsdRecordCommand(NamedTuple):
             self.output_path,
             delegate=self.renderer,
             resolution=self.resolution,
+            samples=self.samples,
             camera=self.camera,
             frames=self.frames,
             seed=self.seed,
@@ -100,9 +102,10 @@ class UsdRecordCommand(NamedTuple):
 def run_tests(
     include_globs: Iterable[str] = DEFAULT_INCLUDE_GLOBS,
     exclude_globs: Iterable[str] = DEFAULT_EXCLUDE_GLOBS,
-    output_dir=DEFAULT_OUTPUT_DIR,
-    delegates=DEFAULT_DELEGATES,
-    resolution=DEFAULT_RESOLUTION,
+    output_dir: str = DEFAULT_OUTPUT_DIR,
+    delegates: Iterable[str] = DEFAULT_DELEGATES,
+    resolution: int = DEFAULT_RESOLUTION,
+    samples: Optional[int] = None,
     cameras: Iterable[str] = (),
     frames: Optional[str] = None,
     seed: int = DEFAULT_SEED,
@@ -198,6 +201,7 @@ def run_tests(
                         camera=camera,
                         frames=test_frames,
                         resolution=resolution,
+                        samples=samples,
                         seed=seed,
                     )
                 )
@@ -232,6 +236,7 @@ def run_test(
     output_path: str,
     delegate: str,
     resolution: int,
+    samples: Optional[int],
     camera: str,
     frames: str,
     seed: int,
@@ -263,6 +268,8 @@ def run_test(
         raise
     env = dict(os.environ)
     env["HDEMBREE_RANDOM_NUMBER_SEED"] = str(seed)
+    if samples is not None:
+        env["HDEMBREE_SAMPLES_TO_CONVERGENCE"] = str(samples)
     return subprocess.call(cmd, env=env)
 
 
@@ -292,6 +299,15 @@ def get_parser():
         type=int,
         default=DEFAULT_RESOLUTION,
         help="Resolution of the rendered test images",
+    )
+    parser.add_argument(
+        "-s",
+        "--samples",
+        type=int,
+        help=(
+            "Number of samples per-pixel for the embree render delegate (if not specified, uses embree's default,"
+            " currently 100)"
+        ),
     )
     parser.add_argument(
         "-c",
@@ -328,7 +344,7 @@ def get_parser():
         help="Frame string, in FRAMESPEC format used by usdrecord (see --frames arg in `usdrecord --help`).",
     )
     parser.add_argument(
-        "-s",
+        "-x",
         "--seed",
         type=int,
         default=DEFAULT_SEED,
@@ -351,6 +367,7 @@ def main(argv=None):
             output_dir=args.output_dir,
             delegates=args.delegates,
             resolution=args.resolution,
+            samples=args.samples,
             cameras=args.cameras,
             frames=args.frames,
             seed=args.seed,
