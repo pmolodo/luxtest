@@ -21,7 +21,7 @@ import sys
 import textwrap
 import traceback
 
-from typing import Iterable
+from typing import Dict, Iterable
 
 ###############################################################################
 # Constants
@@ -311,10 +311,19 @@ def gen_images(light_descriptions, verbose=False, max_concurrency=-1):
     asyncio.run(gen_images_async(light_descriptions, verbose, max_concurrency=max_concurrency))
 
 
-def gen_html(light_descriptions):
+def gen_html(light_descriptions: Dict[str, genLightParamDescriptions.LightParamDescription]):
     html = HTML_START
     num_cols = len(RENDERERS) * 2 + 1
-    for name, description in light_descriptions.items():
+
+    # sort first by number of frames (so tests with, ie, only one frame appear at top and are easy to find), then
+    # alphabetically
+    def sort_key(name_desc_pair):
+        name, description = name_desc_pair
+        return (description.frames.num_frames, description.frames.start, name)
+
+    sorted_lights = sorted(light_descriptions.items(), key=sort_key)
+
+    for name, description in sorted_lights:
         summaries_by_start_frame = genLightParamDescriptions.get_light_group_summaries(name, description)
 
         html += textwrap.dedent(
