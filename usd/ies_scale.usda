@@ -105,7 +105,7 @@ def Scope "Render"
 
 def Xform "lights"
 {
-    def SphereLight "light1" (
+    def SphereLight "ies_scale_light" (
         prepend apiSchemas = ["ShapingAPI", "HoudiniViewportGuideAPI"]
     )
     {

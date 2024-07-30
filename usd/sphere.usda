@@ -8,7 +8,7 @@
             bool capture_application = 0
             int capture_every_nth_frames = 20
             bool capture_every_nth_frames_checked = 0
-            int capture_frame_end = 40
+            int capture_frame_end = 55
             int capture_frame_start = 1
             string capture_name = "sphere-rtx"
             string capture_range = "Custom Range - Frames"
@@ -30,7 +30,7 @@
             int mp4_encoding_rc_target_quality = 0
             bool mp4_encoding_video_full_range_flag = 0
             string output_format = ".exr"
-            string output_path = "C:/Users/alanglands/code/luxtest/renders/rtx"
+            string output_path = "./renders/rtx"
             bool overwrite_existing_frame_checked = 0
             bool pathtrace_mb_checked = 0
             double pathtrace_mb_frame_shutter_close = 0.5
@@ -86,7 +86,7 @@
             double agentHeight = 180
             double agentRadius = 20
             bool excludeRigidBodies = 1
-            uint64 ver = 1
+            int ver = 1
             double voxelCeiling = 460
         }
         dictionary omni_layer = {
@@ -94,7 +94,7 @@
         }
         dictionary renderSettings = {
             float3 "rtx:debugView:pixelDebug:textColor" = (0, 1e18, 0)
-            int "rtx:externalFrameCounter" = 40
+            int "rtx:externalFrameCounter" = 55
             float3 "rtx:fog:fogColor" = (0.75, 0.75, 0.75)
             float3 "rtx:index:regionOfInterestMax" = (0, 0, 0)
             float3 "rtx:index:regionOfInterestMin" = (0, 0, 0)
@@ -126,7 +126,7 @@
             float3 "rtx:post:tonemap:whitepoint" = (1, 1, 1)
             float3 "rtx:raytracing:inscattering:singleScatteringAlbedo" = (0.9, 0.9, 0.9)
             float3 "rtx:raytracing:inscattering:transmittanceColor" = (0.5, 0.5, 0.5)
-            token "rtx:rendermode" = "PathTracing"
+            string "rtx:rendermode" = "PathTracing"
             float3 "rtx:sceneDb:ambientLightColor" = (0.1, 0.1, 0.1)
         }
     }
