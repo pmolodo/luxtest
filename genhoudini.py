@@ -25,6 +25,8 @@ import combine_ies_test_images
 import genLightParamDescriptions
 import luxtest_hou_utils
 
+from genLightParamDescriptions import FrameRange
+
 LUXTEST_HIP = os.path.join(THIS_DIR, "luxtest.hip")
 HUSK_PRE_RENDER = os.path.join(THIS_DIR, "husk_pre_render.py")
 
@@ -78,7 +80,7 @@ def render_luxtest(
     hip_path=LUXTEST_HIP,
     renderers: Optional[Iterable[str]] = None,
     lights: Optional[Iterable[str]] = None,
-    frame_range: Optional[Tuple[int, int]] = None,
+    frame_range: Optional[FrameRange] = None,
     images=True,
     usd=True,
 ):
@@ -129,7 +131,7 @@ def output_usd(lights: Iterable[str] = ()):
 def render_images(
     renderers: Iterable[str] = (),
     lights: Iterable[str] = (),
-    frame_range: Optional[Tuple[int, int]] = None,
+    frame_range: Optional[FrameRange] = None,
 ):
     import hou
 
@@ -153,7 +155,7 @@ def render_images(
         "verbose": True,
     }
     if frame_range is not None:
-        render_kwargs["frame_range"] = frame_range
+        render_kwargs["frame_range"] = tuple(frame_range)
 
     ies_renderer_count = {}
     for i, rop_node in enumerate(rop_nodes):
@@ -233,6 +235,7 @@ def get_parser():
     parser.add_argument(
         "-f",
         "--frames",
+        type=FrameRange.from_str,
         help=(
             "Only render the given frame or frame range; may be single digit, or inclusive range specified as start:end"
         ),
@@ -245,24 +248,12 @@ def main(argv=None):
         argv = sys.argv[1:]
     parser = get_parser()
     args = parser.parse_args(argv)
-    frame_range = None
-    if args.frames:
-        if ":" in args.frames:
-            split = args.frames.split(":")
-            if len(split) > 2:
-                raise ValueError(
-                    f"frames may only have a single ':', to denote start:end (inclusive) - got: {args.frames}"
-                )
-            frame_range = tuple(int(x) for x in split)
-        else:
-            frame = int(args.frames)
-            frame_range = (frame, frame)
     try:
         render_luxtest(
             args.hip_file,
             lights=args.lights,
             renderers=args.renderers,
-            frame_range=frame_range,
+            frame_range=args.frames,
             images=args.images,
             usd=args.usd,
         )

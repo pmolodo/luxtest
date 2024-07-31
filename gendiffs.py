@@ -12,7 +12,6 @@ import argparse
 import asyncio
 import datetime
 import inspect
-import locale
 import multiprocessing
 import os
 import shutil
@@ -21,7 +20,7 @@ import sys
 import textwrap
 import traceback
 
-from typing import Iterable
+from typing import Dict, Iterable
 
 ###############################################################################
 # Constants
@@ -34,6 +33,7 @@ if THIS_DIR not in sys.path:
     sys.path.append(THIS_DIR)
 
 import genLightParamDescriptions
+import luxtest_utils
 import pip_import
 
 pip_import.pip_import("tqdm")
@@ -65,6 +65,20 @@ HTML_START = """<!DOCTYPE html>
     <link rel="stylesheet" href="luxtest.css">
   </head>
   <body>
+
+    <div class="wrapper">
+      <div class="navbar">
+"""
+
+HTML_NAVBAR_END = """\
+      </div> <!-- navbar -->
+      <div class="main">
+"""
+
+HTML_END = """<!DOCTYPE html>
+      </div> <!-- main -->
+    </div> <!-- wrapper -->
+  </body>
 """
 
 OIIOTOOL = os.environ.get("LUXTEST_OIIOTOOL", "oiiotool")
@@ -81,6 +95,8 @@ FALLBACK_LIGHTS = (
     "sphere",
     "visibleRect",
 )
+
+SKIP_LIGHTS = ("ies_scale",)
 
 
 ###############################################################################
@@ -104,29 +120,6 @@ else:
         import shlex
 
         return " ".join(shlex.quote(x) for x in cmd_list)
-
-
-def make_unique(*objs):
-    return tuple(dict.fromkeys(objs))
-
-
-CODEC_LIST = make_unique(
-    # list of codecs to try, in order...
-    sys.stdout.encoding,
-    sys.stderr.encoding,
-    sys.stdin.encoding,
-    locale.getpreferredencoding(),
-    "utf8",
-)
-
-
-def try_decode(input_bytes):
-    for codec in CODEC_LIST:
-        try:
-            return input_bytes.decode(codec)
-        except UnicodeDecodeError:
-            pass
-    return input_bytes
 
 
 def normalize_concurrency(concurrency: int):
@@ -170,7 +163,7 @@ def print_streams(proc: subprocess.CompletedProcess):
         print("=" * 80)
         print(f"{stream_name}:")
         print()
-        print(try_decode(stream))
+        print(luxtest_utils.try_decode(stream))
 
 
 def raise_proc_error(proc: subprocess.CompletedProcess, verbose: bool):
@@ -309,14 +302,30 @@ def gen_images(light_descriptions, verbose=False, max_concurrency=-1):
     asyncio.run(gen_images_async(light_descriptions, verbose, max_concurrency=max_concurrency))
 
 
-def gen_html(light_descriptions):
+def gen_html(light_descriptions: Dict[str, genLightParamDescriptions.LightParamDescription]):
     html = HTML_START
     num_cols = len(RENDERERS) * 2 + 1
-    for name, description in light_descriptions.items():
+
+    # sort first by number of frames (so tests with, ie, only one frame appear at top and are easy to find), then
+    # alphabetically
+    def sort_key(name_desc_pair):
+        name, description = name_desc_pair
+        return (description.frames.num_frames, description.frames.start, name)
+
+    sorted_lights = sorted(light_descriptions.items(), key=sort_key)
+
+    for name, description in sorted_lights:
+        # add navbar links first
+        html += f"""<p><a href="#{name}">{name}</a></p>"""
+
+    html += HTML_NAVBAR_END
+
+    for name, description in sorted_lights:
+        # now add main body
         summaries_by_start_frame = genLightParamDescriptions.get_light_group_summaries(name, description)
 
         html += textwrap.dedent(
-            f"""<h1>{name}</h1>
+            f"""<h1 id="{name}">{name}</h1>
 
             <table>
             <tr>
@@ -359,6 +368,7 @@ def gen_html(light_descriptions):
             html += "  </tr>"
 
         html += "</table>\n"
+    html += HTML_END
 
     with open(os.path.join(WEB_ROOT, "luxtest.html"), "w", encoding="utf8") as f:
         f.write(html)
@@ -368,7 +378,9 @@ def gen_html(light_descriptions):
 
 def gen_diffs(verbose=False, max_concurrency=-1, lights: Iterable[str] = ()):
     start = datetime.datetime.now()
+    lights = tuple(lights)  # in case it's an iterable
     light_descriptions = genLightParamDescriptions.read_descriptions()
+    light_descriptions = {light: desc for light, desc in light_descriptions.items() if light not in SKIP_LIGHTS}
     if lights:
         light_descriptions = {light: desc for light, desc in light_descriptions.items() if light in lights}
 
@@ -427,7 +439,7 @@ def main(argv=None):
     parser = get_parser()
     args = parser.parse_args(argv)
     try:
-        gen_diffs(verbose=args.verbose, max_concurrency=args.j, lights=args.lights)
+        gen_diffs(verbose=args.verbose, max_concurrency=args.j, lights=args.lights or ())
     except Exception:  # pylint: disable=broad-except
 
         traceback.print_exc()

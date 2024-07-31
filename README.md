@@ -1,4 +1,29 @@
-# Test Suite for UsdLux
+# Problem Statement
+
+The current specifications of the various UsdLux prims + attributes are imprecise or vague in many places, and as a result, actual implementations of them by various renderers have diverged, sometimes quite significantly.  For instance, here is Intel's [4004 Moore Lane](https://dpel.aswf.io/4004-moore-lane/) scene, with the same UsdLux lights defined, in 3 different renderers:
+
+| Karma                                   | Arnold                                    | Omniverse RTX                                 |
+| --------------------------------------- | ----------------------------------------- | --------------------------------------------- |
+| ![4004 Moore Lane - Karma][moore-karma] | ![4004 Moore Lane - Arnold][moore-arnold] | ![4004 Moore Lane - Omniverse RTX][moore-rtx] |
+
+# Solution
+
+We need to update UsdLux to specify exactly what quantities should be emitted for each light and combination of its attributes so that lighting can be shared between applications and renderers.
+
+A PR with proposals for these changes may be found here:
+- https://github.com/PixarAnimationStudios/OpenUSD/pull/3182
+
+Further, we propose adding a reference implementation of UsdLux support to hdEmbree, in a similar way that hdStorm provides a reference implementation of a Hydra Render Delegate.  A PR chain adding such an implementation can be found here:
+
+- https://github.com/PixarAnimationStudios/OpenUSD/pull/3199
+
+
+#  A Test Suite For UsdLux
+
+Further, this repo aims to provide tooling to:
+- generate standardized UsdLux test scenes (in .usda format)
+- generate renders of these test scenes
+- compare rendered images between different renderers
 
 ## Prerequisites
 
@@ -53,3 +78,8 @@ the repo root, run:
 ```shell
 git clone https://github.com/pmolodo/luxtest_renders renders
 ```
+
+
+[moore-karma]: https://github.com/anderslanglands/light_comparison/blob/main/renders/moore-lane/moore-lane_karma.jpg?raw=true "Karma"
+[moore-arnold]: https://github.com/anderslanglands/light_comparison/blob/main/renders/moore-lane/moore-lane_arnold.jpg?raw=true "Arnold"
+[moore-rtx]: https://github.com/anderslanglands/light_comparison/blob/main/renders/moore-lane/moore-lane_rtx.jpg?raw=true "Omniverse RTX"

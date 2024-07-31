@@ -6,6 +6,21 @@ body {
     color: #444
 }
 
+.wrapper {
+    display: flex;
+}
+
+.navbar {
+    height: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.main {
+    margin-left: 20px;
+}
+
 h1,
 h2,
 h3 {

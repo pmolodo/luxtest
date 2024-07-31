@@ -12,7 +12,7 @@ import os
 import sys
 import traceback
 
-from typing import Any, Dict, Iterable, List, Optional, Tuple, TypeAlias, Union
+from typing import Any, Dict, Iterable, List, NamedTuple, Optional, Tuple, TypeAlias, Union
 
 from pxr import Gf, Sdf, Usd, UsdLux
 
@@ -221,11 +221,6 @@ def find_usds(path: str, recurse=False):
     return paths
 
 
-###############################################################################
-# Dataclasses
-###############################################################################
-
-
 def get_override_group(light_name, frame):
     for start_end in SUMMARY_OVERRIDES.get(light_name, {}).keys():
         if frame >= start_end[0] and frame <= start_end[1]:
@@ -233,11 +228,42 @@ def get_override_group(light_name, frame):
     return None
 
 
+###############################################################################
+# Dataclasses
+###############################################################################
+
+
+class FrameRange(NamedTuple):
+    start: int
+    end: int
+
+    @property
+    def num_frames(self):
+        return self.end - self.start + 1
+
+    def __str__(self):
+        return f"{self.start}:{self.end}"
+
+    @classmethod
+    def from_str(cls, frames_str) -> "FrameRange":
+        if ":" in frames_str:
+            split = frames_str.split(":")
+            if len(split) > 2:
+                raise ValueError(
+                    f"frames may only have a single ':', to denote start:end (inclusive) - got: {args.frames}"
+                )
+            frames = tuple(int(x) for x in split)
+        else:
+            frame = int(frames_str)
+            frames = (frame, frame)
+        return cls(*frames)
+
+
 @dataclasses.dataclass
 class FrameGroup:
     """A frame group is a range over which exactly 1 parameter is varying, and in the same direction"""
 
-    frames: Tuple[IntFloat, IntFloat]  # start/end frames
+    frames: FrameRange
     varying: Dict[str, Dict[IntFloat, Any]]  # dictionary from attr names to it's per-frame values
     non_default_constants: Dict[str, Any]  # attributes that were constant, but not at their default value
 
@@ -248,6 +274,7 @@ class FrameGroup:
         for attrname, framevals in data["varying"].items():
             framevals = {to_int_float(frame): val for frame, val in framevals.items()}
             data["varying"][attrname] = framevals
+        data["frames"] = FrameRange(*data["frames"])
         return cls(**data)
 
 
@@ -266,7 +293,7 @@ class FrameGroupTracker:
     constants: List[str]  # constant, but not at default
     defaults: List[str]  # constant, AND default
 
-    override_group: Optional[Tuple[int, int]] = dataclasses.field(init=False, default=None)
+    override_group: Optional[FrameRange] = dataclasses.field(init=False, default=None)
 
     def __post_init__(self):
         # sort the things...
@@ -546,7 +573,7 @@ class FrameGroupFinder:
 class LightParamDescription:
     usd_path: str
     frame_groups: List[FrameGroup]
-    frames: Tuple[IntFloat, IntFloat]  # start/end
+    frames: FrameRange  # start/end
     attrs: List[str]
 
     @classmethod
@@ -557,6 +584,7 @@ class LightParamDescription:
     def from_dict(cls, data):
         data = dict(data)
         data["frame_groups"] = [FrameGroup.from_dict(x) for x in data["frame_groups"]]
+        data["frames"] = FrameRange(*data["frames"])
         return cls(**data)
 
     @classmethod
