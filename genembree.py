@@ -120,6 +120,7 @@ def run_tests(
     cameras: Iterable[str] = (),
     frames: Optional[FrameRange] = None,
     seed: int = DEFAULT_SEED,
+    progress_bar: bool = True,
 ) -> List[str]:
     """Runs tests on input usds matching given glob, for all given delegates
 
@@ -217,24 +218,31 @@ def run_tests(
     print(f"Total usdrecord render commands: {num_commands} - Total frames: {total_frames}")
     print()
 
-    render_command_progress = tqdm(desc="Render commands", unit="command", total=num_commands, position=0)
-    total_frames_progress = tqdm(desc="Total frames   ", unit="frame", total=total_frames, position=1)
-    current_frames_progress = tqdm(desc="Command frames ", unit="frame", position=2)
-
+    if progress_bar:
+        render_command_progress = tqdm(desc="Render commands", unit="command", total=num_commands, position=0)
+        total_frames_progress = tqdm(desc="Total frames   ", unit="frame", total=total_frames, position=1)
+        current_frames_progress = tqdm(desc="Command frames ", unit="frame", position=2)
     try:
+        if progress_bar:
 
-        def frame_progress_update():
-            render_command_progress.refresh()
-            total_frames_progress.update(1)
-            current_frames_progress.update(1)
+            def frame_progress_update():
+                render_command_progress.refresh()
+                total_frames_progress.update(1)
+                current_frames_progress.update(1)
+
+            frame_callback = frame_progress_update
+        else:
+            frame_callback = None
 
         failures = []
         for command in flat_list:
-            current_frames_progress.reset(total=command.frames.num_frames)
-            current_frames_progress.clear()
+            if progress_bar:
+                current_frames_progress.reset(total=command.frames.num_frames)
+                current_frames_progress.clear()
             print()
-            exitcode = command.render(frame_callback=frame_progress_update)
-            render_command_progress.update(1)
+            exitcode = command.render(frame_callback=frame_callback)
+            if progress_bar:
+                render_command_progress.update(1)
             if exitcode:
                 failures.append(command)
 
@@ -246,9 +254,10 @@ def run_tests(
 
         return failures
     finally:
-        render_command_progress.close()
-        total_frames_progress.close()
-        current_frames_progress.close()
+        if progress_bar:
+            render_command_progress.close()
+            total_frames_progress.close()
+            current_frames_progress.close()
 
 
 def run_test(
@@ -292,6 +301,10 @@ def run_test(
     env["HDEMBREE_RANDOM_NUMBER_SEED"] = str(seed)
     if samples is not None:
         env["HDEMBREE_SAMPLES_TO_CONVERGENCE"] = str(samples)
+
+    if frame_callback is None:
+        # skip progress bar
+        return subprocess.call(cmd, env=env)
 
     current_line = []
 
@@ -433,6 +446,12 @@ def get_parser():
         default=DEFAULT_SEED,
         help="Set a random number seed, for repeatable results; set to -1 to use a different seed on each invocation",
     )
+    parser.add_argument(
+        "--no-progress-bar",
+        dest="progress_bar",
+        action="store_false",
+        help="Disable the progress bar - may be useful for debugging",
+    )
 
     return parser
 
@@ -454,6 +473,7 @@ def main(argv=None):
             cameras=args.cameras,
             frames=args.frames,
             seed=args.seed,
+            progress_bar=args.progress_bar,
         )
     except Exception:  # pylint: disable=broad-except
         traceback.print_exc()
