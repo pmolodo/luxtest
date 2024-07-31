@@ -349,7 +349,7 @@ def Xform "lights"
             34: 8750,
             35: 11000,
         }
-        float inputs:diffuse = 2.79
+        float inputs:diffuse = 1
         bool inputs:enableColorTemperature.timeSamples = {
             1: 0,
             2: 0,
