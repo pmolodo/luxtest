@@ -100,14 +100,32 @@ def is_sorted(vals: Iterable):
     return True
 
 
+def _standardize_val_for_comparison(val):
+    if type(val).__name__.startswith("Matrix"):
+        flat = []
+        for vec in val:
+            flat.extend(list(vec))
+        return flat
+    elif type(val).__name__.startswith("Vec"):
+        return list(val)
+    if isinstance(val, (str, bytes)):
+        return val
+    try:
+        iter(val)
+    except Exception:
+        return val
+    # standardize all iterables as lists
+    return list(val)
+
+
 def vals_close(val1, val2):
+    val1 = _standardize_val_for_comparison(val1)
+    val2 = _standardize_val_for_comparison(val2)
     if isinstance(val1, float) or isinstance(val2, float):
         return math.isclose(val1, val2)
     elif type(val1) != type(val2):
         return False
-    elif type(val1).__name__.startswith("Matrix") or type(val1).__name__.startswith("Vec"):
-        return Gf.IsClose(val1, val2)
-    elif isinstance(val1, (list, tuple)):
+    elif isinstance(val1, list):
         if len(val1) != len(val2):
             return False
         return all(vals_close(v1, v2) for v1, v2 in zip(val1, val2))
