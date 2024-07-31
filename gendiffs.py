@@ -12,7 +12,6 @@ import argparse
 import asyncio
 import datetime
 import inspect
-import locale
 import multiprocessing
 import os
 import shutil
@@ -34,6 +33,7 @@ if THIS_DIR not in sys.path:
     sys.path.append(THIS_DIR)
 
 import genLightParamDescriptions
+import luxtest_utils
 import pip_import
 
 pip_import.pip_import("tqdm")
@@ -122,29 +122,6 @@ else:
         return " ".join(shlex.quote(x) for x in cmd_list)
 
 
-def make_unique(*objs):
-    return tuple(dict.fromkeys(objs))
-
-
-CODEC_LIST = make_unique(
-    # list of codecs to try, in order...
-    sys.stdout.encoding,
-    sys.stderr.encoding,
-    sys.stdin.encoding,
-    locale.getpreferredencoding(),
-    "utf8",
-)
-
-
-def try_decode(input_bytes):
-    for codec in CODEC_LIST:
-        try:
-            return input_bytes.decode(codec)
-        except UnicodeDecodeError:
-            pass
-    return input_bytes
-
-
 def normalize_concurrency(concurrency: int):
     if concurrency < 0:
         concurrency += NUM_CPUS
@@ -186,7 +163,7 @@ def print_streams(proc: subprocess.CompletedProcess):
         print("=" * 80)
         print(f"{stream_name}:")
         print()
-        print(try_decode(stream))
+        print(luxtest_utils.try_decode(stream))
 
 
 def raise_proc_error(proc: subprocess.CompletedProcess, verbose: bool):

@@ -5,7 +5,6 @@
 import argparse
 import fnmatch
 import inspect
-import locale
 import os
 import re
 import subprocess
@@ -27,6 +26,7 @@ if THIS_DIR not in sys.path:
 
 import combine_ies_test_images
 import genLightParamDescriptions
+import luxtest_utils
 import pip_import
 
 pip_import.pip_import("tqdm")
@@ -71,29 +71,6 @@ else:
         import shlex
 
         return " ".join(shlex.quote(x) for x in cmd_list)
-
-
-def make_unique(*objs):
-    return tuple(dict.fromkeys(objs))
-
-
-CODEC_LIST = make_unique(
-    # list of codecs to try, in order...
-    sys.stdout.encoding,
-    sys.stderr.encoding,
-    sys.stdin.encoding,
-    locale.getpreferredencoding(),
-    "utf8",
-)
-
-
-def try_decode(input_bytes):
-    for codec in CODEC_LIST:
-        try:
-            return input_bytes.decode(codec)
-        except UnicodeDecodeError:
-            pass
-    return input_bytes
 
 
 ###############################################################################
@@ -337,7 +314,7 @@ def run_test(
             else:
                 read_first_frame = True
         else:
-            print(try_decode(line))
+            print(luxtest_utils.try_decode(line))
 
     def process_text(newtext):
         if not newtext:
