@@ -5,6 +5,7 @@
 import argparse
 import fnmatch
 import inspect
+import locale
 import os
 import re
 import subprocess
@@ -12,7 +13,7 @@ import sys
 import traceback
 
 from glob import glob
-from typing import Iterable, List, NamedTuple, Optional, Tuple
+from typing import Callable, Iterable, List, NamedTuple, Optional, Tuple
 
 ###############################################################################
 # Constants
@@ -26,6 +27,13 @@ if THIS_DIR not in sys.path:
 
 import combine_ies_test_images
 import genLightParamDescriptions
+import pip_import
+
+pip_import.pip_import("tqdm")
+
+from tqdm import tqdm
+
+from genLightParamDescriptions import FrameRange
 
 EMBREE_DELEGATE = "Embree"
 DEFAULT_DELEGATES = (EMBREE_DELEGATE,)
@@ -39,6 +47,8 @@ DEFAULT_CAMERAS_BY_USD = {
 }
 
 DEFAULT_SEED = 1
+
+USD_RECORD_FRAME_RE = re.compile(rb"""^Recording time code: .*""")
 
 ###############################################################################
 # Utilities
@@ -63,6 +73,29 @@ else:
         return " ".join(shlex.quote(x) for x in cmd_list)
 
 
+def make_unique(*objs):
+    return tuple(dict.fromkeys(objs))
+
+
+CODEC_LIST = make_unique(
+    # list of codecs to try, in order...
+    sys.stdout.encoding,
+    sys.stderr.encoding,
+    sys.stdin.encoding,
+    locale.getpreferredencoding(),
+    "utf8",
+)
+
+
+def try_decode(input_bytes):
+    for codec in CODEC_LIST:
+        try:
+            return input_bytes.decode(codec)
+        except UnicodeDecodeError:
+            pass
+    return input_bytes
+
+
 ###############################################################################
 # Dataclasses
 ###############################################################################
@@ -76,12 +109,12 @@ class UsdRecordCommand(NamedTuple):
     output_path: str
     renderer: str
     camera: str
-    frames: Tuple[int, int]
+    frames: FrameRange
     resolution: int
     samples: Optional[int]
     seed: int
 
-    def render(self):
+    def render(self, frame_callback: Optional[Callable[[], None]] = None):
         return run_test(
             self.usd_path,
             self.output_path,
@@ -91,6 +124,7 @@ class UsdRecordCommand(NamedTuple):
             camera=self.camera,
             frames=self.frames,
             seed=self.seed,
+            frame_callback=frame_callback,
         )
 
 
@@ -107,7 +141,7 @@ def run_tests(
     resolution: int = DEFAULT_RESOLUTION,
     samples: Optional[int] = None,
     cameras: Iterable[str] = (),
-    frames: Optional[str] = None,
+    frames: Optional[FrameRange] = None,
     seed: int = DEFAULT_SEED,
 ) -> List[str]:
     """Runs tests on input usds matching given glob, for all given delegates
@@ -155,6 +189,7 @@ def run_tests(
         return [errmsg]
 
     flat_list: List[UsdRecordCommand] = []
+    total_frames = 0
     unique_cameras = set()
 
     for delegate in delegates:
@@ -167,14 +202,6 @@ def run_tests(
 
             if frames is None:
                 test_frames = light_descriptions.get(base, nullLight).frames
-                if test_frames:
-                    start, end = test_frames
-                    if start == end:
-                        test_frames = f"{start}"
-                    else:
-                        test_frames = f"{start}:{end}"
-                else:
-                    test_frames = "1"
             else:
                 test_frames = frames
 
@@ -185,6 +212,8 @@ def run_tests(
             unique_cameras.update(light_cameras)
 
             for camera in light_cameras:
+                total_frames += test_frames.num_frames
+
                 if len(light_cameras) > 1:
                     camera_filename_part = "." + os.path.basename(camera)
                 else:
@@ -207,28 +236,42 @@ def run_tests(
                 )
 
     num_commands = len(flat_list)
-    print(f"Found: {len(delegates)} delegates - {len(input_layers)} files - {len(unique_cameras)} cameras")
-    print(f"Total usdrecord render commands: {num_commands}")
+    print(f"Found: {len(delegates)} delegates - {len(input_layers)} files - {len(unique_cameras)} cameras ")
+    print(f"Total usdrecord render commands: {num_commands} - Total frames: {total_frames}")
     print()
 
-    failures = []
-    for i, command in enumerate(flat_list):
-        print()
-        print("=" * 80)
-        print(f"Render {i + 1}/{num_commands}")
-        print()
+    render_command_progress = tqdm(desc="Render commands", unit="command", total=num_commands, position=0)
+    total_frames_progress = tqdm(desc="Total frames   ", unit="frame", total=total_frames, position=1)
+    current_frames_progress = tqdm(desc="Command frames ", unit="frame", position=2)
 
-        print("-" * 80)
-        exitcode = command.render()
-        if exitcode:
-            failures.append(command)
+    try:
 
-        # auto-combine iesTest images if we did all cameras
-        if command.name == "iesTest" and not cameras:
-            print(f"Combining {base} images")
-            combine_ies_test_images.combine_ies_test_images(renderers=["embree"])
+        def frame_progress_update():
+            render_command_progress.refresh()
+            total_frames_progress.update(1)
+            current_frames_progress.update(1)
 
-    return failures
+        failures = []
+        for command in flat_list:
+            current_frames_progress.reset(total=command.frames.num_frames)
+            current_frames_progress.clear()
+            print()
+            exitcode = command.render(frame_callback=frame_progress_update)
+            render_command_progress.update(1)
+            if exitcode:
+                failures.append(command)
+
+            # auto-combine iesTest images if we did all cameras
+            if command.name == "iesTest" and not cameras:
+                print()
+                print(f"Combining {base} images")
+                combine_ies_test_images.combine_ies_test_images(renderers=["embree"])
+
+        return failures
+    finally:
+        render_command_progress.close()
+        total_frames_progress.close()
+        current_frames_progress.close()
 
 
 def run_test(
@@ -238,8 +281,9 @@ def run_test(
     resolution: int,
     samples: Optional[int],
     camera: str,
-    frames: str,
+    frames: FrameRange,
     seed: int,
+    frame_callback: Optional[Callable[[], None]] = None,
 ):
 
     usdrecord = "usdrecord"
@@ -256,8 +300,8 @@ def run_test(
         delegate,
         "--colorCorrectionMode=disabled",
     ]
-    if frames:
-        cmd.extend(["--frames", frames])
+    if frames is not None:
+        cmd.extend(["--frames", str(frames)])
     if camera:
         cmd.extend(["--camera", camera])
     cmd.extend([usd_path, output_path])
@@ -267,10 +311,69 @@ def run_test(
         print(cmd)
         raise
     env = dict(os.environ)
+    env["PYTHONUNBUFFERED"] = "1"
     env["HDEMBREE_RANDOM_NUMBER_SEED"] = str(seed)
     if samples is not None:
         env["HDEMBREE_SAMPLES_TO_CONVERGENCE"] = str(samples)
-    return subprocess.call(cmd, env=env)
+
+    current_line = []
+
+    # we watch for usdrecording lines like "Recording time code: 1.0000"
+    # ...however, it prints these when it STARTS each frame, not when it finishes
+    # we don't want to update progress each time we get this, as this would result
+    # in a first frame "finish" time that would be very fast, and would skew
+    # early time estimations.
+    # So, instead we skip the frame_callback() the FIRST time we see this
+    # message... and then add in one last frame_callback() when the process
+    # finishes
+    read_first_frame = False
+
+    def process_finished_line(line):
+        nonlocal read_first_frame
+        match = USD_RECORD_FRAME_RE.match(line)
+        if match and frame_callback is not None:
+            if read_first_frame:
+                frame_callback()
+            else:
+                read_first_frame = True
+        else:
+            print(try_decode(line))
+
+    def process_text(newtext):
+        if not newtext:
+            return
+        lines = newtext.split(b"\n")
+        unfinished_line = lines.pop()
+        for line in lines:
+            line = line.rstrip(b"\r")
+            if current_line:
+                current_line.append(line)
+                finished_line = b"".join(current_line)
+                current_line.clear()
+            else:
+                finished_line = line
+            process_finished_line(finished_line)
+        if unfinished_line:
+            current_line.append(unfinished_line)
+
+    proc = subprocess.Popen(cmd, env=env, stdout=subprocess.PIPE)
+    while proc.poll() is None:
+        newtext = proc.stdout.read1()
+        process_text(newtext)
+
+    # ok, proc finished, but we still might have text to read
+    while True:
+        newtext = proc.stdout.read1()
+        if not newtext:
+            break
+        process_text(newtext)
+    if frame_callback is not None:
+        # callback for "finishing" the last frame
+        frame_callback()
+
+    if current_line:
+        process_text("".join(current_line))
+    return proc.returncode
 
 
 ###############################################################################
@@ -341,7 +444,10 @@ def get_parser():
     parser.add_argument(
         "-f",
         "--frames",
-        help="Frame string, in FRAMESPEC format used by usdrecord (see --frames arg in `usdrecord --help`).",
+        type=FrameRange.from_str,
+        help=(
+            "Only render the given frame or frame range; may be single digit, or inclusive range specified as start:end"
+        ),
     )
     parser.add_argument(
         "-x",
