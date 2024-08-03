@@ -362,7 +362,7 @@ def run_test(
         frame_callback()
 
     if current_line:
-        process_text("".join(current_line))
+        process_text(b"".join(current_line))
     return proc.returncode
 
 
