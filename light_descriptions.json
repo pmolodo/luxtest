@@ -1059,7 +1059,7 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 1000.0,
-                    "inputs:shaping:ies:file": "../test_stripes_nonuniform.ies"
+                    "inputs:shaping:ies:file": "../test_stripes_uniform.ies"
                 },
                 "varying": {}
             },
@@ -1070,7 +1070,7 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 1000.0,
-                    "inputs:shaping:ies:file": "../test_stripes_nonuniform.ies"
+                    "inputs:shaping:ies:file": "../test_stripes_uniform.ies"
                 },
                 "varying": {
                     "inputs:shaping:ies:angleScale": {
@@ -1093,7 +1093,7 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 1000.0,
-                    "inputs:shaping:ies:file": "../test_stripes_uniform.ies"
+                    "inputs:shaping:ies:file": "../test_vstripes_hquadrants_nonuniform.ies"
                 },
                 "varying": {}
             },
@@ -1104,7 +1104,7 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 1000.0,
-                    "inputs:shaping:ies:file": "../test_stripes_uniform.ies"
+                    "inputs:shaping:ies:file": "../test_vstripes_hquadrants_nonuniform.ies"
                 },
                 "varying": {
                     "inputs:shaping:ies:angleScale": {
@@ -1127,7 +1127,7 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 1000.0,
-                    "inputs:shaping:ies:file": "../test_stripes_uniform.ies",
+                    "inputs:shaping:ies:file": "../test_vstripes_hquadrants_nonuniform.ies",
                     "inputs:shaping:ies:normalize": true
                 },
                 "varying": {}
@@ -1139,7 +1139,7 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 1000.0,
-                    "inputs:shaping:ies:file": "../test_stripes_uniform.ies",
+                    "inputs:shaping:ies:file": "../test_vstripes_hquadrants_nonuniform.ies",
                     "inputs:shaping:ies:normalize": true
                 },
                 "varying": {
@@ -1163,7 +1163,7 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 1000000.0,
-                    "inputs:shaping:ies:file": "../test_stripes_uniform.ies"
+                    "inputs:shaping:ies:file": "../test_vstripes_hquadrants_nonuniform.ies"
                 },
                 "varying": {
                     "inputs:shaping:ies:angleScale": {
@@ -1179,7 +1179,7 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 1000000.0,
-                    "inputs:shaping:ies:file": "../test_stripes_uniform.ies"
+                    "inputs:shaping:ies:file": "../test_vstripes_hquadrants_nonuniform.ies"
                 },
                 "varying": {
                     "inputs:shaping:ies:angleScale": {
