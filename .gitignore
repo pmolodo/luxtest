@@ -6,6 +6,9 @@
 /web.archive/
 /renders/
 
+# Rooted files
+/.env
+
 # Unrooted files
 **/*.rat
 **/*.tx
