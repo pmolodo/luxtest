@@ -14,23 +14,30 @@ import traceback
 
 from typing import Any, Dict, Iterable, List, NamedTuple, Optional, Tuple, TypeAlias, Union
 
-from pxr import Gf, Sdf, Usd, UsdLux
-
-IntFloat: TypeAlias = Union[int, float]
-
 THIS_FILE = os.path.abspath(inspect.getsourcefile(lambda: None) or __file__)
 THIS_DIR = os.path.dirname(THIS_FILE)
-USD_DIR = os.path.join(THIS_DIR, "usd")
-
 
 if THIS_DIR not in sys.path:
     sys.path.append(THIS_DIR)
 
+try:
+    from pxr import Sdf, Usd, UsdLux
+except ImportError:
+    import pip_import
+
+    pip_import.pip_import("pxr", "usd-core")
+    from pxr import Sdf, Usd, UsdLux
+
 import luxtest_const
+
+IntFloat: TypeAlias = Union[int, float]
+
 
 ###############################################################################
 # Constants
 ###############################################################################
+
+USD_DIR = os.path.join(THIS_DIR, "usd")
 
 LIGHT_NAME_SUFFIX = "_light"
 OUTPUT_JSON_PATH = os.path.join(THIS_DIR, "light_descriptions.json")
