@@ -1200,7 +1200,7 @@
                     41
                 ],
                 "non_default_constants": {
-                    "inputs:intensity": 1000000.0
+                    "inputs:intensity": 1000.0
                 },
                 "varying": {}
             }

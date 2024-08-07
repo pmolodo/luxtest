@@ -310,7 +310,7 @@ def Xform "lights"
             38: 1000000,
             39: 1000000,
             40: 1000000,
-            41: 1000000,
+            41: 1000,
         }
         bool inputs:normalize = 0
         float inputs:radius = 0.005
