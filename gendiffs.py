@@ -123,7 +123,7 @@ else:
 
 
 def normalize_concurrency(concurrency: int):
-    if concurrency < 0:
+    if concurrency <= 0:
         concurrency += NUM_CPUS
     return max(concurrency, 1)
 
@@ -416,8 +416,8 @@ def get_parser():
         type=int,
         default="-1",
         help=(
-            "Number of oiiotool procs to run in parallel; negative values are subtracted from"
-            " multiprocessing.cpu_count()"
+            "Number of oiiotool procs to run in parallel; 0 means use multiprocessing.cpu_count(); negative values are"
+            " subtracted from multiprocessing.cpu_count()"
         ),
     )
     parser.add_argument(
