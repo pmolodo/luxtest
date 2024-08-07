@@ -1159,22 +1159,17 @@
             {
                 "frames": [
                     31,
-                    32
+                    31
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 1000000.0,
                     "inputs:shaping:ies:file": "../test_vstripes_hquadrants_nonuniform.ies"
                 },
-                "varying": {
-                    "inputs:shaping:ies:angleScale": {
-                        "31": 0.0,
-                        "32": -1.0
-                    }
-                }
+                "varying": {}
             },
             {
                 "frames": [
-                    33,
+                    32,
                     40
                 ],
                 "non_default_constants": {
@@ -1183,6 +1178,7 @@
                 },
                 "varying": {
                     "inputs:shaping:ies:angleScale": {
+                        "32": -1.0,
                         "33": -0.75,
                         "34": -0.5,
                         "35": -0.25,

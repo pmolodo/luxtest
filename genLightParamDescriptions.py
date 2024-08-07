@@ -53,8 +53,8 @@ SUMMARY_OVERRIDES = {
         (1, 1): "ies:angleScale=0 ref",
         (11, 11): "ies:angleScale=0 ref",
         (21, 21): "ies:angleScale=0 ref",
-        (31, 21): "ies:angleScale=0 ref",
-        (41, 31): "no ies:file ref",
+        (31, 31): "ies:angleScale=0 ref",
+        (41, 41): "no ies:file ref",
     },
 }
 
