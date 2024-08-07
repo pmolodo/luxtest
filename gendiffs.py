@@ -39,15 +39,9 @@ import pip_import
 pip_import.pip_import("tqdm")
 import tqdm.asyncio
 
-DEFAULT_RENDERS_ROOTS = [
-    os.path.join(THIS_DIR, "renders"),
-    os.path.join(os.path.dirname(THIS_DIR), "luxtest_renders"),
-]
 WEB_DIR_NAME = "web"
 WEB_ROOT = os.path.join(THIS_DIR, WEB_DIR_NAME)
 WEB_IMG_ROOT = os.path.join(WEB_ROOT, "img")
-
-DEFAULT_REPO_URL = "https://github.com/pmolodo/luxtest_renders.git"
 
 RENDERERS = [
     "karma",
@@ -145,7 +139,7 @@ def iter_frames(light_description):
 
 def get_image_path(light_name, renderer: str, frame: int, ext: str, prefix="", renders_root=""):
     if not renders_root:
-        renders_root = get_renders_root()
+        renders_root = luxtest_utils.get_renders_root()
     ext = ext.lstrip(".")
     filename = f"{prefix}{light_name}-{renderer}.{frame:04}.{ext}"
     if ext == "png":
@@ -159,7 +153,7 @@ def get_image_path(light_name, renderer: str, frame: int, ext: str, prefix="", r
 
 def get_image_url(light_name, renderer: str, frame: int, ext: str, prefix="", renders_root=""):
     if not renders_root:
-        renders_root = get_renders_root()
+        renders_root = luxtest_utils.get_renders_root()
     image_path = get_image_path(light_name, renderer, frame, ext, prefix=prefix, renders_root=renders_root)
     rel_path = os.path.relpath(image_path, WEB_ROOT)
     return rel_path.replace(os.sep, "/")
@@ -207,20 +201,6 @@ async def run(args: Iterable[str], check=False, verbose=False):
 ###############################################################################
 # Core functions
 ###############################################################################
-
-
-def get_renders_root():
-    for test_path in DEFAULT_RENDERS_ROOTS:
-        if os.path.isdir(test_path):
-            return test_path
-
-    # couldn't find the renders path - clone it
-    renders_root = DEFAULT_RENDERS_ROOTS[0]
-    # don't fetch all blobs for faster clone
-    subprocess.run(["git", "clone", "--filter=blob:none", DEFAULT_REPO_URL, renders_root])
-    if not os.path.isdir(renders_root):
-        raise RuntimeError(f"error cloning repo {DEFAULT_REPO_URL!r} to {renders_root!r}")
-    return renders_root
 
 
 async def update_png(exr_path, png_path, verbose=False):
@@ -408,7 +388,7 @@ def gen_diffs(verbose=False, max_concurrency=-1, lights: Iterable[str] = ()):
     if lights:
         light_descriptions = {light: desc for light, desc in light_descriptions.items() if light in lights}
 
-    renders_root = get_renders_root()
+    renders_root = luxtest_utils.get_renders_root()
     os.makedirs(WEB_IMG_ROOT, exist_ok=True)
     gen_images(light_descriptions, verbose=verbose, max_concurrency=max_concurrency, renders_root=renders_root)
     gen_html(light_descriptions, renders_root=renders_root)
