@@ -1203,6 +1203,15 @@ def Xform "lights"
         }
         float inputs:specular = 1
         rel light:filters = None
+        bool primvars:arnold:visibility:camera = 0 (
+            interpolation = "constant"
+        )
+        string primvars:karma:object:rendervisibility = "-primary" (
+            interpolation = "constant"
+        )
+        int primvars:ri:attributes:visibility:camera = 0 (
+            interpolation = "constant"
+        )
         matrix4d xformOp:transform.timeSamples = {
             1: ( (1, 0, 0, 0), (0, 0.7071067811865476, -0.7071067811865476, 0), (0, 0.7071067811865476, 0.7071067811865476, 0), (0, 1, 0, 1) ),
             2: ( (1, 0, 0, 0), (0, 0.7071067811865476, -0.7071067811865476, 0), (0, 0.7071067811865476, 0.7071067811865476, 0), (0, 1, 0, 1) ),
