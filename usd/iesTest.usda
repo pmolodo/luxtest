@@ -130,7 +130,6 @@
             float3 "rtx:sceneDb:ambientLightColor" = (0.1, 0.1, 0.1)
         }
     }
-    defaultPrim = "sopcreate_iesTest"
     endTimeCode = 41
     framesPerSecond = 24
     metersPerUnit = 1
@@ -227,26 +226,12 @@ def Xform "cameras"
     }
 }
 
-def Xform "sopcreate_iesTest" (
+def "sopcreate_iesTest" (
     prepend apiSchemas = ["MaterialBindingAPI"]
-    kind = "component"
+    prepend references = @./shapes/sphere50x50.usda@
 )
 {
     rel material:binding = </materials/usdpreviewsurface1>
-    matrix4d xformOp:transform:xform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
-    uniform token[] xformOpOrder = ["xformOp:transform:xform"]
-
-    def Mesh "mesh_0"
-    {
-        float3[] extent = [(-0.5, -0.5, -0.5), (0.5, 0.5, 0.5)]
-        int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
-        int[] faceVertexIndices = [0, 2, 3, 1, 4, 6, 7, 5, 6, 3, 2, 7, 5, 0, 1, 4, 5, 7, 2, 0, 1, 3, 6, 4]
-        uniform token orientation = "leftHanded"
-        point3f[] points = [(0.5, -0.5, 0.5), (-0.5, -0.5, 0.5), (0.5, 0.5, 0.5), (-0.5, 0.5, 0.5), (-0.5, -0.5, -0.5), (0.5, -0.5, -0.5), (-0.5, 0.5, -0.5), (0.5, 0.5, -0.5)] (
-            interpolation = "vertex"
-        )
-        uniform token subdivisionScheme = "catmullClark"
-    }
 }
 
 def Xform "lights"
