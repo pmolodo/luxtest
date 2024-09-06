@@ -18,7 +18,7 @@ if THIS_DIR not in sys.path:
 
 import luxtest_utils
 
-RENDERERS = ("embree", "arnold", "karma", "ris")
+RENDERERS = [x.name for x in os.scandir(luxtest_utils.get_renders_root()) if x.is_dir()]
 
 INPUT_NAME_RE = re.compile(r"""^iesTest-(?P<renderer>.*)\.(?P<camera>iesTop|iesBottom).(?P<frame>\d{4}).exr$""")
 ###############################################################################
