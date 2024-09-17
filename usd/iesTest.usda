@@ -8,7 +8,7 @@
             bool capture_application = 0
             int capture_every_nth_frames = 20
             bool capture_every_nth_frames_checked = 0
-            int capture_frame_end = 41
+            int capture_frame_end = 21
             int capture_frame_start = 1
             string capture_name = "iesTest-rtx"
             string capture_range = "Custom Range - Frames"
@@ -94,7 +94,7 @@
         }
         dictionary renderSettings = {
             float3 "rtx:debugView:pixelDebug:textColor" = (0, 1e18, 0)
-            int "rtx:externalFrameCounter" = 41
+            int "rtx:externalFrameCounter" = 21
             float3 "rtx:fog:fogColor" = (0.75, 0.75, 0.75)
             float3 "rtx:index:regionOfInterestMax" = (0, 0, 0)
             float3 "rtx:index:regionOfInterestMin" = (0, 0, 0)
@@ -130,7 +130,7 @@
             float3 "rtx:sceneDb:ambientLightColor" = (0.1, 0.1, 0.1)
         }
     }
-    endTimeCode = 41
+    endTimeCode = 21
     framesPerSecond = 24
     metersPerUnit = 1
     startTimeCode = 1
@@ -254,49 +254,7 @@ def Xform "lights"
         float inputs:diffuse = 1
         bool inputs:enableColorTemperature = 0
         float inputs:exposure = 0
-        float inputs:intensity.timeSamples = {
-            1: 1000,
-            2: 1000,
-            3: 1000,
-            4: 1000,
-            5: 1000,
-            6: 1000,
-            7: 1000,
-            8: 1000,
-            9: 1000,
-            10: 1000,
-            11: 1000,
-            12: 1000,
-            13: 1000,
-            14: 1000,
-            15: 1000,
-            16: 1000,
-            17: 1000,
-            18: 1000,
-            19: 1000,
-            20: 1000,
-            21: 1000,
-            22: 1000,
-            23: 1000,
-            24: 1000,
-            25: 1000,
-            26: 1000,
-            27: 1000,
-            28: 1000,
-            29: 1000,
-            30: 1000,
-            31: 1000000,
-            32: 1000000,
-            33: 1000000,
-            34: 1000000,
-            35: 1000000,
-            36: 1000000,
-            37: 1000000,
-            38: 1000000,
-            39: 1000000,
-            40: 1000000,
-            41: 1000,
-        }
+        float inputs:intensity = 1000
         bool inputs:normalize = 0
         float inputs:radius = 0.005
         float inputs:shaping:cone:angle = 180
@@ -307,7 +265,7 @@ def Xform "lights"
             3: -0.75,
             4: -0.5,
             5: -0.25,
-            6: 4.440892e-16,
+            6: 0,
             7: 0.25,
             8: 0.5,
             9: 0.75,
@@ -317,44 +275,24 @@ def Xform "lights"
             13: -0.75,
             14: -0.5,
             15: -0.25,
-            16: 0,
+            16: -6.661338e-16,
             17: 0.25,
             18: 0.5,
             19: 0.75,
             20: 1,
             21: 0,
-            22: -1,
-            23: -0.75,
-            24: -0.5,
-            25: -0.25,
-            26: 0,
-            27: 0.25,
-            28: 0.5,
-            29: 0.75,
-            30: 1,
-            31: 0,
-            32: -1,
-            33: -0.75,
-            34: -0.5,
-            35: -0.25,
-            36: -6.661338e-16,
-            37: 0.25,
-            38: 0.5,
-            39: 0.75,
-            40: 1,
-            41: 0,
         }
         asset inputs:shaping:ies:file.timeSamples = {
-            1: @../test_stripes_uniform.ies@,
-            2: @../test_stripes_uniform.ies@,
-            3: @../test_stripes_uniform.ies@,
-            4: @../test_stripes_uniform.ies@,
-            5: @../test_stripes_uniform.ies@,
-            6: @../test_stripes_uniform.ies@,
-            7: @../test_stripes_uniform.ies@,
-            8: @../test_stripes_uniform.ies@,
-            9: @../test_stripes_uniform.ies@,
-            10: @../test_stripes_uniform.ies@,
+            1: @../test_vstripes_hquadrants_nonuniform.ies@,
+            2: @../test_vstripes_hquadrants_nonuniform.ies@,
+            3: @../test_vstripes_hquadrants_nonuniform.ies@,
+            4: @../test_vstripes_hquadrants_nonuniform.ies@,
+            5: @../test_vstripes_hquadrants_nonuniform.ies@,
+            6: @../test_vstripes_hquadrants_nonuniform.ies@,
+            7: @../test_vstripes_hquadrants_nonuniform.ies@,
+            8: @../test_vstripes_hquadrants_nonuniform.ies@,
+            9: @../test_vstripes_hquadrants_nonuniform.ies@,
+            10: @../test_vstripes_hquadrants_nonuniform.ies@,
             11: @../test_vstripes_hquadrants_nonuniform.ies@,
             12: @../test_vstripes_hquadrants_nonuniform.ies@,
             13: @../test_vstripes_hquadrants_nonuniform.ies@,
@@ -365,27 +303,7 @@ def Xform "lights"
             18: @../test_vstripes_hquadrants_nonuniform.ies@,
             19: @../test_vstripes_hquadrants_nonuniform.ies@,
             20: @../test_vstripes_hquadrants_nonuniform.ies@,
-            21: @../test_vstripes_hquadrants_nonuniform.ies@,
-            22: @../test_vstripes_hquadrants_nonuniform.ies@,
-            23: @../test_vstripes_hquadrants_nonuniform.ies@,
-            24: @../test_vstripes_hquadrants_nonuniform.ies@,
-            25: @../test_vstripes_hquadrants_nonuniform.ies@,
-            26: @../test_vstripes_hquadrants_nonuniform.ies@,
-            27: @../test_vstripes_hquadrants_nonuniform.ies@,
-            28: @../test_vstripes_hquadrants_nonuniform.ies@,
-            29: @../test_vstripes_hquadrants_nonuniform.ies@,
-            30: @../test_vstripes_hquadrants_nonuniform.ies@,
-            31: @../test_vstripes_hquadrants_nonuniform.ies@,
-            32: @../test_vstripes_hquadrants_nonuniform.ies@,
-            33: @../test_vstripes_hquadrants_nonuniform.ies@,
-            34: @../test_vstripes_hquadrants_nonuniform.ies@,
-            35: @../test_vstripes_hquadrants_nonuniform.ies@,
-            36: @../test_vstripes_hquadrants_nonuniform.ies@,
-            37: @../test_vstripes_hquadrants_nonuniform.ies@,
-            38: @../test_vstripes_hquadrants_nonuniform.ies@,
-            39: @../test_vstripes_hquadrants_nonuniform.ies@,
-            40: @../test_vstripes_hquadrants_nonuniform.ies@,
-            41: @@,
+            21: @@,
         }
         bool inputs:shaping:ies:normalize.timeSamples = {
             1: 0,
@@ -398,37 +316,17 @@ def Xform "lights"
             8: 0,
             9: 0,
             10: 0,
-            11: 0,
-            12: 0,
-            13: 0,
-            14: 0,
-            15: 0,
-            16: 0,
-            17: 0,
-            18: 0,
-            19: 0,
-            20: 0,
-            21: 1,
-            22: 1,
-            23: 1,
-            24: 1,
-            25: 1,
-            26: 1,
-            27: 1,
-            28: 1,
-            29: 1,
-            30: 1,
-            31: 0,
-            32: 0,
-            33: 0,
-            34: 0,
-            35: 0,
-            36: 0,
-            37: 0,
-            38: 0,
-            39: 0,
-            40: 0,
-            41: 0,
+            11: 1,
+            12: 1,
+            13: 1,
+            14: 1,
+            15: 1,
+            16: 1,
+            17: 1,
+            18: 1,
+            19: 1,
+            20: 1,
+            21: 0,
         }
         float inputs:specular = 1
         rel light:filters = None
