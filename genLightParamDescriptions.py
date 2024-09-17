@@ -69,6 +69,8 @@ for area_light in ("sphere", "disk", "cylinder", "rect"):
     SUMMARY_OVERRIDES[area_light] = dict(AREA_LIGHT_SUMMARY_OVERRIDES)
 del area_light
 
+SUMMARY_OVERRIDES["iesLibPreview"] = SUMMARY_OVERRIDES["iesTest"]
+
 COLOR_NAMES = {
     (0.0, 0.0, 0.0): "black",
     (1.0, 1.0, 1.0): "white",
