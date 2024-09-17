@@ -693,7 +693,7 @@ def write_light_param_descriptions(path: str, recurse: bool = False, json_out_pa
         print(summarize_light(light_name, desc))
     print("=" * 80)
     print(f"Writing as json: {json_out_path}")
-    with open(json_out_path, "w", encoding="utf8") as writer:
+    with open(json_out_path, "w", encoding="utf8", newline="\n") as writer:
         json.dump(descriptions, writer, sort_keys=True, indent=4, cls=DataclassJsonEncoder)
     return
 

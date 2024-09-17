@@ -374,7 +374,7 @@ def gen_html(light_descriptions: Dict[str, genLightParamDescriptions.LightParamD
         html += "</table>\n"
     html += HTML_END
 
-    with open(os.path.join(WEB_ROOT, "luxtest.html"), "w", encoding="utf8") as f:
+    with open(os.path.join(WEB_ROOT, "luxtest.html"), "w", encoding="utf8", newline="\n") as f:
         f.write(html)
 
     shutil.copyfile("luxtest.css", os.path.join(WEB_ROOT, "luxtest.css"))
