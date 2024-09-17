@@ -602,6 +602,18 @@ class LightParamDescription:
     frames: FrameRange  # start/end
     attrs: List[str]
 
+    def make_usd_path_relative(self, output_dir: str):
+        self.usd_path = os.path.relpath(self.usd_path, output_dir)
+        # standardize on linux-style separators
+        if os.path.sep != "/":
+            self.usd_path = self.usd_path.replace(os.path.sep, "/")
+
+    def make_usd_path_absolute(self, output_dir: str):
+        if not os.path.isabs(self.usd_path):
+            self.usd_path = os.path.join(output_dir, self.usd_path)
+        if os.path.sep != "/":
+            self.usd_path = self.usd_path.replace("/", os.path.sep)
+
     @classmethod
     def empty(cls):
         return cls("", [], (1, 1), [])
@@ -680,10 +692,15 @@ def write_light_param_descriptions(path: str, recurse: bool = False, json_out_pa
     if not usd_paths:
         raise ValueError(f"Could not find any USD files at path: {path}")
     descriptions = {}
+    output_dir = os.path.dirname(os.path.abspath(json_out_path))
     for usd_path in usd_paths:
         stage = Usd.Stage.Open(usd_path)
         print(f"Processing: {usd_path}")
         descriptions.update(gen_light_param_descriptions(stage, errors=errors))
+
+    # Prep for serializing but making paths relative + linux
+    for description in descriptions.values():
+        description.make_usd_path_relative(output_dir)
 
     print(f"Got {len(descriptions)} descriptions")
     print("=" * 80)
@@ -792,8 +809,16 @@ def gen_light_param_descriptions(stage: Usd.Stage, errors="raise"):
 def read_descriptions(path=OUTPUT_JSON_PATH):
     with open(path, "r", encoding="utf8") as reader:
         raw_data = json.load(reader)
+
+    output_dir = os.path.dirname(os.path.abspath(path))
+    descriptions = {}
     # convert back to LightParamDescription objects
-    return {name: LightParamDescription.from_dict(data) for name, data in raw_data.items()}
+    for name, data in raw_data.items():
+        light_description = LightParamDescription.from_dict(data)
+        # convert usd_path back to absolute, and OS-specific
+        light_description.make_usd_path_relative(output_dir)
+        descriptions[name] = light_description
+    return descriptions
 
 
 ###############################################################################

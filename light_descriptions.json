@@ -397,7 +397,7 @@
             1,
             60
         ],
-        "usd_path": "C:\\src\\NVIDIA\\luxtest\\usd\\cylinder.usda"
+        "usd_path": "usd/cylinder.usda"
     },
     "disk": {
         "attrs": [
@@ -797,7 +797,7 @@
             1,
             60
         ],
-        "usd_path": "C:\\src\\NVIDIA\\luxtest\\usd\\disk.usda"
+        "usd_path": "usd/disk.usda"
     },
     "distant": {
         "attrs": [
@@ -1033,7 +1033,7 @@
             1,
             35
         ],
-        "usd_path": "C:\\src\\NVIDIA\\luxtest\\usd\\distant.usda"
+        "usd_path": "usd/distant.usda"
     },
     "dome": {
         "attrs": [],
@@ -1042,7 +1042,7 @@
             1,
             1
         ],
-        "usd_path": "C:\\src\\NVIDIA\\luxtest\\usd\\dome.usda"
+        "usd_path": "usd/dome.usda"
     },
     "iesTest": {
         "attrs": [
@@ -1205,7 +1205,7 @@
             1,
             41
         ],
-        "usd_path": "C:\\src\\NVIDIA\\luxtest\\usd\\iesTest.usda"
+        "usd_path": "usd/iesTest.usda"
     },
     "ies_scale": {
         "attrs": [
@@ -1248,7 +1248,7 @@
             1,
             20
         ],
-        "usd_path": "C:\\src\\NVIDIA\\luxtest\\usd\\ies_scale.usda"
+        "usd_path": "usd/ies_scale.usda"
     },
     "rect": {
         "attrs": [
@@ -1655,7 +1655,7 @@
             1,
             60
         ],
-        "usd_path": "C:\\src\\NVIDIA\\luxtest\\usd\\rect.usda"
+        "usd_path": "usd/rect.usda"
     },
     "sphere": {
         "attrs": [
@@ -2055,7 +2055,7 @@
             1,
             60
         ],
-        "usd_path": "C:\\src\\NVIDIA\\luxtest\\usd\\sphere.usda"
+        "usd_path": "usd/sphere.usda"
     },
     "visibleRect": {
         "attrs": [],
@@ -2064,6 +2064,6 @@
             1,
             1
         ],
-        "usd_path": "C:\\src\\NVIDIA\\luxtest\\usd\\visibleRect.usda"
+        "usd_path": "usd/visibleRect.usda"
     }
 }
