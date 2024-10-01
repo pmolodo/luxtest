@@ -21,6 +21,11 @@ DEFAULT_RENDERS_ROOTS = (
 
 DEFAULT_RENDERS_REPO_URL = "https://github.com/pmolodo/luxtest_renders.git"
 
+WEB_DIR_NAME = "web"
+WEB_ROOT = os.path.join(THIS_DIR, WEB_DIR_NAME)
+WEB_IMG_ROOT = os.path.join(WEB_ROOT, "img")
+
+
 # if we can't read light_descriptions, use this
 FALLBACK_LIGHTS = (
     "cylinder",

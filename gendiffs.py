@@ -37,18 +37,10 @@ import luxtest_const
 import luxtest_utils
 import pip_import
 
+from luxtest_utils import get_image_path, get_image_url
+
 pip_import.pip_import("tqdm")
 import tqdm.asyncio
-
-WEB_DIR_NAME = "web"
-WEB_ROOT = os.path.join(THIS_DIR, WEB_DIR_NAME)
-WEB_IMG_ROOT = os.path.join(WEB_ROOT, "img")
-
-RENDERERS = [
-    "karma",
-    "ris",
-    "arnold",
-]
 
 OUTPUT_DIR = "diff"
 
@@ -125,28 +117,6 @@ def needs_update(existing, dependent):
 def iter_frames(light_description):
     start, end = light_description.frames
     return range(start, end + 1)
-
-
-def get_image_path(light_name, renderer: str, frame: int, ext: str, prefix="", renders_root=""):
-    if not renders_root:
-        renders_root = luxtest_utils.get_renders_root()
-    ext = ext.lstrip(".")
-    filename = f"{prefix}{light_name}-{renderer}.{frame:04}.{ext}"
-    if ext == "png":
-        base_dir = WEB_IMG_ROOT
-    elif ext == "exr":
-        base_dir = os.path.join(renders_root, renderer)
-    else:
-        raise ValueError(f"unrecognized extension: {ext}")
-    return os.path.join(base_dir, filename)
-
-
-def get_image_url(light_name, renderer: str, frame: int, ext: str, prefix="", renders_root=""):
-    if not renders_root:
-        renders_root = luxtest_utils.get_renders_root()
-    image_path = get_image_path(light_name, renderer, frame, ext, prefix=prefix, renders_root=renders_root)
-    rel_path = os.path.relpath(image_path, WEB_ROOT)
-    return rel_path.replace(os.sep, "/")
 
 
 def print_streams(proc: subprocess.CompletedProcess):
@@ -364,10 +334,10 @@ def gen_html(light_descriptions: Dict[str, genLightParamDescriptions.LightParamD
         html += "</table>\n"
     html += HTML_END
 
-    with open(os.path.join(WEB_ROOT, "luxtest.html"), "w", encoding="utf8", newline="\n") as f:
+    with open(os.path.join(luxtest_const.WEB_ROOT, "luxtest.html"), "w", encoding="utf8", newline="\n") as f:
         f.write(html)
 
-    shutil.copyfile("luxtest.css", os.path.join(WEB_ROOT, "luxtest.css"))
+    shutil.copyfile("luxtest.css", os.path.join(luxtest_const.WEB_ROOT, "luxtest.css"))
 
 
 def gen_diffs(verbose=False, max_concurrency=-1, lights: Iterable[str] = ()):
@@ -379,7 +349,7 @@ def gen_diffs(verbose=False, max_concurrency=-1, lights: Iterable[str] = ()):
         light_descriptions = {light: desc for light, desc in light_descriptions.items() if light in lights}
 
     renders_root = luxtest_utils.get_renders_root()
-    os.makedirs(WEB_IMG_ROOT, exist_ok=True)
+    os.makedirs(luxtest_const.WEB_IMG_ROOT, exist_ok=True)
     gen_images(light_descriptions, verbose=verbose, max_concurrency=max_concurrency, renders_root=renders_root)
     gen_html(light_descriptions, renders_root=renders_root)
     elapsed = datetime.datetime.now() - start
