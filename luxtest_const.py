@@ -14,10 +14,10 @@ DEFAULT_OVERRIDES = {
     "inputs:shaping:cone:angle": 180,
 }
 
-DEFAULT_RENDERS_ROOTS = [
+DEFAULT_RENDERS_ROOTS = (
     os.path.join(THIS_DIR, "renders"),
     os.path.join(os.path.dirname(THIS_DIR), "luxtest_renders"),
-]
+)
 
 DEFAULT_RENDERS_REPO_URL = "https://github.com/pmolodo/luxtest_renders.git"
 

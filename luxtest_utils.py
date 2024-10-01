@@ -3,6 +3,8 @@ import os
 import subprocess
 import sys
 
+from typing import Tuple
+
 THIS_FILE = os.path.abspath(inspect.getsourcefile(lambda: None) or __file__)
 THIS_DIR = os.path.dirname(THIS_FILE)
 
@@ -21,7 +23,7 @@ def try_decode(input_bytes):
     return input_bytes
 
 
-def get_renders_root():
+def get_renders_root() -> str:
     for test_path in luxtest_const.DEFAULT_RENDERS_ROOTS:
         if os.path.isdir(test_path):
             return test_path
@@ -35,5 +37,5 @@ def get_renders_root():
     return renders_root
 
 
-def get_render_dirs():
-    return [x.name for x in os.scandir(get_renders_root()) if x.is_dir()]
+def get_render_dirs() -> Tuple[str, ...]:
+    return tuple(x.name for x in os.scandir(get_renders_root()) if x.is_dir())

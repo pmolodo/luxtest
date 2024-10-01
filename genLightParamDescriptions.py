@@ -205,10 +205,10 @@ def format_attr(attr_name):
     return ":".join(split)
 
 
-def get_light_names():
+def get_light_names() -> Tuple[str, ...]:
     try:
         light_descriptions = read_descriptions()
-        return sorted(light_descriptions)
+        return tuple(sorted(light_descriptions))
     except Exception as err:
         print("Error reading light names from light_descriptions.json:")
         print(err)
