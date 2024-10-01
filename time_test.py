@@ -20,6 +20,8 @@ if THIS_DIR not in sys.path:
 
 import luxtest_utils
 
+from luxtest_utils import FrameRange
+
 GEN_EMBREE = os.path.join(THIS_DIR, "genembree.py")
 DEFAULT_TEST_USDA = os.path.join(THIS_DIR, "usd", "test", "embree_test_01.usda")
 RENDERS_ROOT = luxtest_utils.get_renders_root()
@@ -51,18 +53,6 @@ else:
 ###############################################################################
 # Core functions
 ###############################################################################
-
-
-class FrameRange(NamedTuple):
-    start: int
-    end: int
-
-    @property
-    def num_frames(self):
-        return self.end - self.start + 1
-
-    def __str__(self):
-        return f"{self.start}:{self.end}"
 
 
 class TrialInfo(NamedTuple):

@@ -33,7 +33,7 @@ pip_import.pip_import("tqdm")
 
 from tqdm import tqdm
 
-from genLightParamDescriptions import FrameRange
+from luxtest_utils import FrameRange
 
 EMBREE_DELEGATE = "Embree"
 DEFAULT_DELEGATES = (EMBREE_DELEGATE,)

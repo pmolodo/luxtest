@@ -12,13 +12,15 @@ import os
 import sys
 import traceback
 
-from typing import Any, Dict, Iterable, List, NamedTuple, Optional, Tuple, TypeAlias, Union
+from typing import Any, Dict, Iterable, List, Optional, Tuple, TypeAlias, Union
 
 THIS_FILE = os.path.abspath(inspect.getsourcefile(lambda: None) or __file__)
 THIS_DIR = os.path.dirname(THIS_FILE)
 
 if THIS_DIR not in sys.path:
     sys.path.append(THIS_DIR)
+
+from luxtest_utils import FrameRange
 
 try:
     from pxr import Sdf, Usd, UsdLux
@@ -269,32 +271,6 @@ def get_override_group(light_name, frame):
 ###############################################################################
 # Dataclasses
 ###############################################################################
-
-
-class FrameRange(NamedTuple):
-    start: int
-    end: int
-
-    @property
-    def num_frames(self):
-        return self.end - self.start + 1
-
-    def __str__(self):
-        return f"{self.start}:{self.end}"
-
-    @classmethod
-    def from_str(cls, frames_str) -> "FrameRange":
-        if ":" in frames_str:
-            split = frames_str.split(":")
-            if len(split) > 2:
-                raise ValueError(
-                    f"frames may only have a single ':', to denote start:end (inclusive) - got: {frames_str}"
-                )
-            frames = tuple(int(x) for x in split)
-        else:
-            frame = int(frames_str)
-            frames = (frame, frame)
-        return cls(*frames)
 
 
 @dataclasses.dataclass

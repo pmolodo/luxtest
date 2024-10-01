@@ -25,7 +25,7 @@ import combine_ies_test_images
 import genLightParamDescriptions
 import luxtest_hou_utils
 
-from genLightParamDescriptions import FrameRange
+from luxtest_utils import FrameRange
 
 LUXTEST_HIP = os.path.join(THIS_DIR, "luxtest.hip")
 HUSK_PRE_RENDER = os.path.join(THIS_DIR, "husk_pre_render.py")

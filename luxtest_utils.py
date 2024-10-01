@@ -3,7 +3,7 @@ import os
 import subprocess
 import sys
 
-from typing import Tuple
+from typing import NamedTuple, Tuple
 
 THIS_FILE = os.path.abspath(inspect.getsourcefile(lambda: None) or __file__)
 THIS_DIR = os.path.dirname(THIS_FILE)
@@ -12,6 +12,10 @@ if THIS_DIR not in sys.path:
     sys.path.append(THIS_DIR)
 
 import luxtest_const
+
+###############################################################################
+# Functions
+###############################################################################
 
 
 def try_decode(input_bytes):
@@ -61,3 +65,43 @@ def get_image_url(light_name, renderer: str, frame: int, ext: str, prefix="", re
     image_path = get_image_path(light_name, renderer, frame, ext, prefix=prefix, renders_root=renders_root)
     rel_path = os.path.relpath(image_path, luxtest_const.WEB_ROOT)
     return rel_path.replace(os.sep, "/")
+
+
+###############################################################################
+# Classes
+###############################################################################
+
+
+class FrameRange(NamedTuple):
+    start: int
+    end: int
+
+    @property
+    def num_frames(self):
+        return self.end - self.start + 1
+
+    def __str__(self):
+        return f"{self.start}:{self.end}"
+
+    @classmethod
+    def from_str(cls, frames_str) -> "FrameRange":
+        if ":" in frames_str:
+            split = frames_str.split(":")
+            if len(split) > 2:
+                raise ValueError(
+                    f"frames may only have a single ':', to denote start:end (inclusive) - got: {frames_str}"
+                )
+            frames = tuple(int(x) for x in split)
+        else:
+            frame = int(frames_str)
+            frames = (frame, frame)
+        return cls(*frames)
+
+    def iter_frames(self):
+        """Returns an iterator over every frame in the range
+
+        As a tuple, an iterator is already defined, as (start, end); this
+        is different from that, as it iterates over interior frames (and won't
+        repeat start/end if they're the same)
+        """
+        return iter(range(self.start, self.end + 1))

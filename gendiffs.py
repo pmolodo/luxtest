@@ -114,11 +114,6 @@ def needs_update(existing, dependent):
     return True
 
 
-def iter_frames(light_description):
-    start, end = light_description.frames
-    return range(start, end + 1)
-
-
 def print_streams(proc: subprocess.CompletedProcess):
     for stream_name in ("stdout", "stderr"):
         stream = getattr(proc, stream_name, None)
@@ -211,7 +206,7 @@ async def update_diff(exr_path1, exr_path2, diff_path, verbose=False):
 async def gen_images_async(light_descriptions, verbose=False, max_concurrency=-1, renders_root=""):
     flat_frames = []
     for name, description in light_descriptions.items():
-        for frame in iter_frames(description):
+        for frame in description.frames.iter_frames():
             flat_frames.append((name, description, frame))
 
     all_tasks = []
@@ -306,7 +301,7 @@ def gen_html(light_descriptions: Dict[str, genLightParamDescriptions.LightParamD
             )
 
         html += "\n</tr>"
-        for frame in iter_frames(description):
+        for frame in description.frames.iter_frames():
 
             if frame in summaries_by_start_frame:
                 desc = summaries_by_start_frame[frame]
