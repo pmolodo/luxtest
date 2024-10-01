@@ -78,6 +78,19 @@ COLOR_NAMES = {
     (0.0, 0.0, 1.0): "blue",
 }
 
+# if we can't read light_descriptions, use this
+FALLBACK_LIGHTS = (
+    "cylinder",
+    "disk",
+    "distant",
+    "dome",
+    "iesLibPReview",
+    "iesTest",
+    "rect",
+    "sphere",
+    "visibleRect",
+)
+
 ###############################################################################
 # Utilities
 ###############################################################################
@@ -203,6 +216,17 @@ def format_attr(attr_name):
     if split[0] == "shaping":
         del split[0]
     return ":".join(split)
+
+
+def get_light_names():
+    try:
+        light_descriptions = read_descriptions()
+        return sorted(light_descriptions)
+    except Exception as err:
+        print("Error reading light names from light_descriptions.json:")
+        print(err)
+        print("...using fallback light names")
+        return FALLBACK_LIGHTS
 
 
 def get_light_name(light):

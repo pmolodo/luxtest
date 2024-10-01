@@ -32,16 +32,6 @@ HUSK_PRE_RENDER = os.path.join(THIS_DIR, "husk_pre_render.py")
 
 HOUDINI_ATTR_RE = re.compile(r"""^\s*[A-Za-z_][A-Za-z_0-9]* houdini:[A-Za-z_][A-Za-z_0-9:]*.*""")
 
-# if we can't read light_descriptions, use this
-FALLBACK_LIGHTS = (
-    "cylinder",
-    "disk",
-    "distant",
-    "dome",
-    "rect",
-    "sphere",
-    "visibleRect",
-)
 
 ###############################################################################
 # Utilities
@@ -193,14 +183,7 @@ def get_parser():
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
 
-    try:
-        light_descriptions = genLightParamDescriptions.read_descriptions()
-        light_names = sorted(light_descriptions)
-    except Exception as err:
-        print("Error reading light names from light_descriptions.json:")
-        print(err)
-        print("...using fallback light names")
-        light_names = FALLBACK_LIGHTS
+    light_names = genLightParamDescriptions.get_light_names()
 
     parser.add_argument(
         "hip_file",

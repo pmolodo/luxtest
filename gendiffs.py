@@ -83,17 +83,6 @@ OIIOTOOL = os.environ.get("LUXTEST_OIIOTOOL", "oiiotool")
 
 NUM_CPUS = multiprocessing.cpu_count()
 
-# if we can't read light_descriptions, use this
-FALLBACK_LIGHTS = (
-    "cylinder",
-    "disk",
-    "distant",
-    "dome",
-    "rect",
-    "sphere",
-    "visibleRect",
-)
-
 SKIP_LIGHTS = ("ies_scale",)
 
 
@@ -402,14 +391,7 @@ def gen_diffs(verbose=False, max_concurrency=-1, lights: Iterable[str] = ()):
 
 
 def get_parser():
-    try:
-        light_descriptions = genLightParamDescriptions.read_descriptions()
-        light_names = sorted(light_descriptions)
-    except Exception as err:
-        print("Error reading light names from light_descriptions.json:")
-        print(err)
-        print("...using fallback light names")
-        light_names = FALLBACK_LIGHTS
+    light_names = genLightParamDescriptions.get_light_names()
 
     parser = argparse.ArgumentParser(
         description=__doc__,
