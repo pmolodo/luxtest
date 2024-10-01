@@ -277,7 +277,7 @@ class FrameRange(NamedTuple):
             split = frames_str.split(":")
             if len(split) > 2:
                 raise ValueError(
-                    f"frames may only have a single ':', to denote start:end (inclusive) - got: {args.frames}"
+                    f"frames may only have a single ':', to denote start:end (inclusive) - got: {frames_str}"
                 )
             frames = tuple(int(x) for x in split)
         else:
