@@ -21,6 +21,22 @@ DEFAULT_RENDERS_ROOTS = [
 
 DEFAULT_RENDERS_REPO_URL = "https://github.com/pmolodo/luxtest_renders.git"
 
+# if we can't read light_descriptions, use this
+FALLBACK_LIGHTS = (
+    "cylinder",
+    "disk",
+    "distant",
+    "dome",
+    "iesLibPReview",
+    "iesTest",
+    "rect",
+    "sphere",
+    "visibleRect",
+)
+
+THIRD_PARTY_RENDERERS = ("arnold", "karma", "ris")
+RENDERERS = THIRD_PARTY_RENDERERS + ("embree",)
+
 
 def make_unique(*objs):
     return tuple(dict.fromkeys(x for x in objs if x is not None))

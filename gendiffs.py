@@ -33,6 +33,7 @@ if THIS_DIR not in sys.path:
     sys.path.append(THIS_DIR)
 
 import genLightParamDescriptions
+import luxtest_const
 import luxtest_utils
 import pip_import
 
@@ -266,7 +267,7 @@ async def gen_images_async(light_descriptions, verbose=False, max_concurrency=-1
         embree_png_path = get_image_path(name, "embree", frame, "png", renders_root=renders_root)
         queue_png_update(embree_exr_path, embree_png_path)
 
-        for renderer in RENDERERS:
+        for renderer in luxtest_const.THIRD_PARTY_RENDERERS:
             renderer_exr_path = get_image_path(name, renderer, frame, "exr", renders_root=renders_root)
             renderer_png_path = get_image_path(name, renderer, frame, "png", renders_root=renders_root)
             queue_png_update(renderer_exr_path, renderer_png_path)
@@ -297,7 +298,7 @@ def gen_images(light_descriptions, verbose=False, max_concurrency=-1, renders_ro
 
 def gen_html(light_descriptions: Dict[str, genLightParamDescriptions.LightParamDescription], renders_root=""):
     html = HTML_START
-    num_cols = len(RENDERERS) * 2 + 1
+    num_cols = len(luxtest_const.THIRD_PARTY_RENDERERS) * 2 + 1
 
     # sort first by number of frames (so tests with, ie, only one frame appear at top and are easy to find), then
     # alphabetically
@@ -326,7 +327,7 @@ def gen_html(light_descriptions: Dict[str, genLightParamDescriptions.LightParamD
                 <td>Ref</td>
             """
         )
-        for renderer in RENDERERS:
+        for renderer in luxtest_const.THIRD_PARTY_RENDERERS:
             html += textwrap.dedent(
                 f"""
                     <td>{renderer}</td>
@@ -351,7 +352,7 @@ def gen_html(light_descriptions: Dict[str, genLightParamDescriptions.LightParamD
 
             html += f'    <td><img src="{embree_url}"</td>\n'
 
-            for renderer in RENDERERS:
+            for renderer in luxtest_const.THIRD_PARTY_RENDERERS:
                 renderer_url = get_image_url(name, renderer, frame, "png", renders_root=renders_root)
                 diff_url = get_image_url(name, renderer, frame, "png", prefix="diff-", renders_root=renders_root)
 

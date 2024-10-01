@@ -78,19 +78,6 @@ COLOR_NAMES = {
     (0.0, 0.0, 1.0): "blue",
 }
 
-# if we can't read light_descriptions, use this
-FALLBACK_LIGHTS = (
-    "cylinder",
-    "disk",
-    "distant",
-    "dome",
-    "iesLibPReview",
-    "iesTest",
-    "rect",
-    "sphere",
-    "visibleRect",
-)
-
 ###############################################################################
 # Utilities
 ###############################################################################
@@ -226,7 +213,7 @@ def get_light_names():
         print("Error reading light names from light_descriptions.json:")
         print(err)
         print("...using fallback light names")
-        return FALLBACK_LIGHTS
+        return luxtest_const.FALLBACK_LIGHTS
 
 
 def get_light_name(light):
