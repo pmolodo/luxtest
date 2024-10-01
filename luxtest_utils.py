@@ -33,3 +33,7 @@ def get_renders_root():
     if not os.path.isdir(renders_root):
         raise RuntimeError(f"error cloning repo {luxtest_const.DEFAULT_RENDERS_REPO_URL!r} to {renders_root!r}")
     return renders_root
+
+
+def get_render_dirs():
+    return [x.name for x in os.scandir(get_renders_root()) if x.is_dir()]
