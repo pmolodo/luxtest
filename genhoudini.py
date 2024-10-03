@@ -25,6 +25,7 @@ import combine_ies_test_images
 import genLightParamDescriptions
 import luxtest_hou_utils
 
+from luxtest_const import THIRD_PARTY_RENDERERS
 from luxtest_utils import FrameRange
 
 LUXTEST_HIP = os.path.join(THIS_DIR, "luxtest.hip")
@@ -195,25 +196,17 @@ def get_parser():
     parser.add_argument("--no-usd", dest="usd", action="store_false", help="Disable writing out usda files")
     parser.add_argument(
         "-r",
-        "--renderer",
-        choices=("karma", "ris", "arnold"),
-        action="append",
-        dest="renderers",
-        help=(
-            "Only render images for the given renderer; if not"
-            " specified, render images for all renderers. May be"
-            " repeated."
-        ),
+        "--renderers",
+        choices=THIRD_PARTY_RENDERERS,
+        nargs="+",
+        help="Only render images for the given renderer(s); if not specified, render images for all renderers.",
     )
     parser.add_argument(
         "-l",
-        "--light",
+        "--lights",
         choices=light_names,
-        action="append",
-        dest="lights",
-        help=(
-            "Only render images for the given lights; if not specified, render images for all lights. May be repeated."
-        ),
+        nargs="+",
+        help="Only render images for the given light(s); if not specified, render images for all lights.",
     )
     parser.add_argument(
         "-f",

@@ -375,13 +375,10 @@ def get_parser():
     )
     parser.add_argument(
         "-l",
-        "--light",
+        "--lights",
         choices=light_names,
-        action="append",
-        dest="lights",
-        help=(
-            "Only render images for the given lights; if not specified, render images for all lights. May be repeated."
-        ),
+        nargs="+",
+        help="Only render images for the given light(s); if not specified, render images for all lights",
     )
     return parser
 
