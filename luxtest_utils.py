@@ -42,7 +42,8 @@ def get_renders_root() -> str:
 
 
 def get_render_dirs() -> Tuple[str, ...]:
-    return tuple(x.name for x in os.scandir(get_renders_root()) if x.is_dir())
+    # filter out linux-hidden dirs (like ".git")
+    return tuple(x.name for x in os.scandir(get_renders_root()) if x.is_dir() and not x.name.startswith("."))
 
 
 def get_image_path(light_name, renderer: str, frame: int, ext: str, prefix="", renders_root=""):

@@ -18,6 +18,8 @@ if THIS_DIR not in sys.path:
 
 import luxtest_utils
 
+from luxtest_const import RENDERERS
+
 RENDER_DIRS = luxtest_utils.get_render_dirs()
 
 INPUT_NAME_RE = re.compile(r"""^iesTest-(?P<renderer>.*)\.(?P<camera>iesTop|iesBottom).(?P<frame>\d{4}).exr$""")
@@ -52,7 +54,7 @@ else:
 def combine_ies_test_images(renderers=(), delete=True):
     to_delete = []
     if not renderers:
-        renderers = RENDER_DIRS
+        renderers = RENDERERS
     renders_root = luxtest_utils.get_renders_root()
     for renderer in renderers:
         renderer_dir = os.path.join(renders_root, renderer)
@@ -121,9 +123,12 @@ def get_parser():
     parser.add_argument(
         "-r",
         "--renderers",
+        # We allow them to CHOOSE any existing render dir (RENDER_DIRS), but by default, only select known renderers
+        # (RENDERERS)
         choices=RENDER_DIRS,
         nargs="+",
-        help="Only combine images for the given renderers; if not specified, combine images for all renderers.",
+        help="Only combine images from the given render dirs; if not specified, combine images for all standard
+            f"renderers: {RENDERERS}.",
     )
     parser.add_argument(
         "-k", "--keep", action="store_true", help="Keep source half-image files after generating combined image"
