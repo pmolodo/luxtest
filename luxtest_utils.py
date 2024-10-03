@@ -72,6 +72,16 @@ def get_image_url(light_name, renderer: str, frame: int, ext: str, prefix="", re
 ###############################################################################
 
 
+# Note: wanted to convert to a frozen dataclass, so we could have a more
+# intuitive iter, which iterated over all frames in the range:
+#
+#  @dataclasses.dataclass(frozen=True)
+#  class FrameRange:
+#       ...
+#
+# ...but that made it serialize as a dict `{"start": 1, "end": 10}`` instead of
+# a 2-item list `[1, 10]`.  No way to customize how dataclasses.asdict
+# handles recursive serialization, so leaving as NamedTuple for now.
 class FrameRange(NamedTuple):
     start: int
     end: int
@@ -81,7 +91,22 @@ class FrameRange(NamedTuple):
         return self.end - self.start + 1
 
     def __str__(self):
+        """Formatting suitable with usdrecord"""
         return f"{self.start}:{self.end}"
+
+    def display_str(self):
+        if len(self) == 1:
+            return str(self.start)
+        return f"{self.start}-{self.end}"
+
+    def has_frame(self, frame: int) -> bool:
+        return self.start <= frame <= self.end
+
+    def issuperset(self, other: "FrameRange") -> bool:
+        return self.start <= other.start and other.end <= self.end
+
+    def issubset(self, other: "FrameRange") -> bool:
+        return other.issuperset(self)
 
     @classmethod
     def from_str(cls, frames_str) -> "FrameRange":

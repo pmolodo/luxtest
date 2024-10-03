@@ -48,21 +48,21 @@ USD_EXTENSIONS = (".usd", ".usda", ".usdc")
 MISSING = object()
 
 AREA_LIGHT_SUMMARY_OVERRIDES = {
-    (1, 5): "light rotate worldZ from 0 to 60",
-    (26, 30): "light rotate under shear + nonuniform scale",
-    (46, 50): "focusTint from black to green to white",
+    FrameRange(1, 5): "light rotate worldZ from 0 to 60",
+    FrameRange(26, 30): "light rotate under shear + nonuniform scale",
+    FrameRange(46, 50): "focusTint from black to green to white",
 }
 
 SUMMARY_OVERRIDES = {
     "distant": {
-        (1, 5): "light rotate worldZ from 0 to 80",
-        (6, 10): "cam rotate from 0 to 80",
+        FrameRange(1, 5): "light rotate worldZ from 0 to 80",
+        FrameRange(6, 10): "cam rotate from 0 to 80",
     },
     "iesTest": {
-        (1, 1): "ies:angleScale=0 ref",
-        (11, 11): "ies:angleScale=0 ref",
-        (21, 21): "ies:angleScale=0 ref",
-        (31, 31): "no ies:file ref",
+        FrameRange(1, 1): "ies:angleScale=0 ref",
+        FrameRange(11, 11): "ies:angleScale=0 ref",
+        FrameRange(21, 21): "ies:angleScale=0 ref",
+        FrameRange(31, 31): "no ies:file ref",
     },
 }
 
@@ -261,10 +261,10 @@ def find_usds(path: str, recurse=False):
     return paths
 
 
-def get_override_group(light_name, frame):
-    for start_end in SUMMARY_OVERRIDES.get(light_name, {}).keys():
-        if frame >= start_end[0] and frame <= start_end[1]:
-            return start_end
+def get_override_group(light_name, frame) -> Optional[FrameRange]:
+    for frame_range in SUMMARY_OVERRIDES.get(light_name, {}).keys():
+        if frame_range.has_frame(frame):
+            return frame_range
     return None
 
 
@@ -542,7 +542,7 @@ class FrameGroupTracker:
                 del constants[key]
 
         return FrameGroup(
-            frames=(start, end),
+            frames=FrameRange(start, end),
             varying=varying_vals,
             non_default_constants=constants,
         )
@@ -638,17 +638,18 @@ class LightParamDescription:
             start = math.floor(all_samples[0])
             end = int(all_samples[-1])
         light_overrides = SUMMARY_OVERRIDES.get(light_name, {})
-        for override_start, override_end in light_overrides:
-            start = min(start, override_start)
-            end = max(end, override_end)
+        for override_range in light_overrides:
+            start = min(start, override_range.start)
+            end = max(end, override_range.end)
         if start == math.inf:
             start = end = 1
 
+        frame_range = FrameRange(start, end)
         if not all_samples:
             # constant
-            return cls(usd_path=usd_path, frame_groups=[], frames=(start, end), attrs=[])
+            return cls(usd_path=usd_path, frame_groups=[], frames=frame_range, attrs=[])
 
-        frames_list = list(range(start, end + 1))
+        frames_list = list(frame_range.iter_frames())
         frame_groups = FrameGroupFinder.find(light_name, all_attrs=attrs, all_frames=frames_list)
         attr_names = [x.GetName() for x in attrs]
 
@@ -659,7 +660,7 @@ class LightParamDescription:
             all_varying.update(group.varying)
         attr_names = [x for x in attr_names if not x.startswith("xformOp:") or x in all_varying]
 
-        return cls(usd_path=usd_path, frame_groups=frame_groups, frames=(start, end), attrs=attr_names)
+        return cls(usd_path=usd_path, frame_groups=frame_groups, frames=frame_range, attrs=attr_names)
 
 
 class DataclassJsonEncoder(json.JSONEncoder):
@@ -703,14 +704,13 @@ def write_light_param_descriptions(path: str, recurse: bool = False, json_out_pa
     return
 
 
-def find_summary_override(light_name: str, start: int, end: int):
+def find_summary_override(light_name: str, frame_range: FrameRange):
     light_overrides = SUMMARY_OVERRIDES.get(light_name)
     if light_overrides is None:
         return None
-    for frames, desc in light_overrides.items():
-        override_start, override_end = frames
-        if override_start <= start and end <= override_end:
-            return frames, desc
+    for override_frames, desc in light_overrides.items():
+        if override_frames.issuperset(frame_range):
+            return override_frames, desc
     return None
 
 
@@ -720,16 +720,13 @@ def get_light_group_summaries(light_name, light_description):
 
     summaries_by_start_frame = {}
     for group in light_description.frame_groups:
-        start, end = group.frames
+        frame_range = group.frames
 
         frame_desc = ""
-        override_desc = ""
         varying_desc = ""
-        override = find_summary_override(light_name, start, end)
+        override = find_summary_override(light_name, frame_range)
         if override is not None:
-            override_frames, override_desc = override
-            start, end = override_frames
-            varying_desc = override_desc
+            frame_range, varying_desc = override
         elif not group.varying:
             frame_desc = "(constant)"
         if not frame_desc:
@@ -737,7 +734,8 @@ def get_light_group_summaries(light_name, light_description):
                 varying_descs = []
                 for varying_attr, vals in group.varying.items():
                     varying_descs.append(
-                        f"{format_attr(varying_attr)} from {format_val(vals[start])} to {format_val(vals[end])}"
+                        f"{format_attr(varying_attr)} from {format_val(vals[frame_range.start])} to"
+                        f" {format_val(vals[frame_range.end])}"
                     )
                 varying_desc = ", ".join(varying_descs)
 
@@ -752,12 +750,7 @@ def get_light_group_summaries(light_name, light_description):
                 constants_desc = f" ({constants_desc})"
             frame_desc = f"{varying_desc}{constants_desc}"
 
-        if start == end:
-            frame_str = str(start)
-        else:
-            frame_str = f"{start}-{end}"
-
-        summaries_by_start_frame[start] = f"{frame_str}: {frame_desc}"
+        summaries_by_start_frame[frame_range.start] = f"{frame_range.display_str()}: {frame_desc}"
     return summaries_by_start_frame
 
 
