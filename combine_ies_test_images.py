@@ -127,8 +127,10 @@ def get_parser():
         # (RENDERERS)
         choices=RENDER_DIRS,
         nargs="+",
-        help="Only combine images from the given render dirs; if not specified, combine images for all standard
-            f"renderers: {RENDERERS}.",
+        help=(
+            "Only combine images from the given render dirs; if not specified, combine images for all standard"
+            f" renderers: {RENDERERS}."
+        ),
     )
     parser.add_argument(
         "-k", "--keep", action="store_true", help="Keep source half-image files after generating combined image"
