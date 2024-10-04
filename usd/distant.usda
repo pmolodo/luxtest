@@ -130,7 +130,7 @@
             float3 "rtx:sceneDb:ambientLightColor" = (0.1, 0.1, 0.1)
         }
     }
-    defaultPrim = "floor_plane"
+    defaultPrim = "floorPlane"
     endTimeCode = 35
     framesPerSecond = 24
     metersPerUnit = 1
@@ -246,12 +246,10 @@ def Xform "cameras"
     }
 }
 
-def Xform "floor_plane" (
-    prepend apiSchemas = ["MaterialBindingAPI"]
+def Xform "floorPlane" (
     kind = "component"
 )
 {
-    rel material:binding = </materials/usdpreviewsurface1>
     matrix4d xformOp:transform:xform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
     uniform token[] xformOpOrder = ["xformOp:transform:xform"]
 

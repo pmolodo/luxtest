@@ -130,7 +130,7 @@
             float3 "rtx:sceneDb:ambientLightColor" = (0.1, 0.1, 0.1)
         }
     }
-    defaultPrim = "sopcreate_iesTest"
+    defaultPrim = "iesProjectionSphere"
     endTimeCode = 41
     framesPerSecond = 24
     metersPerUnit = 1
@@ -227,7 +227,7 @@ def Xform "cameras"
     }
 }
 
-def Xform "sopcreate_iesTest" (
+def Xform "iesProjectionSphere" (
     kind = "component"
 )
 {

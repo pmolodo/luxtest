@@ -226,7 +226,7 @@ def Xform "cameras"
     }
 }
 
-def "sopcreate_iesTest" (
+def "iesProjectionSphere" (
     prepend apiSchemas = ["MaterialBindingAPI"]
     prepend references = @./shapes/sphere50x50.usda@
 )
