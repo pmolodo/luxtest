@@ -20,7 +20,8 @@ import sys
 import textwrap
 import traceback
 
-from typing import Dict, Iterable
+from re import T
+from typing import Dict, Iterable, Optional
 
 ###############################################################################
 # Constants
@@ -37,7 +38,7 @@ import luxtest_const
 import luxtest_utils
 import pip_import
 
-from luxtest_utils import get_image_path, get_image_url
+from luxtest_utils import FrameRange, get_image_path, get_image_url
 
 pip_import.pip_import("tqdm")
 import tqdm.asyncio
@@ -203,14 +204,33 @@ async def update_diff(exr_path1, exr_path2, diff_path, verbose=False):
         raise_proc_error(proc, verbose)
 
 
-async def gen_images_async(light_descriptions, verbose=False, max_concurrency=-1, renders_root=""):
-    flat_frames = []
-    for name, description in light_descriptions.items():
-        for frame in description.frames.iter_frames():
-            flat_frames.append((name, description, frame))
-
+async def gen_images_async(
+    light_descriptions,
+    verbose=False,
+    max_concurrency=-1,
+    renders_root="",
+    do_diffs=True,
+    lights: Optional[Iterable[str]] = None,
+    renderers: Iterable[str] = luxtest_const.RENDERERS,
+    frame_range: Optional[FrameRange] = None,
+):
     all_tasks = []
     num_possible_images = 0
+
+    renderers = list(renderers)
+    if lights is not None:
+        lights = list(lights)
+
+    flat_frames = []
+    for name, description in light_descriptions.items():
+        if lights is not None and name not in lights:
+            continue
+        if frame_range is not None:
+            light_frame_range = frame_range
+        else:
+            light_frame_range = description.frames
+        for frame in light_frame_range.iter_frames():
+            flat_frames.append((name, description, frame))
 
     def queue_png_update(exr_path, png_path):
         nonlocal num_possible_images
@@ -228,17 +248,22 @@ async def gen_images_async(light_descriptions, verbose=False, max_concurrency=-1
     progress = tqdm.tqdm(flat_frames)
     for name, description, frame in progress:
         progress.set_postfix({"name": name, "frame": frame})
-        embree_exr_path = get_image_path(name, "embree", frame, "exr", renders_root=renders_root)
-        embree_png_path = get_image_path(name, "embree", frame, "png", renders_root=renders_root)
-        queue_png_update(embree_exr_path, embree_png_path)
 
-        for renderer in luxtest_const.THIRD_PARTY_RENDERERS:
+        if do_diffs:
+            embree_exr_path = get_image_path(name, "embree", frame, "exr", renders_root=renders_root)
+
+        for renderer in renderers:
             renderer_exr_path = get_image_path(name, renderer, frame, "exr", renders_root=renders_root)
             renderer_png_path = get_image_path(name, renderer, frame, "png", renders_root=renders_root)
             queue_png_update(renderer_exr_path, renderer_png_path)
 
-            diff_png_path = get_image_path(name, renderer, frame, "png", prefix="diff-", renders_root=renders_root)
-            queue_diff_update(embree_exr_path, renderer_exr_path, diff_png_path)
+            # don't need to do a diff of embree with itself!
+            if renderer == "embree":
+                continue
+
+            if do_diffs:
+                diff_png_path = get_image_path(name, renderer, frame, "png", prefix="diff-", renders_root=renders_root)
+                queue_diff_update(embree_exr_path, renderer_exr_path, diff_png_path)
 
     print(f"Generating {len(all_tasks)} images (out of possible {num_possible_images}):")
 

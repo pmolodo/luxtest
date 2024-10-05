@@ -39,9 +39,13 @@ def pip_import(module_name, pip_package_name=None):
         pip_package_name = module_name
     os.makedirs(PY_DEPS_DIR, exist_ok=True)
 
-    # ensurepip not necessary, houdini's python install includes it... and it was erroring
-    # subprocess.check_call([sys.executable, "-m", "ensurepip"])
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "--target", PY_DEPS_DIR, pip_package_name])
+    pip_install(pip_package_name)
     print("=" * 80)
 
     return importlib.import_module(module_name)
+
+
+def pip_install(pip_package_name: str):
+    # ensurepip not necessary, houdini's python install includes it... and it was erroring
+    # subprocess.check_call([sys.executable, "-m", "ensurepip"])
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "--target", PY_DEPS_DIR, pip_package_name])
