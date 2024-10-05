@@ -33,8 +33,8 @@ import moviepy.video.io.ImageSequenceClip
 ###############################################################################
 
 FRAME_RANGES_BY_RENDERER = {
-    "karma": FrameRange(22, 42),
-    "ris": FrameRange(1, 21),
+    "karma": FrameRange(50, 98),
+    "ris": FrameRange(1, 49),
 }
 
 
@@ -56,7 +56,7 @@ def is_ipython():
 ###############################################################################
 
 
-def make_movies(fps: float = 10.0):
+def make_movies(fps: float = 24.0):
 
     renders_root = luxtest_utils.get_renders_root()
 
