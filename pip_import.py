@@ -12,7 +12,7 @@ THIS_FILE = os.path.abspath(inspect.getsourcefile(lambda: None) or __file__)
 THIS_DIR = os.path.dirname(THIS_FILE)
 
 DEPS_DIR = os.path.join(THIS_DIR, ".deps")
-PY_DEPS_DIR = os.path.join(DEPS_DIR, "python")
+PY_DEPS_DIR = os.path.join(DEPS_DIR, f"python{sys.version_info[0]}.{sys.version_info[1]}")
 
 ###############################################################################
 # Functions
