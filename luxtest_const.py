@@ -32,7 +32,7 @@ FALLBACK_LIGHTS = (
     "disk",
     "distant",
     "dome",
-    "iesLibPReview",
+    "iesLibPreview",
     "iesTest",
     "rect",
     "sphere",
