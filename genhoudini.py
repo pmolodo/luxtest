@@ -126,6 +126,8 @@ def render_images(
     lights: Iterable[str] = (),
     frame_range: Optional[FrameRange] = None,
 ):
+    if not lights:
+        lights = luxtest_const.DEFAULT_LIGHTS
     import hou
 
     usdrender_type = hou.lopNodeTypeCategory().nodeType("usdrender_rop")
@@ -209,11 +211,11 @@ def get_parser():
         "--lights",
         metavar="LIGHT",
         choices=all_light_names,
-        default=luxtest_const.DEFAULT_LIGHTS,
         nargs="+",
         help=(
-            f"Only render images for the given light(s). Choices: {all_light_names}.  If not specified, render images"
-            " for default lights."
+            f"Only export .usda files and render images for the given light(s). Choices: {all_light_names}.  If"
+            " notspecified, the default is to export all .usda for all lights, and only render these lights by"
+            " default: {luxtest_const.DEFAULT_LIGHTS}"
         ),
     )
     parser.add_argument(
