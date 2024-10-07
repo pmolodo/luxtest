@@ -39,7 +39,8 @@ FALLBACK_LIGHTS = (
     "visibleRect",
 )
 
-THIRD_PARTY_RENDERERS = ("arnold", "karma", "ris")
+# order here matters for gendiffs.py
+THIRD_PARTY_RENDERERS = ("karma", "ris", "arnold")
 RENDERERS = THIRD_PARTY_RENDERERS + ("embree",)
 
 
