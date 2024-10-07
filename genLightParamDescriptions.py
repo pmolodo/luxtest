@@ -207,15 +207,15 @@ def format_attr(attr_name):
     return ":".join(split)
 
 
-def get_light_names() -> Tuple[str, ...]:
+def get_all_light_names() -> Tuple[str, ...]:
     try:
         light_descriptions = read_descriptions()
         return tuple(sorted(light_descriptions))
     except Exception as err:
         print("Error reading light names from light_descriptions.json:")
         print(err)
-        print("...using fallback light names")
-        return luxtest_const.FALLBACK_LIGHTS
+        print("...using default light names")
+        return luxtest_const.DEFAULT_LIGHTS
 
 
 def get_light_name(light):

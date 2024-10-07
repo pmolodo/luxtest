@@ -26,8 +26,8 @@ WEB_ROOT = os.path.join(THIS_DIR, WEB_DIR_NAME)
 WEB_IMG_ROOT = os.path.join(WEB_ROOT, "img")
 
 
-# if we can't read light_descriptions, use this
-FALLBACK_LIGHTS = (
+# set of lights to use by default (ie, in gendiffs.py)
+DEFAULT_LIGHTS = (
     "cylinder",
     "disk",
     "distant",

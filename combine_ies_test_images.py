@@ -126,10 +126,11 @@ def get_parser():
         # We allow them to CHOOSE any existing render dir (RENDER_DIRS), but by default, only select known renderers
         # (RENDERERS)
         choices=RENDER_DIRS,
+        default=RENDERERS,
         nargs="+",
         help=(
-            "Only combine images from the given render dirs; if not specified, combine images for all standard"
-            f" renderers: {RENDERERS}."
+            f"Only combine images from the given render dirs.  If not specified, combine"
+            f" images for all standard renderers."
         ),
     )
     parser.add_argument(

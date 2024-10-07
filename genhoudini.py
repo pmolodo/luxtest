@@ -11,6 +11,8 @@ import traceback
 
 from typing import Iterable, Optional, Tuple
 
+import luxtest_const
+
 ###############################################################################
 # Constants
 ###############################################################################
@@ -184,7 +186,7 @@ def get_parser():
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
 
-    light_names = genLightParamDescriptions.get_light_names()
+    all_light_names = genLightParamDescriptions.get_all_light_names()
 
     parser.add_argument(
         "hip_file",
@@ -199,14 +201,20 @@ def get_parser():
         "--renderers",
         choices=THIRD_PARTY_RENDERERS,
         nargs="+",
+        default=THIRD_PARTY_RENDERERS,
         help="Only render images for the given renderer(s); if not specified, render images for all renderers.",
     )
     parser.add_argument(
         "-l",
         "--lights",
-        choices=light_names,
+        metavar="LIGHT",
+        choices=all_light_names,
+        default=luxtest_const.DEFAULT_LIGHTS,
         nargs="+",
-        help="Only render images for the given light(s); if not specified, render images for all lights.",
+        help=(
+            f"Only render images for the given light(s). Choices: {all_light_names}.  If not specified, render images"
+            " for default lights."
+        ),
     )
     parser.add_argument(
         "-f",

@@ -20,7 +20,6 @@ import sys
 import textwrap
 import traceback
 
-from re import T
 from typing import Dict, Iterable, Optional
 
 ###############################################################################
@@ -360,7 +359,7 @@ def gen_html(light_descriptions: Dict[str, genLightParamDescriptions.LightParamD
     shutil.copyfile("luxtest.css", os.path.join(luxtest_const.WEB_ROOT, "luxtest.css"))
 
 
-def gen_diffs(verbose=False, max_concurrency=-1, lights: Iterable[str] = ()):
+def gen_diffs(verbose=False, max_concurrency=-1, lights: Iterable[str] = luxtest_const.DEFAULT_LIGHTS):
     start = datetime.datetime.now()
     lights = tuple(lights)  # in case it's an iterable
     light_descriptions = genLightParamDescriptions.read_descriptions()
@@ -382,7 +381,7 @@ def gen_diffs(verbose=False, max_concurrency=-1, lights: Iterable[str] = ()):
 
 
 def get_parser():
-    light_names = genLightParamDescriptions.get_light_names()
+    all_light_names = genLightParamDescriptions.get_all_light_names()
 
     parser = argparse.ArgumentParser(
         description=__doc__,
@@ -401,9 +400,14 @@ def get_parser():
     parser.add_argument(
         "-l",
         "--lights",
-        choices=light_names,
+        metavar="LIGHT",
+        choices=all_light_names,
         nargs="+",
-        help="Only render images for the given light(s); if not specified, render images for all lights",
+        default=luxtest_const.DEFAULT_LIGHTS,
+        help=(
+            f"Only render images for the given light(s).  Choices: {all_light_names}.  If not specified, render"
+            " images for the set of default lights."
+        ),
     )
     return parser
 
@@ -414,7 +418,7 @@ def main(argv=None):
     parser = get_parser()
     args = parser.parse_args(argv)
     try:
-        gen_diffs(verbose=args.verbose, max_concurrency=args.j, lights=args.lights or ())
+        gen_diffs(verbose=args.verbose, max_concurrency=args.j, lights=args.lights)
     except Exception:  # pylint: disable=broad-except
 
         traceback.print_exc()

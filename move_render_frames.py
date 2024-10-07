@@ -79,7 +79,7 @@ def move_frames(
     old_frames: FrameRange,
     new_frames: FrameRange,
     renderers: Optional[Iterable[str]] = None,
-    lights: Optional[Iterable[str]] = None,
+    lights: Iterable[str] = luxtest_const.DEFAULT_LIGHTS,
     dry_run: bool = False,
     git: bool = USE_GIT_BY_DEFAULT,
 ):
@@ -90,8 +90,6 @@ def move_frames(
     if renderers is None:
         renderers = RENDERERS
     renderers = tuple(renderers)
-    if lights is None:
-        lights = genLightParamDescriptions.get_light_names()
     lights = tuple(lights)
 
     print()
@@ -174,7 +172,7 @@ def move_frames(
 
 
 def get_parser():
-    light_names = genLightParamDescriptions.get_light_names()
+    all_light_names = genLightParamDescriptions.get_all_light_names()
 
     parser = argparse.ArgumentParser(
         description=__doc__,
@@ -210,12 +208,13 @@ def get_parser():
     parser.add_argument(
         "-l",
         "--lights",
-        choices=light_names,
+        choices=all_light_names,
+        default=luxtest_const.DEFAULT_LIGHTS,
         metavar="LIGHT",
         nargs="+",
         help=(
-            f"Only render images for the given light(s). Choices: {{{', '.join(light_names)}}}. If not specified,"
-            " render images for all lights."
+            f"Only render images for the given light(s). Choices: {all_light_names}. If not specified,"
+            " render images for default lights."
         ),
     )
     parser.add_argument(
