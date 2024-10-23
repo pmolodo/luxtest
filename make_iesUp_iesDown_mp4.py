@@ -33,10 +33,12 @@ import moviepy.video.io.ImageSequenceClip
 ###############################################################################
 
 FRAME_RANGES_BY_RENDERER = {
+    "embree": FrameRange(99, 147),  # for bimodal formula renders
     "karma": FrameRange(50, 98),
     "ris": FrameRange(1, 49),
 }
 
+ALL_RENDERERS = tuple(FRAME_RANGES_BY_RENDERER)
 
 ###############################################################################
 # Utilities
@@ -56,13 +58,17 @@ def is_ipython():
 ###############################################################################
 
 
-def make_movies(fps: float = 24.0):
+def make_movies(fps: float = 24.0, renderers=ALL_RENDERERS):
 
     renders_root = luxtest_utils.get_renders_root()
 
     light_descriptions = genLightParamDescriptions.read_descriptions()
 
-    for renderer, frame_range in FRAME_RANGES_BY_RENDERER.items():
+    for renderer in renderers:
+        frame_range = FRAME_RANGES_BY_RENDERER[renderer]
+        print()
+        print("=" * 80)
+        print(f"{renderer} - frames: {frame_range}")
 
         # first make sure we have the pngs
         # (we can't go straight from exrs, as moviepy can't handle color space conversion)
@@ -74,12 +80,12 @@ def make_movies(fps: float = 24.0):
                 lights=["iesUp", "iesDown"],
                 renderers=[renderer],
                 frame_range=frame_range,
+                do_diffs=False,
             )
         )
 
         for direction in ("Up", "Down"):
             light = f"ies{direction}"
-            renderer_dir = os.path.join(renders_root, renderer)
             # Want to make a ping-pong - so do images forward first
             images = [
                 luxtest_utils.get_image_path(light, renderer, f, ".png", renders_root=renders_root)
@@ -102,6 +108,14 @@ def get_parser():
         description=__doc__,
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
+    parser.add_argument(
+        "-r",
+        "--renderers",
+        choices=ALL_RENDERERS,
+        nargs="+",
+        default=ALL_RENDERERS,
+        help="Only render images for the given renderer(s); if not specified, render images for all renderers.",
+    )
     return parser
 
 
@@ -109,9 +123,9 @@ def main(argv=None):
     if argv is None:
         argv = sys.argv[1:]
     parser = get_parser()
-    parser.parse_args(argv)
+    args = parser.parse_args(argv)
     try:
-        make_movies()
+        make_movies(renderers=args.renderers)
     except Exception:  # pylint: disable=broad-except
 
         traceback.print_exc()

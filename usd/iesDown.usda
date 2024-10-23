@@ -8,7 +8,7 @@
             bool capture_application = 0
             int capture_every_nth_frames = 20
             bool capture_every_nth_frames_checked = 0
-            int capture_frame_end = 98
+            int capture_frame_end = 147
             int capture_frame_start = 1
             string capture_name = "iesDown-rtx"
             string capture_range = "Custom Range - Frames"
@@ -94,7 +94,7 @@
         }
         dictionary renderSettings = {
             float3 "rtx:debugView:pixelDebug:textColor" = (0, 1e18, 0)
-            int "rtx:externalFrameCounter" = 98
+            int "rtx:externalFrameCounter" = 147
             float3 "rtx:fog:fogColor" = (0.75, 0.75, 0.75)
             float3 "rtx:index:regionOfInterestMax" = (0, 0, 0)
             float3 "rtx:index:regionOfInterestMin" = (0, 0, 0)
@@ -131,7 +131,7 @@
         }
     }
     defaultPrim = "backWall"
-    endTimeCode = 98
+    endTimeCode = 147
     framesPerSecond = 24
     metersPerUnit = 1
     startTimeCode = 1
@@ -377,6 +377,55 @@ def Xform "lights"
             96: -0.30555555,
             97: -0.31944445,
             98: -0.33333334,
+            99: 0.5,
+            100: 0.5208333,
+            101: 0.5416667,
+            102: 0.5625,
+            103: 0.5833333,
+            104: 0.6041667,
+            105: 0.625,
+            106: 0.6458333,
+            107: 0.6666667,
+            108: 0.6875,
+            109: 0.7083333,
+            110: 0.7291667,
+            111: 0.75,
+            112: 0.7708333,
+            113: 0.7916667,
+            114: 0.8125,
+            115: 0.8333333,
+            116: 0.8541667,
+            117: 0.875,
+            118: 0.8958333,
+            119: 0.9166667,
+            120: 0.9375,
+            121: 0.9583333,
+            122: 0.9791667,
+            123: 1,
+            124: 1.0208334,
+            125: 1.0416666,
+            126: 1.0625,
+            127: 1.0833334,
+            128: 1.1041666,
+            129: 1.125,
+            130: 1.1458334,
+            131: 1.1666666,
+            132: 1.1875,
+            133: 1.2083334,
+            134: 1.2291666,
+            135: 1.25,
+            136: 1.2708334,
+            137: 1.2916666,
+            138: 1.3125,
+            139: 1.3333334,
+            140: 1.3541666,
+            141: 1.375,
+            142: 1.3958334,
+            143: 1.4166666,
+            144: 1.4375,
+            145: 1.4583334,
+            146: 1.4791666,
+            147: 1.5,
         }
         asset inputs:shaping:ies:file = @../test_vstripes_hquadrants_nonuniform_aimDown.ies@
         bool inputs:shaping:ies:normalize = 0
