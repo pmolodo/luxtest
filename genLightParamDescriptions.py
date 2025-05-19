@@ -603,10 +603,6 @@ class LightParamDescription:
             self.usd_path = self.usd_path.replace("/", os.path.sep)
 
     @classmethod
-    def empty(cls):
-        return cls("", [], (1, 1), [])
-
-    @classmethod
     def from_dict(cls, data):
         data = dict(data)
         data["frame_groups"] = [FrameGroup.from_dict(x) for x in data["frame_groups"]]

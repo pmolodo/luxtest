@@ -12,7 +12,8 @@ import sys
 import traceback
 
 from glob import glob
-from typing import Callable, Iterable, List, NamedTuple, Optional, Tuple
+from types import NoneType
+from typing import Callable, Iterable, List, NamedTuple, Optional
 
 ###############################################################################
 # Constants
@@ -128,7 +129,8 @@ def run_tests(
     -------
     failures: List[UsdRecordCommand]
     """
-    nullLight = genLightParamDescriptions.LightParamDescription.empty()
+    if not isinstance(frames, (FrameRange, NoneType)):
+        raise TypeError("input frames must be FrameRange | None")
 
     light_descriptions = genLightParamDescriptions.read_descriptions()
 
@@ -179,7 +181,19 @@ def run_tests(
             base = os.path.splitext(input_file)[0]
 
             if frames is None:
-                test_frames = light_descriptions.get(base, nullLight).frames
+                light_desc = light_descriptions.get(base)
+                if light_desc is None:
+                    known_lights = sorted(light_descriptions)
+                    raise ValueError(
+                        f"could not find light {base!r} in light_descriptions - known lights: {known_lights}"
+                    )
+                test_frames = light_desc.frames
+
+                if not isinstance(test_frames, (FrameRange, NoneType)):
+                    raise TypeError(
+                        "light_description frames must be FrameRange | None - got:"
+                        f" {test_frames} ({type(test_frames).__name__})"
+                    )
             else:
                 test_frames = frames
 
