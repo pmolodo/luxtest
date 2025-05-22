@@ -198,8 +198,8 @@ def Xform "cameras"
         float horizontalAperture = 0.20955
         float horizontalApertureOffset = 0
         token projection = "perspective"
-        double shutter:close = 0.25
-        double shutter:open = -0.25
+        double shutter:close = 0
+        double shutter:open = 0
         float verticalAperture = 0.20955
         float verticalApertureOffset = 0
         matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 0, -1, 0), (0, 1, 0, 0), (0, 30, 0, 1) )
