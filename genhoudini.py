@@ -215,7 +215,7 @@ def get_parser():
         help=(
             f"Only export .usda files and render images for the given light(s). Choices: {all_light_names}.  If"
             " notspecified, the default is to export all .usda for all lights, and only render these lights by"
-            " default: {luxtest_const.DEFAULT_LIGHTS}"
+            f" default: {luxtest_const.DEFAULT_LIGHTS}"
         ),
     )
     parser.add_argument(
