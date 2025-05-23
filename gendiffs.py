@@ -17,6 +17,7 @@ import os
 import shutil
 import subprocess
 import sys
+import sysconfig
 import textwrap
 import traceback
 
@@ -71,8 +72,6 @@ HTML_END = """<!DOCTYPE html>
     </div> <!-- wrapper -->
   </body>
 """
-
-OIIOTOOL = os.environ.get("LUXTEST_OIIOTOOL", "oiiotool")
 
 NUM_CPUS = multiprocessing.cpu_count()
 
@@ -151,6 +150,26 @@ async def run(args: Iterable[str], check=False, verbose=False):
         if verbose:
             print(f"Exitcode: {completed_proc.returncode}")
     return completed_proc
+
+
+def _calc_oiiotool_path() -> str:
+    oiiotool = os.environ.get("LUXTEST_OIIOTOOL")
+    if oiiotool:
+        return oiiotool
+    oiiotool = shutil.which("oiiotool")
+    if oiiotool:
+        return oiiotool
+    print(pip_import.pip_import("OpenImageIO"))
+    scripts_dir = sysconfig.get_path("scripts")
+    new_path = f"{scripts_dir}{os.pathsep}{os.environ["PATH"]}"
+    print(new_path.split("os.pathsep"))
+    oiiotool = shutil.which("oiiotool", path=new_path)
+    if oiiotool:
+        return oiiotool
+    raise RuntimeError("Could not find path to oiiotool (even after pip-installing oiiotool)")
+
+
+OIIOTOOL = _calc_oiiotool_path()
 
 
 ###############################################################################
