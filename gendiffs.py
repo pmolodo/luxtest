@@ -161,7 +161,7 @@ def _calc_oiiotool_path() -> str:
         return oiiotool
     print(pip_import.pip_import("OpenImageIO"))
     scripts_dir = sysconfig.get_path("scripts")
-    new_path = f"{scripts_dir}{os.pathsep}{os.environ["PATH"]}"
+    new_path = f"{scripts_dir}{os.pathsep}{os.environ['PATH']}"
     print(new_path.split("os.pathsep"))
     oiiotool = shutil.which("oiiotool", path=new_path)
     if oiiotool:

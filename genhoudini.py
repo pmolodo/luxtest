@@ -9,7 +9,7 @@ import re
 import sys
 import traceback
 
-from typing import Iterable, Optional, Tuple
+from typing import TYPE_CHECKING, Iterable, Optional
 
 import luxtest_const
 
@@ -35,6 +35,9 @@ HUSK_PRE_RENDER = os.path.join(THIS_DIR, "husk_pre_render.py")
 
 HOUDINI_ATTR_RE = re.compile(r"""^\s*[A-Za-z_][A-Za-z_0-9]* houdini:[A-Za-z_][A-Za-z_0-9:]*.*""")
 
+if TYPE_CHECKING:
+    import hou
+
 
 ###############################################################################
 # Utilities
@@ -52,7 +55,7 @@ def is_ipython():
 def filter_lights(rop_nodes: Iterable["hou.Node"], lights: Iterable[str]):
     if not lights:
         return rop_nodes
-    light_suffixes = tuple(f"_{l}" for l in lights)
+    light_suffixes = tuple(f"_{light}" for light in lights)
     return [x for x in rop_nodes if x.name().endswith(light_suffixes)]
 
 
