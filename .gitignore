@@ -1,6 +1,7 @@
 # Rooted directories
 /.deps/
 /.thumbs/
+/.uv/
 /backup/
 /web/
 /web.archive/
