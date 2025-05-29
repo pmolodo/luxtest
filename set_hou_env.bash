@@ -13,11 +13,11 @@ export LUXTEST_VENV_NAME=.venv_houdini
 
 . "${THIS_DIR}/uv_install.sh"
 
+# Determine hython version
 
 # Could use, ie, `hython -c "import sys; print(sys.version_info[:3])"``...
 # ...but `hython -c` is VERY slow to startup (while `hython --version` is speedy)
 hython_ver_str="$("${LUXTEST_HYTHON}" --version)"
-
 if [[ "${hython_ver_str}" =~ (([0-9]+\.[0-9]+)\.[0-9]) ]]; then
     export LUXTEST_HYTHON_VER_3="${BASH_REMATCH[1]}"
     export LUXTEST_HYTHON_VER_2="${BASH_REMATCH[2]}"
@@ -26,43 +26,31 @@ else
     exit 201
 fi
 
-# Try to see if uv recognizes this python version (first trying
-# 3-part version, ie, 3.10.10, then 2-part, ie, 3.10)
-uv_python_ver=""
-for test_ver in "${LUXTEST_HYTHON_VER_3}" "${LUXTEST_HYTHON_VER_2}"; do
-    if [ -n "$("${LUXTEST_UV_PATH}" python list "${test_ver}")" ]; then
-        uv_python_ver="${test_ver}"
-        break
-    fi
-done
-if [ -z "$uv_python_ver" ]; then
-    echo "uv did not recognize houdini python version: '${LUXTEST_HYTHON_VER_2}'"
-    exit 202
-fi
-
-# Initially wanted to use "uv venv --python $LUXTEST_HYTHON", but uv errors when
-# trying to query for interpreter info, due to an error with "import setuptools",
-# resulting in it considering LUXTEST_HYTHON an invalid interpreter
-#    Tested with: Houdini 20.5.445, 20.0.653
-
-# So, instead, we setup a venv for a "compatible" python version interpreter,
-# using uv_python_ver
+verbosity="--quiet"
+# verbosity="--verbose"
 
 if ! [ -f "${LUXTEST_VENV_ACTIVATE}" ]; then
     if [ -d "${UV_PROJECT_ENVIRONMENT}" ]; then
         # if the venv dir exists, but the activate script doesn't, assume it's a failed / incomplete venv
         rm -rf "${UV_PROJECT_ENVIRONMENT}"
     fi
-    "${LUXTEST_UV_PATH}" --quiet venv --python "${uv_python_ver}" "${LUXTEST_VENV_NAME}"
+
+    # If we just do: "uv venv --python $LUXTEST_HYTHON", uv errors because it
+    # tries to query information using `hython -I`, and hython doesn't work with -I
+
+    # Instead, try to get the "true" python binary, not the hython wrapper...
+    LUXTEST_PYTHON_BASE_PREFIX="$("${LUXTEST_HYTHON}" -c 'import sys; print(sys.base_prefix)')"
+    if [ "${LUXTEST_OS_TYPE}" == "windows" ]; then
+        LUXTEST_PYTHON_BIN="${LUXTEST_PYTHON_BASE_PREFIX}/python.exe"
+    else
+        LUXTEST_PYTHON_BIN="${LUXTEST_PYTHON_BASE_PREFIX}/bin/python"
+    fi
+    "${LUXTEST_UV_PATH}" ${verbosity} venv --python "${LUXTEST_PYTHON_BIN}" "${UV_PROJECT_ENVIRONMENT}"
 fi
 
-"${LUXTEST_UV_PATH}" --quiet sync
+"${LUXTEST_UV_PATH}" ${verbosity} sync
 
-# can't rely on the "activate" script since we didn't use $LUXTEST_HYTHON when setting up our "venv"
-
-# ...so add to PATH/PYTHONPATH manually
-
-if [[ "${LUXTEST_OS_TYPE}" == "windows" ]]; then
+if [ "${LUXTEST_OS_TYPE}" == "windows" ]; then
     export LUXTEST_VENV_PYLIB_SUBDIR="Lib"
 else
     export LUXTEST_VENV_PYLIB_SUBDIR="lib/python${LUXTEST_HYTHON_VER_2}"
