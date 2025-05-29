@@ -12521,16 +12521,16 @@ return xform.extractRotates()[2]
 	 length = 0.041666666666666685 accel = 0.013888888888888895 0.013888888888888895 expr = \"$HIP/04f377f94ce81cd7b5101fffdf571454.ies\" }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.375 accel = 0.125 0.125 expr = \"C:/src/NVIDIA/luxtest/test_vstripes_hquadrants_nonuniform.ies\" }
+	 length = 0.375 accel = 0.125 0.125 expr = \"$HIP/test_vstripes_hquadrants_nonuniform.ies\" }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.041666666666666803 accel = 0.013888888888888933 0.013888888888888933 expr = \"C:/src/NVIDIA/luxtest/test_vstripes_hquadrants_nonuniform.ies\" }
+	 length = 0.041666666666666803 accel = 0.013888888888888933 0.013888888888888933 expr = \"$HIP/test_vstripes_hquadrants_nonuniform.ies\" }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.37499999999999967 accel = 0.12499999999999989 0.12499999999999989 expr = \"C:/src/NVIDIA/luxtest/test_vstripes_hquadrants_nonuniform.ies\" }
+	 length = 0.37499999999999967 accel = 0.12499999999999989 0.12499999999999989 expr = \"$HIP/test_vstripes_hquadrants_nonuniform.ies\" }
       segment { options = {	 untie  is ia autoslope  ao }
 
-	 length = 0.041666666666666831 accel = 0.013888888888888944 0.013888888888888944 expr = \"C:/src/NVIDIA/luxtest/test_vstripes_hquadrants_nonuniform.ies\" }
+	 length = 0.041666666666666831 accel = 0.013888888888888944 0.013888888888888944 expr = \"$HIP/test_vstripes_hquadrants_nonuniform.ies\" }
       segment { options = {	 untie  os oa autoslope  ai }
 
 	 length = 0 accel = 0.33333333333333331 0.33333333333333331 expr = \"\" }
@@ -20203,7 +20203,7 @@ return xform.extractRotates()[2]
     channel xn__inputsshapingiesfile_n8ahd {
       lefttype = extend
       righttype = extend
-      defaultString = \"C:/src/NVIDIA/luxtest/bega_omni002_4777lm.ies\"
+      defaultString = \"$HIP/bega_omni002_4777lm.ies\"
       flags = 0
       start = 2.0416666666666665
       segment { options = {	 untie  is ia autoslope  ao }
@@ -20211,7 +20211,7 @@ return xform.extractRotates()[2]
 	 length = 0.041666666666666963 accel = 0.013888888888888987 0.013888888888888987 expr = \"\" }
       segment { options = {	 untie  os oa autoslope  ai }
 
-	 length = 0 accel = 0.33333333333333331 0.33333333333333331 expr = \"C:/src/NVIDIA/luxtest/bega_omni002_4777lm.ies\" }
+	 length = 0 accel = 0.33333333333333331 0.33333333333333331 expr = \"$HIP/bega_omni002_4777lm.ies\" }
     }
     channel xn__inputsshapingiesnormalize_shbhd {
       lefttype = extend
