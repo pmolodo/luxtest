@@ -15,6 +15,8 @@ from glob import glob
 from types import NoneType
 from typing import Callable, Iterable, List, NamedTuple, Optional
 
+from tqdm import tqdm
+
 ###############################################################################
 # Constants
 ###############################################################################
@@ -28,11 +30,6 @@ if THIS_DIR not in sys.path:
 import combine_ies_test_images
 import genLightParamDescriptions
 import luxtest_utils
-import pip_import
-
-pip_import.pip_import("tqdm")
-
-from tqdm import tqdm
 
 from luxtest_utils import FrameRange
 

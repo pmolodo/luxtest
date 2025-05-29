@@ -14,23 +14,17 @@ import traceback
 
 from typing import Any, Dict, Iterable, List, Optional, Tuple, TypeAlias, Union
 
+from pxr import Sdf, Usd, UsdLux
+
 THIS_FILE = os.path.abspath(inspect.getsourcefile(lambda: None) or __file__)
 THIS_DIR = os.path.dirname(THIS_FILE)
 
 if THIS_DIR not in sys.path:
     sys.path.append(THIS_DIR)
 
-from luxtest_utils import FrameRange
-
-try:
-    from pxr import Sdf, Usd, UsdLux
-except ImportError:
-    import pip_import
-
-    pip_import.pip_import("pxr", "usd-core")
-    from pxr import Sdf, Usd, UsdLux
-
 import luxtest_const
+
+from luxtest_utils import FrameRange
 
 IntFloat: TypeAlias = Union[int, float]
 

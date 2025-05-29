@@ -15,18 +15,13 @@ THIS_DIR = os.path.dirname(THIS_FILE)
 if THIS_DIR not in sys.path:
     sys.path.append(THIS_DIR)
 
+import moviepy.video.io.ImageSequenceClip
+
 import gendiffs
 import genLightParamDescriptions
 import luxtest_utils
-import pip_import
 
 from luxtest_utils import FrameRange
-
-pip_import.pip_import("moviepy")
-pip_import.pip_import("imageio", "imageio[pyav]")
-pip_import.pip_import("av")
-
-import moviepy.video.io.ImageSequenceClip
 
 ###############################################################################
 # Constants

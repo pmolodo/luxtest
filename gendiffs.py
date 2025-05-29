@@ -23,6 +23,8 @@ import traceback
 
 from typing import Dict, Iterable, Optional
 
+import tqdm.asyncio
+
 ###############################################################################
 # Constants
 ###############################################################################
@@ -36,12 +38,8 @@ if THIS_DIR not in sys.path:
 import genLightParamDescriptions
 import luxtest_const
 import luxtest_utils
-import pip_import
 
 from luxtest_utils import FrameRange, get_image_path, get_image_url
-
-pip_import.pip_import("tqdm")
-import tqdm.asyncio
 
 OUTPUT_DIR = "diff"
 
@@ -159,14 +157,12 @@ def _calc_oiiotool_path() -> str:
     oiiotool = shutil.which("oiiotool")
     if oiiotool:
         return oiiotool
-    print(pip_import.pip_import("OpenImageIO"))
     scripts_dir = sysconfig.get_path("scripts")
     new_path = f"{scripts_dir}{os.pathsep}{os.environ['PATH']}"
-    print(new_path.split("os.pathsep"))
     oiiotool = shutil.which("oiiotool", path=new_path)
     if oiiotool:
         return oiiotool
-    raise RuntimeError("Could not find path to oiiotool (even after pip-installing oiiotool)")
+    raise RuntimeError("Could not find path to oiiotool")
 
 
 OIIOTOOL = _calc_oiiotool_path()
