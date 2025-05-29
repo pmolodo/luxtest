@@ -133,10 +133,12 @@ def raise_proc_error(proc: subprocess.CompletedProcess, verbose: bool):
     raise subprocess.CalledProcessError(proc.returncode, proc.args, proc.stdout, proc.stderr)
 
 
-async def run(args: Iterable[str], check=False, verbose=False):
+async def run(args: Iterable[str], check=False, verbose=False, **kwargs):
     if verbose:
         print(f"Running: {to_shell_cmd(args)}")
-    proc = await asyncio.create_subprocess_exec(args[0], *args[1:], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    proc = await asyncio.create_subprocess_exec(
+        args[0], *args[1:], stdout=subprocess.PIPE, stderr=subprocess.PIPE, **kwargs
+    )
     stdout, stderr = await proc.communicate()
     completed_proc = subprocess.CompletedProcess(args=args, returncode=proc.returncode, stdout=stdout, stderr=stderr)
     if verbose:
@@ -168,6 +170,14 @@ def _calc_oiiotool_path() -> str:
 OIIOTOOL = _calc_oiiotool_path()
 
 
+async def run_oiiotool(args, verbose=False, **kwargs):
+    cmd = [OIIOTOOL] + list(args)
+    # houdini / hython sets PYTHONHOME, which messes oiiotool up
+    env = kwargs.pop("env") or dict(os.environ)
+    env.pop("PYTHONHOME", "")
+    return run(cmd, verbose=verbose, env=env, **kwargs)
+
+
 ###############################################################################
 # Core functions
 ###############################################################################
@@ -179,7 +189,6 @@ async def update_png(exr_path, png_path, verbose=False):
         if verbose:
             print(f"Creating png: {png_path}")
         cmd = [
-            OIIOTOOL,
             exr_path,
             "--ch",
             "R,G,B",
@@ -189,7 +198,7 @@ async def update_png(exr_path, png_path, verbose=False):
             "-o",
             png_path,
         ]
-        proc = await run(cmd, verbose=verbose, check=True)
+        proc = await run_oiiotool(cmd, verbose=verbose, check=True)
         if not os.path.isfile:
             print(f"Error - output png did not exist: {png_path}")
             raise_proc_error(proc, verbose)
@@ -197,7 +206,6 @@ async def update_png(exr_path, png_path, verbose=False):
 
 async def update_diff(exr_path1, exr_path2, diff_path, verbose=False):
     cmd = [
-        OIIOTOOL,
         exr_path1,
         exr_path2,
         "--diff",
@@ -212,7 +220,7 @@ async def update_diff(exr_path1, exr_path2, diff_path, verbose=False):
         "-o",
         diff_path,
     ]
-    proc = await run(cmd, verbose=verbose)
+    proc = await run_oiiotool(cmd, verbose=verbose)
     if not os.path.isfile:
         print(f"Error - output diff png did not exist: {diff_path}")
         raise_proc_error(proc, verbose)

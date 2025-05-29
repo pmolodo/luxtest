@@ -62,3 +62,6 @@ varname_to_native_path LUXTEST_VENV_SITE_PACKAGES_DIR
 
 export PATH="${LUXTEST_VENV_BIN_DIR}${PATH:+:${PATH}}"
 export PYTHONPATH="${LUXTEST_VENV_SITE_PACKAGES_DIR}${PYTHONPATH:+${PATHSEP}${PYTHONPATH}}"
+
+# prevent HTOA from spamming on houdini startup, if it's installed
+export HTOA_STARTUP_LOG="${HTOA_STARTUP_LOG:-0}"

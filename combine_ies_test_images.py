@@ -56,6 +56,9 @@ def combine_ies_test_images(renderers=(), delete=True):
     if not renderers:
         renderers = RENDERERS
     renders_root = luxtest_utils.get_renders_root()
+    env = dict(os.environ)
+    # houdini / hython sets PYTHONHOME, which messes oiiotool up
+    env.pop("PYTHONHOME", "")
     for renderer in renderers:
         renderer_dir = os.path.join(renders_root, renderer)
 
@@ -100,7 +103,7 @@ def combine_ies_test_images(renderers=(), delete=True):
             output_path = os.path.join(renderer_dir, f"iesTest-{renderer}.{frame}.exr")
             args = ["oiiotool", top_path, bottom_path, "--mosaic", "1x2", "-o", output_path]
             print(to_shell_cmd(args), flush=True)
-            subprocess.check_call(args)
+            subprocess.check_call(args, env=env)
             print(f"Output: {output_path}")
             to_delete.append(top_path)
             to_delete.append(bottom_path)
