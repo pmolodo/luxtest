@@ -18,7 +18,7 @@
     "editor.insertSpaces": true,
     "editor.tabSize": 4,
     "editor.wordWrapColumn": 120,
-    "files.trimTrailingWhitespace": true,
+    "files.trimTrailingWhitespace": false,
     "python.analysis.typeCheckingMode": "off", // use mypy for typing, not pylance
     "rewrap.wrappingColumn": 120,
     "ruff.organizeImports": false
