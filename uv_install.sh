@@ -37,11 +37,42 @@ if [[ "${LUXTEST_OS_TYPE}" == "windows" ]]; then
     export LUXTEST_BIN_EXT=".exe"
     export LUXTEST_VENV_BIN_DIRNAME="Scripts"
     export LUXTEST_VENV_LIB_SUBDIR="Lib"
+    if [ -z "${PATHSEP:-}" ]; then
+        export PATHSEP=;
+    fi
 else
     export LUXTEST_BIN_EXT=""
     export LUXTEST_VENV_BIN_DIRNAME="bin"
     export LUXTEST_VENV_LIB_SUBDIR="lib/python"
+    if [ -z "${PATHSEP:-}" ]; then
+        export PATHSEP=:
+    fi
 fi
+
+if [[ "${LUXTEST_OS_TYPE}" == "windows" ]]; then
+    to_native_path()
+    {
+        # could use `cygpath -w`, but I'm not sure if we can assume that's available...
+        "${THIS_DIR}/luxtest_python.sh" -c 'import pathlib, sys; print(pathlib.Path(sys.argv[1]))' "$1"
+    }
+
+    varname_to_native_path()
+    {
+        declare -n var_ref="$1"
+        var_ref="$(to_native_path "${var_ref}")"
+    }
+else
+    to_native_path()
+    {
+        echo "$1"
+    }
+
+    varname_to_native_path()
+    {
+        : # no-op
+    }
+fi
+
 export UV_FILENAME="uv${LUXTEST_BIN_EXT}"
 
 if [ -z "${LUXTEST_VENV_NAME:-}" ]; then

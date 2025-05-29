@@ -10,6 +10,7 @@ THIS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LUXTEST_HYTHON="$("${THIS_DIR}/luxtest_python.sh" "${THIS_DIR}/find_hython.py")"
 
 export LUXTEST_VENV_NAME=.venv_houdini
+
 . "${THIS_DIR}/uv_install.sh"
 
 
@@ -67,9 +68,9 @@ else
     export LUXTEST_VENV_PYLIB_SUBDIR="lib/python${LUXTEST_HYTHON_VER_2}"
 fi
 export LUXTEST_VENV_SITE_PACKAGES_DIR="${UV_PROJECT_ENVIRONMENT}/${LUXTEST_VENV_PYLIB_SUBDIR}/site-packages"
-if [[ "${LUXTEST_OS_TYPE}" == "windows" ]] && which cygpath &> /dev/null ; then
-    export LUXTEST_VENV_SITE_PACKAGES_DIR="$(cygpath -w "${LUXTEST_VENV_SITE_PACKAGES_DIR}")"
-fi
+
+varname_to_native_path LUXTEST_VENV_BIN_DIR
+varname_to_native_path LUXTEST_VENV_SITE_PACKAGES_DIR
 
 export PATH="${LUXTEST_VENV_BIN_DIR}${PATH:+:${PATH}}"
 export PYTHONPATH="${LUXTEST_VENV_SITE_PACKAGES_DIR}${PYTHONPATH:+${PATHSEP}${PYTHONPATH}}"
