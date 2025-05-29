@@ -427,7 +427,7 @@ def Xform "lights"
             146: 1.4791666,
             147: 1.5,
         }
-        asset inputs:shaping:ies:file = @../test_vstripes_hquadrants_nonuniform_aimDown.ies@
+        asset inputs:shaping:ies:file = @../ies/test_vstripes_hquadrants_nonuniform_aimDown.ies@
         bool inputs:shaping:ies:normalize = 0
         float inputs:specular = 1
         rel light:filters = None

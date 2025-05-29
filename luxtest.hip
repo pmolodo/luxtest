@@ -2745,8 +2745,8 @@ text "1-5: light rotate worldZ from 0 to 60 (intensity=5)
 36-40: focus from 0 to 5 (intensity=5, width=2)
 41-45: focus from 0 to 5 (intensity=5, cone:angle=60, focusTint=red, width=2)
 46-50: focusTint from black to green to white (intensity=5, focus=3, width=2)
-51-55: ies:angleScale from -1 to 1 (exposure=-11, intensity=5, ies:file='bega_omni002_4777lm.ies', width=2)
-56-60: ies:angleScale from -1 to 1 (ies:file='bega_omni002_4777lm.ies', ies:normalize=on, width=2)"
+51-55: ies:angleScale from -1 to 1 (exposure=-11, intensity=5, ies.file='ies/bega_omni002_4777lm.ies', width=2)
+56-60: ies:angleScale from -1 to 1 (ies.file='ies/bega_omni002_4777lm.ies', ies:normalize=on, width=2)"
 position -95.197 -40.6149
 size 52.127 17.5001
 textsize 1
@@ -2788,8 +2788,8 @@ text "1-5: light rotate worldZ from 0 to 60 (intensity=5)
 36-40: focus from 0 to 5 (intensity=5)
 41-45: focus from 0 to 5 (intensity=5, cone:angle=60, focusTint=red)
 46-50: focusTint from black to green to white (intensity=5, focus=3)
-51-55: ies:angleScale from -1 to 1 (exposure=-11, intensity=5, ies:file='bega_omni002_4777lm.ies')
-56-60: ies:angleScale from -1 to 1 (ies:file='bega_omni002_4777lm.ies', ies:normalize=on)"
+51-55: ies:angleScale from -1 to 1 (exposure=-11, intensity=5, ies.file='ies/bega_omni002_4777lm.ies')
+56-60: ies:angleScale from -1 to 1 (ies.file='ies/bega_omni002_4777lm.ies', ies:normalize=on)"
 position -83.9554 -63.3532
 size 47.6087 18.3597
 textsize 1
@@ -2831,8 +2831,8 @@ text "1-5: light rotate worldZ from 0 to 60 (intensity=5)
 36-40: focus from 0 to 5 (intensity=5)
 41-45: focus from 0 to 5 (intensity=5, cone:angle=60, focusTint=red)
 46-50: focusTint from black to green to white (intensity=5, focus=3)
-51-55: ies:angleScale from -1 to 1 (exposure=-11, intensity=5, ies:file='bega_omni002_4777lm.ies')
-56-60: ies:angleScale from -1 to 1 (ies:file='bega_omni002_4777lm.ies', ies:normalize=on)"
+51-55: ies:angleScale from -1 to 1 (exposure=-11, intensity=5, ies.file='ies/bega_omni002_4777lm.ies')
+56-60: ies:angleScale from -1 to 1 (ies.file='ies/bega_omni002_4777lm.ies', ies:normalize=on)"
 position -88.1632 -85.4452
 size 45.6695 18.0734
 textsize 1
@@ -2874,8 +2874,8 @@ text "1-5: light rotate worldZ from 0 to 60 (intensity=5)
 36-40: focus from 0 to 5 (intensity=5)
 41-45: focus from 0 to 5 (intensity=5, cone:angle=60, focusTint=red)
 46-50: focusTint from black to green to white (intensity=5, focus=3)
-51-55: ies:angleScale from -1 to 1 (exposure=-11, intensity=5, ies:file='bega_omni002_4777lm.ies')
-56-60: ies:angleScale from -1 to 1 (ies:file='bega_omni002_4777lm.ies', ies:normalize=on)"
+51-55: ies:angleScale from -1 to 1 (exposure=-11, intensity=5, ies.file='ies/bega_omni002_4777lm.ies')
+56-60: ies:angleScale from -1 to 1 (ies.file='ies/bega_omni002_4777lm.ies', ies:normalize=on)"
 position -89.8932 -106.837
 size 46.8295 18.4746
 textsize 1
@@ -3003,12 +3003,12 @@ matchesdef = 0
 Content-Disposition: attachment; filename="stage/__stickynote22.postitdef"
 Content-Type: text/plain
 
-text "1-1: ies:angleScale=0 ref (ies:file='04f377f94ce81cd7b5101fffdf571454.ies')
-2-10: ies:angleScale from -1 to 1 (ies:file='04f377f94ce81cd7b5101fffdf571454.ies')
-11-11: ies:angleScale=0 ref (intensity=1000, ies:file='test_vstripes_hquadrants_nonuniform.ies')
-12-20: ies:angleScale from -2 to 2 (intensity=1000, ies:file='test_vstripes_hquadrants_nonuniform.ies')
-21-21: ies:angleScale=0 ref (intensity=1000, ies:file='test_vstripes_hquadrants_nonuniform.ies', ies:normalize=on)
-22-30: ies:angleScale from -1 to 1 (intensity=1000, ies:file='test_vstripes_hquadrants_nonuniform.ies', ies:normalize=on)
+text "1-1: ies:angleScale=0 ref (ies.file='ies/04f377f94ce81cd7b5101fffdf571454.ies')
+2-10: ies:angleScale from -1 to 1 (ies.file='ies/04f377f94ce81cd7b5101fffdf571454.ies')
+11-11: ies:angleScale=0 ref (intensity=1000, ies.file='ies/test_vstripes_hquadrants_nonuniform.ies')
+12-20: ies:angleScale from -2 to 2 (intensity=1000, ies.file='ies/test_vstripes_hquadrants_nonuniform.ies')
+21-21: ies:angleScale=0 ref (intensity=1000, ies.file='ies/test_vstripes_hquadrants_nonuniform.ies', ies:normalize=on)
+22-30: ies:angleScale from -1 to 1 (intensity=1000, ies.file='ies/test_vstripes_hquadrants_nonuniform.ies', ies:normalize=on)
 31-31: no ies:file ref (intensity=1000)"
 position 37.2476 2.69232
 size 51.8219 12.0859
@@ -3073,12 +3073,12 @@ matchesdef = 0
 Content-Disposition: attachment; filename="stage/__stickynote24.postitdef"
 Content-Type: text/plain
 
-text "1-1: ies:angleScale=0 ref (ies:file='04f377f94ce81cd7b5101fffdf571454.ies')
-2-10: ies:angleScale from -1 to 1 (ies:file='04f377f94ce81cd7b5101fffdf571454.ies')
-11-11: ies:angleScale=0 ref (intensity=1000, ies:file='test_vstripes_hquadrants_nonuniform.ies')
-12-20: ies:angleScale from -2 to 2 (intensity=1000, ies:file='test_vstripes_hquadrants_nonuniform.ies')
-21-21: ies:angleScale=0 ref (intensity=1000, ies:file='test_vstripes_hquadrants_nonuniform.ies', ies:normalize=on)
-22-30: ies:angleScale from -1 to 1 (intensity=1000, ies:file='test_vstripes_hquadrants_nonuniform.ies', ies:normalize=on)
+text "1-1: ies:angleScale=0 ref (ies.file='ies/04f377f94ce81cd7b5101fffdf571454.ies')
+2-10: ies:angleScale from -1 to 1 (ies.file='ies/04f377f94ce81cd7b5101fffdf571454.ies')
+11-11: ies:angleScale=0 ref (intensity=1000, ies.file='ies/test_vstripes_hquadrants_nonuniform.ies')
+12-20: ies:angleScale from -2 to 2 (intensity=1000, ies.file='ies/test_vstripes_hquadrants_nonuniform.ies')
+21-21: ies:angleScale=0 ref (intensity=1000, ies.file='ies/test_vstripes_hquadrants_nonuniform.ies', ies:normalize=on)
+22-30: ies:angleScale from -1 to 1 (intensity=1000, ies.file='ies/test_vstripes_hquadrants_nonuniform.ies', ies:normalize=on)
 31-31: no ies:file ref (intensity=1000)"
 position 56.3371 30.9731
 size 51.8219 12.0859
@@ -12515,22 +12515,22 @@ return xform.extractRotates()[2]
       start = 2.2204460492503131e-16
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.37499999999999978 accel = 0.12499999999999992 0.12499999999999992 expr = \"$HIP/04f377f94ce81cd7b5101fffdf571454.ies\" }
+	 length = 0.37499999999999978 accel = 0.12499999999999992 0.12499999999999992 expr = \"$HIP/ies/04f377f94ce81cd7b5101fffdf571454.ies\" }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.041666666666666685 accel = 0.013888888888888895 0.013888888888888895 expr = \"$HIP/04f377f94ce81cd7b5101fffdf571454.ies\" }
+	 length = 0.041666666666666685 accel = 0.013888888888888895 0.013888888888888895 expr = \"$HIP/ies/04f377f94ce81cd7b5101fffdf571454.ies\" }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.375 accel = 0.125 0.125 expr = \"$HIP/test_vstripes_hquadrants_nonuniform.ies\" }
+	 length = 0.375 accel = 0.125 0.125 expr = \"$HIP/ies/test_vstripes_hquadrants_nonuniform.ies\" }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.041666666666666803 accel = 0.013888888888888933 0.013888888888888933 expr = \"$HIP/test_vstripes_hquadrants_nonuniform.ies\" }
+	 length = 0.041666666666666803 accel = 0.013888888888888933 0.013888888888888933 expr = \"$HIP/ies/test_vstripes_hquadrants_nonuniform.ies\" }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.37499999999999967 accel = 0.12499999999999989 0.12499999999999989 expr = \"$HIP/test_vstripes_hquadrants_nonuniform.ies\" }
+	 length = 0.37499999999999967 accel = 0.12499999999999989 0.12499999999999989 expr = \"$HIP/ies/test_vstripes_hquadrants_nonuniform.ies\" }
       segment { options = {	 untie  is ia autoslope  ao }
 
-	 length = 0.041666666666666831 accel = 0.013888888888888944 0.013888888888888944 expr = \"$HIP/test_vstripes_hquadrants_nonuniform.ies\" }
+	 length = 0.041666666666666831 accel = 0.013888888888888944 0.013888888888888944 expr = \"$HIP/ies/test_vstripes_hquadrants_nonuniform.ies\" }
       segment { options = {	 untie  os oa autoslope  ai }
 
 	 length = 0 accel = 0.33333333333333331 0.33333333333333331 expr = \"\" }
@@ -20203,7 +20203,7 @@ return xform.extractRotates()[2]
     channel xn__inputsshapingiesfile_n8ahd {
       lefttype = extend
       righttype = extend
-      defaultString = \"$HIP/bega_omni002_4777lm.ies\"
+      defaultString = \"$HIP/ies/bega_omni002_4777lm.ies\"
       flags = 0
       start = 2.0416666666666665
       segment { options = {	 untie  is ia autoslope  ao }
@@ -20211,7 +20211,7 @@ return xform.extractRotates()[2]
 	 length = 0.041666666666666963 accel = 0.013888888888888987 0.013888888888888987 expr = \"\" }
       segment { options = {	 untie  os oa autoslope  ai }
 
-	 length = 0 accel = 0.33333333333333331 0.33333333333333331 expr = \"$HIP/bega_omni002_4777lm.ies\" }
+	 length = 0 accel = 0.33333333333333331 0.33333333333333331 expr = \"$HIP/ies/bega_omni002_4777lm.ies\" }
     }
     channel xn__inputsshapingiesnormalize_shbhd {
       lefttype = extend
@@ -123017,7 +123017,7 @@ xn__inputsshapingfocusTint_control_xpbh	[ 0	locks=0 ]	(	set	)
 xn__inputsshapingfocusTint_wcbh	[ 0	locks=0 ]	(	0	0	0	)
 iesenable	[ 0	locks=0 ]	(	"on"	)
 xn__inputsshapingiesfile_control_ombhd	[ 0	locks=0 ]	(	set	)
-xn__inputsshapingiesfile_n8ahd	[ 0	locks=0	autoscope=1	autosel=4294967295 ]	(	$HIP/test_vstripes_hquadrants_nonuniform_aimDown.ies	)
+xn__inputsshapingiesfile_n8ahd	[ 0	locks=0	autoscope=1	autosel=4294967295 ]	(	$HIP/ies/test_vstripes_hquadrants_nonuniform_aimDown.ies	)
 xn__inputsshapingiesnormalize_control_tubhd	[ 0	locks=0 ]	(	set	)
 xn__inputsshapingiesnormalize_shbhd	[ 8	locks=0	autoscope=0	autosel=4294967295 ]	(	"off"	)
 xn__inputsshapingiesangleScale_control_gwbhd	[ 0	locks=0 ]	(	set	)
@@ -135243,7 +135243,7 @@ xn__inputsshapingfocusTint_control_xpbh	[ 0	locks=0 ]	(	set	)
 xn__inputsshapingfocusTint_wcbh	[ 0	locks=0 ]	(	0	0	0	)
 iesenable	[ 0	locks=0 ]	(	"on"	)
 xn__inputsshapingiesfile_control_ombhd	[ 0	locks=0 ]	(	set	)
-xn__inputsshapingiesfile_n8ahd	[ 0	locks=0	autoscope=1	autosel=4294967295 ]	(	$HIP/test_vstripes_hquadrants_nonuniform_aimUp.ies	)
+xn__inputsshapingiesfile_n8ahd	[ 0	locks=0	autoscope=1	autosel=4294967295 ]	(	$HIP/ies/test_vstripes_hquadrants_nonuniform_aimUp.ies	)
 xn__inputsshapingiesnormalize_control_tubhd	[ 0	locks=0 ]	(	set	)
 xn__inputsshapingiesnormalize_shbhd	[ 8	locks=0	autoscope=0	autosel=4294967295 ]	(	"off"	)
 xn__inputsshapingiesangleScale_control_gwbhd	[ 0	locks=0 ]	(	set	)

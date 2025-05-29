@@ -361,7 +361,7 @@
                 "non_default_constants": {
                     "inputs:exposure": -11.0,
                     "inputs:intensity": 5.0,
-                    "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies"
+                    "inputs:shaping:ies:file": "../ies/bega_omni002_4777lm.ies"
                 },
                 "varying": {
                     "inputs:shaping:ies:angleScale": {
@@ -379,7 +379,7 @@
                     60
                 ],
                 "non_default_constants": {
-                    "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies",
+                    "inputs:shaping:ies:file": "../ies/bega_omni002_4777lm.ies",
                     "inputs:shaping:ies:normalize": true
                 },
                 "varying": {
@@ -761,7 +761,7 @@
                 "non_default_constants": {
                     "inputs:exposure": -11.0,
                     "inputs:intensity": 5.0,
-                    "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies"
+                    "inputs:shaping:ies:file": "../ies/bega_omni002_4777lm.ies"
                 },
                 "varying": {
                     "inputs:shaping:ies:angleScale": {
@@ -779,7 +779,7 @@
                     60
                 ],
                 "non_default_constants": {
-                    "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies",
+                    "inputs:shaping:ies:file": "../ies/bega_omni002_4777lm.ies",
                     "inputs:shaping:ies:normalize": true
                 },
                 "varying": {
@@ -1250,7 +1250,7 @@
                     1
                 ],
                 "non_default_constants": {
-                    "inputs:shaping:ies:file": "../04f377f94ce81cd7b5101fffdf571454.ies"
+                    "inputs:shaping:ies:file": "../ies/04f377f94ce81cd7b5101fffdf571454.ies"
                 },
                 "varying": {}
             },
@@ -1260,7 +1260,7 @@
                     10
                 ],
                 "non_default_constants": {
-                    "inputs:shaping:ies:file": "../04f377f94ce81cd7b5101fffdf571454.ies"
+                    "inputs:shaping:ies:file": "../ies/04f377f94ce81cd7b5101fffdf571454.ies"
                 },
                 "varying": {
                     "inputs:shaping:ies:angleScale": {
@@ -1283,7 +1283,7 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 1000.0,
-                    "inputs:shaping:ies:file": "../test_vstripes_hquadrants_nonuniform.ies"
+                    "inputs:shaping:ies:file": "../ies/test_vstripes_hquadrants_nonuniform.ies"
                 },
                 "varying": {}
             },
@@ -1294,7 +1294,7 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 1000.0,
-                    "inputs:shaping:ies:file": "../test_vstripes_hquadrants_nonuniform.ies"
+                    "inputs:shaping:ies:file": "../ies/test_vstripes_hquadrants_nonuniform.ies"
                 },
                 "varying": {
                     "inputs:shaping:ies:angleScale": {
@@ -1317,7 +1317,7 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 1000.0,
-                    "inputs:shaping:ies:file": "../test_vstripes_hquadrants_nonuniform.ies",
+                    "inputs:shaping:ies:file": "../ies/test_vstripes_hquadrants_nonuniform.ies",
                     "inputs:shaping:ies:normalize": true
                 },
                 "varying": {}
@@ -1329,7 +1329,7 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 1000.0,
-                    "inputs:shaping:ies:file": "../test_vstripes_hquadrants_nonuniform.ies",
+                    "inputs:shaping:ies:file": "../ies/test_vstripes_hquadrants_nonuniform.ies",
                     "inputs:shaping:ies:normalize": true
                 },
                 "varying": {
@@ -1377,7 +1377,7 @@
                     1
                 ],
                 "non_default_constants": {
-                    "inputs:shaping:ies:file": "../04f377f94ce81cd7b5101fffdf571454.ies"
+                    "inputs:shaping:ies:file": "../ies/04f377f94ce81cd7b5101fffdf571454.ies"
                 },
                 "varying": {}
             },
@@ -1387,7 +1387,7 @@
                     10
                 ],
                 "non_default_constants": {
-                    "inputs:shaping:ies:file": "../04f377f94ce81cd7b5101fffdf571454.ies"
+                    "inputs:shaping:ies:file": "../ies/04f377f94ce81cd7b5101fffdf571454.ies"
                 },
                 "varying": {
                     "inputs:shaping:ies:angleScale": {
@@ -1410,7 +1410,7 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 1000.0,
-                    "inputs:shaping:ies:file": "../test_vstripes_hquadrants_nonuniform.ies"
+                    "inputs:shaping:ies:file": "../ies/test_vstripes_hquadrants_nonuniform.ies"
                 },
                 "varying": {}
             },
@@ -1421,7 +1421,7 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 1000.0,
-                    "inputs:shaping:ies:file": "../test_vstripes_hquadrants_nonuniform.ies"
+                    "inputs:shaping:ies:file": "../ies/test_vstripes_hquadrants_nonuniform.ies"
                 },
                 "varying": {
                     "inputs:shaping:ies:angleScale": {
@@ -1444,7 +1444,7 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 1000.0,
-                    "inputs:shaping:ies:file": "../test_vstripes_hquadrants_nonuniform.ies",
+                    "inputs:shaping:ies:file": "../ies/test_vstripes_hquadrants_nonuniform.ies",
                     "inputs:shaping:ies:normalize": true
                 },
                 "varying": {}
@@ -1456,7 +1456,7 @@
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 1000.0,
-                    "inputs:shaping:ies:file": "../test_vstripes_hquadrants_nonuniform.ies",
+                    "inputs:shaping:ies:file": "../ies/test_vstripes_hquadrants_nonuniform.ies",
                     "inputs:shaping:ies:normalize": true
                 },
                 "varying": {
@@ -2092,7 +2092,7 @@
                 "non_default_constants": {
                     "inputs:exposure": -11.0,
                     "inputs:intensity": 5.0,
-                    "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies",
+                    "inputs:shaping:ies:file": "../ies/bega_omni002_4777lm.ies",
                     "inputs:width": 2.0
                 },
                 "varying": {
@@ -2111,7 +2111,7 @@
                     60
                 ],
                 "non_default_constants": {
-                    "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies",
+                    "inputs:shaping:ies:file": "../ies/bega_omni002_4777lm.ies",
                     "inputs:shaping:ies:normalize": true,
                     "inputs:width": 2.0
                 },
@@ -2494,7 +2494,7 @@
                 "non_default_constants": {
                     "inputs:exposure": -11.0,
                     "inputs:intensity": 5.0,
-                    "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies"
+                    "inputs:shaping:ies:file": "../ies/bega_omni002_4777lm.ies"
                 },
                 "varying": {
                     "inputs:shaping:ies:angleScale": {
@@ -2512,7 +2512,7 @@
                     60
                 ],
                 "non_default_constants": {
-                    "inputs:shaping:ies:file": "../bega_omni002_4777lm.ies",
+                    "inputs:shaping:ies:file": "../ies/bega_omni002_4777lm.ies",
                     "inputs:shaping:ies:normalize": true
                 },
                 "varying": {
