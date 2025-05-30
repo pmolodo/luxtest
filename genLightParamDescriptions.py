@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+# no hashbang - use .sh wrapper script
 
 """Generate .json file describing the various parameters for each light"""
 

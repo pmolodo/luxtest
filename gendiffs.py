@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-
+# no hashbang - use .sh wrapper script
 
 """Generate a web page showing UsdLux image diffs
 

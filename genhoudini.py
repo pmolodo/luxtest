@@ -1,4 +1,4 @@
-#!/usr/bin/env hython
+# no hashbang - use .sh wrapper script
 
 """Render all lights for all renderers in luxtest.hip"""
 

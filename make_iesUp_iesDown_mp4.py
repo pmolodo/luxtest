@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+# no hashbang - use .sh wrapper script
 
 """Create iesDown-karma.mp4, iesDown-ris.mp4, iesUp-karma.mp4, iesUp-ris.mp4"""
 

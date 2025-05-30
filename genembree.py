@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+# no hashbang - use .sh wrapper script
 
 """Run the UsdLux_2 test suite"""
 
