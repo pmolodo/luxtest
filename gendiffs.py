@@ -172,9 +172,9 @@ OIIOTOOL = _calc_oiiotool_path()
 async def run_oiiotool(args, verbose=False, **kwargs):
     cmd = [OIIOTOOL] + list(args)
     # houdini / hython sets PYTHONHOME, which messes oiiotool up
-    env = kwargs.pop("env") or dict(os.environ)
+    env = kwargs.pop("env", None) or dict(os.environ)
     env.pop("PYTHONHOME", "")
-    return run(cmd, verbose=verbose, env=env, **kwargs)
+    return await run(cmd, verbose=verbose, env=env, **kwargs)
 
 
 ###############################################################################
