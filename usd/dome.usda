@@ -186,7 +186,6 @@ def Scope "materials"
 def Xform "cameras"
 {
     def Camera "camera1" (
-        prepend apiSchemas = ["HoudiniCameraPlateAPI", "HoudiniViewportGuideAPI"]
     )
     {
         float2 clippingRange = (1, 1000000)
@@ -210,8 +209,7 @@ def Xform "cameras"
 def Xform "lights"
 {
     def DomeLight "dome_light" (
-        prepend apiSchemas = ["KarmaLightAPI", "HoudiniViewportGuideAPI", "LightAPI"]
-    )
+        prepend apiSchemas = ["KarmaLightAPI", "LightAPI"]    )
     {
         custom rel filters = None
         color3f inputs:color = (1, 1, 1)
@@ -224,7 +222,7 @@ def Xform "lights"
         float inputs:specular = 1
         asset inputs:texture:file = @../dome_grid_2k.exr@
         token inputs:texture:format = "latlong"
-        bool karma:light:renderlightgeo = 1
+        custom bool karma:light:renderlightgeo = 1
         rel light:filters = None
         rel portals = None
         matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )

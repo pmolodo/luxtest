@@ -186,7 +186,6 @@ def Scope "materials"
 def Xform "cameras"
 {
     def Camera "iesBottom" (
-        prepend apiSchemas = ["HoudiniCameraPlateAPI", "HoudiniViewportGuideAPI"]
     )
     {
         float2 clippingRange = (0.001, 1000000)
@@ -206,7 +205,6 @@ def Xform "cameras"
     }
 
     def Camera "iesTop" (
-        prepend apiSchemas = ["HoudiniCameraPlateAPI", "HoudiniViewportGuideAPI"]
     )
     {
         float2 clippingRange = (0.001, 1000000)
@@ -237,8 +235,7 @@ def "iesProjectionSphere" (
 def Xform "lights"
 {
     def SphereLight "iesTest_light" (
-        prepend apiSchemas = ["ShapingAPI", "HoudiniViewportLightAPI", "HoudiniViewportGuideAPI", "LightAPI"]
-    )
+        prepend apiSchemas = ["ShapingAPI", "LightAPI"]    )
     {
         custom float barndoorbottom = 0
         custom float barndoorbottomedge = 0

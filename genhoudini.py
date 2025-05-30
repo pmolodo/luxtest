@@ -34,6 +34,7 @@ LUXTEST_HIP = os.path.join(THIS_DIR, "luxtest.hip")
 HUSK_PRE_RENDER = os.path.join(THIS_DIR, "husk_pre_render.py")
 
 HOUDINI_ATTR_RE = re.compile(r"""^\s*[A-Za-z_][A-Za-z_0-9]* houdini:[A-Za-z_][A-Za-z_0-9:]*.*""")
+PREPEND_API_SCHEMAS_RE = re.compile(r"""^(?P<head>\s*prepend\s+apiSchemas = \[)(?P<schemas>.*)(?P<tail>\])""")
 
 if TYPE_CHECKING:
     import hou
@@ -110,6 +111,9 @@ def output_usd(lights: Iterable[str] = ()):
     print("=" * 80)
     print()
 
+    def is_houdini_api_schema(schema_str: str):
+        return schema_str.startswith('"Houdini') and schema_str.endswith('API"')
+
     for i, rop_node in enumerate(rop_nodes):
         print(f"Outputing USD node {i + 1}/{num_rops}: {rop_node.name()}")
         rop_node.render()
@@ -118,8 +122,29 @@ def output_usd(lights: Iterable[str] = ()):
         outpath = rop_node.parm("lopoutput").eval()
         with open(outpath, "r", encoding="utf8") as reader:
             lines = reader.readlines()
-        newlines = [x for x in lines if not HOUDINI_ATTR_RE.match(x)]
-        if len(newlines) != len(lines):
+        newlines = []
+        modified = False
+        for line in lines:
+            if HOUDINI_ATTR_RE.match(line):
+                modified = True
+                continue
+            api_schemas_match = PREPEND_API_SCHEMAS_RE.match(line)
+            if api_schemas_match:
+                schemas = api_schemas_match.group("schemas").split(", ")
+                non_houdini_schemas = [x for x in schemas if not is_houdini_api_schema(x)]
+                if not non_houdini_schemas:
+                    continue
+                if len(non_houdini_schemas) != len(schemas):
+                    modified = True
+                    parts = [
+                        api_schemas_match.group("head"),
+                        ", ".join(non_houdini_schemas),
+                        api_schemas_match.group("tail"),
+                    ]
+                    line = "".join(parts)
+
+            newlines.append(line)
+        if modified:
             with open(outpath, "w", encoding="utf8", newline="\n") as writer:
                 writer.writelines(newlines)
 
