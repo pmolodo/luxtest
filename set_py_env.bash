@@ -19,4 +19,4 @@ fi
 
 . "${LUXTEST_VENV_ACTIVATE}" &> /dev/null
 
-"${LUXTEST_UV_PATH}" --quiet sync
+"${LUXTEST_UV_PATH}" --quiet sync --group usd
