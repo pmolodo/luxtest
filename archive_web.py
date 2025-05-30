@@ -1,6 +1,6 @@
 # no hashbang - use .sh wrapper script
 
-"""Moves the "web" folder into webdiffs, giving it a unique name to identify it"""
+"""Moves the "web" folder into web.archive, giving it a unique name to identify it"""
 
 import argparse
 import datetime
