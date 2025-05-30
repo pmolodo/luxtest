@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+# no hashbang - use .sh wrapper script
 
 """Moves the "web" folder into webdiffs, giving it a unique name to identify it"""
 
