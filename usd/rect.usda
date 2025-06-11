@@ -150,6 +150,7 @@ def Scope "Render"
         custom int arnold:global:GI_total_depth = 0
         rel camera = </cameras/camera1>
         float4 dataWindowNDC = (0, 0, 1, 1)
+        uniform bool disableMotionBlur = 1
         token[] includedPurposes = ["default", "render"]
         bool instantaneousShutter = 1
         int karma:global:pathtracedsamples = 64
