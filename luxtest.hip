@@ -3680,7 +3680,7 @@ Content-Type: text/plain
 version 0.8
 nummaterials	[ 0	locks=0 ]	(	1	)
 enable1	[ 0	locks=0 ]	(	"on"	)
-primpattern1	[ 0	locks=0 ]	(	/floor_plane	)
+primpattern1	[ 0	locks=0 ]	(	/floorPlane	)
 matspecmethod1	[ 0	locks=0 ]	(	"path"	)
 matspecpath1	[ 0	locks=0 ]	(	/materials/usdpreviewsurface1	)
 matspeccvex1	[ 0	locks=0 ]	(	""	)
