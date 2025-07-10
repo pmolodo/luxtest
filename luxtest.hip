@@ -31,7 +31,7 @@ set -g JOB = 'C:/Users/alanglands/Desktop/light_comparison'
 set -g PI = '3.1415926535897932384'
 set -g POSE = 'C:/Users/alanglands/Documents/houdini19.5/poselib'
 set -g _HIP_SAVEPLATFORM = 'windows-x86_64-cl19.35'
-set -g _HIP_SAVETIME = 'Wed Jun 11 14:33:22 2025'
+set -g _HIP_SAVETIME = 'Thu Jul 10 10:17:46 2025'
 set -g _HIP_SAVEVERSION = '20.5.445'
 set -g status = '0'
 
@@ -138,21 +138,21 @@ Content-Disposition: attachment; filename=".OPdummydefs"
 Content-Type: application/octet-stream
 Content-Transfer-Encoding: base64
 
-SU5EWAAAAAAAAAAAAAAACwAAAA1JTkRFWF9TRUNUSU9OAAAAAAAABftoSfYiAAAAEmhvdWRpbmkuaGRhbGlicmFyeQAABfsAAAAAaEn2IgAAAApMb3AvY2FtZXJhAAAF+wAAjSloSfTjAAAAD0xvcC9jcmVhdGV4Zm9ybQAAkyQ=
-AAAnSmhJ9OMAAAAVTG9wL2Rpc3RhbnRsaWdodDo6Mi4wAAC6bgAAu85oSfTjAAAAEkxvcC9kb21lbGlnaHQ6OjIuMAABdjwAAGv8aEn04wAAAA5Mb3AvbGlnaHQ6OjIuMAAB4jgAANtUaEn04wAAABJUb3AvbG9jYWxzY2hlZHU=
-bGVyAAK9jAAATJJoSfTkAAAAGkxvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzAAMKHgAAEDloSfTjAAAADUxvcC9zb3BjcmVhdGUAAxpXAACI+mhJ9OMAAAAVVm9wL3VzZHByZXZpZXdzdXJmYWNlAAOjUQAAEkZoSfTjAAAACQA=
+SU5EWAAAAAAAAAAAAAAACwAAAA1JTkRFWF9TRUNUSU9OAAAAAAAABftob/W6AAAAEmhvdWRpbmkuaGRhbGlicmFyeQAABfsAAAAAaG/1ugAAAApMb3AvY2FtZXJhAAAF+wAAjSlob/L6AAAAD0xvcC9jcmVhdGV4Zm9ybQAAkyQ=
+AAAnSmhv8voAAAAVTG9wL2Rpc3RhbnRsaWdodDo6Mi4wAAC6bgAAu85ob/L6AAAAEkxvcC9kb21lbGlnaHQ6OjIuMAABdjwAAGv8aG/y+gAAAA5Mb3AvbGlnaHQ6OjIuMAAB4jgAANtUaG/y+gAAABJUb3AvbG9jYWxzY2hlZHU=
+bGVyAAK9jAAATJJob/L6AAAAGkxvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzAAMKHgAAEDlob/L6AAAADUxvcC9zb3BjcmVhdGUAAxpXAACI+mhv8vkAAAAVVm9wL3VzZHByZXZpZXdzdXJmYWNlAAOjUQAAEkZob/L5AAAACQA=
 AAAEAAAABmNhbWVyYQAAAAZDYW1lcmEAAAAcb3BsaWI6L0xvcC9jYW1lcmE/TG9wL2NhbWVyYQAAAApMT1BfY2FtZXJhAAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAE3N1YnR5cGU9cHJvcGVkaXRvciAAAAAAAAAAAWg=
-SfYiAAEAAAAABAAAAAtjcmVhdGV4Zm9ybQAAAAVYZm9ybQAAACZvcGxpYjovTG9wL2NyZWF0ZXhmb3JtP0xvcC9jcmVhdGV4Zm9ybQAAAA9MT1BfY3JlYXRleGZvcm0AAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3U=
-YnR5cGU9cHJvcGVkaXRvciAAAAAAAAAAAWhJ9iIAAQAAAAAEAAAAEWRpc3RhbnRsaWdodDo6Mi4wAAAADURpc3RhbnQgTGlnaHQAAAAyb3BsaWI6L0xvcC9kaXN0YW50bGlnaHQ6OjIuMD9Mb3AvZGlzdGFudGxpZ2h0OjoyLjA=
-AAAAEExPUF9kaXN0YW50bGlnaHQAAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3VidHlwZT1wcm9wZWRpdG9yIAAAAAAAAAABaEn2IgABAAAAAAQAAAAOZG9tZWxpZ2h0OjoyLjAAAAAKRG9tZSBMaWdodAAAACxvcGw=
-aWI6L0xvcC9kb21lbGlnaHQ6OjIuMD9Mb3AvZG9tZWxpZ2h0OjoyLjAAAAANTE9QX2RvbWVsaWdodAAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAAAAAAFoSfYiAAEAAAAABAA=
+b/W6AAEAAAAABAAAAAtjcmVhdGV4Zm9ybQAAAAVYZm9ybQAAACZvcGxpYjovTG9wL2NyZWF0ZXhmb3JtP0xvcC9jcmVhdGV4Zm9ybQAAAA9MT1BfY3JlYXRleGZvcm0AAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3U=
+YnR5cGU9cHJvcGVkaXRvciAAAAAAAAAAAWhv9boAAQAAAAAEAAAAEWRpc3RhbnRsaWdodDo6Mi4wAAAADURpc3RhbnQgTGlnaHQAAAAyb3BsaWI6L0xvcC9kaXN0YW50bGlnaHQ6OjIuMD9Mb3AvZGlzdGFudGxpZ2h0OjoyLjA=
+AAAAEExPUF9kaXN0YW50bGlnaHQAAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3VidHlwZT1wcm9wZWRpdG9yIAAAAAAAAAABaG/1ugABAAAAAAQAAAAOZG9tZWxpZ2h0OjoyLjAAAAAKRG9tZSBMaWdodAAAACxvcGw=
+aWI6L0xvcC9kb21lbGlnaHQ6OjIuMD9Mb3AvZG9tZWxpZ2h0OjoyLjAAAAANTE9QX2RvbWVsaWdodAAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAAAAAAFob/W6AAEAAAAABAA=
 AAAKbGlnaHQ6OjIuMAAAAAVMaWdodAAAACRvcGxpYjovTG9wL2xpZ2h0OjoyLjA/TG9wL2xpZ2h0OjoyLjAAAAAJTE9QX2xpZ2h0AAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAE3N1YnR5cGU9cHJvcGVkaXRvciAAAAA=
-AAAAAAFoSfYiAAEAAAAABQAAAA5sb2NhbHNjaGVkdWxlcgAAAA9Mb2NhbCBTY2hlZHVsZXIAAAAsb3BsaWI6L1RvcC9sb2NhbHNjaGVkdWxlcj9Ub3AvbG9jYWxzY2hlZHVsZXIAAAASVE9QX2xvY2Fsc2NoZWR1bGVyAAAAAAA=
-AAAAAAAAA1RvcAAAAAAAAAAAAAAAAAAAADxwZGd0eXBlPSdzY2hlZHVsZXInIHN1YnR5cGU9bG9jYWxzY2hlZHVsZXIgdmlzaWJsZW91dHB1dHM9MCAAAAAAAAAAAGhJ9iIAAQAAAAAAAAAABAAAABZyZW5kZXJnZW9tZXRyeXM=
+AAAAAAFob/W6AAEAAAAABQAAAA5sb2NhbHNjaGVkdWxlcgAAAA9Mb2NhbCBTY2hlZHVsZXIAAAAsb3BsaWI6L1RvcC9sb2NhbHNjaGVkdWxlcj9Ub3AvbG9jYWxzY2hlZHVsZXIAAAASVE9QX2xvY2Fsc2NoZWR1bGVyAAAAAAA=
+AAAAAAAAA1RvcAAAAAAAAAAAAAAAAAAAADxwZGd0eXBlPSdzY2hlZHVsZXInIHN1YnR5cGU9bG9jYWxzY2hlZHVsZXIgdmlzaWJsZW91dHB1dHM9MCAAAAAAAAAAAGhv9boAAQAAAAAAAAAABAAAABZyZW5kZXJnZW9tZXRyeXM=
 ZXR0aW5ncwAAABhSZW5kZXIgR2VvbWV0cnkgU2V0dGluZ3MAAAA8b3BsaWI6L0xvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzP0xvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzAAAAGkxPUF9yZW5kZXJnZW9tZXRyeXNldHRpbmc=
-cwAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAQAAAAFoSfYiAAEAAAAABAAAAAlzb3BjcmVhdGUAAAAKU09QIENyZWF0ZQAAACJvcGxpYjovTG9wL3NvcGNyZWF0ZT9Mb3Avc28=
-cGNyZWF0ZQAAAA1MT1Bfc29wY3JlYXRlAAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABaEn2IgEBAAAAAAQAAAARdXNkcHJldmlld3N1cmZhY2UAAAATVVNEIFByZXZpZXcgU3VyZmFjZQAAADJvcGxpYjo=
-L1ZvcC91c2RwcmV2aWV3c3VyZmFjZT9Wb3AvdXNkcHJldmlld3N1cmZhY2UAAAAVVk9QX3VzZHByZXZpZXdzdXJmYWNlAAAAAAAAAAAAAAADVm9wAAAAAAAAAAAAAAAAAAAAA3VzZAAAAAAAAAAAaEn2IgABAElORFgAAAAAAAA=
+cwAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAQAAAAFob/W6AAEAAAAABAAAAAlzb3BjcmVhdGUAAAAKU09QIENyZWF0ZQAAACJvcGxpYjovTG9wL3NvcGNyZWF0ZT9Mb3Avc28=
+cGNyZWF0ZQAAAA1MT1Bfc29wY3JlYXRlAAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABaG/1ugEBAAAAAAQAAAARdXNkcHJldmlld3N1cmZhY2UAAAATVVNEIFByZXZpZXcgU3VyZmFjZQAAADJvcGxpYjo=
+L1ZvcC91c2RwcmV2aWV3c3VyZmFjZT9Wb3AvdXNkcHJldmlld3N1cmZhY2UAAAAVVk9QX3VzZHByZXZpZXdzdXJmYWNlAAAAAAAAAAAAAAADVm9wAAAAAAAAAAAAAAAAAAAAA3VzZAAAAAAAAAAAaG/1ugABAElORFgAAAAAAAA=
 AAAAAAABAAAADERpYWxvZ1NjcmlwdAAAAAAAAIz9ZzOJKCMgRGlhbG9nIHNjcmlwdCBmb3IgY2FtZXJhIGF1dG9tYXRpY2FsbHkgZ2VuZXJhdGVkCgp7CiAgICBuYW1lCWNhbWVyYQogICAgc2NyaXB0CWNhbWVyYQogICAgbGE=
 YmVsCUNhbWVyYQoKICAgIGhlbHAgewoJIiIKICAgIH0KCiAgICBpbnB1dGxhYmVsCTEJIklucHV0IFN0YWdlIgoKICAgIGdyb3VwY29sbGFwc2libGUgewogICAgICAgIG5hbWUgICAgInNhbXBsZV9ncm91cDIiCiAgICAgICA=
 IGxhYmVsICAgIkZyYW1lIFJhbmdlL1N1YmZyYW1lcyIKICAgICAgICBwYXJtdGFnIHsgInNpZGVmeDo6aGVhZGVyX3Bhcm0iICJzYW1wbGVfYmVoYXZpb3IiIH0KCiAgICAgICAgcGFybSB7CiAgICAgICAgICAgIG5hbWUgICA=
@@ -1729,8 +1729,8 @@ aXRpdmUgU3BlY2lmaWVyIgogICAgICAgICAgICB0eXBlICAgIHN0cmluZwogICAgICAgICAgICBkZWZh
 IF0KICAgICAgICAgICAgICAgIFsgInJldHVybiBsb3B1dGlscy5jcmVhdGVTcGVjaWZpZXJzTWVudSgpIiBdCiAgICAgICAgICAgICAgICBsYW5ndWFnZSBweXRob24KICAgICAgICAgICAgfQogICAgICAgIH0KICAgICAgICA=
 cGFybSB7CiAgICAgICAgICAgIG5hbWUgICAgInBhcmVudHByaW10eXBlIgogICAgICAgICAgICBsYWJlbCAgICJQYXJlbnQgUHJpbWl0aXZlIFR5cGUiCiAgICAgICAgICAgIHR5cGUgICAgc3RyaW5nCiAgICAgICAgICAgIGQ=
 ZWZhdWx0IHsgIlVzZEdlb21YZm9ybSIgfQogICAgICAgICAgICBtZW51IHsKICAgICAgICAgICAgICAgIFsgImltcG9ydCBsb3B1dGlscyIgXQogICAgICAgICAgICAgICAgWyAicmV0dXJuIGxvcHV0aWxzLmNyZWF0ZVBhcmU=
-bnRUeXBlc01lbnUoKSIgXQogICAgICAgICAgICAgICAgbGFuZ3VhZ2UgcHl0aG9uCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9Cgp9CklORFgAAAAAAAAAAAAAAAIAAAAIQ29udGVudHMAAAAAAAAAV2hJ9OMAAAAMRGk=
-YWxvZ1NjcmlwdAAAAFcAAIhfZzOJMTA3MDcwNzAwMDAwMTAwMDAwMDAwMDY2NjAwMDAwMDAwMDAwMDAwMDAwMTAwMDAwMDE1MDIyMzcyMzQzMDAwMDEzMDAwMDAwMDAwMDBUUkFJTEVSISEhACMgRGlhbG9nIHNjcmlwdCBmb3I=
+bnRUeXBlc01lbnUoKSIgXQogICAgICAgICAgICAgICAgbGFuZ3VhZ2UgcHl0aG9uCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9Cgp9CklORFgAAAAAAAAAAAAAAAIAAAAIQ29udGVudHMAAAAAAAAAV2hv8vkAAAAMRGk=
+YWxvZ1NjcmlwdAAAAFcAAIhfZzOJMTA3MDcwNzAwMDAwMTAwMDAwMDAwMDY2NjAwMDAwMDAwMDAwMDAwMDAwMTAwMDAwMDE1MDMzNzcxMzcxMDAwMDEzMDAwMDAwMDAwMDBUUkFJTEVSISEhACMgRGlhbG9nIHNjcmlwdCBmb3I=
 IHNvcGNyZWF0ZSBhdXRvbWF0aWNhbGx5IGdlbmVyYXRlZAoKewogICAgbmFtZQlzb3BjcmVhdGUKICAgIHNjcmlwdAlzb3BjcmVhdGUKICAgIGxhYmVsCSJTT1AgQ3JlYXRlIgoKICAgIGhlbHAgewoJIiIKICAgIH0KICAgIGI=
 aW5kaGFuZGxlIHByeCB4Zm9ybSAiVHJhbnNmb3JtZXIiIHBpdm90X3J4ICIiCiAgICBiaW5kaGFuZGxlIHByeSB4Zm9ybSAiVHJhbnNmb3JtZXIiIHBpdm90X3J5ICIiCiAgICBiaW5kaGFuZGxlIHByeiB4Zm9ybSAiVHJhbnM=
 Zm9ybWVyIiBwaXZvdF9yeiAiIgogICAgYmluZGhhbmRsZSBweCB4Zm9ybSAiVHJhbnNmb3JtZXIiIHB4ICIiCiAgICBiaW5kaGFuZGxlIHB5IHhmb3JtICJUcmFuc2Zvcm1lciIgcHkgIiIKICAgIGJpbmRoYW5kbGUgcHogeGY=
@@ -2175,7 +2175,7 @@ inputs
 stat
 {
   create 1680755038
-  modify 1749677588
+  modify 1752167875
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -2243,7 +2243,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1749677294
+  modify 1752167607
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2266,7 +2266,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1749677294
+  modify 1752167600
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2289,7 +2289,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1749677294
+  modify 1752167593
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2312,7 +2312,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1749677294
+  modify 1752167861
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2335,7 +2335,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1749677293
+  modify 1752167861
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2358,7 +2358,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1749677294
+  modify 1752167861
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2381,7 +2381,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1749677294
+  modify 1752167861
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2404,7 +2404,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1749677302
+  modify 1752167861
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2427,7 +2427,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1749677297
+  modify 1752167652
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2450,7 +2450,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1749677297
+  modify 1752167629
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2473,7 +2473,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1749677299
+  modify 1752167617
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -64010,7 +64010,7 @@ Content-Type: text/plain
 comment ""
 position 33.0892 -51.0145
 connectornextid 2
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
+flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress on colordefault on exposed on debug off
 outputsNamed3
 {
 1 "output1"
@@ -64026,7 +64026,7 @@ inputs
 stat
 {
   create 1721010894
-  modify 1748568533
+  modify 1752167862
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -71744,7 +71744,7 @@ inputs
 stat
 {
   create 1694395523
-  modify 1749677586
+  modify 1752167265
   author alanglands@NV-1C89HW3
   access 0777
 }
@@ -71761,138 +71761,6 @@ Content-Type: text/plain
 version 0.8
 allowediting	[ 0	locks=0 ]	(	"on"	)
 usdsource	[ 0	locks=0 ]	(	"#usda 1.0
-(
-    customLayerData = {
-        dictionary MovieCaptureSettings = {
-            double animation_fps = 24
-            int batch_count = 1
-            string camera_name = \"/cameras/camera1\"
-            bool capture_application = 0
-            int capture_every_nth_frames = 20
-            bool capture_every_nth_frames_checked = 0
-            int capture_frame_end = 40
-            int capture_frame_start = 1
-            string capture_name = \"sphere-rtx\"
-            string capture_range = \"Custom Range - Frames\"
-            double capture_time_end = 10
-            double capture_time_start = 0
-            string exr_compression_method = \"zips\"
-            double fps = 24
-            bool generate_shader_cache = 0
-            bool hdr_for_exr_checked = 1
-            bool hdr_for_exr_visible = 0
-            int iray_pathtrace_spp = 1
-            int iray_subframes_per_frame = 32
-            string movie_type = \"Sequence\"
-            int mp4_encoding_bitrate = 16777216
-            int mp4_encoding_iframe_interval = 60
-            string mp4_encoding_preset = \"PRESET_DEFAULT\"
-            string mp4_encoding_profile = \"H264_PROFILE_HIGH\"
-            string mp4_encoding_rc_mode = \"RC_VBR\"
-            int mp4_encoding_rc_target_quality = 0
-            bool mp4_encoding_video_full_range_flag = 0
-            string output_format = \".exr\"
-            string output_path = \"C:/Users/alanglands/code/luxtest/renders/rtx\"
-            bool overwrite_existing_frame_checked = 0
-            bool pathtrace_mb_checked = 0
-            double pathtrace_mb_frame_shutter_close = 0.5
-            double pathtrace_mb_frame_shutter_open = 0
-            int pathtrace_mb_subframes = 64
-            int pathtrace_spp_per_iteration_mgpu = 1
-            int pathtrace_spp_per_subframe = 128
-            string queue_instance = \"localhost Queue\"
-            int realtime_settle_latency = 0
-            string render_preset = \"PathTracing\"
-            bool render_style = 1
-            bool renumber_negtive_frames_checked = 0
-            int resolution_aspect_ratio_selected = 0
-            string resolution_aspect_ratios = '[\"1.000:1\", \"16:9\", \"4:3\"]'
-            int resolution_height = 512
-            string resolution_type = \"Custom\"
-            bool resolution_w_h_linked = 0
-            int resolution_width = 512
-            int run_n_frames_before_start = 20
-            bool run_n_frames_before_start_checked = 0
-            bool save_alpha_checked = 0
-            bool skip_upload_to_s3 = 0
-            int start_delay_seconds = 10
-            double sunstudy_end = 18
-            int sunstudy_movie_minutes = 1
-            int sunstudy_movie_seconds = 1
-            double sunstudy_start = 6
-            string task_comment = \"\"
-            string task_priority = \"\"
-            string task_type = \"create-render\"
-            bool upload_to_s3 = 0
-        }
-        dictionary cameraSettings = {
-            dictionary Front = {
-                double3 position = (0, 0, 500)
-                double radius = 500
-            }
-            dictionary Perspective = {
-                double3 position = (500, 500, 500)
-                double3 target = (-0.00000397803842133726, 0.000007956076785831101, -0.000003978038307650422)
-            }
-            dictionary Right = {
-                double3 position = (-500, 0, 0)
-                double radius = 500
-            }
-            dictionary Top = {
-                double3 position = (0, 500, 0)
-                double radius = 500
-            }
-            string boundCamera = \"/cameras/camera1\"
-        }
-        dictionary navmeshSettings = {
-            double agentHeight = 180
-            double agentRadius = 20
-            bool excludeRigidBodies = 1
-            uint64 ver = 1
-            double voxelCeiling = 460
-        }
-        dictionary omni_layer = {
-            string authoring_layer = \"./sphere.usda\"
-        }
-        dictionary renderSettings = {
-            float3 \"rtx:debugView:pixelDebug:textColor\" = (0, 1e18, 0)
-            int \"rtx:externalFrameCounter\" = 40
-            float3 \"rtx:fog:fogColor\" = (0.75, 0.75, 0.75)
-            float3 \"rtx:index:regionOfInterestMax\" = (0, 0, 0)
-            float3 \"rtx:index:regionOfInterestMin\" = (0, 0, 0)
-            float3 \"rtx:iray:environment_dome_ground_position\" = (0, 0, 0)
-            float3 \"rtx:iray:environment_dome_ground_reflectivity\" = (0, 0, 0)
-            float3 \"rtx:iray:environment_dome_rotation_axis\" = (3.4028235e38, 3.4028235e38, 3.4028235e38)
-            float3 \"rtx:post:backgroundZeroAlpha:backgroundDefaultColor\" = (0, 0, 0)
-            float3 \"rtx:post:colorcorr:contrast\" = (1, 1, 1)
-            float3 \"rtx:post:colorcorr:gain\" = (1, 1, 1)
-            float3 \"rtx:post:colorcorr:gamma\" = (1, 1, 1)
-            float3 \"rtx:post:colorcorr:offset\" = (0, 0, 0)
-            float3 \"rtx:post:colorcorr:saturation\" = (1, 1, 1)
-            float3 \"rtx:post:colorgrad:blackpoint\" = (0, 0, 0)
-            float3 \"rtx:post:colorgrad:contrast\" = (1, 1, 1)
-            float3 \"rtx:post:colorgrad:gain\" = (1, 1, 1)
-            float3 \"rtx:post:colorgrad:gamma\" = (1, 1, 1)
-            float3 \"rtx:post:colorgrad:lift\" = (0, 0, 0)
-            float3 \"rtx:post:colorgrad:multiply\" = (1, 1, 1)
-            float3 \"rtx:post:colorgrad:offset\" = (0, 0, 0)
-            float3 \"rtx:post:colorgrad:whitepoint\" = (1, 1, 1)
-            float3 \"rtx:post:lensDistortion:lensFocalLengthArray\" = (10, 30, 50)
-            float3 \"rtx:post:lensFlares:anisoFlareFalloffX\" = (450, 475, 500)
-            float3 \"rtx:post:lensFlares:anisoFlareFalloffY\" = (10, 10, 10)
-            float3 \"rtx:post:lensFlares:cutoffPoint\" = (2, 2, 2)
-            float3 \"rtx:post:lensFlares:haloFlareFalloff\" = (10, 10, 10)
-            float3 \"rtx:post:lensFlares:haloFlareRadius\" = (75, 75, 75)
-            float3 \"rtx:post:lensFlares:isotropicFlareFalloff\" = (50, 50, 50)
-            double \"rtx:post:tonemap:filmIso\" = 0
-            float3 \"rtx:post:tonemap:whitepoint\" = (1, 1, 1)
-            float3 \"rtx:raytracing:inscattering:singleScatteringAlbedo\" = (0.9, 0.9, 0.9)
-            float3 \"rtx:raytracing:inscattering:transmittanceColor\" = (0.5, 0.5, 0.5)
-            token \"rtx:rendermode\" = \"PathTracing\"
-            float3 \"rtx:sceneDb:ambientLightColor\" = (0.1, 0.1, 0.1)
-        }
-    }
-)
 
 def Scope \"Render\" {
 
@@ -106890,590 +106758,6 @@ Content-Type: text/plain
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_distant.init"
-Content-Type: text/plain
-
-type = pythonscript
-matchesdef = 1
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_distant.def"
-Content-Type: text/plain
-
-comment ""
-position -17.7525 -17.5744
-connectornextid 2
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
-outputsNamed3
-{
-1 "output1"
-}
-inputsNamed3
-{
-0 	editproperties_distant 1 1 "input1"
-}
-inputs
-{
-0 	editproperties_distant 0 1
-}
-stat
-{
-  create 1722362092
-  modify 1748625066
-  author pmolodowitch@NV-MEGALODON
-  access 0777
-}
-color UT_Color RGB 0.8 0.8 0.8 
-delscript ""
-exprlanguage hscript
-end
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_distant.parm"
-Content-Type: text/plain
-
-{
-version 0.8
-python	[ 0	locks=0 ]	(	"import os
-import runpy
-
-this_hip_file = os.path.abspath(hou.hipFile.path())
-this_dir = os.path.dirname(this_hip_file)
-script_path = os.path.join(this_dir, \"set_customLayerData.py\")
-runpy.run_path(script_path)
-"	)
-maintainstate	[ 0	locks=0 ]	(	"off"	)
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_distant.netbox"
-Content-Type: text/plain
-
-__netbox1
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_distant.userdata"
-Content-Type: text/plain
-
-{
-	"___Version___":{
-		"type":"string",
-		"value":"20.5.445"
-	}
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_rect.init"
-Content-Type: text/plain
-
-type = pythonscript
-matchesdef = 1
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_rect.def"
-Content-Type: text/plain
-
-comment ""
-position -17.7525 -38.256
-connectornextid 2
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
-outputsNamed3
-{
-1 "output1"
-}
-inputsNamed3
-{
-0 	rendergeometrysettings_rect 1 1 "input1"
-}
-inputs
-{
-0 	rendergeometrysettings_rect 0 1
-}
-stat
-{
-  create 1722362092
-  modify 1748624656
-  author pmolodowitch@NV-MEGALODON
-  access 0777
-}
-color UT_Color RGB 0.8 0.8 0.8 
-delscript ""
-exprlanguage hscript
-end
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_rect.parm"
-Content-Type: text/plain
-
-{
-version 0.8
-python	[ 0	locks=0 ]	(	"import os
-import runpy
-
-this_hip_file = os.path.abspath(hou.hipFile.path())
-this_dir = os.path.dirname(this_hip_file)
-script_path = os.path.join(this_dir, \"set_customLayerData.py\")
-runpy.run_path(script_path)
-"	)
-maintainstate	[ 0	locks=0 ]	(	"off"	)
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_rect.netbox"
-Content-Type: text/plain
-
-__netbox4
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_rect.userdata"
-Content-Type: text/plain
-
-{
-	"___Version___":{
-		"type":"string",
-		"value":"20.5.445"
-	}
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_sphere.init"
-Content-Type: text/plain
-
-type = pythonscript
-matchesdef = 1
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_sphere.def"
-Content-Type: text/plain
-
-comment ""
-position -17.749 -55.6147
-connectornextid 2
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
-outputsNamed3
-{
-1 "output1"
-}
-inputsNamed3
-{
-0 	rendergeometrysettings_sphere 1 1 "input1"
-}
-inputs
-{
-0 	rendergeometrysettings_sphere 0 1
-}
-stat
-{
-  create 1722362092
-  modify 1725653657
-  author pmolodowitch@NV-MEGALODON
-  access 0777
-}
-color UT_Color RGB 0.8 0.8 0.8 
-delscript ""
-exprlanguage hscript
-end
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_sphere.parm"
-Content-Type: text/plain
-
-{
-version 0.8
-python	[ 0	locks=0 ]	(	"import os
-import runpy
-
-this_hip_file = os.path.abspath(hou.hipFile.path())
-this_dir = os.path.dirname(this_hip_file)
-script_path = os.path.join(this_dir, \"set_customLayerData.py\")
-runpy.run_path(script_path)
-"	)
-maintainstate	[ 0	locks=0 ]	(	"off"	)
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_sphere.netbox"
-Content-Type: text/plain
-
-__netbox5
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_sphere.userdata"
-Content-Type: text/plain
-
-{
-	"___Version___":{
-		"type":"string",
-		"value":"20.5.445"
-	}
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_disk.init"
-Content-Type: text/plain
-
-type = pythonscript
-matchesdef = 1
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_disk.def"
-Content-Type: text/plain
-
-comment ""
-position -17.7501 -79.2395
-connectornextid 2
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
-outputsNamed3
-{
-1 "output1"
-}
-inputsNamed3
-{
-0 	rendergeometrysettings_disk 1 1 "input1"
-}
-inputs
-{
-0 	rendergeometrysettings_disk 0 1
-}
-stat
-{
-  create 1722362092
-  modify 1722364476
-  author pmolodowitch@NV-MEGALODON
-  access 0777
-}
-color UT_Color RGB 0.8 0.8 0.8 
-delscript ""
-exprlanguage hscript
-end
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_disk.parm"
-Content-Type: text/plain
-
-{
-version 0.8
-python	[ 0	locks=0 ]	(	"import os
-import runpy
-
-this_hip_file = os.path.abspath(hou.hipFile.path())
-this_dir = os.path.dirname(this_hip_file)
-script_path = os.path.join(this_dir, \"set_customLayerData.py\")
-runpy.run_path(script_path)
-"	)
-maintainstate	[ 0	locks=0 ]	(	"off"	)
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_disk.netbox"
-Content-Type: text/plain
-
-__netbox6
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_disk.userdata"
-Content-Type: text/plain
-
-{
-	"___Version___":{
-		"type":"string",
-		"value":"20.5.445"
-	}
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_cylinder.init"
-Content-Type: text/plain
-
-type = pythonscript
-matchesdef = 1
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_cylinder.def"
-Content-Type: text/plain
-
-comment ""
-position -17.7512 -100.163
-connectornextid 2
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
-outputsNamed3
-{
-1 "output1"
-}
-inputsNamed3
-{
-0 	rendergeometrysettings_cylinder 1 1 "input1"
-}
-inputs
-{
-0 	rendergeometrysettings_cylinder 0 1
-}
-stat
-{
-  create 1722362092
-  modify 1722364476
-  author pmolodowitch@NV-MEGALODON
-  access 0777
-}
-color UT_Color RGB 0.8 0.8 0.8 
-delscript ""
-exprlanguage hscript
-end
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_cylinder.parm"
-Content-Type: text/plain
-
-{
-version 0.8
-python	[ 0	locks=0 ]	(	"import os
-import runpy
-
-this_hip_file = os.path.abspath(hou.hipFile.path())
-this_dir = os.path.dirname(this_hip_file)
-script_path = os.path.join(this_dir, \"set_customLayerData.py\")
-runpy.run_path(script_path)
-"	)
-maintainstate	[ 0	locks=0 ]	(	"off"	)
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_cylinder.netbox"
-Content-Type: text/plain
-
-__netbox7
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_cylinder.userdata"
-Content-Type: text/plain
-
-{
-	"___Version___":{
-		"type":"string",
-		"value":"20.5.445"
-	}
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_iesTest.init"
-Content-Type: text/plain
-
-type = pythonscript
-matchesdef = 1
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_iesTest.def"
-Content-Type: text/plain
-
-comment ""
-position 24.9064 5.88739
-connectornextid 2
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
-outputsNamed3
-{
-1 "output1"
-}
-inputsNamed3
-{
-0 	rendergeometrysettings_iesTest 1 1 "input1"
-}
-inputs
-{
-0 	rendergeometrysettings_iesTest 0 1
-}
-stat
-{
-  create 1722362092
-  modify 1729708380
-  author pmolodowitch@NV-MEGALODON
-  access 0777
-}
-color UT_Color RGB 0.8 0.8 0.8 
-delscript ""
-exprlanguage hscript
-end
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_iesTest.parm"
-Content-Type: text/plain
-
-{
-version 0.8
-python	[ 0	locks=0 ]	(	"import os
-import runpy
-
-this_hip_file = os.path.abspath(hou.hipFile.path())
-this_dir = os.path.dirname(this_hip_file)
-script_path = os.path.join(this_dir, \"set_customLayerData.py\")
-runpy.run_path(script_path)
-"	)
-maintainstate	[ 0	locks=0 ]	(	"off"	)
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_iesTest.netbox"
-Content-Type: text/plain
-
-__netbox10
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_iesTest.userdata"
-Content-Type: text/plain
-
-{
-	"___Version___":{
-		"type":"string",
-		"value":"20.5.445"
-	}
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_dome.init"
-Content-Type: text/plain
-
-type = pythonscript
-matchesdef = 1
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_dome.def"
-Content-Type: text/plain
-
-comment ""
-position 33.0892 -33.8761
-connectornextid 2
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
-outputsNamed3
-{
-1 "output1"
-}
-inputsNamed3
-{
-0 	editproperties_dome 1 1 "input1"
-}
-inputs
-{
-0 	editproperties_dome 0 1
-}
-stat
-{
-  create 1722362092
-  modify 1722364476
-  author pmolodowitch@NV-MEGALODON
-  access 0777
-}
-color UT_Color RGB 0.8 0.8 0.8 
-delscript ""
-exprlanguage hscript
-end
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_dome.parm"
-Content-Type: text/plain
-
-{
-version 0.8
-python	[ 0	locks=0 ]	(	"import os
-import runpy
-
-this_hip_file = os.path.abspath(hou.hipFile.path())
-this_dir = os.path.dirname(this_hip_file)
-script_path = os.path.join(this_dir, \"set_customLayerData.py\")
-runpy.run_path(script_path)
-"	)
-maintainstate	[ 0	locks=0 ]	(	"off"	)
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_dome.netbox"
-Content-Type: text/plain
-
-__netbox8
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_dome.userdata"
-Content-Type: text/plain
-
-{
-	"___Version___":{
-		"type":"string",
-		"value":"20.5.445"
-	}
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_visibleRect.init"
-Content-Type: text/plain
-
-type = pythonscript
-matchesdef = 1
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_visibleRect.def"
-Content-Type: text/plain
-
-comment ""
-position 33.0892 -52.1545
-connectornextid 2
-flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress on colordefault on exposed on debug off
-outputsNamed3
-{
-1 "output1"
-}
-inputsNamed3
-{
-0 	editproperties_visibleRect 1 1 "input1"
-}
-inputs
-{
-0 	editproperties_visibleRect 0 1
-}
-stat
-{
-  create 1722362092
-  modify 1748625908
-  author pmolodowitch@NV-MEGALODON
-  access 0777
-}
-color UT_Color RGB 0.8 0.8 0.8 
-delscript ""
-exprlanguage hscript
-end
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_visibleRect.parm"
-Content-Type: text/plain
-
-{
-version 0.8
-python	[ 0	locks=0 ]	(	"import os
-import runpy
-
-this_hip_file = os.path.abspath(hou.hipFile.path())
-this_dir = os.path.dirname(this_hip_file)
-script_path = os.path.join(this_dir, \"set_customLayerData.py\")
-runpy.run_path(script_path)
-"	)
-maintainstate	[ 0	locks=0 ]	(	"off"	)
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_visibleRect.netbox"
-Content-Type: text/plain
-
-__netbox9
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_visibleRect.userdata"
-Content-Type: text/plain
-
-{
-	"___Version___":{
-		"type":"string",
-		"value":"20.5.445"
-	}
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="stage/sopcreate_iesTest/sopnet/create.def"
 Content-Type: text/plain
 
@@ -121636,79 +120920,6 @@ Content-Type: text/plain
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_iesLibPreview.init"
-Content-Type: text/plain
-
-type = pythonscript
-matchesdef = 1
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_iesLibPreview.def"
-Content-Type: text/plain
-
-comment ""
-position 35.7287 33.3845
-connectornextid 2
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
-outputsNamed3
-{
-1 "output1"
-}
-inputsNamed3
-{
-0 	rendergeometrysettings_iesLibPreview 1 1 "input1"
-}
-inputs
-{
-0 	rendergeometrysettings_iesLibPreview 0 1
-}
-stat
-{
-  create 1722362092
-  modify 1748567118
-  author pmolodowitch@NV-MEGALODON
-  access 0777
-}
-color UT_Color RGB 0.8 0.8 0.8 
-delscript ""
-exprlanguage hscript
-end
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_iesLibPreview.parm"
-Content-Type: text/plain
-
-{
-version 0.8
-python	[ 0	locks=0 ]	(	"import os
-import runpy
-
-this_hip_file = os.path.abspath(hou.hipFile.path())
-this_dir = os.path.dirname(this_hip_file)
-script_path = os.path.join(this_dir, \"set_customLayerData.py\")
-runpy.run_path(script_path)
-"	)
-maintainstate	[ 0	locks=0 ]	(	"off"	)
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_iesLibPreview.netbox"
-Content-Type: text/plain
-
-__netbox11
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_iesLibPreview.userdata"
-Content-Type: text/plain
-
-{
-	"___Version___":{
-		"type":"string",
-		"value":"20.5.445"
-	}
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="stage/xform_camera1_iesLibPreview.init"
 Content-Type: text/plain
 
@@ -134194,79 +133405,6 @@ Content-Type: text/plain
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_iesDown.init"
-Content-Type: text/plain
-
-type = pythonscript
-matchesdef = 1
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_iesDown.def"
-Content-Type: text/plain
-
-comment ""
-position 35.7287 61.2308
-connectornextid 2
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
-outputsNamed3
-{
-1 "output1"
-}
-inputsNamed3
-{
-0 	rendergeometrysettings_iesDown 1 1 "input1"
-}
-inputs
-{
-0 	rendergeometrysettings_iesDown 0 1
-}
-stat
-{
-  create 1722362092
-  modify 1729708352
-  author pmolodowitch@NV-MEGALODON
-  access 0777
-}
-color UT_Color RGB 0.8 0.8 0.8 
-delscript ""
-exprlanguage hscript
-end
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_iesDown.parm"
-Content-Type: text/plain
-
-{
-version 0.8
-python	[ 0	locks=0 ]	(	"import os
-import runpy
-
-this_hip_file = os.path.abspath(hou.hipFile.path())
-this_dir = os.path.dirname(this_hip_file)
-script_path = os.path.join(this_dir, \"set_customLayerData.py\")
-runpy.run_path(script_path)
-"	)
-maintainstate	[ 0	locks=0 ]	(	"off"	)
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_iesDown.netbox"
-Content-Type: text/plain
-
-__netbox12
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_iesDown.userdata"
-Content-Type: text/plain
-
-{
-	"___Version___":{
-		"type":"string",
-		"value":"20.5.445"
-	}
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="stage/xform_camera1_iesDown.init"
 Content-Type: text/plain
 
@@ -146608,79 +145746,6 @@ Content-Type: text/plain
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_iesUp.init"
-Content-Type: text/plain
-
-type = pythonscript
-matchesdef = 1
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_iesUp.def"
-Content-Type: text/plain
-
-comment ""
-position 35.7287 90.3843
-connectornextid 2
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on debug off
-outputsNamed3
-{
-1 "output1"
-}
-inputsNamed3
-{
-0 	rendergeometrysettings_iesUp 1 1 "input1"
-}
-inputs
-{
-0 	rendergeometrysettings_iesUp 0 1
-}
-stat
-{
-  create 1722362092
-  modify 1728071611
-  author pmolodowitch@NV-MEGALODON
-  access 0777
-}
-color UT_Color RGB 0.8 0.8 0.8 
-delscript ""
-exprlanguage hscript
-end
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_iesUp.parm"
-Content-Type: text/plain
-
-{
-version 0.8
-python	[ 0	locks=0 ]	(	"import os
-import runpy
-
-this_hip_file = os.path.abspath(hou.hipFile.path())
-this_dir = os.path.dirname(this_hip_file)
-script_path = os.path.join(this_dir, \"set_customLayerData.py\")
-runpy.run_path(script_path)
-"	)
-maintainstate	[ 0	locks=0 ]	(	"off"	)
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_iesUp.netbox"
-Content-Type: text/plain
-
-__netbox13
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="stage/pythonscript_iesUp.userdata"
-Content-Type: text/plain
-
-{
-	"___Version___":{
-		"type":"string",
-		"value":"20.5.445"
-	}
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="stage/xform_camera1_iesUp.init"
 Content-Type: text/plain
 
@@ -149941,7 +149006,7 @@ Content-Type: text/plain
 	"posy":-100.952850163432814,
 	"pinned":true,
 	"color":"FROMOUTPUT",
-	"input":"pythonscript_cylinder 0 1"
+	"input":"rendergeometrysettings_cylinder 0 1"
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -149954,7 +149019,7 @@ Content-Type: text/plain
 	"posy":-80.0294501634328128,
 	"pinned":true,
 	"color":"FROMOUTPUT",
-	"input":"pythonscript_disk 0 1",
+	"input":"rendergeometrysettings_disk 0 1",
 	"netbox":"__netbox6"
 }
 
@@ -149968,7 +149033,7 @@ Content-Type: text/plain
 	"posy":-56.4046501634328123,
 	"pinned":false,
 	"color":"FROMOUTPUT",
-	"input":"pythonscript_sphere 0 1",
+	"input":"rendergeometrysettings_sphere 0 1",
 	"netbox":"__netbox5"
 }
 
@@ -149982,7 +149047,7 @@ Content-Type: text/plain
 	"posy":-39.0603501634328083,
 	"pinned":false,
 	"color":"FROMOUTPUT",
-	"input":"pythonscript_rect 0 1",
+	"input":"rendergeometrysettings_rect 0 1",
 	"netbox":"__netbox4"
 }
 
@@ -149996,7 +149061,7 @@ Content-Type: text/plain
 	"posy":-18.8217151603995703,
 	"pinned":false,
 	"color":"FROMOUTPUT",
-	"input":"pythonscript_distant 0 1",
+	"input":"editproperties_distant 0 1",
 	"netbox":"__netbox1"
 }
 
@@ -150010,7 +149075,7 @@ Content-Type: text/plain
 	"posy":-34.6888058233447367,
 	"pinned":false,
 	"color":"FROMOUTPUT",
-	"input":"pythonscript_dome 0 1",
+	"input":"editproperties_dome 0 1",
 	"netbox":"__netbox8"
 }
 
@@ -150024,7 +149089,7 @@ Content-Type: text/plain
 	"posy":-52.9444630587071927,
 	"pinned":false,
 	"color":"FROMOUTPUT",
-	"input":"pythonscript_visibleRect 0 1",
+	"input":"editproperties_visibleRect 0 1",
 	"netbox":"__netbox9"
 }
 
@@ -150064,7 +149129,7 @@ Content-Type: text/plain
 	"posy":5.09739307927670193,
 	"pinned":false,
 	"color":"FROMOUTPUT",
-	"input":"pythonscript_iesTest 0 1",
+	"input":"rendergeometrysettings_iesTest 0 1",
 	"netbox":"__netbox10"
 }
 
@@ -150130,7 +149195,7 @@ Content-Type: text/plain
 	"posy":32.5944572848166203,
 	"pinned":false,
 	"color":"FROMOUTPUT",
-	"input":"pythonscript_iesLibPreview 0 1",
+	"input":"rendergeometrysettings_iesLibPreview 0 1",
 	"netbox":"__netbox11"
 }
 
@@ -150209,7 +149274,7 @@ Content-Type: text/plain
 	"posy":60.4407719234974365,
 	"pinned":false,
 	"color":"FROMOUTPUT",
-	"input":"pythonscript_iesDown 0 1",
+	"input":"rendergeometrysettings_iesDown 0 1",
 	"netbox":"__netbox12"
 }
 
@@ -150249,7 +149314,7 @@ Content-Type: text/plain
 	"posy":89.5942274481748626,
 	"pinned":false,
 	"color":"FROMOUTPUT",
-	"input":"pythonscript_iesUp 0 1",
+	"input":"rendergeometrysettings_iesUp 0 1",
 	"netbox":"__netbox13"
 }
 
@@ -150283,7 +149348,7 @@ Content-Type: text/plain
 Content-Disposition: attachment; filename="stage.order"
 Content-Type: text/plain
 
-121
+110
 usd_rop_iesTest
 render_iesBottom_karma_iesTest
 render_iesBottom_arnold_iesTest
@@ -150355,14 +149420,6 @@ rendergeometrysettings_rect
 rendergeometrysettings_sphere
 rendergeometrysettings_disk
 rendergeometrysettings_cylinder
-pythonscript_distant
-pythonscript_rect
-pythonscript_sphere
-pythonscript_disk
-pythonscript_cylinder
-pythonscript_iesTest
-pythonscript_dome
-pythonscript_visibleRect
 sopcreate_iesTest
 reference_iesTest
 usd_rop_sphere50x50
@@ -150373,7 +149430,6 @@ rendergeometrysettings_iesLibPreview
 render_karma_iesLibPreview
 render_arnold_iesLibPreview
 render_ris_iesLibPreview
-pythonscript_iesLibPreview
 xform_camera1_iesLibPreview
 sopcreate_backWall_iesLibPreview
 assignmaterial_backWall_iesLibPreview
@@ -150386,7 +149442,6 @@ iesDown_light
 rendergeometrysettings_iesDown
 render_karma_iesDown
 render_ris_iesDown
-pythonscript_iesDown
 xform_camera1_iesDown
 xform_cameras_iesDown
 sopcreate_backWall_iesUp
@@ -150397,7 +149452,6 @@ iesUp_light
 rendergeometrysettings_iesUp
 render_karma_iesUp
 render_ris_iesUp
-pythonscript_iesUp
 xform_camera1_iesUp
 xform_cameras_iesUp
 sopcreate_ceilingPlane_iesUp
@@ -151105,16 +150159,16 @@ viewsnapshotoption -s off -h off -a 1 -v '*' -m 0 Solaris.pane1.solaris
 cplane -o 0 0 0 -n 4.37114e-08 1 -4.37114e-08 -x 1.91069e-15 4.37114e-08 1 -l n -s 0.1 0.1 -c 40 40 -r 10 10 -d off Solaris.pane1.solaris
 glcache -t 9828 -v 39312
 sceneviewopts -C on -c on -e on -F on -g on -H on -i -1 -k """" -l off -m on -M off -p /Render/Settings -P off -s on -S 1 -r "BRAY_HdKarmaXPU" -K off -R 512 512 -V off Solaris.pane1.solaris
-sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" "RenderMan XPU - GPU" Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" "RenderMan RIS" Solaris.pane1.solaris
+sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" "RenderMan XPU - GPU" Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -r -m "Normal Lighting" "RenderMan XPU - CPU" Solaris.pane1.solaris
-sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" "RenderMan XPU" Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" "Karma CPU" Solaris.pane1.solaris
+sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" "RenderMan XPU" Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -g -p -m "High Quality Lighting" Storm Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" Arnold Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" "Karma XPU" Solaris.pane1.solaris
 sceneviewrenderopts -b "xn__riintegratorPxrPathTracersampleModebxdfriintegratorPxrUnifiedaccumOpacity1riprojectionPxrCameramatteriintegratorPxrUnifiedmaxInterfaces2rilightingselectionlearningscheme1riintegratorPxrUnifiedmaxIndirectBounces8Photon_Guiding_folder0riintegratorPxrVCMmaxIndirectBounces8riprojectionPxrSphereCamerahsweep360rilimitsgeocachememory2097152riintegratorPxrPathTracernumSubsurfaceSamples1riintegratorPxrUnifiedsssOversampling8Russian_Roulette_folder0rihiderdecidither0Intensity_Clamping_folder0riintegratorPxrVCMmergePaths1riprojectionPxrCamerafocus3000riintegratorPxrUnifiedindirectOversampling2riintegratorPxrUnifiedcausticClamp1e06ribucketordercircleriintegratorPxrUnifiedphotonAdaptive0riintegratorPxrUnifiedcatchAllLights0Sampling_folder0riintegratorPxrVCMphotonGuidingBBoxMax1e301e301e30rishaderoughnessmollification1riintegratorPxrVCMnumLightSamples1riintegratorPxrVCMrouletteDepth4riintegratorPxrPathTracerrouletteThreshold02rihiderpixelfiltermodeweightedriintegratorPxrPathTracernumLightSamples0riintegratorPxrUnifiedmanifoldWalk0riintegratorPxrUnifiedphotonVisibilityRod0riintegratorPxrVisualizerwireframeOpacity05riintegratorPxrOcclusionuseAlbedo0riintegratorPxrUnifiedphotonEstimationRadius0riintegratorPxrPathTracernumSpecularSamples1riprojectionPxrCamerafocus1000riintegratorPxrUnifiedenableShadingTimers0riintegratorPxrPathTracernumBxdfSamples1riprojectionPxrCamerafocus2000riprojectionPxrCameradetail0Chromatic_Aberration_folder20rihidermaxsamples0riintegratorPxrVisualizerwireframe1riprojectionPxrCameraroll0riintegratorPxrVCMrouletteThreshold02riprojectionPxrSphereCameravsweep90riintegratorPxrPathTraceraccumOpacity0rilimitstexturememory2097152riintegratorPxrUnifiedallowMultilobeIndirect0riintegratorPxrPathTracerclampLuminance10Vignetting_folder30riintegratorPxrUnifiednumIndirectSamples1rihiderminextrasamples1riintegratorPxrUnifiedmaxIterations10riprojectionPxrCamerashiftY0riintegratorPxrDirectLightingnumBxdfSamples4riintegratorPxrUnifiedphotonVisibilityRodDirectProb0riintegratorPxrUnifiednumLightSamples1riintegratorPxrUnifiedindirectTrainingSamples0riintegratorPxrUnifiedphotonVisibilityRodMax000riprojectionPxrCamerasweepdownriprojectionPxrCamerashiftX0riprojectionPxrCameraassymX0riprojectionnamePxrPerspectiverihiderbluenoise1riintegratorPxrPathTracerrouletteDepth4riprojectionPxrCameraduration1riintegratorPxrVisualizerwireframeWidth1riintegratorPxrUnifiedenableSampleTimers0rihiderdarkfalloff0025riintegratorPxrPathTracermaxContinuationLength1riintegratorPxrOcclusionnumSamples4riintegratorPxrOcclusionmaxDistance0riintegratorPxrPathTracermaxNonStochasticOpacityEvents0riintegratorPxrUnifiedindirectClamp8riintegratorPxrVCMtimeRadius1riintegratorPxrVCMmergeRadius5riintegratorPxrUnifiedphotonVisibilityRodMin000Indirect_Clamping_folder0ridiceoffscreenmultiplier1riintegratorPxrPathTracernumIndirectSamples0riintegratorPxrVCMclampDepth2riintegratorPxrDebugShadingContextviewchannelNnShutter_folder40Lens_Distortion_folder10riintegratorPxrVisualizernormalCheck0riintegratorPxrUnifiedindirectSpatialBlurRadius025riintegratorPxrPathTracerclampDepth2riprojectionPxrCamerasqueeze1riintegratorPxrVCMclampLuminance10riprojectionPxrCamerafovEnd0rihideradaptivemetricvarianceriintegratorPxrUnifiedrouletteDepth1riprojectionPxrCameraaxial000riprojectionPxrCylinderCameravsweep90riprojectionPxrPerspectivefovEnd0riintegratorPxrVisualizerwireframeColor000rihiderextrememotiondof0rihidergeomShadowTermBias1riintegratorPxrUnifiedsuppressNaNs0riintegratorPxrUnifiedtraceLightPaths0riintegratorPxrPathTracerallowCaustics0riprojectionPxrCylinderCamerahsweep360Tilt_Shift_folder00riintegratorPxrUnifiedphotonEstimationNumber64riintegratorPxrVCMphotonGuidingBBoxMin1e301e301e30riprojectionPxrCameraenhance001riintegratorPxrUnifiedindirectDirectionalBlurRadius0rihideradaptall0riprojectionPxrCameranatural0riintegratorPxrOcclusionfalloff0riprojectionPxrCameraradial10rihiderminsamples1riintegratorPxrVCMnumBxdfSamples1riintegratorPxrOcclusioncosineSpread1riintegratorPxrUnifieddirectClamp1e06Russian_Roulette_folder20riintegratorPxrUnifiedemissionMultiplier1riintegratorPxrUnifiedmaxRayDistance10000Vertex_Merging_folder0riprojectionPxrCameraoptical0riprojectionPxrCameraassymY0riprojectionPxrCameratransverse111riintegratorPxrUnifiedenableVolumeCaustics0riprojectionPxrCameratilt0riintegratorPxrVCMphotonGuiding0riintegratorPxrUnifiednumBxdfSamples1riprojectionOmnidirectionalStereointerpupilaryDistance00635riintegratorPxrVisualizermatCapriintegratorPxrUnifiedwalkThreshold0005riintegratorPxrPathTracermaxIndirectBounces0riintegratorPxrVisualizerstyleshadedriintegratorPxrPathTracernumRefractionSamples1riintegratorPxrVCMconnectPaths1rihiderexposurebracket11riintegratorPxrPathTracernumDiffuseSamples1ribucketorderorigin11riprojectionPxrCameraradial20riintegratorPxrVisualizershadedPrimVardisplayColorriintegratorPxrUnifiedrouletteLightDepth1riintegratorPxrDirectLightingnumLightSamples4riintegratornamePxrPathTracerWireframe_Settings_folder0Advanced_folder50riintegratorPxrUnifiedrouletteThreshold02riRiPixelVariance0015riintegratorPxrOcclusiondistribution1folder00_cz0le5da45cga61aia10jea6eo78dc9yia86ja7ig6uma6hn756r9ag8ab0ac9ab7ab4bbvb0bb7adwh9bb1bbxbrbzb2ab1ad6bb8aeni0bb0bbpb2bm3ab7ab5ab6bcwk4bb8ab5bb5bc7ab8bb7bb1ad5bb3bb1ad1ab2abrb8abzb9ac7ac1bbvh8bb3bcsb4bbwb9ac1ab7bb5cb1bb9bb8bd0ag1ab1abqqqb2bb3ab3bb4bbse0cb8ab9ab8cb9ab2ab3ab8bdybzb7bb2ab9bepbxb0bb1cd9ab2ab6ac1abvk9ab0ad9ac6ab3bdxbzb8ab1bb2bb9adsb8bc2bm2ad5cbpb2ab5ab2abrb6ab0bb7aeyb4bb0bfvb2ab1ab5ad6bbzb5ab0bb8cf5ac9ae7bb4ai9bb4abwc6bbtc2ab2bo4bb8bbqpzbqb3bcre0bbh79c4h9szdv0buulrzd4onb56bmpgcx9cmh1s0dw0bvumr0dtp8a40cmphct39ayeee391aeae15al5bcb4a2byb6bya3b0b5a2c1b0au2a5a5abc9b2bx3b1bs0cfg6a0b8a9b8a6bzb7b6bxbzc7b5abc8b3b5abc4a5au1b2a3bzb3b4a1c4bv7bza3b4a0c2c0byc9bbc8a4a4a8at5b6a6b5bya3cyb1b7cxb5a6a2cbc1a2a0c5a5cs0a3b2cyb5a0b4a7a2b4abc3b9a6bbc0a2a1b3b3b2bv2c7bfg6abc8cs5a8a5au9a2b2b1a7b5bya5a4a9abc9b2a8a2bzd9a4b8b1byc7a0ac9bxac5a8c3b9b7a2at7bx3bk27fgag85igug3ckyahcc82l7frst4ahtx1cjc15awa4003dkanlkkknfkjggkkofiyfkktzfkgtfkphhgplknvfkkq1affl3afkglfkjhlkkvfkknjggmkkpfkkptfkgv0afxfkgqfkgofknshfqoknqfkknfkkufknrhkmkfkkxfkntfkjhlkkufknpfkjhlkjh6afflfknkfkjffkgshkphgknnfgolkkxfknpxfkktffqgkkogkjhfkrpfkk4afkkqfkkyfkkxlkjgkkjhfkjhfkfufkfknofkjjfknpfkktffmjknwgkmlfkmmfkn4afkkofkglfkgmfkkx8afeufkntfkglfkwmw1afknmfkk0aiknlfkjifkgpgkjhffpokkofkjglkrhgkohfknplfrfftfkknfkkqfknofkrhyfkkxgkgvxkjilkk4affjfkjifkmifkjifflgkgpfkmnfkkm6afkktfkkp3afkjifkjhfkjllkkvfkjffkgofkkpfkvwkknhgkkojkntfkngmknvfkgnffqkknsfgmlkjifknoskktfkrqfkf7bufkkshcojkmnl71740bgcpa" HdPrmanLoaderRendererPlugin
-sceneviewrenderopts -b "xn__karmaglobalipr_continuous_dicing0karmaglobalimagemodeProgressivekarmaglobalcolorlimit10disableMotionBlur0karmagloballight_sampling_modeLightTreekarmahydraoverride_lighting_menuheadlightkarmahydradenoise0karmaglobalipr_proxy_for_imagefilter2karmaglobalpathtracedsamples128karmahydraoverride_lighting0karmahydravariance001primvarskarmaobjectrefractlimit0karmaglobaldicingqualityscale1primvarskarmaobjectdiffuselimit0karmaglobalipr_reserve_threads1karmaglobalprogressivepasses0primvarskarmaobjectvolumesteprate025karmaglobalsamplesperpixel9primvarskarmaobjectreflectlimit0karmagloballight_sampling_quality1karmaglobalenable_dof1karmaglobalenginecpukarmaglobalipr_proxydepth2_her26fla5ek6aj17bd56y6abunvcrb4am6alrb0bb2ad1absd5ab3ab5ab4ab2ab7ad0ab5ab7abvbrfz950a9azau8b6bu3b7a4ax8a6a8a7a5a2b3a8azbyy2a22i7fn93agawigkuglwigutfxsfiig0aigskfsifjofgnigtlfgniguigslfgplgqlfgnigxiglighmgp9873cu9b" BRAY_HdKarma
+sceneviewrenderopts -b "xn__karmaglobalipr_continuous_dicing0karmaglobalimagemodeProgressivekarmaglobalcolorlimit10karmagloballight_sampling_modeLightTreekarmahydraoverride_lighting_menuheadlightdisableMotionBlur0karmahydradenoise0karmaglobalipr_proxy_for_imagefilter2karmaglobalpathtracedsamples128karmahydraoverride_lighting0karmahydravariance001primvarskarmaobjectrefractlimit0karmaglobaldicingqualityscale1primvarskarmaobjectdiffuselimit0karmaglobalipr_reserve_threads1karmaglobalprogressivepasses0primvarskarmaobjectvolumesteprate025karmaglobalsamplesperpixel9primvarskarmaobjectreflectlimit0karmagloballight_sampling_quality1karmaglobalenable_dof1karmaglobalenginecpukarmaglobalipr_proxydepth2_ydr57fla7ck6aj98bd56y6abunvc4am6alrbrb0bb2ad1absd5ab3ab5ab4ab2ab7ad0ab5ab7abvbrfz950a9aza8b6buu3b7a4ax8a6a8a7a5a2b3a8azbyy2a22i7fn93agawigkugljgutfx5aifiig0aigskfsifjofgnigtlfgniguigslfgplgqlfgnigxiglighmgp9873cu9b" BRAY_HdKarma
 sceneviewrenderopts -b "xn__enable_progressive_render1ignore_subdivision0GI_specular_depth0GI_volume_samples2GI_specular_samples2GI_transmission_depth0GI_diffuse_samples2ignore_shadows0ignore_atmosphere0progressive_min_AA_samples4ignore_displacement0GI_diffuse_depth0auto_transparency_depth10enable_adaptive_sampling0ignore_lights0AA_samples6enable_gpu_rendering0GI_subsurface_samples2GI_transmission_samples2ignore_operators0ignore_motion0GI_volume_depth0GI_total_depth0interactive_target_fps30ignore_shaders0ignore_bump0interactive_fps_min5ignore_dof0ignore_sss0threads1ignore_smoothing0interactive_target_fps_min20ignore_textures0AA_samples_max20_lktzabsbrbrbtbvbsbobrb0abtbqbxcybnbkbubvbxbqbnbpbobwcoblbtbkbkbhbqb0acpbo50zvauuwyvru3awt1a1aqnxy0atqsr0arownnkt4ass5uyol80awavvxzwsv4ayu1a3aroyz1aurts0atpxoolv4aus8579bg4b" HdArnoldRendererPlugin
 networkeditor -p '{\n}\n'performance -c on -d on -f on -g off -j on -k on -m off -n on -o on -t off -v on -p on -y on -u on -e off -r absolute -R seconds -w tree panetab12
 chopview -a 0 -c "" -k 1 -m 1 -b 1 -e 1 -f 0 -g 0 -H 1 -i 0 -j 1 -l 0 -n 1 -V 0 -y 0 -B 0 -s 0 -S 0.034375 -u 0 -v 0 -h -10 310 -r -1.5 1.5 Build.panetab13
@@ -151154,16 +150208,16 @@ imgviewhist -V on -L on -G on -H on -P off -c -1 -h 0 -i on imgview2 13
 imgviewhist -V on -L on -G on -H on -P off -c -1 -h 0 -i on imgview2 14
 imgviewhist -V on -L on -G on -H on -P off -c -1 -h 0 -i on imgview2 15
 imgviewhist -V on -L on -G on -H on -P off -c -1 -h 0 -i on imgview2 16
-panepath -d Solaris -f -p pane1 /stage/inlineusd_rendersettings
+panepath -d Solaris -f -p pane1 /stage/editproperties_visibleRect
 panepath -d Solaris -f -p panetab9 /stage/
-panepath -d Solaris -f -p panetab10 /stage/inlineusd_rendersettings
-panepath -d Solaris -f -p panetab8 /stage/inlineusd_rendersettings
-panepath -d Solaris -f -p panetab7 /stage/inlineusd_rendersettings
-panepath -d Solaris -f -p panetab11 /stage/inlineusd_rendersettings
-panepath -d Solaris -f -p panetab1 /stage/inlineusd_rendersettings
-panepath -d Solaris -f -p panetab3 /stage/inlineusd_rendersettings
+panepath -d Solaris -f -p panetab10 /stage/editproperties_visibleRect
+panepath -d Solaris -f -p panetab8 /stage/editproperties_visibleRect
+panepath -d Solaris -f -p panetab7 /stage/editproperties_visibleRect
+panepath -d Solaris -f -p panetab11 /stage/editproperties_visibleRect
+panepath -d Solaris -f -p panetab1 /stage/editproperties_visibleRect
+panepath -d Solaris -f -p panetab3 /stage/editproperties_visibleRect
 panepath -d Solaris -f -p panetab4 /stage/
-panepath -d Solaris -f -p panetab2 /stage/inlineusd_rendersettings
+panepath -d Solaris -f -p panetab2 /stage/editproperties_visibleRect
 desk set Solaris
 viewupdate -u always
 audiopanel -s p ''
@@ -151215,13 +150269,13 @@ omparm barndoor sidefx_barndoor_handle /stage/sphere_light "invisible(1) handle_
 omparm mylight_handle light /stage/cylinder_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
 omparm brect_handle boundingrect /stage/iesTest_light "invisible(1) rotate(1)"
 omparm barndoor sidefx_barndoor_handle /stage/iesTest_light "invisible(1) handle_parameter_group(10) tx(0) ty(0) tz(0) rx(0) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
-omparm mylight_handle light /stage/visibleRect_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
 omparm brect_handle boundingrect /stage/sphere_light "invisible(1) rotate(1)"
-omparm mycamera_handle camera /stage/camera1 "camera_handletype(2) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) camera_clip(0)"
+omparm mylight_handle light /stage/visibleRect_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
 omparm mylight_handle light /stage/iesLibPreview_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
+omparm mycamera_handle camera /stage/camera1 "camera_handletype(2) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) camera_clip(0)"
 omparm brect_handle boundingrect /stage/visibleRect_light "rotate(1)"
-omparm barndoor sidefx_barndoor_handle /stage/cylinder_light "invisible(1) handle_parameter_group(10) tx(0) ty(1) tz(0) rx(-45.000000000000007) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
 omparm bbox_handle boundingbox /stage/cylinder_light "rotate(1)"
+omparm barndoor sidefx_barndoor_handle /stage/cylinder_light "invisible(1) handle_parameter_group(10) tx(0) ty(1) tz(0) rx(-45.000000000000007) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
 omparm mylight_handle light /stage/sphere_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
 texcache  -a off -r 2147483647 2147483647 -m 10000 -M 32728
 shopvisible +I3D +VMantra +RIB
