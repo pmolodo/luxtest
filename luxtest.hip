@@ -31,7 +31,7 @@ set -g JOB = 'C:/Users/alanglands/Desktop/light_comparison'
 set -g PI = '3.1415926535897932384'
 set -g POSE = 'C:/Users/alanglands/Documents/houdini19.5/poselib'
 set -g _HIP_SAVEPLATFORM = 'windows-x86_64-cl19.35'
-set -g _HIP_SAVETIME = 'Thu Jul 10 12:56:26 2025'
+set -g _HIP_SAVETIME = 'Wed Jul 23 22:12:28 2025'
 set -g _HIP_SAVEVERSION = '20.5.445'
 set -g status = '0'
 
@@ -138,21 +138,21 @@ Content-Disposition: attachment; filename=".OPdummydefs"
 Content-Type: application/octet-stream
 Content-Transfer-Encoding: base64
 
-SU5EWAAAAAAAAAAAAAAACwAAAA1JTkRFWF9TRUNUSU9OAAAAAAAABftocBrqAAAAEmhvdWRpbmkuaGRhbGlicmFyeQAABfsAAAAAaHAa6gAAAApMb3AvY2FtZXJhAAAF+wAAjSlocBfXAAAAD0xvcC9jcmVhdGV4Zm9ybQAAkyQ=
-AAAnSmhwF9cAAAAVTG9wL2Rpc3RhbnRsaWdodDo6Mi4wAAC6bgAAu85ocBfXAAAAEkxvcC9kb21lbGlnaHQ6OjIuMAABdjwAAGv8aHAX1wAAAA5Mb3AvbGlnaHQ6OjIuMAAB4jgAANtUaHAX1wAAABJUb3AvbG9jYWxzY2hlZHU=
-bGVyAAK9jAAATJJocBfXAAAAGkxvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzAAMKHgAAEDlocBfXAAAADUxvcC9zb3BjcmVhdGUAAxpXAACI+mhwF9cAAAAVVm9wL3VzZHByZXZpZXdzdXJmYWNlAAOjUQAAEkZocBfXAAAACQA=
+SU5EWAAAAAAAAAAAAAAACwAAAA1JTkRFWF9TRUNUSU9OAAAAAAAABftogcC8AAAAEmhvdWRpbmkuaGRhbGlicmFyeQAABfsAAAAAaIHAvAAAAApMb3AvY2FtZXJhAAAF+wAAjSlogb/LAAAAD0xvcC9jcmVhdGV4Zm9ybQAAkyQ=
+AAAnSmiBv8sAAAAVTG9wL2Rpc3RhbnRsaWdodDo6Mi4wAAC6bgAAu85ogb/LAAAAEkxvcC9kb21lbGlnaHQ6OjIuMAABdjwAAGv8aIG/ywAAAA5Mb3AvbGlnaHQ6OjIuMAAB4jgAANtUaIG/ywAAABJUb3AvbG9jYWxzY2hlZHU=
+bGVyAAK9jAAATJJogb/LAAAAGkxvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzAAMKHgAAEDlogb/LAAAADUxvcC9zb3BjcmVhdGUAAxpXAACI+miBv8oAAAAVVm9wL3VzZHByZXZpZXdzdXJmYWNlAAOjUQAAEkZogb/KAAAACQA=
 AAAEAAAABmNhbWVyYQAAAAZDYW1lcmEAAAAcb3BsaWI6L0xvcC9jYW1lcmE/TG9wL2NhbWVyYQAAAApMT1BfY2FtZXJhAAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAE3N1YnR5cGU9cHJvcGVkaXRvciAAAAAAAAAAAWg=
-cBrqAAEAAAAABAAAAAtjcmVhdGV4Zm9ybQAAAAVYZm9ybQAAACZvcGxpYjovTG9wL2NyZWF0ZXhmb3JtP0xvcC9jcmVhdGV4Zm9ybQAAAA9MT1BfY3JlYXRleGZvcm0AAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3U=
-YnR5cGU9cHJvcGVkaXRvciAAAAAAAAAAAWhwGuoAAQAAAAAEAAAAEWRpc3RhbnRsaWdodDo6Mi4wAAAADURpc3RhbnQgTGlnaHQAAAAyb3BsaWI6L0xvcC9kaXN0YW50bGlnaHQ6OjIuMD9Mb3AvZGlzdGFudGxpZ2h0OjoyLjA=
-AAAAEExPUF9kaXN0YW50bGlnaHQAAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3VidHlwZT1wcm9wZWRpdG9yIAAAAAAAAAABaHAa6gABAAAAAAQAAAAOZG9tZWxpZ2h0OjoyLjAAAAAKRG9tZSBMaWdodAAAACxvcGw=
-aWI6L0xvcC9kb21lbGlnaHQ6OjIuMD9Mb3AvZG9tZWxpZ2h0OjoyLjAAAAANTE9QX2RvbWVsaWdodAAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAAAAAAFocBrqAAEAAAAABAA=
+gcC8AAEAAAAABAAAAAtjcmVhdGV4Zm9ybQAAAAVYZm9ybQAAACZvcGxpYjovTG9wL2NyZWF0ZXhmb3JtP0xvcC9jcmVhdGV4Zm9ybQAAAA9MT1BfY3JlYXRleGZvcm0AAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3U=
+YnR5cGU9cHJvcGVkaXRvciAAAAAAAAAAAWiBwLwAAQAAAAAEAAAAEWRpc3RhbnRsaWdodDo6Mi4wAAAADURpc3RhbnQgTGlnaHQAAAAyb3BsaWI6L0xvcC9kaXN0YW50bGlnaHQ6OjIuMD9Mb3AvZGlzdGFudGxpZ2h0OjoyLjA=
+AAAAEExPUF9kaXN0YW50bGlnaHQAAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3VidHlwZT1wcm9wZWRpdG9yIAAAAAAAAAABaIHAvAABAAAAAAQAAAAOZG9tZWxpZ2h0OjoyLjAAAAAKRG9tZSBMaWdodAAAACxvcGw=
+aWI6L0xvcC9kb21lbGlnaHQ6OjIuMD9Mb3AvZG9tZWxpZ2h0OjoyLjAAAAANTE9QX2RvbWVsaWdodAAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAAAAAAFogcC8AAEAAAAABAA=
 AAAKbGlnaHQ6OjIuMAAAAAVMaWdodAAAACRvcGxpYjovTG9wL2xpZ2h0OjoyLjA/TG9wL2xpZ2h0OjoyLjAAAAAJTE9QX2xpZ2h0AAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAE3N1YnR5cGU9cHJvcGVkaXRvciAAAAA=
-AAAAAAFocBrqAAEAAAAABQAAAA5sb2NhbHNjaGVkdWxlcgAAAA9Mb2NhbCBTY2hlZHVsZXIAAAAsb3BsaWI6L1RvcC9sb2NhbHNjaGVkdWxlcj9Ub3AvbG9jYWxzY2hlZHVsZXIAAAASVE9QX2xvY2Fsc2NoZWR1bGVyAAAAAAA=
-AAAAAAAAA1RvcAAAAAAAAAAAAAAAAAAAADxwZGd0eXBlPSdzY2hlZHVsZXInIHN1YnR5cGU9bG9jYWxzY2hlZHVsZXIgdmlzaWJsZW91dHB1dHM9MCAAAAAAAAAAAGhwGuoAAQAAAAAAAAAABAAAABZyZW5kZXJnZW9tZXRyeXM=
+AAAAAAFogcC8AAEAAAAABQAAAA5sb2NhbHNjaGVkdWxlcgAAAA9Mb2NhbCBTY2hlZHVsZXIAAAAsb3BsaWI6L1RvcC9sb2NhbHNjaGVkdWxlcj9Ub3AvbG9jYWxzY2hlZHVsZXIAAAASVE9QX2xvY2Fsc2NoZWR1bGVyAAAAAAA=
+AAAAAAAAA1RvcAAAAAAAAAAAAAAAAAAAADxwZGd0eXBlPSdzY2hlZHVsZXInIHN1YnR5cGU9bG9jYWxzY2hlZHVsZXIgdmlzaWJsZW91dHB1dHM9MCAAAAAAAAAAAGiBwLwAAQAAAAAAAAAABAAAABZyZW5kZXJnZW9tZXRyeXM=
 ZXR0aW5ncwAAABhSZW5kZXIgR2VvbWV0cnkgU2V0dGluZ3MAAAA8b3BsaWI6L0xvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzP0xvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzAAAAGkxPUF9yZW5kZXJnZW9tZXRyeXNldHRpbmc=
-cwAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAQAAAAFocBrqAAEAAAAABAAAAAlzb3BjcmVhdGUAAAAKU09QIENyZWF0ZQAAACJvcGxpYjovTG9wL3NvcGNyZWF0ZT9Mb3Avc28=
-cGNyZWF0ZQAAAA1MT1Bfc29wY3JlYXRlAAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABaHAa6gEBAAAAAAQAAAARdXNkcHJldmlld3N1cmZhY2UAAAATVVNEIFByZXZpZXcgU3VyZmFjZQAAADJvcGxpYjo=
-L1ZvcC91c2RwcmV2aWV3c3VyZmFjZT9Wb3AvdXNkcHJldmlld3N1cmZhY2UAAAAVVk9QX3VzZHByZXZpZXdzdXJmYWNlAAAAAAAAAAAAAAADVm9wAAAAAAAAAAAAAAAAAAAAA3VzZAAAAAAAAAANaHAa6gABAElORFgAAAAAAAA=
+cwAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAQAAAAFogcC8AAEAAAAABAAAAAlzb3BjcmVhdGUAAAAKU09QIENyZWF0ZQAAACJvcGxpYjovTG9wL3NvcGNyZWF0ZT9Mb3Avc28=
+cGNyZWF0ZQAAAA1MT1Bfc29wY3JlYXRlAAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABaIHAvAEBAAAAAAQAAAARdXNkcHJldmlld3N1cmZhY2UAAAATVVNEIFByZXZpZXcgU3VyZmFjZQAAADJvcGxpYjo=
+L1ZvcC91c2RwcmV2aWV3c3VyZmFjZT9Wb3AvdXNkcHJldmlld3N1cmZhY2UAAAAVVk9QX3VzZHByZXZpZXdzdXJmYWNlAAAAAAAAAAAAAAADVm9wAAAAAAAAAAAAAAAAAAAAA3VzZAAAAAAAAAAAaIHAvAABAElORFgAAAAAAAA=
 AAAAAAABAAAADERpYWxvZ1NjcmlwdAAAAAAAAIz9ZzOJKCMgRGlhbG9nIHNjcmlwdCBmb3IgY2FtZXJhIGF1dG9tYXRpY2FsbHkgZ2VuZXJhdGVkCgp7CiAgICBuYW1lCWNhbWVyYQogICAgc2NyaXB0CWNhbWVyYQogICAgbGE=
 YmVsCUNhbWVyYQoKICAgIGhlbHAgewoJIiIKICAgIH0KCiAgICBpbnB1dGxhYmVsCTEJIklucHV0IFN0YWdlIgoKICAgIGdyb3VwY29sbGFwc2libGUgewogICAgICAgIG5hbWUgICAgInNhbXBsZV9ncm91cDIiCiAgICAgICA=
 IGxhYmVsICAgIkZyYW1lIFJhbmdlL1N1YmZyYW1lcyIKICAgICAgICBwYXJtdGFnIHsgInNpZGVmeDo6aGVhZGVyX3Bhcm0iICJzYW1wbGVfYmVoYXZpb3IiIH0KCiAgICAgICAgcGFybSB7CiAgICAgICAgICAgIG5hbWUgICA=
@@ -1729,8 +1729,8 @@ aXRpdmUgU3BlY2lmaWVyIgogICAgICAgICAgICB0eXBlICAgIHN0cmluZwogICAgICAgICAgICBkZWZh
 IF0KICAgICAgICAgICAgICAgIFsgInJldHVybiBsb3B1dGlscy5jcmVhdGVTcGVjaWZpZXJzTWVudSgpIiBdCiAgICAgICAgICAgICAgICBsYW5ndWFnZSBweXRob24KICAgICAgICAgICAgfQogICAgICAgIH0KICAgICAgICA=
 cGFybSB7CiAgICAgICAgICAgIG5hbWUgICAgInBhcmVudHByaW10eXBlIgogICAgICAgICAgICBsYWJlbCAgICJQYXJlbnQgUHJpbWl0aXZlIFR5cGUiCiAgICAgICAgICAgIHR5cGUgICAgc3RyaW5nCiAgICAgICAgICAgIGQ=
 ZWZhdWx0IHsgIlVzZEdlb21YZm9ybSIgfQogICAgICAgICAgICBtZW51IHsKICAgICAgICAgICAgICAgIFsgImltcG9ydCBsb3B1dGlscyIgXQogICAgICAgICAgICAgICAgWyAicmV0dXJuIGxvcHV0aWxzLmNyZWF0ZVBhcmU=
-bnRUeXBlc01lbnUoKSIgXQogICAgICAgICAgICAgICAgbGFuZ3VhZ2UgcHl0aG9uCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9Cgp9CklORFgAAAAAAAAAAAAAAAIAAAAIQ29udGVudHMAAAAAAAAAV2hwF9cAAAAMRGk=
-YWxvZ1NjcmlwdAAAAFcAAIhfZzOJMTA3MDcwNzAwMDAwMTAwMDAwMDAwMDY2NjAwMDAwMDAwMDAwMDAwMDAwMTAwMDAwMDE1MDM0MDEzNzI3MDAwMDEzMDAwMDAwMDAwMDBUUkFJTEVSISEhACMgRGlhbG9nIHNjcmlwdCBmb3I=
+bnRUeXBlc01lbnUoKSIgXQogICAgICAgICAgICAgICAgbGFuZ3VhZ2UgcHl0aG9uCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9Cgp9CklORFgAAAAAAAAAAAAAAAIAAAAIQ29udGVudHMAAAAAAAAAV2iBv8oAAAAMRGk=
+YWxvZ1NjcmlwdAAAAFcAAIhfZzOJMTA3MDcwNzAwMDAwMTAwMDAwMDAwMDY2NjAwMDAwMDAwMDAwMDAwMDAwMTAwMDAwMDE1MDQwMzM3NzEyMDAwMDEzMDAwMDAwMDAwMDBUUkFJTEVSISEhACMgRGlhbG9nIHNjcmlwdCBmb3I=
 IHNvcGNyZWF0ZSBhdXRvbWF0aWNhbGx5IGdlbmVyYXRlZAoKewogICAgbmFtZQlzb3BjcmVhdGUKICAgIHNjcmlwdAlzb3BjcmVhdGUKICAgIGxhYmVsCSJTT1AgQ3JlYXRlIgoKICAgIGhlbHAgewoJIiIKICAgIH0KICAgIGI=
 aW5kaGFuZGxlIHByeCB4Zm9ybSAiVHJhbnNmb3JtZXIiIHBpdm90X3J4ICIiCiAgICBiaW5kaGFuZGxlIHByeSB4Zm9ybSAiVHJhbnNmb3JtZXIiIHBpdm90X3J5ICIiCiAgICBiaW5kaGFuZGxlIHByeiB4Zm9ybSAiVHJhbnM=
 Zm9ybWVyIiBwaXZvdF9yeiAiIgogICAgYmluZGhhbmRsZSBweCB4Zm9ybSAiVHJhbnNmb3JtZXIiIHB4ICIiCiAgICBiaW5kaGFuZGxlIHB5IHhmb3JtICJUcmFuc2Zvcm1lciIgcHkgIiIKICAgIGJpbmRoYW5kbGUgcHogeGY=
@@ -2175,7 +2175,7 @@ inputs
 stat
 {
   create 1680755038
-  modify 1752177361
+  modify 1753333929
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -2243,7 +2243,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1752176609
+  modify 1753333716
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2266,7 +2266,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1752176609
+  modify 1753333716
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2289,7 +2289,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1752176609
+  modify 1753333716
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2312,7 +2312,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1752176609
+  modify 1753333716
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2335,7 +2335,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1752176608
+  modify 1753333715
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2358,7 +2358,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1752176609
+  modify 1753333716
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2381,7 +2381,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1752176609
+  modify 1753333716
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2404,7 +2404,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1752176617
+  modify 1753333724
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2427,7 +2427,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1752176612
+  modify 1753333719
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2450,7 +2450,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1752176612
+  modify 1753333719
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2473,7 +2473,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1752176614
+  modify 1753333721
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -3023,8 +3023,7 @@ text "1-1: ies:angleScale=0 ref (ies:file='ies/04f377f94ce81cd7b5101fffdf571454.
 11-11: ies:angleScale=0 ref (intensity=1000, ies:file='ies/test_vstripes_hquadrants_nonuniform.ies')
 12-20: ies:angleScale from -2 to 2 (intensity=1000, ies:file='ies/test_vstripes_hquadrants_nonuniform.ies')
 21-21: ies:angleScale=0 ref (intensity=1000, ies:file='ies/test_vstripes_hquadrants_nonuniform.ies', ies:normalize=on)
-22-30: ies:angleScale from -2 to 2 (intensity=1000, ies:file='ies/test_vstripes_hquadrants_nonuniform.ies', ies:normalize=on)
-31-31: no ies:file ref (intensity=1000)"
+22-30: ies:angleScale from -2 to 2 (intensity=1000, ies:file='ies/test_vstripes_hquadrants_nonuniform.ies', ies:normalize=on)"
 position 37.2476 2.69232
 size 51.8219 12.0859
 textsize 1
@@ -3032,7 +3031,7 @@ flags = minimize off
 stat
 {
   create 1686112034
-  modify 1752177356
+  modify 1753333928
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -3093,8 +3092,7 @@ text "1-1: ies:angleScale=0 ref (ies:file='ies/04f377f94ce81cd7b5101fffdf571454.
 11-11: ies:angleScale=0 ref (intensity=1000, ies:file='ies/test_vstripes_hquadrants_nonuniform.ies')
 12-20: ies:angleScale from -2 to 2 (intensity=1000, ies:file='ies/test_vstripes_hquadrants_nonuniform.ies')
 21-21: ies:angleScale=0 ref (intensity=1000, ies:file='ies/test_vstripes_hquadrants_nonuniform.ies', ies:normalize=on)
-22-30: ies:angleScale from -2 to 2 (intensity=1000, ies:file='ies/test_vstripes_hquadrants_nonuniform.ies', ies:normalize=on)
-31-31: no ies:file ref (intensity=1000)"
+22-30: ies:angleScale from -2 to 2 (intensity=1000, ies:file='ies/test_vstripes_hquadrants_nonuniform.ies', ies:normalize=on)"
 position 56.3371 30.9731
 size 51.8219 12.0859
 textsize 1
@@ -3102,7 +3100,7 @@ flags = minimize off
 stat
 {
   create 1686112034
-  modify 1752177356
+  modify 1753333928
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -5557,7 +5555,7 @@ inputs
 stat
 {
   create 1680837817
-  modify 1727715278
+  modify 1753333774
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -5983,7 +5981,7 @@ execute	[ 0	locks=0 ]	(	0	)
 executebackground	[ 0	locks=0 ]	(	0	)
 renderdialog	[ 0	locks=0 ]	(	0	)
 trange	[ 0	locks=0 ]	(	"normal"	)
-f	[ 8	locks=0 ]	(	1	31	1	)
+f	[ 8	locks=0 ]	(	1	30	1	)
 foffset	[ 0	locks=0 ]	(	0	0	1	)
 take	[ 0	locks=0 ]	(	_current_	)
 loppath	[ 0	locks=0 ]	(	"../`opinput(\".\", 0)`"	)
@@ -150026,7 +150024,7 @@ viewroto  -S file -F '$HH/pic/uvgrid_grey.pic' -C '' -a on -f 'scale' -o 0 0 -s 
 viewroto  -S file -F '' -C '' -a on -f 'scale' -o 0 0 -s 1 1 -O 1 -B 1 -e off image Solaris.pane1.solaris.persp1
 viewforeground -d on -f on -D Pz -s 0 Solaris.pane1.solaris.persp1
 viewforeground -o 1 Solaris.pane1.solaris.persp1
-viewtransform Solaris.pane1.solaris.persp1 version ( 3 )  flag ( Fax )  orthowidth ( 2.53023 )  focal ( 0.05 )  aperture ( 0.020955 )  window ( 0 1 0 1 )  winroll ( 0 )  clear ( 1 )  nearfar ( 1 1e+06 )  aspect ( 1 )  pixelaspect ( 1 )  txyz ( -4.20176e-16 0 -0.431 )  pxyz ( -2.10088e-16 0 -1.7155 )  rotation ( -1 0 -1.22465e-16 0 1 0 1.22465e-16 0 -1  )  homedistance ( 4.76976 )  homeadjboxwidth ( 2.53023 )  homeorthowidth ( 2.53023 )  homeradius ( 4.23762 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612372 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 3 )  fov ( 45b)  inffreecam ( 0 )  
+viewtransform Solaris.pane1.solaris.persp1 version ( 3 )  flag ( Fax )  orthowidth ( 3.84369 )  focal ( 0.05 )  aperture ( 0.020955 )  window ( 0 1 0 1 )  winroll ( 0 )  clear ( 1 )  nearfar ( 1 1e+06 )  aspect ( 1 )  pixelaspect ( 1 )  txyz ( -4.20176e-16 0 -0.431 )  pxyz ( -2.10088e-16 0 -1.7155 )  rotation ( -1 0 -1.22465e-16 0 1 0 1.22465e-16 0 -1  )  homedistance ( 6.35524 )  homeadjboxwidth ( 3.84369 )  homeorthowidth ( 3.84369 )  homeradius ( 4.9738 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612372 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 3 )  fov ( 45b)  inffreecam ( 0 )  
 viewcamera -c /cameras/camera1 Solaris.pane1.solaris.persp1
 vieworthogrid -d on -o 0 0 0 -s 0.2 0.2 -r 5 5 -R 1 Solaris.pane1.solaris.persp1
 viewuvgrid -r on -s 0.1 0.1 -P off -S 64 64 -O 0 0 -C on -t on Solaris.pane1.solaris.persp1
@@ -150175,16 +150173,16 @@ viewsnapshotoption -s off -h off -a 1 -v '*' -m 0 Solaris.pane1.solaris
 cplane -o 0 0 0 -n 4.37114e-08 1 -4.37114e-08 -x 1.91069e-15 4.37114e-08 1 -l n -s 0.1 0.1 -c 40 40 -r 10 10 -d off Solaris.pane1.solaris
 glcache -t 9828 -v 39312
 sceneviewopts -C on -c on -e on -F on -g on -H on -i -1 -k """" -l off -m on -M off -p /Render/Settings -P off -s on -S 1 -r "BRAY_HdKarmaXPU" -K off -R 512 512 -V off Solaris.pane1.solaris
-sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" "RenderMan XPU - GPU" Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" "RenderMan RIS" Solaris.pane1.solaris
+sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" "RenderMan XPU - GPU" Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -r -m "Normal Lighting" "RenderMan XPU - CPU" Solaris.pane1.solaris
-sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" "RenderMan XPU" Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" "Karma CPU" Solaris.pane1.solaris
+sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" "RenderMan XPU" Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -g -p -m "High Quality Lighting" Storm Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" Arnold Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" "Karma XPU" Solaris.pane1.solaris
 sceneviewrenderopts -b "xn__riintegratorPxrPathTracersampleModebxdfriintegratorPxrUnifiedaccumOpacity1riprojectionPxrCameramatteriintegratorPxrUnifiedmaxInterfaces2rilightingselectionlearningscheme1riintegratorPxrUnifiedmaxIndirectBounces8Photon_Guiding_folder0riintegratorPxrVCMmaxIndirectBounces8riprojectionPxrSphereCamerahsweep360rilimitsgeocachememory2097152riintegratorPxrPathTracernumSubsurfaceSamples1riintegratorPxrUnifiedsssOversampling8Russian_Roulette_folder0rihiderdecidither0Intensity_Clamping_folder0riintegratorPxrVCMmergePaths1riprojectionPxrCamerafocus3000riintegratorPxrUnifiedindirectOversampling2riintegratorPxrUnifiedcausticClamp1e06ribucketordercircleriintegratorPxrUnifiedphotonAdaptive0riintegratorPxrUnifiedcatchAllLights0Sampling_folder0riintegratorPxrVCMphotonGuidingBBoxMax1e301e301e30rishaderoughnessmollification1riintegratorPxrVCMnumLightSamples1riintegratorPxrVCMrouletteDepth4riintegratorPxrPathTracerrouletteThreshold02rihiderpixelfiltermodeweightedriintegratorPxrPathTracernumLightSamples0riintegratorPxrUnifiedmanifoldWalk0riintegratorPxrUnifiedphotonVisibilityRod0riintegratorPxrVisualizerwireframeOpacity05riintegratorPxrOcclusionuseAlbedo0riintegratorPxrUnifiedphotonEstimationRadius0riintegratorPxrPathTracernumSpecularSamples1riprojectionPxrCamerafocus1000riintegratorPxrUnifiedenableShadingTimers0riintegratorPxrPathTracernumBxdfSamples1riprojectionPxrCamerafocus2000riprojectionPxrCameradetail0Chromatic_Aberration_folder20rihidermaxsamples0riintegratorPxrVisualizerwireframe1riprojectionPxrCameraroll0riintegratorPxrVCMrouletteThreshold02riprojectionPxrSphereCameravsweep90riintegratorPxrPathTraceraccumOpacity0rilimitstexturememory2097152riintegratorPxrUnifiedallowMultilobeIndirect0riintegratorPxrPathTracerclampLuminance10Vignetting_folder30riintegratorPxrUnifiednumIndirectSamples1rihiderminextrasamples1riintegratorPxrUnifiedmaxIterations10riprojectionPxrCamerashiftY0riintegratorPxrDirectLightingnumBxdfSamples4riintegratorPxrUnifiedphotonVisibilityRodDirectProb0riintegratorPxrUnifiednumLightSamples1riintegratorPxrUnifiedindirectTrainingSamples0riintegratorPxrUnifiedphotonVisibilityRodMax000riprojectionPxrCamerasweepdownriprojectionPxrCamerashiftX0riprojectionPxrCameraassymX0riprojectionnamePxrPerspectiverihiderbluenoise1riintegratorPxrPathTracerrouletteDepth4riprojectionPxrCameraduration1riintegratorPxrVisualizerwireframeWidth1riintegratorPxrUnifiedenableSampleTimers0rihiderdarkfalloff0025riintegratorPxrPathTracermaxContinuationLength1riintegratorPxrOcclusionnumSamples4riintegratorPxrOcclusionmaxDistance0riintegratorPxrPathTracermaxNonStochasticOpacityEvents0riintegratorPxrUnifiedindirectClamp8riintegratorPxrVCMtimeRadius1riintegratorPxrVCMmergeRadius5riintegratorPxrUnifiedphotonVisibilityRodMin000Indirect_Clamping_folder0ridiceoffscreenmultiplier1riintegratorPxrPathTracernumIndirectSamples0riintegratorPxrVCMclampDepth2riintegratorPxrDebugShadingContextviewchannelNnShutter_folder40Lens_Distortion_folder10riintegratorPxrVisualizernormalCheck0riintegratorPxrUnifiedindirectSpatialBlurRadius025riintegratorPxrPathTracerclampDepth2riprojectionPxrCamerasqueeze1riintegratorPxrVCMclampLuminance10riprojectionPxrCamerafovEnd0rihideradaptivemetricvarianceriintegratorPxrUnifiedrouletteDepth1riprojectionPxrCameraaxial000riprojectionPxrCylinderCameravsweep90riprojectionPxrPerspectivefovEnd0riintegratorPxrVisualizerwireframeColor000rihiderextrememotiondof0rihidergeomShadowTermBias1riintegratorPxrUnifiedsuppressNaNs0riintegratorPxrUnifiedtraceLightPaths0riintegratorPxrPathTracerallowCaustics0riprojectionPxrCylinderCamerahsweep360Tilt_Shift_folder00riintegratorPxrUnifiedphotonEstimationNumber64riintegratorPxrVCMphotonGuidingBBoxMin1e301e301e30riprojectionPxrCameraenhance001riintegratorPxrUnifiedindirectDirectionalBlurRadius0rihideradaptall0riprojectionPxrCameranatural0riintegratorPxrOcclusionfalloff0riprojectionPxrCameraradial10rihiderminsamples1riintegratorPxrVCMnumBxdfSamples1riintegratorPxrOcclusioncosineSpread1riintegratorPxrUnifieddirectClamp1e06Russian_Roulette_folder20riintegratorPxrUnifiedemissionMultiplier1riintegratorPxrUnifiedmaxRayDistance10000Vertex_Merging_folder0riprojectionPxrCameraoptical0riprojectionPxrCameraassymY0riprojectionPxrCameratransverse111riintegratorPxrUnifiedenableVolumeCaustics0riprojectionPxrCameratilt0riintegratorPxrVCMphotonGuiding0riintegratorPxrUnifiednumBxdfSamples1riprojectionOmnidirectionalStereointerpupilaryDistance00635riintegratorPxrVisualizermatCapriintegratorPxrUnifiedwalkThreshold0005riintegratorPxrPathTracermaxIndirectBounces0riintegratorPxrVisualizerstyleshadedriintegratorPxrPathTracernumRefractionSamples1riintegratorPxrVCMconnectPaths1rihiderexposurebracket11riintegratorPxrPathTracernumDiffuseSamples1ribucketorderorigin11riprojectionPxrCameraradial20riintegratorPxrVisualizershadedPrimVardisplayColorriintegratorPxrUnifiedrouletteLightDepth1riintegratorPxrDirectLightingnumLightSamples4riintegratornamePxrPathTracerWireframe_Settings_folder0Advanced_folder50riintegratorPxrUnifiedrouletteThreshold02riRiPixelVariance0015riintegratorPxrOcclusiondistribution1folder00_cz0le5da45cga61aia10jea6eo78dc9yia86ja7ig6uma6hn756r9ag8ab0ac9ab7ab4bbvb0bb7adwh9bb1bbxbrbzb2ab1ad6bb8aeni0bb0bbpb2bm3ab7ab5ab6bcwk4bb8ab5bb5bc7ab8bb7bb1ad5bb3bb1ad1ab2abrb8abzb9ac7ac1bbvh8bb3bcsb4bbwb9ac1ab7bb5cb1bb9bb8bd0ag1ab1abqqqb2bb3ab3bb4bbse0cb8ab9ab8cb9ab2ab3ab8bdybzb7bb2ab9bepbxb0bb1cd9ab2ab6ac1abvk9ab0ad9ac6ab3bdxbzb8ab1bb2bb9adsb8bc2bm2ad5cbpb2ab5ab2abrb6ab0bb7aeyb4bb0bfvb2ab1ab5ad6bbzb5ab0bb8cf5ac9ae7bb4ai9bb4abwc6bbtc2ab2bo4bb8bbqpzbqb3bcre0bbh79c4h9szdv0buulrzd4onb56bmpgcx9cmh1s0dw0bvumr0dtp8a40cmphct39ayeee391aeae15al5bcb4a2byb6bya3b0b5a2c1b0au2a5a5abc9b2bx3b1bs0cfg6a0b8a9b8a6bzb7b6bxbzc7b5abc8b3b5abc4a5au1b2a3bzb3b4a1c4bv7bza3b4a0c2c0byc9bbc8a4a4a8at5b6a6b5bya3cyb1b7cxb5a6a2cbc1a2a0c5a5cs0a3b2cyb5a0b4a7a2b4abc3b9a6bbc0a2a1b3b3b2bv2c7bfg6abc8cs5a8a5au9a2b2b1a7b5bya5a4a9abc9b2a8a2bzd9a4b8b1byc7a0ac9bxac5a8c3b9b7a2at7bx3bk27fgag85igug3ckyahcc82l7frst4ahtx1cjc15awa4003dkanlkkknfkjggkkofiyfkktzfkgtfkphhgplknvfkkq1affl3afkglfkjhlkkvfkknjggmkkpfkkptfkgv0afxfkgqfkgofknshfqoknqfkknfkkufknrhkmkfkkxfkntfkjhlkkufknpfkjhlkjh6afflfknkfkjffkgshkphgknnfgolkkxfknpxfkktffqgkkogkjhfkrpfkk4afkkqfkkyfkkxlkjgkkjhfkjhfkfufkfknofkjjfknpfkktffmjknwgkmlfkmmfkn4afkkofkglfkgmfkkx8afeufkntfkglfkwmw1afknmfkk0aiknlfkjifkgpgkjhffpokkofkjglkrhgkohfknplfrfftfkknfkkqfknofkrhyfkkxgkgvxkjilkk4affjfkjifkmifkjifflgkgpfkmnfkkm6afkktfkkp3afkjifkjhfkjllkkvfkjffkgofkkpfkvwkknhgkkojkntfkngmknvfkgnffqkknsfgmlkjifknoskktfkrqfkf7bufkkshcojkmnl71740bgcpa" HdPrmanLoaderRendererPlugin
-sceneviewrenderopts -b "xn__primvarskarmaobjectreflectlimit0primvarskarmaobjectrefractlimit0karmaglobalipr_continuous_dicing0primvarskarmaobjectdiffuselimit0karmaglobalipr_proxy_for_imagefilter2karmaglobalenginecpukarmaglobalcolorlimit10karmahydravariance001karmahydraoverride_lighting0karmaglobalsamplesperpixel9karmaglobalprogressivepasses0karmaglobalipr_proxydepth2karmagloballight_sampling_modeLightTreeprimvarskarmaobjectvolumesteprate025karmaglobalimagemodeProgressivekarmahydraoverride_lighting_menuheadlightkarmaglobaldicingqualityscale1karmaglobalipr_reserve_threads1karmahydradenoise0karmaglobalpathtracedsamples128karmaglobalenable_dof1disableMotionBlur0karmagloballight_sampling_quality1_6kr29eda8pk0dl6aj320a5ab5ab6ab5ab0bbrfvcsd1ab0ab2abzb4am7adun6al3ab4abrb2advbrb7a850a8a9a8a2byazx4a3a5a2a8bzb9a8b6a7au7ayu0bz3g5fs34afagnlfgnigwlfgnig0aighmgljfjlfsigqigsigpiguwfgplgkufxsgtiguifiigskglvigx9873cu9b" BRAY_HdKarma
+sceneviewrenderopts -b "xn__karmaglobalipr_continuous_dicing0karmaglobalimagemodeProgressivekarmaglobalcolorlimit10disableMotionBlur0karmagloballight_sampling_modeLightTreekarmahydraoverride_lighting_menuheadlightkarmahydradenoise0karmaglobalipr_proxy_for_imagefilter2karmaglobalpathtracedsamples128karmahydraoverride_lighting0karmahydravariance001primvarskarmaobjectrefractlimit0karmaglobaldicingqualityscale1primvarskarmaobjectdiffuselimit0karmaglobalipr_reserve_threads1karmaglobalprogressivepasses0primvarskarmaobjectvolumesteprate025karmaglobalsamplesperpixel9primvarskarmaobjectreflectlimit0karmagloballight_sampling_quality1karmaglobalenable_dof1karmaglobalenginecpukarmaglobalipr_proxydepth2_her26fla5ek6aj17bd56y6abunvcrb4am6alrb0bb2ad1absd5ab3ab5ab4ab2ab7ad0ab5ab7abvbrfz950a9azau8b6bu3b7a4ax8a6a8a7a5a2b3a8azbyy2a22i7fn93agawigkuglwigutfxsfiig0aigskfsifjofgnigtlfgniguigslfgplgqlfgnigxiglighmgp9873cu9b" BRAY_HdKarma
 sceneviewrenderopts -b "xn__enable_progressive_render1ignore_subdivision0GI_specular_depth0GI_volume_samples2GI_specular_samples2GI_transmission_depth0GI_diffuse_samples2ignore_shadows0ignore_atmosphere0progressive_min_AA_samples4ignore_displacement0GI_diffuse_depth0auto_transparency_depth10enable_adaptive_sampling0ignore_lights0AA_samples6enable_gpu_rendering0GI_subsurface_samples2GI_transmission_samples2ignore_operators0ignore_motion0GI_volume_depth0GI_total_depth0interactive_target_fps30ignore_shaders0ignore_bump0interactive_fps_min5ignore_dof0ignore_sss0threads1ignore_smoothing0interactive_target_fps_min20ignore_textures0AA_samples_max20_lktzabsbrbrbtbvbsbobrb0abtbqbxcybnbkbubvbxbqbnbpbobwcoblbtbkbkbhbqb0acpbo50zvauuwyvru3awt1a1aqnxy0atqsr0arownnkt4ass5uyol80awavvxzwsv4ayu1a3aroyz1aurts0atpxoolv4aus8579bg4b" HdArnoldRendererPlugin
 networkeditor -p '{\n}\n'performance -c on -d on -f on -g off -j on -k on -m off -n on -o on -t off -v on -p on -y on -u on -e off -r absolute -R seconds -w tree panetab12
 chopview -a 0 -c "" -k 1 -m 1 -b 1 -e 1 -f 0 -g 0 -H 1 -i 0 -j 1 -l 0 -n 1 -V 0 -y 0 -B 0 -s 0 -S 0.034375 -u 0 -v 0 -h -10 310 -r -1.5 1.5 Build.panetab13
@@ -150224,16 +150222,16 @@ imgviewhist -V on -L on -G on -H on -P off -c -1 -h 0 -i on imgview2 13
 imgviewhist -V on -L on -G on -H on -P off -c -1 -h 0 -i on imgview2 14
 imgviewhist -V on -L on -G on -H on -P off -c -1 -h 0 -i on imgview2 15
 imgviewhist -V on -L on -G on -H on -P off -c -1 -h 0 -i on imgview2 16
-panepath -d Solaris -f -p pane1 /stage/iesTest_light
+panepath -d Solaris -f -p pane1 /stage/usd_rop_iesLibPreview
 panepath -d Solaris -f -p panetab9 /stage/
-panepath -d Solaris -f -p panetab10 /stage/iesTest_light
-panepath -d Solaris -f -p panetab8 /stage/iesTest_light
-panepath -d Solaris -f -p panetab7 /stage/iesTest_light
-panepath -d Solaris -f -p panetab11 /stage/iesTest_light
-panepath -d Solaris -f -p panetab1 /stage/iesTest_light
-panepath -d Solaris -f -p panetab3 /stage/iesTest_light
+panepath -d Solaris -f -p panetab10 /stage/usd_rop_iesLibPreview
+panepath -d Solaris -f -p panetab8 /stage/usd_rop_iesLibPreview
+panepath -d Solaris -f -p panetab7 /stage/usd_rop_iesLibPreview
+panepath -d Solaris -f -p panetab11 /stage/usd_rop_iesLibPreview
+panepath -d Solaris -f -p panetab1 /stage/usd_rop_iesLibPreview
+panepath -d Solaris -f -p panetab3 /stage/usd_rop_iesLibPreview
 panepath -d Solaris -f -p panetab4 /stage/
-panepath -d Solaris -f -p panetab2 /stage/iesTest_light
+panepath -d Solaris -f -p panetab2 /stage/usd_rop_iesLibPreview
 desk set Solaris
 viewupdate -u always
 audiopanel -s p ''
@@ -150256,43 +150254,43 @@ audiopanel -f 1
 audiopanel -O 0
 colorsettings -D -A 
 compproject -r 1920 1080 -a 1 -d fp16 -p 0 1 -P full -f 0 -F 0 -l on
-omparm bbox_handle boundingbox /stage/sphere_light "rotate(1)"
-omparm bbox_handle boundingbox /stage/visibleRect_light "invisible(1) rotate(1)"
-omparm barndoor sidefx_barndoor_handle /stage/iesTest_light "invisible(1) handle_parameter_group(10) tx(0) ty(0) tz(0) rx(0) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
-omparm mylight_handle light /stage/iesLibPreview_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
-omparm bbox_handle boundingbox /stage/rect_light "invisible(1) rotate(1)"
-omparm bbox_handle boundingbox /stage/distant_light "invisible(1) rotate(1)"
-omparm bbox_handle boundingbox /stage/disk_light "invisible(1) rotate(1)"
-omparm mycamera_handle camera /stage/camera1 "camera_handletype(2) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) camera_clip(0)"
-omparm brect_handle boundingrect /stage/sphere_light "invisible(1) rotate(1)"
-omparm barndoor sidefx_barndoor_handle /stage/cylinder_light "invisible(1) handle_parameter_group(10) tx(0) ty(1) tz(0) rx(-45.000000000000007) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
-omparm mycamera_handle camera /stage/camera_edit_camera1_visibleRect "camera_handletype(0) camera_gimbal(0) camera_anchor(1) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) camera_clip(0)"
-omparm bbox_handle boundingbox /stage/iesTest_light "rotate(1)"
-omparm mycamera_handle camera /stage/camera_edit_camera1_dome "camera_handletype(0) camera_gimbal(0) camera_anchor(1) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) camera_clip(0)"
-omparm barndoor sidefx_barndoor_handle /stage/sphere_light "invisible(1) handle_parameter_group(10) tx(0) ty(1) tz(0) rx(-45.000000000000007) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
-omparm barndoor sidefx_barndoor_handle /stage/disk_light "invisible(1) handle_parameter_group(10) tx(0) ty(1) tz(0) rx(-45.000000000000007) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
-omparm bbox_handle boundingbox /stage/iesLibPreview_light "rotate(1)"
 omparm mycamera_handle camera /stage/camera_create_iesBottom_iesTest "camera_handletype(0) camera_gimbal(0) camera_anchor(1) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) camera_clip(0)"
-omparm mylight_handle light /stage/iesTest_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
-omparm barndoor sidefx_barndoor_handle /stage/rect_light "invisible(1) handle_parameter_group(10) tx(0) ty(1) tz(0) rx(-45.000000000000007) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
-omparm barndoor sidefx_barndoor_handle /stage/distant_light "invisible(1) handle_parameter_group(10) tx(0) ty(5) tz(0) rx(-90) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
-omparm mycamera_handle camera /stage/camera_create_iesTop_iesTest "camera_handletype(0) camera_gimbal(0) camera_anchor(1) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) camera_clip(0)"
-omparm brect_handle boundingrect /stage/iesLibPreview_light "invisible(1) rotate(1)"
-omparm mylight_handle light /stage/visibleRect_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
-omparm mylight_handle light /stage/cylinder_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
-omparm mylight_handle light /stage/sphere_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
-omparm brect_handle boundingrect /stage/rect_light "rotate(1)"
-omparm mylight_handle light /stage/disk_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
-omparm brect_handle boundingrect /stage/distant_light "invisible(1) rotate(1)"
+omparm bbox_handle boundingbox /stage/disk_light "invisible(1) rotate(1)"
 omparm barndoor sidefx_barndoor_handle /stage/iesLibPreview_light "invisible(1) handle_parameter_group(10) tx(0) ty(1) tz(-0.050000000000000003) rx(0) ry(-90) rz(-90) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
 omparm mylight_handle light /stage/distant_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
-omparm mylight_handle light /stage/rect_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
-omparm brect_handle boundingrect /stage/disk_light "rotate(1)"
+omparm brect_handle boundingrect /stage/rect_light "rotate(1)"
 omparm brect_handle boundingrect /stage/cylinder_light "invisible(1) rotate(1)"
+omparm barndoor sidefx_barndoor_handle /stage/rect_light "invisible(1) handle_parameter_group(10) tx(0) ty(1) tz(0) rx(-45.000000000000007) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
+omparm mycamera_handle camera /stage/camera_edit_camera1_dome "camera_handletype(0) camera_gimbal(0) camera_anchor(1) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) camera_clip(0)"
+omparm bbox_handle boundingbox /stage/rect_light "invisible(1) rotate(1)"
+omparm barndoor sidefx_barndoor_handle /stage/distant_light "invisible(1) handle_parameter_group(10) tx(0) ty(5) tz(0) rx(-90) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
+omparm bbox_handle boundingbox /stage/sphere_light "rotate(1)"
+omparm mylight_handle light /stage/iesTest_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
+omparm brect_handle boundingrect /stage/disk_light "rotate(1)"
+omparm mylight_handle light /stage/iesLibPreview_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
+omparm bbox_handle boundingbox /stage/iesTest_light "rotate(1)"
+omparm barndoor sidefx_barndoor_handle /stage/visibleRect_light "invisible(1) handle_parameter_group(10) tx(0) ty(0) tz(0) rx(0) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
+omparm mycamera_handle camera /stage/camera_create_iesTop_iesTest "camera_handletype(0) camera_gimbal(0) camera_anchor(1) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) camera_clip(0)"
+omparm mylight_handle light /stage/rect_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
+omparm brect_handle boundingrect /stage/iesLibPreview_light "invisible(1) rotate(1)"
+omparm bbox_handle boundingbox /stage/distant_light "invisible(1) rotate(1)"
+omparm barndoor sidefx_barndoor_handle /stage/disk_light "invisible(1) handle_parameter_group(10) tx(0) ty(1) tz(0) rx(-45.000000000000007) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
+omparm mylight_handle light /stage/disk_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
+omparm brect_handle boundingrect /stage/distant_light "invisible(1) rotate(1)"
+omparm bbox_handle boundingbox /stage/iesLibPreview_light "rotate(1)"
+omparm bbox_handle boundingbox /stage/visibleRect_light "invisible(1) rotate(1)"
+omparm mycamera_handle camera /stage/camera_edit_camera1_visibleRect "camera_handletype(0) camera_gimbal(0) camera_anchor(1) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) camera_clip(0)"
+omparm barndoor sidefx_barndoor_handle /stage/sphere_light "invisible(1) handle_parameter_group(10) tx(0) ty(1) tz(0) rx(-45.000000000000007) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
+omparm mylight_handle light /stage/cylinder_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
+omparm brect_handle boundingrect /stage/iesTest_light "invisible(1) rotate(1)"
+omparm barndoor sidefx_barndoor_handle /stage/iesTest_light "invisible(1) handle_parameter_group(10) tx(0) ty(0) tz(0) rx(0) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
+omparm brect_handle boundingrect /stage/sphere_light "invisible(1) rotate(1)"
+omparm mylight_handle light /stage/visibleRect_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
+omparm mycamera_handle camera /stage/camera1 "camera_handletype(2) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) camera_clip(0)"
 omparm brect_handle boundingrect /stage/visibleRect_light "rotate(1)"
 omparm bbox_handle boundingbox /stage/cylinder_light "rotate(1)"
-omparm barndoor sidefx_barndoor_handle /stage/visibleRect_light "invisible(1) handle_parameter_group(10) tx(0) ty(0) tz(0) rx(0) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
-omparm brect_handle boundingrect /stage/iesTest_light "invisible(1) rotate(1)"
+omparm barndoor sidefx_barndoor_handle /stage/cylinder_light "invisible(1) handle_parameter_group(10) tx(0) ty(1) tz(0) rx(-45.000000000000007) ry(0) rz(0) barndoorleft(0) barndoorright(0) barndoortop(0) barndoorbottom(0)"
+omparm mylight_handle light /stage/sphere_light "camera_handletype(0) camera_gimbal(0) camera_anchor(0) keep_world_aligned(0) keep_world_aligned_2(0) globalxformdefault(0) parm_transform(1) focus_handle(1) link_cone(0)"
 texcache  -a off -r 2147483647 2147483647 -m 10000 -M 32728
 shopvisible +I3D +VMantra +RIB
 

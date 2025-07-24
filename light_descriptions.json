@@ -1361,21 +1361,11 @@
                         "30": 2.0
                     }
                 }
-            },
-            {
-                "frames": [
-                    31,
-                    31
-                ],
-                "non_default_constants": {
-                    "inputs:intensity": 1000.0
-                },
-                "varying": {}
             }
         ],
         "frames": [
             1,
-            31
+            30
         ],
         "usd_path": "usd/iesLibPreview.usda"
     },
@@ -1488,21 +1478,11 @@
                         "30": 2.0
                     }
                 }
-            },
-            {
-                "frames": [
-                    31,
-                    31
-                ],
-                "non_default_constants": {
-                    "inputs:intensity": 1000.0
-                },
-                "varying": {}
             }
         ],
         "frames": [
             1,
-            31
+            30
         ],
         "usd_path": "usd/iesTest.usda"
     },

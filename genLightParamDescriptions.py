@@ -56,7 +56,6 @@ SUMMARY_OVERRIDES = {
         FrameRange(1, 1): "ies:angleScale=0 ref",
         FrameRange(11, 11): "ies:angleScale=0 ref",
         FrameRange(21, 21): "ies:angleScale=0 ref",
-        FrameRange(31, 31): "no ies:file ref",
     },
     "visibleRect": {
         FrameRange(1, 5): "light rotate Y from 0 to 80",
