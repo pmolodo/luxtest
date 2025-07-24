@@ -43,8 +43,7 @@ MISSING = object()
 
 AREA_LIGHT_SUMMARY_OVERRIDES = {
     FrameRange(1, 5): "light rotate worldZ from 0 to 60",
-    FrameRange(26, 30): "light rotate under shear + nonuniform scale",
-    FrameRange(46, 50): "focusTint from black to green to white",
+    FrameRange(41, 45): "focusTint from black to green to white",
 }
 
 SUMMARY_OVERRIDES = {

@@ -31,7 +31,7 @@ set -g JOB = 'C:/Users/alanglands/Desktop/light_comparison'
 set -g PI = '3.1415926535897932384'
 set -g POSE = 'C:/Users/alanglands/Documents/houdini19.5/poselib'
 set -g _HIP_SAVEPLATFORM = 'windows-x86_64-cl19.35'
-set -g _HIP_SAVETIME = 'Wed Jul 23 22:12:28 2025'
+set -g _HIP_SAVETIME = 'Wed Jul 23 23:16:36 2025'
 set -g _HIP_SAVEVERSION = '20.5.445'
 set -g status = '0'
 
@@ -138,21 +138,21 @@ Content-Disposition: attachment; filename=".OPdummydefs"
 Content-Type: application/octet-stream
 Content-Transfer-Encoding: base64
 
-SU5EWAAAAAAAAAAAAAAACwAAAA1JTkRFWF9TRUNUSU9OAAAAAAAABftogcC8AAAAEmhvdWRpbmkuaGRhbGlicmFyeQAABfsAAAAAaIHAvAAAAApMb3AvY2FtZXJhAAAF+wAAjSlogb/LAAAAD0xvcC9jcmVhdGV4Zm9ybQAAkyQ=
+SU5EWAAAAAAAAAAAAAAACwAAAA1JTkRFWF9TRUNUSU9OAAAAAAAABftogc/EAAAAEmhvdWRpbmkuaGRhbGlicmFyeQAABfsAAAAAaIHPxAAAAApMb3AvY2FtZXJhAAAF+wAAjSlogb/LAAAAD0xvcC9jcmVhdGV4Zm9ybQAAkyQ=
 AAAnSmiBv8sAAAAVTG9wL2Rpc3RhbnRsaWdodDo6Mi4wAAC6bgAAu85ogb/LAAAAEkxvcC9kb21lbGlnaHQ6OjIuMAABdjwAAGv8aIG/ywAAAA5Mb3AvbGlnaHQ6OjIuMAAB4jgAANtUaIG/ywAAABJUb3AvbG9jYWxzY2hlZHU=
 bGVyAAK9jAAATJJogb/LAAAAGkxvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzAAMKHgAAEDlogb/LAAAADUxvcC9zb3BjcmVhdGUAAxpXAACI+miBv8oAAAAVVm9wL3VzZHByZXZpZXdzdXJmYWNlAAOjUQAAEkZogb/KAAAACQA=
 AAAEAAAABmNhbWVyYQAAAAZDYW1lcmEAAAAcb3BsaWI6L0xvcC9jYW1lcmE/TG9wL2NhbWVyYQAAAApMT1BfY2FtZXJhAAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAE3N1YnR5cGU9cHJvcGVkaXRvciAAAAAAAAAAAWg=
-gcC8AAEAAAAABAAAAAtjcmVhdGV4Zm9ybQAAAAVYZm9ybQAAACZvcGxpYjovTG9wL2NyZWF0ZXhmb3JtP0xvcC9jcmVhdGV4Zm9ybQAAAA9MT1BfY3JlYXRleGZvcm0AAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3U=
-YnR5cGU9cHJvcGVkaXRvciAAAAAAAAAAAWiBwLwAAQAAAAAEAAAAEWRpc3RhbnRsaWdodDo6Mi4wAAAADURpc3RhbnQgTGlnaHQAAAAyb3BsaWI6L0xvcC9kaXN0YW50bGlnaHQ6OjIuMD9Mb3AvZGlzdGFudGxpZ2h0OjoyLjA=
-AAAAEExPUF9kaXN0YW50bGlnaHQAAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3VidHlwZT1wcm9wZWRpdG9yIAAAAAAAAAABaIHAvAABAAAAAAQAAAAOZG9tZWxpZ2h0OjoyLjAAAAAKRG9tZSBMaWdodAAAACxvcGw=
-aWI6L0xvcC9kb21lbGlnaHQ6OjIuMD9Mb3AvZG9tZWxpZ2h0OjoyLjAAAAANTE9QX2RvbWVsaWdodAAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAAAAAAFogcC8AAEAAAAABAA=
+gc/EAAEAAAAABAAAAAtjcmVhdGV4Zm9ybQAAAAVYZm9ybQAAACZvcGxpYjovTG9wL2NyZWF0ZXhmb3JtP0xvcC9jcmVhdGV4Zm9ybQAAAA9MT1BfY3JlYXRleGZvcm0AAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3U=
+YnR5cGU9cHJvcGVkaXRvciAAAAAAAAAAAWiBz8QAAQAAAAAEAAAAEWRpc3RhbnRsaWdodDo6Mi4wAAAADURpc3RhbnQgTGlnaHQAAAAyb3BsaWI6L0xvcC9kaXN0YW50bGlnaHQ6OjIuMD9Mb3AvZGlzdGFudGxpZ2h0OjoyLjA=
+AAAAEExPUF9kaXN0YW50bGlnaHQAAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3VidHlwZT1wcm9wZWRpdG9yIAAAAAAAAAABaIHPxAABAAAAAAQAAAAOZG9tZWxpZ2h0OjoyLjAAAAAKRG9tZSBMaWdodAAAACxvcGw=
+aWI6L0xvcC9kb21lbGlnaHQ6OjIuMD9Mb3AvZG9tZWxpZ2h0OjoyLjAAAAANTE9QX2RvbWVsaWdodAAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAAAAAAFogc/EAAEAAAAABAA=
 AAAKbGlnaHQ6OjIuMAAAAAVMaWdodAAAACRvcGxpYjovTG9wL2xpZ2h0OjoyLjA/TG9wL2xpZ2h0OjoyLjAAAAAJTE9QX2xpZ2h0AAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAE3N1YnR5cGU9cHJvcGVkaXRvciAAAAA=
-AAAAAAFogcC8AAEAAAAABQAAAA5sb2NhbHNjaGVkdWxlcgAAAA9Mb2NhbCBTY2hlZHVsZXIAAAAsb3BsaWI6L1RvcC9sb2NhbHNjaGVkdWxlcj9Ub3AvbG9jYWxzY2hlZHVsZXIAAAASVE9QX2xvY2Fsc2NoZWR1bGVyAAAAAAA=
-AAAAAAAAA1RvcAAAAAAAAAAAAAAAAAAAADxwZGd0eXBlPSdzY2hlZHVsZXInIHN1YnR5cGU9bG9jYWxzY2hlZHVsZXIgdmlzaWJsZW91dHB1dHM9MCAAAAAAAAAAAGiBwLwAAQAAAAAAAAAABAAAABZyZW5kZXJnZW9tZXRyeXM=
+AAAAAAFogc/EAAEAAAAABQAAAA5sb2NhbHNjaGVkdWxlcgAAAA9Mb2NhbCBTY2hlZHVsZXIAAAAsb3BsaWI6L1RvcC9sb2NhbHNjaGVkdWxlcj9Ub3AvbG9jYWxzY2hlZHVsZXIAAAASVE9QX2xvY2Fsc2NoZWR1bGVyAAAAAAA=
+AAAAAAAAA1RvcAAAAAAAAAAAAAAAAAAAADxwZGd0eXBlPSdzY2hlZHVsZXInIHN1YnR5cGU9bG9jYWxzY2hlZHVsZXIgdmlzaWJsZW91dHB1dHM9MCAAAAAAAAAAAGiBz8QAAQAAAAAAAAAABAAAABZyZW5kZXJnZW9tZXRyeXM=
 ZXR0aW5ncwAAABhSZW5kZXIgR2VvbWV0cnkgU2V0dGluZ3MAAAA8b3BsaWI6L0xvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzP0xvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzAAAAGkxPUF9yZW5kZXJnZW9tZXRyeXNldHRpbmc=
-cwAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAQAAAAFogcC8AAEAAAAABAAAAAlzb3BjcmVhdGUAAAAKU09QIENyZWF0ZQAAACJvcGxpYjovTG9wL3NvcGNyZWF0ZT9Mb3Avc28=
-cGNyZWF0ZQAAAA1MT1Bfc29wY3JlYXRlAAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABaIHAvAEBAAAAAAQAAAARdXNkcHJldmlld3N1cmZhY2UAAAATVVNEIFByZXZpZXcgU3VyZmFjZQAAADJvcGxpYjo=
-L1ZvcC91c2RwcmV2aWV3c3VyZmFjZT9Wb3AvdXNkcHJldmlld3N1cmZhY2UAAAAVVk9QX3VzZHByZXZpZXdzdXJmYWNlAAAAAAAAAAAAAAADVm9wAAAAAAAAAAAAAAAAAAAAA3VzZAAAAAAAAAAAaIHAvAABAElORFgAAAAAAAA=
+cwAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAQAAAAFogc/EAAEAAAAABAAAAAlzb3BjcmVhdGUAAAAKU09QIENyZWF0ZQAAACJvcGxpYjovTG9wL3NvcGNyZWF0ZT9Mb3Avc28=
+cGNyZWF0ZQAAAA1MT1Bfc29wY3JlYXRlAAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABaIHPxAEBAAAAAAQAAAARdXNkcHJldmlld3N1cmZhY2UAAAATVVNEIFByZXZpZXcgU3VyZmFjZQAAADJvcGxpYjo=
+L1ZvcC91c2RwcmV2aWV3c3VyZmFjZT9Wb3AvdXNkcHJldmlld3N1cmZhY2UAAAAVVk9QX3VzZHByZXZpZXdzdXJmYWNlAAAAAAAAAAAAAAADVm9wAAAAAAAAAAAAAAAAAAAAA3VzZAAAAAAAAAAAaIHPxAABAElORFgAAAAAAAA=
 AAAAAAABAAAADERpYWxvZ1NjcmlwdAAAAAAAAIz9ZzOJKCMgRGlhbG9nIHNjcmlwdCBmb3IgY2FtZXJhIGF1dG9tYXRpY2FsbHkgZ2VuZXJhdGVkCgp7CiAgICBuYW1lCWNhbWVyYQogICAgc2NyaXB0CWNhbWVyYQogICAgbGE=
 YmVsCUNhbWVyYQoKICAgIGhlbHAgewoJIiIKICAgIH0KCiAgICBpbnB1dGxhYmVsCTEJIklucHV0IFN0YWdlIgoKICAgIGdyb3VwY29sbGFwc2libGUgewogICAgICAgIG5hbWUgICAgInNhbXBsZV9ncm91cDIiCiAgICAgICA=
 IGxhYmVsICAgIkZyYW1lIFJhbmdlL1N1YmZyYW1lcyIKICAgICAgICBwYXJtdGFnIHsgInNpZGVmeDo6aGVhZGVyX3Bhcm0iICJzYW1wbGVfYmVoYXZpb3IiIH0KCiAgICAgICAgcGFybSB7CiAgICAgICAgICAgIG5hbWUgICA=
@@ -2175,7 +2175,7 @@ inputs
 stat
 {
   create 1680755038
-  modify 1753333929
+  modify 1753337788
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -2754,13 +2754,13 @@ text "1-5: light rotate worldZ from 0 to 60 (intensity=5)
 11-15: width from .2 to 2 (intensity=5, normalize=on)
 16-20: colorTemperature from 2000 to 11000 (enableColorTemperature=on, intensity=5, width=2)
 21-25: cone:angle from 170 to 10 (intensity=125, width=2)
-26-30: light rotate under shear + nonuniform scale (intensity=125, cone:angle=170, focus=2, focusTint=blue, width=2)
-31-35: cone:softness from 0 to 1 (intensity=5, cone:angle=45, width=2)
-36-40: focus from 0 to 5 (intensity=5, width=2)
-41-45: focus from 0 to 5 (intensity=5, cone:angle=60, focusTint=red, width=2)
-46-50: focusTint from black to green to white (intensity=5, focus=3, width=2)
-51-59: ies:angleScale from -2 to 2 (exposure=-11, intensity=5, ies:file='ies/bega_omni002_4777lm.ies', width=2)
-60-68: ies:angleScale from -2 to 2 (ies:file='ies/bega_omni002_4777lm.ies', ies:normalize=on, width=2)"
+26-30: cone:softness from 0 to 1 (intensity=5, cone:angle=45, width=2)
+31-34: focus from 0 to 3.8 (intensity=5, width=2)
+35-35: (constant)
+36-40: focus from 0 to 5 (intensity=5, cone:angle=60, focusTint=red, width=2)
+41-45: focusTint from black to green to white (intensity=5, focus=3, width=2)
+46-54: ies:angleScale from -2 to 2 (exposure=-11, intensity=5, ies:file='ies/bega_omni002_4777lm.ies', width=2)
+55-63: ies:angleScale from -2 to 2 (ies:file='ies/bega_omni002_4777lm.ies', ies:normalize=on, width=2)"
 position -95.197 -40.6149
 size 52.127 17.5001
 textsize 1
@@ -2768,7 +2768,7 @@ flags = minimize off
 stat
 {
   create 1686112034
-  modify 1752177356
+  modify 1753337785
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -2797,13 +2797,13 @@ text "1-5: light rotate worldZ from 0 to 60 (intensity=5)
 11-15: radius from .1 to .5 (intensity=5, normalize=on)
 16-20: colorTemperature from 2000 to 11000 (enableColorTemperature=on, intensity=5)
 21-25: cone:angle from 170 to 10 (intensity=125, radius=.1)
-26-30: light rotate under shear + nonuniform scale (intensity=125, radius=.1, cone:angle=170, focus=2, focusTint=blue)
-31-35: cone:softness from 0 to 1 (intensity=5, cone:angle=45)
-36-40: focus from 0 to 5 (intensity=5)
-41-45: focus from 0 to 5 (intensity=5, cone:angle=60, focusTint=red)
-46-50: focusTint from black to green to white (intensity=5, focus=3)
-51-59: ies:angleScale from -2 to 2 (exposure=-11, intensity=5, ies:file='ies/bega_omni002_4777lm.ies')
-60-68: ies:angleScale from -2 to 2 (ies:file='ies/bega_omni002_4777lm.ies', ies:normalize=on)"
+26-30: cone:softness from 0 to 1 (intensity=5, cone:angle=45)
+31-34: focus from 0 to 3.8 (intensity=5)
+35-35: (constant)
+36-40: focus from 0 to 5 (intensity=5, cone:angle=60, focusTint=red)
+41-45: focusTint from black to green to white (intensity=5, focus=3)
+46-54: ies:angleScale from -2 to 2 (exposure=-11, intensity=5, ies:file='ies/bega_omni002_4777lm.ies')
+55-63: ies:angleScale from -2 to 2 (ies:file='ies/bega_omni002_4777lm.ies', ies:normalize=on)"
 position -83.9554 -63.3532
 size 47.6087 18.3597
 textsize 1
@@ -2811,7 +2811,7 @@ flags = minimize off
 stat
 {
   create 1686112034
-  modify 1752177356
+  modify 1753337785
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -2840,13 +2840,13 @@ text "1-5: light rotate worldZ from 0 to 60 (intensity=5)
 11-15: radius from .1 to .5 (intensity=5, normalize=on)
 16-20: colorTemperature from 2000 to 11000 (enableColorTemperature=on, intensity=5)
 21-25: cone:angle from 170 to 10 (intensity=125, radius=.1)
-26-30: light rotate under shear + nonuniform scale (intensity=125, radius=.1, cone:angle=170, focus=2, focusTint=blue)
-31-35: cone:softness from 0 to 1 (intensity=5, cone:angle=45)
-36-40: focus from 0 to 5 (intensity=5)
-41-45: focus from 0 to 5 (intensity=5, cone:angle=60, focusTint=red)
-46-50: focusTint from black to green to white (intensity=5, focus=3)
-51-59: ies:angleScale from -2 to 2 (exposure=-11, intensity=5, ies:file='ies/bega_omni002_4777lm.ies')
-60-68: ies:angleScale from -2 to 2 (ies:file='ies/bega_omni002_4777lm.ies', ies:normalize=on)"
+26-30: cone:softness from 0 to 1 (intensity=5, cone:angle=45)
+31-34: focus from 0 to 3.8 (intensity=5)
+35-35: (constant)
+36-40: focus from 0 to 5 (intensity=5, cone:angle=60, focusTint=red)
+41-45: focusTint from black to green to white (intensity=5, focus=3)
+46-54: ies:angleScale from -2 to 2 (exposure=-11, intensity=5, ies:file='ies/bega_omni002_4777lm.ies')
+55-63: ies:angleScale from -2 to 2 (ies:file='ies/bega_omni002_4777lm.ies', ies:normalize=on)"
 position -88.1632 -85.4452
 size 45.6695 18.0734
 textsize 1
@@ -2854,7 +2854,7 @@ flags = minimize off
 stat
 {
   create 1686112034
-  modify 1752177356
+  modify 1753337785
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -2883,13 +2883,13 @@ text "1-5: light rotate worldZ from 0 to 60 (intensity=5)
 11-15: radius from .1 to .5 (intensity=5, normalize=on)
 16-20: colorTemperature from 2000 to 11000 (enableColorTemperature=on, intensity=5)
 21-25: cone:angle from 170 to 10 (intensity=125, radius=.1)
-26-30: light rotate under shear + nonuniform scale (intensity=125, radius=.1, cone:angle=170, focus=2, focusTint=blue)
-31-35: cone:softness from 0 to 1 (intensity=5, cone:angle=45)
-36-40: focus from 0 to 5 (intensity=5)
-41-45: focus from 0 to 5 (intensity=5, cone:angle=60, focusTint=red)
-46-50: focusTint from black to green to white (intensity=5, focus=3)
-51-59: ies:angleScale from -2 to 2 (exposure=-11, intensity=5, ies:file='ies/bega_omni002_4777lm.ies')
-60-68: ies:angleScale from -2 to 2 (ies:file='ies/bega_omni002_4777lm.ies', ies:normalize=on)"
+26-30: cone:softness from 0 to 1 (intensity=5, cone:angle=45)
+31-34: focus from 0 to 3.8 (intensity=5)
+35-35: (constant)
+36-40: focus from 0 to 5 (intensity=5, cone:angle=60, focusTint=red)
+41-45: focusTint from black to green to white (intensity=5, focus=3)
+46-54: ies:angleScale from -2 to 2 (exposure=-11, intensity=5, ies:file='ies/bega_omni002_4777lm.ies')
+55-63: ies:angleScale from -2 to 2 (ies:file='ies/bega_omni002_4777lm.ies', ies:normalize=on)"
 position -89.8932 -106.837
 size 46.8295 18.4746
 textsize 1
@@ -2897,7 +2897,7 @@ flags = minimize off
 stat
 {
   create 1686112034
-  modify 1752177356
+  modify 1753337785
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -18225,7 +18225,7 @@ inputs
 stat
 {
   create 1680838012
-  modify 1752175123
+  modify 1753337534
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -18241,7 +18241,6 @@ Content-Type: text/plain
     groupcollapsible {
         name    "sample_group3"
         label   "Frame Range/Subframes"
-        grouptag { "group_type" "collapsible" }
         parmtag { "sidefx::header_parm" "sample_behavior" }
         grouptag { "sidefx::switcher" "sample_group2" }
 
@@ -18267,7 +18266,6 @@ Content-Type: text/plain
             name    "sample_subframegroup3"
             label   "Subframe Sampling"
             disablewhen "{ sample_subframeenable == 0 }"
-            grouptag { "group_type" "simple" }
             parmtag { "sidefx::header_toggle" "sample_subframeenable" }
             grouptag { "sidefx::switcher" "sample_subframegroup2" }
 
@@ -18437,6 +18435,7 @@ Content-Type: text/plain
         name    "folder_transform5"
         label   "Transform"
         parmtag { "group_default" "1" }
+        grouptag { "sidefx::switcher" "folder_transform" }
 
         parm {
             name    "xn__xformOptransform_control_6fb"
@@ -18512,7 +18511,7 @@ Content-Type: text/plain
             name    "pivotxform2"
             label   "Pivot Transform"
             disablewhen "{ xn__xformOptransform_control_6fb == block } { xn__xformOptransform_control_6fb == none }"
-            grouptag { "group_type" "collapsible" }
+            grouptag { "sidefx::switcher" "pivotxform" }
 
             parm {
                 name    "p"
@@ -18531,7 +18530,8 @@ Content-Type: text/plain
         groupcollapsible {
             name    "folder1"
             label   "Constraints"
-            grouptag { "group_type" "collapsible" }
+            disablewhen "{ xn__xformOptransform_control_6fb == block } { xn__xformOptransform_control_6fb == none }"
+            grouptag { "sidefx::switcher" "folder0" }
 
             parm {
                 name    "lookatenable"
@@ -18543,6 +18543,7 @@ Content-Type: text/plain
                 name    "keepposition"
                 baseparm
                 label   "Keep Position"
+                invisible
                 export  none
             }
             parm {
@@ -18596,7 +18597,6 @@ Content-Type: text/plain
     group {
         name    "folder_transform5_1"
         label   "Base Properties"
-        grouptag { "group_default" "1" }
 
         parm {
             name    "xn__inputsintensity_control_jeb"
@@ -18743,6 +18743,18 @@ Content-Type: text/plain
             export  none
         }
         parm {
+            name    "xn__houdiniclippingRange_control_pmb"
+            baseparm
+            label   "Clipping Range"
+            export  none
+        }
+        parm {
+            name    "xn__houdiniclippingRange_o8a"
+            baseparm
+            label   "Clipping Range"
+            export  none
+        }
+        parm {
             name    "xn__inputsnormalize_control_jeb"
             baseparm
             label   "Normalize"
@@ -18819,7 +18831,6 @@ Content-Type: text/plain
     group {
         name    "folder_transform5_2"
         label   "Shaping"
-        grouptag { "group_default" "1" }
 
         parm {
             name    "spotlightenable"
@@ -19031,7 +19042,6 @@ Content-Type: text/plain
     group {
         name    "folder_transform5_3"
         label   "Shadow"
-        grouptag { "group_default" "1" }
 
         parm {
             name    "xn__inputsshadowenable_control_fjbg"
@@ -19095,10 +19105,17 @@ Content-Type: text/plain
         }
     }
 
+    parm {
+        name    "handlefocus"
+        baseparm
+        label   "Handle Focus"
+        invisible
+        export  none
+    }
     group {
         name    "folder_transform5_4"
         label   "Arnold"
-        grouptag { "group_default" "1" }
+        parmtag { "group_default" "1" }
 
         groupcollapsible {
             name    "arnold_light_group"
@@ -19741,7 +19758,7 @@ Content-Type: text/plain
     }
 
     group {
-        name    "folder_transform5_5"
+        name    "folder_transform5_4_1"
         label   "Karma"
         grouptag { "group_default" "1" }
 
@@ -20153,25 +20170,6 @@ Content-Type: text/plain
 
     }
 
-    parm {
-        name    "handlefocus"
-        baseparm
-        label   "Handle Focus"
-        invisible
-        export  none
-    }
-    parm {
-        name    "xn__houdiniclippingRange_control_pmb"
-        baseparm
-        label   "Clipping Range"
-        export  none
-    }
-    parm {
-        name    "xn__houdiniclippingRange_o8a"
-        baseparm
-        label   "Clipping Range"
-        export  none
-    }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="stage/sphere_light.chn"
@@ -20359,7 +20357,6 @@ return xform.extractRotates()[2]
     channel xn__inputsintensity_i0a {
       lefttype = extend
       righttype = extend
-      default = 125
       flags = 0
       start = 0.79166666666666663
       segment { options = {	 untie  is os ia oa }
@@ -20368,14 +20365,14 @@ return xform.extractRotates()[2]
 	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.37499999999999994 value = 125 125 accel = 0.12499999999999997 0.12499999999999997 expr = linear() }
+	 length = 0.16666666666666669 value = 125 125 accel = 0.055555555555555559 0.055555555555555559 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
 	 length = 0.041666666666666699 value = 125 5 slope = -2879.9999999999977 -2879.9999999999977 accel = 40.000002411265356 40.000002411265356
 	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 1.1666666666666665 value = 5 5 accel = 0.38888888888888884 0.38888888888888884 expr = linear() }
+	 length = 1.1666666666666663 value = 5 5 accel = 0.38888888888888873 0.38888888888888873 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
 	 length = 0.041666666666666963 value = 5 1 slope = -95.999999999999318 -95.999999999999318 accel = 1.3334056693341099 1.3334056693341099
@@ -20388,17 +20385,17 @@ return xform.extractRotates()[2]
       lefttype = extend
       righttype = extend
       flags = 0
-      start = 2.0416666666666665
+      start = 1.8333333333333333
       segment { options = {	 untie  is os ia oa autoslope  ai }
 
-	 length = 0.041666666666666963 value = 0 -11 slope = 0 -263.99999999999812 accel = 0.013888888888888987 3.6666929712861167
+	 length = 0.041666666666666741 value = 0 -11 slope = 0 -263.99999999999812 accel = 0.013888888888888912 3.6666929712860981
 	 expr = bezier() }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.33333333333333304 value = -11 -11 accel = 0.11111111111111101 0.11111111111111101 expr = linear() }
+	 length = 0.33333333333333348 value = -11 -11 accel = 0.11111111111111116 0.11111111111111116 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.041666666666666963 value = -11 0 slope = 263.99999999999812 263.99999999999812 accel = 3.6666929712861167 3.6666929712861167
+	 length = 0.041666666666666519 value = -11 0 slope = 264.00000000000097 264.00000000000097 accel = 3.6666929712861172 3.6666929712861172
 	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
@@ -20449,7 +20446,6 @@ return xform.extractRotates()[2]
     channel xn__inputsradius_mva {
       lefttype = extend
       righttype = extend
-      default = 0.5
       flags = 0
       start = 0.16666666666666666
       segment { options = {	 untie  is os ia oa }
@@ -20477,10 +20473,10 @@ return xform.extractRotates()[2]
 	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.37499999999999994 value = 0.10000000000000001 0.10000000000000001 accel = 0.12499999999999997 0.12499999999999997 expr = linear() }
+	 length = 0.16666666666666674 value = 0.10000000000000001 0.10000000000000001 accel = 0.05555555555555558 0.05555555555555558 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.041666666666666699 value = 0.10000000000000001 0.5 slope = 9.5999999999999925 9.5999999999999925 accel = 0.13405476124459614 0.13405476124459614
+	 length = 0.041666666666666741 value = 0.10000000000000001 0.5 slope = 9.5999999999999837 9.5999999999999837 accel = 0.13405476124459614 0.13405476124459614
 	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
@@ -20489,7 +20485,6 @@ return xform.extractRotates()[2]
     channel xn__inputsnormalize_i0a {
       lefttype = extend
       righttype = extend
-      default = 1
       flags = 0
       start = 0.375
       segment { options = {	 untie  is os ia oa }
@@ -20510,7 +20505,6 @@ return xform.extractRotates()[2]
     channel xn__inputsshapingconeangle_wcbhe {
       lefttype = extend
       righttype = extend
-      default = 170
       flags = 0
       start = 0.79166666666666663
       segment { options = {	 untie  is os ia oa }
@@ -20523,14 +20517,7 @@ return xform.extractRotates()[2]
 	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.041666666666666741 value = 10 170 slope = 3839.9999999999932 3839.9999999999932 accel = 53.333335141782371 53.333335141782371
-	 expr = linear() }
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0.16666666666666652 value = 170 170 accel = 0.055555555555555504 0.055555555555555504 expr = linear() }
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0.041666666666666734 value = 170 45 slope = -2999.999999999995 -2999.999999999995 accel = 41.666668981481415 41.666668981481415
+	 length = 0.041666666666666741 value = 10 45 slope = 839.99999999999852 839.99999999999852 accel = 11.666674933859504 11.666674933859504
 	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
@@ -20561,9 +20548,8 @@ return xform.extractRotates()[2]
     channel xn__inputsshapingconesoftness_shbhe {
       lefttype = extend
       righttype = extend
-      default = 1
       flags = 0
-      start = 1.25
+      start = 1.0416666666666667
       segment { options = {	 untie  is os ia oa }
 
 	 length = 0.16666666666666652 value = 0 1 slope = 6.0000000000000053 6.0000000000000053 accel = 0.3379312516832344 0.3379312516832344
@@ -20580,29 +20566,15 @@ return xform.extractRotates()[2]
       lefttype = extend
       righttype = extend
       flags = 0
-      start = 1
+      start = 1.25
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.041666666666666741 value = 0 2 slope = 47.999999999999915 47.999999999999915 accel = 0.66681132689765565 0.66681132689765565
-	 expr = linear() }
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0.16666666666666652 value = 2 2 accel = 0.055555555555555504 0.055555555555555504 expr = linear() }
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0.041666666666666741 value = 2 0 slope = -47.999999999999915 -47.999999999999915 accel = 0.66681132689765565 0.66681132689765565
-	 expr = linear() }
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0.20833333333333326 accel = 0.06944444444444442 0.06944444444444442 expr = linear() }
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0.16666666666666674 value = 0 5 slope = 29.999999999999986 29.999999999999986 accel = 1.6675923355337372 1.6675923355337372
+	 length = 0.16666666666666652 value = 0 5 slope = 30.000000000000028 30.000000000000028 accel = 1.6675923355337372 1.6675923355337372
 	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
 	 length = 0.041666666666666741 value = 5 0 slope = -119.99999999999979 -119.99999999999979 accel = 1.6667245360323777 1.6667245360323777
-	 expr = linear() }
+	 expr = 0 }
       segment { options = {	 untie  is os ia oa }
 
 	 length = 0.16666666666666674 value = 0 5 slope = 29.999999999999986 29.999999999999986 accel = 1.6675923355337372 1.6675923355337372
@@ -20626,10 +20598,10 @@ return xform.extractRotates()[2]
       lefttype = extend
       righttype = extend
       flags = 0
-      start = 1.625
+      start = 1.4166666666666667
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.041666666666666519 value = 0 1 slope = 24.000000000000085 24.000000000000085 accel = 0.33362255970734206 0.33362255970734206
+	 length = 0.041666666666666297 value = 0 1 slope = 24.000000000000213 24.000000000000213 accel = 0.333622559707342 0.333622559707342
 	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
@@ -20657,10 +20629,10 @@ return xform.extractRotates()[2]
       lefttype = extend
       righttype = extend
       flags = 0
-      start = 1.875
+      start = 1.6666666666666667
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.083333333333333481 value = 0 1 slope = 11.999999999999979 11.999999999999979 accel = 0.33448873829978598 0.33448873829978598
+	 length = 0.083333333333333259 value = 0 1 slope = 12.000000000000011 12.000000000000011 accel = 0.33448873829978598 0.33448873829978598
 	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
@@ -20676,23 +20648,8 @@ return xform.extractRotates()[2]
     channel xn__inputsshapingfocusTint_wcbhb {
       lefttype = extend
       righttype = extend
-      default = 1
       flags = 0
-      start = 1
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0.041666666666666741 value = 0 1 slope = 23.999999999999957 23.999999999999957 accel = 0.333622559707342 0.333622559707342
-	 expr = linear() }
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0.16666666666666652 value = 1 1 accel = 0.055555555555555504 0.055555555555555504 expr = linear() }
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0.041666666666666741 value = 1 0 slope = -23.999999999999957 -23.999999999999957 accel = 0.333622559707342 0.333622559707342
-	 expr = linear() }
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0.625 accel = 0.20833333333333331 0.20833333333333331 expr = linear() }
+      start = 1.6666666666666665
       segment { options = {	 untie  is os ia oa }
 
 	 length = 0.083333333333333481 accel = 0.027777777777777825 0.027777777777777825 expr = linear() }
@@ -20713,10 +20670,10 @@ return xform.extractRotates()[2]
       righttype = extend
       defaultString = \"$HIP/ies/bega_omni002_4777lm.ies\"
       flags = 0
-      start = 2.0416666666666665
+      start = 1.8333333333333333
       segment { options = {	 untie  is ia autoslope  ao }
 
-	 length = 0.041666666666666963 accel = 0.013888888888888987 0.013888888888888987 expr = \"\" }
+	 length = 0.041666666666666741 accel = 0.013888888888888912 0.013888888888888912 expr = \"\" }
       segment { options = {	 untie  os oa autoslope  ai }
 
 	 length = 0 accel = 0.33333333333333331 0.33333333333333331 expr = \"$HIP/ies/bega_omni002_4777lm.ies\" }
@@ -20724,9 +20681,8 @@ return xform.extractRotates()[2]
     channel xn__inputsshapingiesnormalize_shbhd {
       lefttype = extend
       righttype = extend
-      default = 1
       flags = 0
-      start = 2.4166666666666856
+      start = 2.2083333333333526
       segment { options = {	 untie  is os ia oa }
 
 	 length = 0.041666666666666519 value = 0 1 slope = 24.000000000000085 24.000000000000085 accel = 0.33362255970734206 0.33362255970734206
@@ -20739,35 +20695,35 @@ return xform.extractRotates()[2]
       lefttype = extend
       righttype = extend
       flags = 0
-      start = 2.0416666666666665
-      segment { options = {	 untie  is os ia oa autoslope  ai }
-
-	 length = 0.041666666666666963 value = 0 -2 slope = 0 -23.999999999999829 accel = 0.013888888888888987 0.333622559707342
-	 expr = bezier() }
+      start = 1.8333333333333333
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.16666666666666652 value = -2 0 slope = 12.000000000000011 12.000000000000011 accel = 0.66897747659957196 0.66897747659957196
+	 length = 0.041666666666666741 value = 0 -2 slope = -47.999999999999915 -47.999999999999915 accel = 0.66681132689765565 0.66681132689765565
 	 expr = linear() }
-      segment { options = {	 untie  is os ia oa autoslope  ai }
+      segment { options = {	 untie  is os ia oa }
 
-	 length = 0.16666666666666652 value = 0 2 slope = 12.000000000000011 12.000000000000011 accel = 0.66897747659957196 0.66897747659957185
-	 expr = bezier() }
+	 length = 0.16666666666666696 value = -2 0 slope = 11.999999999999979 11.999999999999979 accel = 0.66897747659957196 0.66897747659957196
+	 expr = linear() }
+      segment { options = {	 untie  is os ia oa }
+
+	 length = 0.16666666666666607 value = 0 2 slope = 12.000000000000043 12.000000000000043 accel = 0.66897747659957196 0.66897747659957196
+	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
 	 length = 0.041666666666666963 value = 2 -2 slope = -95.999999999999318 -95.999999999999318 accel = 1.3334056693341099 1.3334056693341099
 	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.16666666666666652 value = -2 0 slope = 12.000000000000011 12.000000000000011 accel = 0.66897747659957196 0.66897747659957196
+	 length = 0.16666666666666696 value = -2 0 slope = 11.999999999999979 11.999999999999979 accel = 0.66897747659957196 0.66897747659957196
 	 expr = linear() }
-      segment { options = {	 untie  is os ia oa autoslope  ai }
+      segment { options = {	 untie  is os ia oa }
 
-	 length = 0.16666666666666652 value = 0 2 slope = 12.000000000000011 12.000000000000011 accel = 0.66897747659957196 0.66897747659957207
-	 expr = bezier() }
+	 length = 0.16666666666666607 value = 0 2 slope = 12.000000000000043 12.000000000000043 accel = 0.66897747659957196 0.66897747659957196
+	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
 	 length = 0 value = 2 0 slope = -23.999999999999957 0 accel = 8.0069414329761948 0.33333333333333331
-	 expr = bezier() }
+	 expr = linear() }
     }
     channel rx {
       lefttype = extend
@@ -20781,10 +20737,10 @@ return xform.extractRotates()[2]
 	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.37499999999999994 accel = 0.12499999999999994 0.12499999999999997 expr = bezier() }
+	 length = 0.16666666666666669 accel = 0.055555555555555552 0.055555555555555559 expr = bezier() }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.041666666666666699 value = 0 -45 slope = -1079.9999999999977 -1079.9999999999977 accel = 15.000006430039758 15.000006430039774
+	 length = 0.041666666666666685 value = 0 -45 slope = -1079.9999999999977 -1079.9999999999977 accel = 15.000006430039754 15.000006430039774
 	 expr = bezier() }
       segment { options = {	 untie  is os ia oa }
 
@@ -20793,7 +20749,7 @@ return xform.extractRotates()[2]
     channel ty {
       lefttype = extend
       righttype = extend
-      default = 0.5
+      default = 1
       flags = 0
       start = 0.79166666666666663
       segment { options = {	 untie  is os ia oa }
@@ -20802,31 +20758,14 @@ return xform.extractRotates()[2]
 	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.37499999999999994 value = 0.5 0.29999999999999999 accel = 0.12499999999999997 0.12499999999999997 expr = .3 }
+	 length = 0.16666666666666669 value = 0.5 0.29999999999999999 accel = 0.055555555555555559 0.055555555555555559 expr = .3 }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.041666666666666699 value = 0.29999999999999999 1 slope = 16.799999999999986 16.799999999999986 accel = 0.23374632762679362 0.23374632762679362
+	 length = 0.041666666666666685 value = 0.29999999999999999 1 slope = 16.79999999999999 16.79999999999999 accel = 0.23374632762679362 0.23374632762679362
 	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
 	 length = 0 value = 1 1 accel = 0.33333333333333331 0.33333333333333331 expr = linear() }
-    }
-    channel ry {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      start = 1.0416666666666667
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0.16666666666666652 value = 0 180 slope = 1080.0000000000009 1080.0000000000009 accel = 60.00002572015908 60.00002572015908
-	 expr = linear() }
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0.041666666666666741 value = 180 0 slope = -4319.9999999999927 -4319.9999999999927 accel = 60.000001607510264 60.000001607510264
-	 expr = linear() }
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0 accel = 0.33333333333333331 0.33333333333333331 expr = linear() }
     }
   }
 
@@ -20873,7 +20812,7 @@ xn__xformOptransform_51a	[ 0	locks=0 ]	(	append	)
 xOrd	[ 0	locks=0 ]	(	"srt"	)
 rOrd	[ 0	locks=0 ]	(	"xyz"	)
 t	[ 0	locks=0	autoscope=2	autosel=4294967295 ]	(	0	[ ty	0 ] 	0	)
-r	[ 0	locks=0	autoscope=3	autosel=4294967295 ]	(	[ rx	0 ] 	[ ry	0 ] 	0	)
+r	[ 0	locks=0	autoscope=3	autosel=4294967295 ]	(	[ rx	0 ] 	0	0	)
 s	[ 0	locks=0 ]	(	1	1	1	)
 pret	[ 0	locks=0 ]	(	0	0	0	)
 prer	[ 0	locks=0 ]	(	0	-0	0	)
@@ -20959,7 +20898,7 @@ xn__inputsshapingfocusTint_control_xpbh	[ 0	locks=0 ]	(	set	)
 xn__inputsshapingfocusTint_wcbh	[ 0	locks=0	autoscope=7	autosel=4294967295 ]	(	[ xn__inputsshapingfocusTint_wcbhr	0 ] 	[ xn__inputsshapingfocusTint_wcbhg	0 ] 	[ xn__inputsshapingfocusTint_wcbhb	0 ] 	)
 iesenable	[ 0	locks=0	autoscope=0	autosel=4294967294 ]	(	"on"	)
 xn__inputsshapingiesfile_control_ombhd	[ 0	locks=0 ]	(	set	)
-xn__inputsshapingiesfile_n8ahd	[ 0	locks=0	autoscope=1	autosel=4294967295 ]	(	[ xn__inputsshapingiesfile_n8ahd	"" ] 	)
+xn__inputsshapingiesfile_n8ahd	[ 8	locks=0	autoscope=1	autosel=4294967295 ]	(	[ xn__inputsshapingiesfile_n8ahd	"" ] 	)
 xn__inputsshapingiesnormalize_control_tubhd	[ 0	locks=0 ]	(	set	)
 xn__inputsshapingiesnormalize_shbhd	[ 0	locks=0	autoscope=1	autosel=4294967295 ]	(	[ xn__inputsshapingiesnormalize_shbhd	0 ] 	)
 xn__inputsshapingiesangleScale_control_gwbhd	[ 0	locks=0 ]	(	set	)
@@ -20977,9 +20916,10 @@ xn__inputsshadowdistance_n8ag	[ 0	locks=0 ]	(	1	)
 handlefocus	[ 0	locks=0 ]	(	3.34887	)
 sample_group3	[ 0	locks=0 ]	(	0	)
 sample_subframegroup3	[ 0	locks=0 ]	(	0	)
-folder_transform5	[ 0	locks=0 ]	(	0	0	0	0	0	0	)
+folder_transform5	[ 0	locks=0 ]	(	2	2	2	2	)
 pivotxform2	[ 0	locks=0 ]	(	0	)
 folder1	[ 0	locks=0 ]	(	0	)
+folder_transform5_4	[ 0	locks=0 ]	(	1	0	)
 arnold_light_group	[ 0	locks=0 ]	(	1	)
 arnoldsamples_control	[ 0	locks=0 ]	(	none	)
 xn__primvarsarnoldsamples_cbbg	[ 0	locks=0 ]	(	1	)
@@ -21118,7 +21058,7 @@ inputs
 stat
 {
   create 1680837817
-  modify 1752174461
+  modify 1753336149
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -21544,7 +21484,7 @@ execute	[ 0	locks=0 ]	(	0	)
 executebackground	[ 0	locks=0 ]	(	0	)
 renderdialog	[ 0	locks=0 ]	(	0	)
 trange	[ 0	locks=0 ]	(	"normal"	)
-f	[ 0	locks=0 ]	(	1	68	1	)
+f	[ 0	locks=0 ]	(	1	63	1	)
 foffset	[ 0	locks=0 ]	(	0	0	1	)
 take	[ 0	locks=0 ]	(	_current_	)
 loppath	[ 0	locks=0 ]	(	"../`opinput(\".\", 0)`"	)
@@ -64342,7 +64282,7 @@ inputs
 stat
 {
   create 1721510053
-  modify 1722511875
+  modify 1753335939
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -64394,68 +64334,6 @@ Content-Type: text/plain
 
 	 length = 0 accel = 0.33333333333333331 0.33333333333333331 expr = linear() }
     }
-    channel sx {
-      lefttype = extend
-      righttype = extend
-      default = 1.25
-      flags = 0
-      start = 1
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0.041666666666666741 value = 1 1.25 slope = 5.9999999999999893 5.9999999999999893 accel = 0.084482812920808614 0.084482812920808614
-	 expr = linear() }
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0.16666666666666652 value = 1.25 1.25 accel = 0.055555555555555504 0.055555555555555504 expr = linear() }
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0.041666666666666741 value = 1.25 1 slope = -5.9999999999999893 -5.9999999999999893 accel = 0.084482812920808614 0.084482812920808614
-	 expr = linear() }
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0 value = 1 1 accel = 0.33333333333333331 0.33333333333333331 expr = linear() }
-    }
-    channel sz {
-      lefttype = extend
-      righttype = extend
-      default = 0.75
-      flags = 0
-      start = 1
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0.041666666666666741 value = 1 0.75 slope = -5.9999999999999893 -5.9999999999999893 accel = 0.084482812920808614 0.084482812920808614
-	 expr = linear() }
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0.16666666666666652 value = 0.75 0.75 accel = 0.055555555555555504 0.055555555555555504 expr = linear() }
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0.041666666666666741 value = 0.75 1 slope = 5.9999999999999893 5.9999999999999893 accel = 0.084482812920808614 0.084482812920808614
-	 expr = linear() }
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0 value = 1 1 accel = 0.33333333333333331 0.33333333333333331 expr = linear() }
-    }
-    channel shear2 {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      start = 1
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0.041666666666666741 value = 0 0.80000000000000004 slope = 19.199999999999967 19.199999999999967 accel = 0.26702811152700573 0.26702811152700573
-	 expr = linear() }
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0.16666666666666652 value = 0.80000000000000004 0.80000000000000004 accel = 0.055555555555555504 0.055555555555555504 expr = linear() }
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0.041666666666666741 value = 0.80000000000000004 0 slope = -19.199999999999967 -19.199999999999967 accel = 0.26702811152700573 0.26702811152700573
-	 expr = linear() }
-      segment { options = {	 untie  is os ia oa }
-
-	 length = 0 accel = 0.33333333333333331 0.33333333333333331 expr = linear() }
-    }
   }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -64491,8 +64369,8 @@ xOrd	[ 0	locks=0 ]	(	"srt"	)
 rOrd	[ 0	locks=0 ]	(	"xyz"	)
 t	[ 8	locks=0 ]	(	0	0	0	)
 r	[ 0	locks=0	autoscope=4	autosel=4294967295 ]	(	0	0	[ rz	0 ] 	)
-s	[ 0	locks=0	autoscope=5	autosel=4294967295 ]	(	[ sx	1 ] 	1	[ sz	1 ] 	)
-shear	[ 0	locks=0	autoscope=2	autosel=4294967295 ]	(	0	[ shear2	0 ] 	0	)
+s	[ 0	locks=0	autoscope=5	autosel=4294967295 ]	(	1	1	1	)
+shear	[ 0	locks=0	autoscope=2	autosel=4294967295 ]	(	0	0	0	)
 scale	[ 0	locks=0 ]	(	1	)
 pivotxform	[ 0	locks=0 ]	(	0	)
 p	[ 0	locks=0 ]	(	0	0	0	)
@@ -68573,7 +68451,7 @@ inputs
 stat
 {
   create 1680838012
-  modify 1722465651
+  modify 1753335036
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -70828,19 +70706,19 @@ return xform.extractRotates()[2]
       start = 0.16666666666666666
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.041666666666666685 value = 1 0.20000000000000001 slope = -19.199999999999992 -19.199999999999992 accel = 0.26702811152700573 0.26702811152700573
+	 length = 0.041666666666666741 value = 1 0.20000000000000001 slope = -19.199999999999992 -19.199999999999992 accel = 0.26702811152700606 0.26702811152700606
 	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.16666666666666666 value = 0.20000000000000001 2 slope = 10.800000000000001 10.800000000000001 accel = 0.60256652724249993 0.60256652724249993
+	 length = 0.16666666666666663 value = 0.20000000000000001 2 slope = 10.800000000000001 10.800000000000001 accel = 0.60256652724249982 0.60256652724249982
 	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.041666666666666685 value = 2 0.20000000000000001 slope = -43.199999999999982 -43.199999999999982 accel = 0.60016072950049637 0.60016072950049637
+	 length = 0.041666666666666741 value = 2 0.20000000000000001 slope = -43.199999999999982 -43.199999999999982 accel = 0.60016072950049726 0.60016072950049726
 	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
-	 length = 0.16666666666666666 value = 0.20000000000000001 2 slope = 10.800000000000001 10.800000000000001 accel = 0.60256652724249993 0.60256652724249993
+	 length = 0.16666666666666652 value = 0.20000000000000001 2 slope = 10.800000000000001 10.800000000000001 accel = 0.60256652724249948 0.60256652724249948
 	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
@@ -71027,7 +70905,7 @@ xn__inputsshapingfocusTint_control_xpbh	[ 0	locks=0 ]	(	set	)
 xn__inputsshapingfocusTint_wcbh	[ 0	locks=0 ]	(	[ xn__inputsshapingfocusTint_wcbhr	0 ] 	[ xn__inputsshapingfocusTint_wcbhg	0 ] 	[ xn__inputsshapingfocusTint_wcbhb	0 ] 	)
 iesenable	[ 0	locks=0	autoscope=0	autosel=4294967294 ]	(	"on"	)
 xn__inputsshapingiesfile_control_ombhd	[ 0	locks=0 ]	(	set	)
-xn__inputsshapingiesfile_n8ahd	[ 0	locks=0	autoscope=1	autosel=4294967295 ]	(	[ xn__inputsshapingiesfile_n8ahd	"" ] 	)
+xn__inputsshapingiesfile_n8ahd	[ 8	locks=0	autoscope=1	autosel=4294967295 ]	(	[ xn__inputsshapingiesfile_n8ahd	"" ] 	)
 xn__inputsshapingiesnormalize_control_tubhd	[ 0	locks=0 ]	(	set	)
 xn__inputsshapingiesnormalize_shbhd	[ 0	locks=0	autoscope=1	autosel=4294967295 ]	(	[ xn__inputsshapingiesnormalize_shbhd	0 ] 	)
 xn__inputsshapingiesangleScale_control_gwbhd	[ 0	locks=0 ]	(	set	)
@@ -71045,7 +70923,7 @@ xn__inputsshadowdistance_n8ag	[ 0	locks=0 ]	(	1	)
 handlefocus	[ 0	locks=0 ]	(	3.34887	)
 sample_group3	[ 0	locks=0 ]	(	0	)
 sample_subframegroup3	[ 0	locks=0 ]	(	0	)
-folder_transform5	[ 0	locks=0 ]	(	0	0	0	0	0	0	)
+folder_transform5	[ 0	locks=0 ]	(	1	1	1	1	1	1	)
 pivotxform2	[ 0	locks=0 ]	(	0	)
 folder1	[ 0	locks=0 ]	(	0	)
 arnold_light_group	[ 0	locks=0 ]	(	1	)
@@ -150222,16 +150100,16 @@ imgviewhist -V on -L on -G on -H on -P off -c -1 -h 0 -i on imgview2 13
 imgviewhist -V on -L on -G on -H on -P off -c -1 -h 0 -i on imgview2 14
 imgviewhist -V on -L on -G on -H on -P off -c -1 -h 0 -i on imgview2 15
 imgviewhist -V on -L on -G on -H on -P off -c -1 -h 0 -i on imgview2 16
-panepath -d Solaris -f -p pane1 /stage/usd_rop_iesLibPreview
+panepath -d Solaris -f -p pane1 /stage/sphere_light
 panepath -d Solaris -f -p panetab9 /stage/
-panepath -d Solaris -f -p panetab10 /stage/usd_rop_iesLibPreview
-panepath -d Solaris -f -p panetab8 /stage/usd_rop_iesLibPreview
-panepath -d Solaris -f -p panetab7 /stage/usd_rop_iesLibPreview
-panepath -d Solaris -f -p panetab11 /stage/usd_rop_iesLibPreview
-panepath -d Solaris -f -p panetab1 /stage/usd_rop_iesLibPreview
-panepath -d Solaris -f -p panetab3 /stage/usd_rop_iesLibPreview
+panepath -d Solaris -f -p panetab10 /stage/sphere_light
+panepath -d Solaris -f -p panetab8 /stage/sphere_light
+panepath -d Solaris -f -p panetab7 /stage/sphere_light
+panepath -d Solaris -f -p panetab11 /stage/sphere_light
+panepath -d Solaris -f -p panetab1 /stage/sphere_light
+panepath -d Solaris -f -p panetab3 /stage/sphere_light
 panepath -d Solaris -f -p panetab4 /stage/
-panepath -d Solaris -f -p panetab2 /stage/usd_rop_iesLibPreview
+panepath -d Solaris -f -p panetab2 /stage/sphere_light
 desk set Solaris
 viewupdate -u always
 audiopanel -s p ''
