@@ -5,6 +5,10 @@ set -u
 
 THIS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+if ! [[ -v "HTOA_STARTUP_LOG" ]]; then
+    export HTOA_STARTUP_LOG=0
+fi
+
 # need to run find_hython.py - need python for that, so create / use
 # the uv-managed venv
 LUXTEST_HYTHON="$("${THIS_DIR}/luxtest_python.sh" "${THIS_DIR}/find_hython.py")"
@@ -28,6 +32,24 @@ fi
 
 verbosity="--quiet"
 # verbosity="--verbose"
+
+
+if [[ -f /etc/os-release ]] && grep -q "^ID=ubuntu" /etc/os-release; then
+    UBUNTU=1
+    # I'm getting a hard crash on quitting hython on Ubuntu - something in jemalloc segfaults when freeing the
+    # houdini python module, if the RenderMan plugin has been loaded.
+
+    # As a workaround, hard-exit on Ubuntu, with "os._exit(0)"
+    NEED_HARD_EXIT=1
+else
+    UBUNTU=0
+    NEED_HARD_EXIT=0
+fi
+
+if [ "${NEED_HARD_EXIT}" -eq 1 ]; then
+    export PYTHONUSERBASE="${THIS_DIR}/python_user_dir_hard_exit"
+    echo "Set PYTHONUSERBASE to ${PYTHONUSERBASE}"
+fi
 
 if ! [ -f "${LUXTEST_VENV_ACTIVATE}" ]; then
     if [ -d "${UV_PROJECT_ENVIRONMENT}" ]; then
