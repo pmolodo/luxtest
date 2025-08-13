@@ -123,7 +123,7 @@
             {
                 "frames": [
                     31,
-                    34
+                    35
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 5.0
@@ -133,19 +133,10 @@
                         "31": 0.0,
                         "32": 1.25,
                         "33": 2.5,
-                        "34": 3.75
+                        "34": 3.75,
+                        "35": 5.0
                     }
                 }
-            },
-            {
-                "frames": [
-                    35,
-                    35
-                ],
-                "non_default_constants": {
-                    "inputs:intensity": 5.0
-                },
-                "varying": {}
             },
             {
                 "frames": [
@@ -388,7 +379,7 @@
             {
                 "frames": [
                     31,
-                    34
+                    35
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 5.0
@@ -398,19 +389,10 @@
                         "31": 0.0,
                         "32": 1.25,
                         "33": 2.5,
-                        "34": 3.75
+                        "34": 3.75,
+                        "35": 5.0
                     }
                 }
-            },
-            {
-                "frames": [
-                    35,
-                    35
-                ],
-                "non_default_constants": {
-                    "inputs:intensity": 5.0
-                },
-                "varying": {}
             },
             {
                 "frames": [
@@ -1561,7 +1543,7 @@
             {
                 "frames": [
                     31,
-                    34
+                    35
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 5.0,
@@ -1572,20 +1554,10 @@
                         "31": 0.0,
                         "32": 1.25,
                         "33": 2.5,
-                        "34": 3.75
+                        "34": 3.75,
+                        "35": 5.0
                     }
                 }
-            },
-            {
-                "frames": [
-                    35,
-                    35
-                ],
-                "non_default_constants": {
-                    "inputs:intensity": 5.0,
-                    "inputs:width": 2.0
-                },
-                "varying": {}
             },
             {
                 "frames": [
@@ -1832,7 +1804,7 @@
             {
                 "frames": [
                     31,
-                    34
+                    35
                 ],
                 "non_default_constants": {
                     "inputs:intensity": 5.0
@@ -1842,19 +1814,10 @@
                         "31": 0.0,
                         "32": 1.25,
                         "33": 2.5,
-                        "34": 3.75
+                        "34": 3.75,
+                        "35": 5.0
                     }
                 }
-            },
-            {
-                "frames": [
-                    35,
-                    35
-                ],
-                "non_default_constants": {
-                    "inputs:intensity": 5.0
-                },
-                "varying": {}
             },
             {
                 "frames": [

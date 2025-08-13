@@ -24,14 +24,14 @@ set -g DRIVERPATH = '/stage/usd_rop_sphere50x50'
 set -g E = '2.7182818284590452354'
 set -g EYE = 'stereo'
 set -g HANDLE_STATUS = '-1'
-set -g HIP = 'C:/src/NVIDIA/luxtest'
-set -g HIPFILE = 'C:/src/NVIDIA/luxtest/luxtest.hip'
+set -g HIP = '/src/NVIDIA/luxtest'
+set -g HIPFILE = '/src/NVIDIA/luxtest/luxtest.hip'
 set -g HIPNAME = 'luxtest'
 set -g JOB = 'C:/Users/alanglands/Desktop/light_comparison'
 set -g PI = '3.1415926535897932384'
 set -g POSE = 'C:/Users/alanglands/Documents/houdini19.5/poselib'
-set -g _HIP_SAVEPLATFORM = 'windows-x86_64-cl19.35'
-set -g _HIP_SAVETIME = 'Wed Jul 23 23:16:36 2025'
+set -g _HIP_SAVEPLATFORM = 'linux-x86_64-gcc11.2'
+set -g _HIP_SAVETIME = 'Wed Aug 13 14:22:31 2025'
 set -g _HIP_SAVEVERSION = '20.5.445'
 set -g status = '0'
 
@@ -114,23 +114,23 @@ Content-Type: text/plain
 Content-Disposition: attachment; filename=".OPfallbacks"
 Content-Type: text/plain
 
-Lop/camera C:/PROGRA~1/SIDEEF~1/HOUDIN~1.445/houdini/otls/OPlibLop.hda
+Lop/camera /opt/hfs20.5.445/houdini/otls/OPlibLop.hda
 Lop/camera otls/OPlibLop.hda
-Lop/createxform C:/PROGRA~1/SIDEEF~1/HOUDIN~1.445/houdini/otls/OPlibLop.hda
+Lop/createxform /opt/hfs20.5.445/houdini/otls/OPlibLop.hda
 Lop/createxform otls/OPlibLop.hda
-Lop/distantlight::2.0 C:/PROGRA~1/SIDEEF~1/HOUDIN~1.445/houdini/otls/OPlibLop.hda
+Lop/distantlight::2.0 /opt/hfs20.5.445/houdini/otls/OPlibLop.hda
 Lop/distantlight::2.0 otls/OPlibLop.hda
-Lop/domelight::2.0 C:/PROGRA~1/SIDEEF~1/HOUDIN~1.445/houdini/otls/OPlibLop.hda
+Lop/domelight::2.0 /opt/hfs20.5.445/houdini/otls/OPlibLop.hda
 Lop/domelight::2.0 otls/OPlibLop.hda
-Lop/light::2.0 C:/PROGRA~1/SIDEEF~1/HOUDIN~1.445/houdini/otls/OPlibLop.hda
+Lop/light::2.0 /opt/hfs20.5.445/houdini/otls/OPlibLop.hda
 Lop/light::2.0 otls/OPlibLop.hda
-Top/localscheduler C:/PROGRA~1/SIDEEF~1/HOUDIN~1.445/houdini/otls/OPlibTop.hda
+Top/localscheduler /opt/hfs20.5.445/houdini/otls/OPlibTop.hda
 Top/localscheduler otls/OPlibTop.hda
-Lop/rendergeometrysettings C:/PROGRA~1/SIDEEF~1/HOUDIN~1.445/houdini/otls/OPlibLop.hda
+Lop/rendergeometrysettings /opt/hfs20.5.445/houdini/otls/OPlibLop.hda
 Lop/rendergeometrysettings otls/OPlibLop.hda
-Lop/sopcreate C:/PROGRA~1/SIDEEF~1/HOUDIN~1.445/houdini/otls/OPlibLop.hda
+Lop/sopcreate /opt/hfs20.5.445/houdini/otls/OPlibLop.hda
 Lop/sopcreate otls/OPlibLop.hda
-Vop/usdpreviewsurface C:/PROGRA~1/SIDEEF~1/HOUDIN~1.445/houdini/otls/OPlibVop.hda
+Vop/usdpreviewsurface /opt/hfs20.5.445/houdini/otls/OPlibVop.hda
 Vop/usdpreviewsurface otls/OPlibVop.hda
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -138,22 +138,22 @@ Content-Disposition: attachment; filename=".OPdummydefs"
 Content-Type: application/octet-stream
 Content-Transfer-Encoding: base64
 
-SU5EWAAAAAAAAAAAAAAACwAAAA1JTkRFWF9TRUNUSU9OAAAAAAAABftogc/EAAAAEmhvdWRpbmkuaGRhbGlicmFyeQAABfsAAAAAaIHPxAAAAApMb3AvY2FtZXJhAAAF+wAAjSlogb/LAAAAD0xvcC9jcmVhdGV4Zm9ybQAAkyQ=
-AAAnSmiBv8sAAAAVTG9wL2Rpc3RhbnRsaWdodDo6Mi4wAAC6bgAAu85ogb/LAAAAEkxvcC9kb21lbGlnaHQ6OjIuMAABdjwAAGv8aIG/ywAAAA5Mb3AvbGlnaHQ6OjIuMAAB4jgAANtUaIG/ywAAABJUb3AvbG9jYWxzY2hlZHU=
-bGVyAAK9jAAATJJogb/LAAAAGkxvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzAAMKHgAAEDlogb/LAAAADUxvcC9zb3BjcmVhdGUAAxpXAACI+miBv8oAAAAVVm9wL3VzZHByZXZpZXdzdXJmYWNlAAOjUQAAEkZogb/KAAAACQA=
+SU5EWAAAAAAAAAAAAAAACwAAAA1JTkRFWF9TRUNUSU9OAAAAAAAABftonQIXAAAAEmhvdWRpbmkuaGRhbGlicmFyeQAABfsAAAAAaJ0CFwAAAApMb3AvY2FtZXJhAAAF+wAAjSlonQIAAAAAD0xvcC9jcmVhdGV4Zm9ybQAAkyQ=
+AAAnSmidAgAAAAAVTG9wL2Rpc3RhbnRsaWdodDo6Mi4wAAC6bgAAu85onQIAAAAAEkxvcC9kb21lbGlnaHQ6OjIuMAABdjwAAGv8aJ0CAAAAAA5Mb3AvbGlnaHQ6OjIuMAAB4jgAANtUaJ0CAAAAABJUb3AvbG9jYWxzY2hlZHU=
+bGVyAAK9jAAATJJonQIAAAAAGkxvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzAAMKHgAAEDlonQIAAAAADUxvcC9zb3BjcmVhdGUAAxpXAACI+midAgAAAAAVVm9wL3VzZHByZXZpZXdzdXJmYWNlAAOjUQAAEkZonQIAAAAACQA=
 AAAEAAAABmNhbWVyYQAAAAZDYW1lcmEAAAAcb3BsaWI6L0xvcC9jYW1lcmE/TG9wL2NhbWVyYQAAAApMT1BfY2FtZXJhAAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAE3N1YnR5cGU9cHJvcGVkaXRvciAAAAAAAAAAAWg=
-gc/EAAEAAAAABAAAAAtjcmVhdGV4Zm9ybQAAAAVYZm9ybQAAACZvcGxpYjovTG9wL2NyZWF0ZXhmb3JtP0xvcC9jcmVhdGV4Zm9ybQAAAA9MT1BfY3JlYXRleGZvcm0AAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3U=
-YnR5cGU9cHJvcGVkaXRvciAAAAAAAAAAAWiBz8QAAQAAAAAEAAAAEWRpc3RhbnRsaWdodDo6Mi4wAAAADURpc3RhbnQgTGlnaHQAAAAyb3BsaWI6L0xvcC9kaXN0YW50bGlnaHQ6OjIuMD9Mb3AvZGlzdGFudGxpZ2h0OjoyLjA=
-AAAAEExPUF9kaXN0YW50bGlnaHQAAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3VidHlwZT1wcm9wZWRpdG9yIAAAAAAAAAABaIHPxAABAAAAAAQAAAAOZG9tZWxpZ2h0OjoyLjAAAAAKRG9tZSBMaWdodAAAACxvcGw=
-aWI6L0xvcC9kb21lbGlnaHQ6OjIuMD9Mb3AvZG9tZWxpZ2h0OjoyLjAAAAANTE9QX2RvbWVsaWdodAAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAAAAAAFogc/EAAEAAAAABAA=
+nQIXAAEAAAAABAAAAAtjcmVhdGV4Zm9ybQAAAAVYZm9ybQAAACZvcGxpYjovTG9wL2NyZWF0ZXhmb3JtP0xvcC9jcmVhdGV4Zm9ybQAAAA9MT1BfY3JlYXRleGZvcm0AAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3U=
+YnR5cGU9cHJvcGVkaXRvciAAAAAAAAAAAWidAhcAAQAAAAAEAAAAEWRpc3RhbnRsaWdodDo6Mi4wAAAADURpc3RhbnQgTGlnaHQAAAAyb3BsaWI6L0xvcC9kaXN0YW50bGlnaHQ6OjIuMD9Mb3AvZGlzdGFudGxpZ2h0OjoyLjA=
+AAAAEExPUF9kaXN0YW50bGlnaHQAAAAAAAAAAAAAAANMb3AAAAAAAAAAAAAAAAAAAAATc3VidHlwZT1wcm9wZWRpdG9yIAAAAAAAAAABaJ0CFwABAAAAAAQAAAAOZG9tZWxpZ2h0OjoyLjAAAAAKRG9tZSBMaWdodAAAACxvcGw=
+aWI6L0xvcC9kb21lbGlnaHQ6OjIuMD9Mb3AvZG9tZWxpZ2h0OjoyLjAAAAANTE9QX2RvbWVsaWdodAAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAAAAAAFonQIXAAEAAAAABAA=
 AAAKbGlnaHQ6OjIuMAAAAAVMaWdodAAAACRvcGxpYjovTG9wL2xpZ2h0OjoyLjA/TG9wL2xpZ2h0OjoyLjAAAAAJTE9QX2xpZ2h0AAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAE3N1YnR5cGU9cHJvcGVkaXRvciAAAAA=
-AAAAAAFogc/EAAEAAAAABQAAAA5sb2NhbHNjaGVkdWxlcgAAAA9Mb2NhbCBTY2hlZHVsZXIAAAAsb3BsaWI6L1RvcC9sb2NhbHNjaGVkdWxlcj9Ub3AvbG9jYWxzY2hlZHVsZXIAAAASVE9QX2xvY2Fsc2NoZWR1bGVyAAAAAAA=
-AAAAAAAAA1RvcAAAAAAAAAAAAAAAAAAAADxwZGd0eXBlPSdzY2hlZHVsZXInIHN1YnR5cGU9bG9jYWxzY2hlZHVsZXIgdmlzaWJsZW91dHB1dHM9MCAAAAAAAAAAAGiBz8QAAQAAAAAAAAAABAAAABZyZW5kZXJnZW9tZXRyeXM=
+AAAAAAFonQIXAAEAAAAABQAAAA5sb2NhbHNjaGVkdWxlcgAAAA9Mb2NhbCBTY2hlZHVsZXIAAAAsb3BsaWI6L1RvcC9sb2NhbHNjaGVkdWxlcj9Ub3AvbG9jYWxzY2hlZHVsZXIAAAASVE9QX2xvY2Fsc2NoZWR1bGVyAAAAAAA=
+AAAAAAAAA1RvcAAAAAAAAAAAAAAAAAAAADxwZGd0eXBlPSdzY2hlZHVsZXInIHN1YnR5cGU9bG9jYWxzY2hlZHVsZXIgdmlzaWJsZW91dHB1dHM9MCAAAAAAAAAAAGidAhcAAQAAAAAAAAAABAAAABZyZW5kZXJnZW9tZXRyeXM=
 ZXR0aW5ncwAAABhSZW5kZXIgR2VvbWV0cnkgU2V0dGluZ3MAAAA8b3BsaWI6L0xvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzP0xvcC9yZW5kZXJnZW9tZXRyeXNldHRpbmdzAAAAGkxPUF9yZW5kZXJnZW9tZXRyeXNldHRpbmc=
-cwAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAQAAAAFogc/EAAEAAAAABAAAAAlzb3BjcmVhdGUAAAAKU09QIENyZWF0ZQAAACJvcGxpYjovTG9wL3NvcGNyZWF0ZT9Mb3Avc28=
-cGNyZWF0ZQAAAA1MT1Bfc29wY3JlYXRlAAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABaIHPxAEBAAAAAAQAAAARdXNkcHJldmlld3N1cmZhY2UAAAATVVNEIFByZXZpZXcgU3VyZmFjZQAAADJvcGxpYjo=
-L1ZvcC91c2RwcmV2aWV3c3VyZmFjZT9Wb3AvdXNkcHJldmlld3N1cmZhY2UAAAAVVk9QX3VzZHByZXZpZXdzdXJmYWNlAAAAAAAAAAAAAAADVm9wAAAAAAAAAAAAAAAAAAAAA3VzZAAAAAAAAAAAaIHPxAABAElORFgAAAAAAAA=
-AAAAAAABAAAADERpYWxvZ1NjcmlwdAAAAAAAAIz9ZzOJKCMgRGlhbG9nIHNjcmlwdCBmb3IgY2FtZXJhIGF1dG9tYXRpY2FsbHkgZ2VuZXJhdGVkCgp7CiAgICBuYW1lCWNhbWVyYQogICAgc2NyaXB0CWNhbWVyYQogICAgbGE=
+cwAAAAAAAAAAAAAAA0xvcAAAAAAAAAAAAAAAAAAAABNzdWJ0eXBlPXByb3BlZGl0b3IgAAAAAQAAAAFonQIXAAEAAAAABAAAAAlzb3BjcmVhdGUAAAAKU09QIENyZWF0ZQAAACJvcGxpYjovTG9wL3NvcGNyZWF0ZT9Mb3Avc28=
+cGNyZWF0ZQAAAA1MT1Bfc29wY3JlYXRlAAAAAAAAAAAAAAADTG9wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABaJ0CFwEBAAAAAAQAAAARdXNkcHJldmlld3N1cmZhY2UAAAATVVNEIFByZXZpZXcgU3VyZmFjZQAAADJvcGxpYjo=
+L1ZvcC91c2RwcmV2aWV3c3VyZmFjZT9Wb3AvdXNkcHJldmlld3N1cmZhY2UAAAAVVk9QX3VzZHByZXZpZXdzdXJmYWNlAAAAAAAAAAAAAAADVm9wAAAAAAAAAAAAAAAAAAAAA3VzZAAAAAAAAAAAaJ0CFwABAElORFgAAAAAAAA=
+AAAAAAABAAAADERpYWxvZ1NjcmlwdAAAAAAAAIz9ZlV9tCMgRGlhbG9nIHNjcmlwdCBmb3IgY2FtZXJhIGF1dG9tYXRpY2FsbHkgZ2VuZXJhdGVkCgp7CiAgICBuYW1lCWNhbWVyYQogICAgc2NyaXB0CWNhbWVyYQogICAgbGE=
 YmVsCUNhbWVyYQoKICAgIGhlbHAgewoJIiIKICAgIH0KCiAgICBpbnB1dGxhYmVsCTEJIklucHV0IFN0YWdlIgoKICAgIGdyb3VwY29sbGFwc2libGUgewogICAgICAgIG5hbWUgICAgInNhbXBsZV9ncm91cDIiCiAgICAgICA=
 IGxhYmVsICAgIkZyYW1lIFJhbmdlL1N1YmZyYW1lcyIKICAgICAgICBwYXJtdGFnIHsgInNpZGVmeDo6aGVhZGVyX3Bhcm0iICJzYW1wbGVfYmVoYXZpb3IiIH0KCiAgICAgICAgcGFybSB7CiAgICAgICAgICAgIG5hbWUgICA=
 ICJzYW1wbGVfYmVoYXZpb3IiCiAgICAgICAgICAgIGJhc2VwYXJtCiAgICAgICAgICAgIGxhYmVsICAgIlNhbXBsaW5nIEJlaGF2aW9yIgogICAgICAgICAgICBleHBvcnQgIG5vbmUKICAgICAgICB9CiAgICAgICAgcGFybSA=
@@ -435,7 +435,7 @@ IHsKICAgICAgICAgICAgICAgIFsgImltcG9ydCBsb3B1dGlscyIgXQogICAgICAgICAgICAgICAgWyAi
 ICAgICAgICAgICAgICAgIGxhbmd1YWdlIHB5dGhvbgogICAgICAgICAgICB9CiAgICAgICAgICAgIHBhcm10YWcgeyAic2lkZWZ4Ojpsb29rIiAiaWNvbiIgfQogICAgICAgIH0KICAgICAgICBwYXJtIHsKICAgICAgICAgICA=
 IG5hbWUgICAgImV4cG9zdXJlIgogICAgICAgICAgICBsYWJlbCAgICJFeHBvc3VyZSIKICAgICAgICAgICAgdHlwZSAgICBmbG9hdAogICAgICAgICAgICBkZWZhdWx0IHsgIjAiIH0KICAgICAgICAgICAgZGlzYWJsZXdoZW4=
 ICJ7IGV4cG9zdXJlX2NvbnRyb2wgPT0gYmxvY2sgfSB7IGV4cG9zdXJlX2NvbnRyb2wgPT0gbm9uZSB9IgogICAgICAgICAgICByYW5nZSAgIHsgLTEwIDEwIH0KICAgICAgICAgICAgcGFybXRhZyB7ICJ1c2R2YWx1ZXR5cGU=
-IiAiZmxvYXQiIH0KICAgICAgICB9CiAgICB9Cgp9CklORFgAAAAAAAAAAAAAAAEAAAAMRGlhbG9nU2NyaXB0AAAAAAAAJx5nM4kpIyBEaWFsb2cgc2NyaXB0IGZvciBjcmVhdGV4Zm9ybSBhdXRvbWF0aWNhbGx5IGdlbmVyYXQ=
+IiAiZmxvYXQiIH0KICAgICAgICB9CiAgICB9Cgp9CklORFgAAAAAAAAAAAAAAAEAAAAMRGlhbG9nU2NyaXB0AAAAAAAAJx5mVX20IyBEaWFsb2cgc2NyaXB0IGZvciBjcmVhdGV4Zm9ybSBhdXRvbWF0aWNhbGx5IGdlbmVyYXQ=
 ZWQKCnsKICAgIG5hbWUJY3JlYXRleGZvcm0KICAgIHNjcmlwdAljcmVhdGV4Zm9ybQogICAgbGFiZWwJIkNyZWF0ZSBUcmFuc2Zvcm0iCgogICAgaGVscCB7CgkiIgogICAgfQogICAgYmluZGhhbmRsZSBwcnggbG9weGZvcm0=
 ICJUcmFuc2Zvcm1lciIgcGl2b3RfcnggIiIKICAgIGJpbmRoYW5kbGUgcHJ5IGxvcHhmb3JtICJUcmFuc2Zvcm1lciIgcGl2b3RfcnkgIiIKICAgIGJpbmRoYW5kbGUgcHJ6IGxvcHhmb3JtICJUcmFuc2Zvcm1lciIgcGl2b3Q=
 X3J6ICIiCiAgICBiaW5kaGFuZGxlIHB4IGxvcHhmb3JtICJUcmFuc2Zvcm1lciIgcHggIiIKICAgIGJpbmRoYW5kbGUgcHkgbG9weGZvcm0gIlRyYW5zZm9ybWVyIiBweSAiIgogICAgYmluZGhhbmRsZSBweiBsb3B4Zm9ybSA=
@@ -514,7 +514,7 @@ IiAiMCIgfQogICAgICAgICAgICBkaXNhYmxld2hlbiAieyB4bl9feGZvcm1PcHRyYW5zZm9ybV9jb250
 ICAgICAgICAgcmFuZ2UgICB7IC0xIDEgfQogICAgICAgIH0KICAgICAgICBwYXJtIHsKICAgICAgICAgICAgbmFtZSAgICAicHIiCiAgICAgICAgICAgIGxhYmVsICAgIlBpdm90IFJvdGF0ZSIKICAgICAgICAgICAgdHlwZSA=
 ICAgdmVjdG9yCiAgICAgICAgICAgIHNpemUgICAgMwogICAgICAgICAgICBkZWZhdWx0IHsgIjAiICIwIiAiMCIgfQogICAgICAgICAgICBkaXNhYmxld2hlbiAieyB4bl9feGZvcm1PcHRyYW5zZm9ybV9jb250cm9sXzZmYiA=
 PT0gYmxvY2sgfSB7IHhuX194Zm9ybU9wdHJhbnNmb3JtX2NvbnRyb2xfNmZiID09IG5vbmUgfSIKICAgICAgICAgICAgcmFuZ2UgICB7IC0xIDEgfQogICAgICAgIH0KICAgIH0KCn0KSU5EWAAAAAAAAAAAAAAAAQAAAAxEaWE=
-bG9nU2NyaXB0AAAAAAAAu6JnM4kpIyBEaWFsb2cgc2NyaXB0IGZvciBkaXN0YW50bGlnaHQ6OjIuMCBhdXRvbWF0aWNhbGx5IGdlbmVyYXRlZAoKewogICAgbmFtZQlkaXN0YW50bGlnaHQ6OjIuMAogICAgc2NyaXB0CWRpc3Q=
+bG9nU2NyaXB0AAAAAAAAu6JmVX21IyBEaWFsb2cgc2NyaXB0IGZvciBkaXN0YW50bGlnaHQ6OjIuMCBhdXRvbWF0aWNhbGx5IGdlbmVyYXRlZAoKewogICAgbmFtZQlkaXN0YW50bGlnaHQ6OjIuMAogICAgc2NyaXB0CWRpc3Q=
 YW50bGlnaHQ6OjIuMAogICAgbGFiZWwJIkRpc3RhbnQgTGlnaHQiCgogICAgaGVscCB7CgkiIgogICAgfQoKICAgIGlucHV0bGFiZWwJMQkiSW5wdXQgU3RhZ2UiCgogICAgZ3JvdXBjb2xsYXBzaWJsZSB7CiAgICAgICAgbmE=
 bWUgICAgInNhbXBsZV9ncm91cDIiCiAgICAgICAgbGFiZWwgICAiRnJhbWUgUmFuZ2UvU3ViZnJhbWVzIgogICAgICAgIHBhcm10YWcgeyAic2lkZWZ4OjpoZWFkZXJfcGFybSIgInNhbXBsZV9iZWhhdmlvciIgfQogICAgICA=
 ICBncm91cHRhZyB7ICJzaWRlZng6OnN3aXRjaGVyIiAic2FtcGxlX2dyb3VwIiB9CgogICAgICAgIHBhcm0gewogICAgICAgICAgICBuYW1lICAgICJzYW1wbGVfYmVoYXZpb3IiCiAgICAgICAgICAgIGJhc2VwYXJtCiAgICA=
@@ -889,7 +889,7 @@ ICAgICJ4bl9faW5wdXRzc2hhZG93ZGlzdGFuY2VfbjhhZyIKICAgICAgICAgICAgbGFiZWwgICAiRGlz
 ICAgICBkaXNhYmxld2hlbiAieyB4bl9faW5wdXRzc2hhZG93ZGlzdGFuY2VfY29udHJvbF9vbWJnID09IGJsb2NrIH0geyB4bl9faW5wdXRzc2hhZG93ZGlzdGFuY2VfY29udHJvbF9vbWJnID09IG5vbmUgfSIKICAgICAgICA=
 ICAgIHJhbmdlICAgeyAwIDEwIH0KICAgICAgICAgICAgcGFybXRhZyB7ICJ1c2RhcGlzY2hlbWEiICJTaGFkb3dBUEkiIH0KICAgICAgICAgICAgcGFybXRhZyB7ICJ1c2R2YWx1ZXR5cGUiICJmbG9hdCIgfQogICAgICAgIH0=
 CiAgICB9CgogICAgcGFybSB7CiAgICAgICAgbmFtZSAgICAiaGFuZGxlZm9jdXMiCiAgICAgICAgbGFiZWwgICAiSGFuZGxlIEZvY3VzIgogICAgICAgIHR5cGUgICAgZmxvYXQKICAgICAgICBpbnZpc2libGUKICAgICAgICA=
-ZGVmYXVsdCB7ICIzLjM0ODg3IiB9CiAgICAgICAgcmFuZ2UgICB7IDAgMTAgfQogICAgfQp9CklORFgAAAAAAAAAAAAAAAEAAAAMRGlhbG9nU2NyaXB0AAAAAAAAa9BnM4kpIyBEaWFsb2cgc2NyaXB0IGZvciBkb21lbGlnaHQ=
+ZGVmYXVsdCB7ICIzLjM0ODg3IiB9CiAgICAgICAgcmFuZ2UgICB7IDAgMTAgfQogICAgfQp9CklORFgAAAAAAAAAAAAAAAEAAAAMRGlhbG9nU2NyaXB0AAAAAAAAa9BmVX21IyBEaWFsb2cgc2NyaXB0IGZvciBkb21lbGlnaHQ=
 OjoyLjAgYXV0b21hdGljYWxseSBnZW5lcmF0ZWQKCnsKICAgIG5hbWUJZG9tZWxpZ2h0OjoyLjAKICAgIHNjcmlwdAlkb21lbGlnaHQ6OjIuMAogICAgbGFiZWwJIkRvbWUgTGlnaHQiCgogICAgaGVscCB7CgkiIgogICAgfQo=
 ICAgIGJpbmRoYW5kbGUgcHggbG9weGZvcm0gIkRvbWUgTGlnaHQiIHB4ICIiCiAgICBiaW5kaGFuZGxlIHB5IGxvcHhmb3JtICJEb21lIExpZ2h0IiBweSAiIgogICAgYmluZGhhbmRsZSBweiBsb3B4Zm9ybSAiRG9tZSBMaWc=
 aHQiIHB6ICIiCiAgICBiaW5kaGFuZGxlIHByeCBsb3B4Zm9ybSAiRG9tZSBMaWdodCIgcnBpdm90eCAiIgogICAgYmluZGhhbmRsZSBwcnkgbG9weGZvcm0gIkRvbWUgTGlnaHQiIHJwaXZvdHkgIiIKICAgIGJpbmRoYW5kbGU=
@@ -1105,7 +1105,7 @@ dGllc0NvbnRyb2xNZW51KGt3YXJncywgJ2Zsb2F0JykiIF0KICAgICAgICAgICAgICAgIGxhbmd1YWdl
 ICAgICAgICB9CiAgICAgICAgcGFybSB7CiAgICAgICAgICAgIG5hbWUgICAgInhuX19pbnB1dHNzaGFkb3dkaXN0YW5jZV9uOGFnIgogICAgICAgICAgICBsYWJlbCAgICJEaXN0YW5jZSIKICAgICAgICAgICAgdHlwZSAgICA=
 ZmxvYXQKICAgICAgICAgICAgZGVmYXVsdCB7ICIxIiB9CiAgICAgICAgICAgIGRpc2FibGV3aGVuICJ7IHhuX19pbnB1dHNzaGFkb3dkaXN0YW5jZV9jb250cm9sX29tYmcgPT0gYmxvY2sgfSB7IHhuX19pbnB1dHNzaGFkb3c=
 ZGlzdGFuY2VfY29udHJvbF9vbWJnID09IG5vbmUgfSIKICAgICAgICAgICAgcmFuZ2UgICB7IDAgMTAgfQogICAgICAgICAgICBwYXJtdGFnIHsgInVzZGFwaXNjaGVtYSIgIlNoYWRvd0FQSSIgfQogICAgICAgICAgICBwYXI=
-bXRhZyB7ICJ1c2R2YWx1ZXR5cGUiICJmbG9hdCIgfQogICAgICAgIH0KICAgIH0KCn0KSU5EWAAAAAAAAAAAAAAAAQAAAAxEaWFsb2dTY3JpcHQAAAAAAADbKGcziS4jIERpYWxvZyBzY3JpcHQgZm9yIGxpZ2h0OjoyLjAgYXU=
+bXRhZyB7ICJ1c2R2YWx1ZXR5cGUiICJmbG9hdCIgfQogICAgICAgIH0KICAgIH0KCn0KSU5EWAAAAAAAAAAAAAAAAQAAAAxEaWFsb2dTY3JpcHQAAAAAAADbKGZVfbcjIERpYWxvZyBzY3JpcHQgZm9yIGxpZ2h0OjoyLjAgYXU=
 dG9tYXRpY2FsbHkgZ2VuZXJhdGVkCgp7CiAgICBuYW1lCWxpZ2h0OjoyLjAKICAgIHNjcmlwdAlsaWdodDo6Mi4wCiAgICBsYWJlbAlMaWdodAoKICAgIGhlbHAgewoJIiIKICAgIH0KCiAgICBpbnB1dGxhYmVsCTEJIklucHU=
 dCBTdGFnZSIKCiAgICBncm91cGNvbGxhcHNpYmxlIHsKICAgICAgICBuYW1lICAgICJzYW1wbGVfZ3JvdXAyIgogICAgICAgIGxhYmVsICAgIkZyYW1lIFJhbmdlL1N1YmZyYW1lcyIKICAgICAgICBwYXJtdGFnIHsgInNpZGU=
 Zng6OmhlYWRlcl9wYXJtIiAic2FtcGxlX2JlaGF2aW9yIiB9CiAgICAgICAgZ3JvdXB0YWcgeyAic2lkZWZ4Ojpzd2l0Y2hlciIgInNhbXBsZV9ncm91cCIgfQoKICAgICAgICBwYXJtIHsKICAgICAgICAgICAgbmFtZSAgICA=
@@ -1544,7 +1544,7 @@ bGFiZWwgICAiRGlzdGFuY2UiCiAgICAgICAgICAgIHR5cGUgICAgZmxvYXQKICAgICAgICAgICAgZGVm
 dHJvbF9vbWJnID09IGJsb2NrIH0geyB4bl9faW5wdXRzc2hhZG93ZGlzdGFuY2VfY29udHJvbF9vbWJnID09IG5vbmUgfSIKICAgICAgICAgICAgcmFuZ2UgICB7IDAgMTAgfQogICAgICAgICAgICBwYXJtdGFnIHsgInVzZGE=
 cGlzY2hlbWEiICJTaGFkb3dBUEkiIH0KICAgICAgICAgICAgcGFybXRhZyB7ICJ1c2R2YWx1ZXR5cGUiICJmbG9hdCIgfQogICAgICAgIH0KICAgIH0KCiAgICBwYXJtIHsKICAgICAgICBuYW1lICAgICJoYW5kbGVmb2N1cyI=
 CiAgICAgICAgbGFiZWwgICAiSGFuZGxlIEZvY3VzIgogICAgICAgIHR5cGUgICAgZmxvYXQKICAgICAgICBpbnZpc2libGUKICAgICAgICBkZWZhdWx0IHsgIjMuMzQ4ODciIH0KICAgICAgICByYW5nZSAgIHsgMCAxMCB9CiA=
-ICAgfQp9CklORFgAAAAAAAAAAAAAAAEAAAAMRGlhbG9nU2NyaXB0AAAAAAAATGZnM4l/IyBEaWFsb2cgc2NyaXB0IGZvciBsb2NhbHNjaGVkdWxlciBhdXRvbWF0aWNhbGx5IGdlbmVyYXRlZAoKewogICAgbmFtZQlsb2NhbHM=
+ICAgfQp9CklORFgAAAAAAAAAAAAAAAEAAAAMRGlhbG9nU2NyaXB0AAAAAAAATGZmVX3zIyBEaWFsb2cgc2NyaXB0IGZvciBsb2NhbHNjaGVkdWxlciBhdXRvbWF0aWNhbGx5IGdlbmVyYXRlZAoKewogICAgbmFtZQlsb2NhbHM=
 Y2hlZHVsZXIKICAgIHNjcmlwdAlsb2NhbHNjaGVkdWxlcgogICAgbGFiZWwJIkxvY2FsIFNjaGVkdWxlciIKCiAgICBoZWxwIHsKCSIiCiAgICB9CgogICAgZ3JvdXAgewogICAgICAgIG5hbWUgICAgImZvbGRlcjAiCiAgICA=
 ICAgIGxhYmVsICAgIlNjaGVkdWxlciIKCiAgICAgICAgZ3JvdXBzaW1wbGUgewogICAgICAgICAgICBuYW1lICAgICJmb2xkZXI1IgogICAgICAgICAgICBsYWJlbCAgICJTY2hlZHVsaW5nIgoKICAgICAgICAgICAgcGFybSA=
 ewogICAgICAgICAgICAgICAgbmFtZSAgICAibWF4cHJvY3NtZW51IgogICAgICAgICAgICAgICAgbGFiZWwgICAiVG90YWwgU2xvdHMiCiAgICAgICAgICAgICAgICB0eXBlICAgIG9yZGluYWwKICAgICAgICAgICAgICAgIGo=
@@ -1697,7 +1697,7 @@ IHBhcm0gewogICAgICAgICAgICAgICAgICAgIG5hbWUgICAgImxvY2FsX2Vudm5hbWUjIgogICAgICAg
 ICAgICAgICAgICAgICAgam9pbm5leHQKICAgICAgICAgICAgICAgICAgICBkZWZhdWx0IHsgIiIgfQogICAgICAgICAgICAgICAgICAgIHBhcm10YWcgeyAicGRnOjpzY2hlZHVsZXIiICIiIH0KICAgICAgICAgICAgICAgIH0=
 CiAgICAgICAgICAgICAgICBwYXJtIHsKICAgICAgICAgICAgICAgICAgICBuYW1lICAgICJsb2NhbF9lbnZ2YWx1ZSMiCiAgICAgICAgICAgICAgICAgICAgbGFiZWwgICAiVmFsdWUiCiAgICAgICAgICAgICAgICAgICAgdHk=
 cGUgICAgc3RyaW5nCiAgICAgICAgICAgICAgICAgICAgZGVmYXVsdCB7ICIiIH0KICAgICAgICAgICAgICAgICAgICBwYXJtdGFnIHsgInBkZzo6c2NoZWR1bGVyIiAiIiB9CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICA=
-ICB9CgogICAgICAgIH0KCiAgICB9Cgp9CklORFgAAAAAAAAAAAAAAAEAAAAMRGlhbG9nU2NyaXB0AAAAAAAAEA1nM4kwIyBEaWFsb2cgc2NyaXB0IGZvciByZW5kZXJnZW9tZXRyeXNldHRpbmdzIGF1dG9tYXRpY2FsbHkgZ2U=
+ICB9CgogICAgICAgIH0KCiAgICB9Cgp9CklORFgAAAAAAAAAAAAAAAEAAAAMRGlhbG9nU2NyaXB0AAAAAAAAEA1mVX25IyBEaWFsb2cgc2NyaXB0IGZvciByZW5kZXJnZW9tZXRyeXNldHRpbmdzIGF1dG9tYXRpY2FsbHkgZ2U=
 bmVyYXRlZAoKewogICAgbmFtZQlyZW5kZXJnZW9tZXRyeXNldHRpbmdzCiAgICBzY3JpcHQJcmVuZGVyZ2VvbWV0cnlzZXR0aW5ncwogICAgbGFiZWwJIlJlbmRlciBHZW9tZXRyeSBTZXR0aW5ncyIKCiAgICBoZWxwIHsKCSI=
 IgogICAgfQoKICAgIGlucHV0bGFiZWwJMQkiSW5wdXQgU3RhZ2UiCgogICAgcGFybSB7CiAgICAgICAgbmFtZSAgICAicHJpbXBhdHRlcm4iCiAgICAgICAgbGFiZWwgICAiUHJpbWl0aXZlcyIKICAgICAgICB0eXBlICAgIHM=
 dHJpbmcKICAgICAgICBkZWZhdWx0IHsgImBsb3BpbnB1dHByaW1zKCcuJywgMClgIiB9CiAgICAgICAgaGlkZXdoZW4gInsgY3JlYXRlcHJpbXMgPT0gb24gfSIKICAgICAgICBtZW51dG9nZ2xlIHsKICAgICAgICAgICAgWyA=
@@ -1729,8 +1729,8 @@ aXRpdmUgU3BlY2lmaWVyIgogICAgICAgICAgICB0eXBlICAgIHN0cmluZwogICAgICAgICAgICBkZWZh
 IF0KICAgICAgICAgICAgICAgIFsgInJldHVybiBsb3B1dGlscy5jcmVhdGVTcGVjaWZpZXJzTWVudSgpIiBdCiAgICAgICAgICAgICAgICBsYW5ndWFnZSBweXRob24KICAgICAgICAgICAgfQogICAgICAgIH0KICAgICAgICA=
 cGFybSB7CiAgICAgICAgICAgIG5hbWUgICAgInBhcmVudHByaW10eXBlIgogICAgICAgICAgICBsYWJlbCAgICJQYXJlbnQgUHJpbWl0aXZlIFR5cGUiCiAgICAgICAgICAgIHR5cGUgICAgc3RyaW5nCiAgICAgICAgICAgIGQ=
 ZWZhdWx0IHsgIlVzZEdlb21YZm9ybSIgfQogICAgICAgICAgICBtZW51IHsKICAgICAgICAgICAgICAgIFsgImltcG9ydCBsb3B1dGlscyIgXQogICAgICAgICAgICAgICAgWyAicmV0dXJuIGxvcHV0aWxzLmNyZWF0ZVBhcmU=
-bnRUeXBlc01lbnUoKSIgXQogICAgICAgICAgICAgICAgbGFuZ3VhZ2UgcHl0aG9uCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9Cgp9CklORFgAAAAAAAAAAAAAAAIAAAAIQ29udGVudHMAAAAAAAAAV2iBv8oAAAAMRGk=
-YWxvZ1NjcmlwdAAAAFcAAIhfZzOJMTA3MDcwNzAwMDAwMTAwMDAwMDAwMDY2NjAwMDAwMDAwMDAwMDAwMDAwMTAwMDAwMDE1MDQwMzM3NzEyMDAwMDEzMDAwMDAwMDAwMDBUUkFJTEVSISEhACMgRGlhbG9nIHNjcmlwdCBmb3I=
+bnRUeXBlc01lbnUoKSIgXQogICAgICAgICAgICAgICAgbGFuZ3VhZ2UgcHl0aG9uCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9Cgp9CklORFgAAAAAAAAAAAAAAAIAAAAIQ29udGVudHMAAAAAAAAAV2idAgAAAAAMRGk=
+YWxvZ1NjcmlwdAAAAFcAAIhfZlV9uTA3MDcwNzAwMDAwMTAwMDAwMDAwMDY2NjAwMDAwMDAwMDAwMDAwMDAwMTAwMDAwMDE1MDQ3MjAxMDAwMDAwMDEzMDAwMDAwMDAwMDBUUkFJTEVSISEhACMgRGlhbG9nIHNjcmlwdCBmb3I=
 IHNvcGNyZWF0ZSBhdXRvbWF0aWNhbGx5IGdlbmVyYXRlZAoKewogICAgbmFtZQlzb3BjcmVhdGUKICAgIHNjcmlwdAlzb3BjcmVhdGUKICAgIGxhYmVsCSJTT1AgQ3JlYXRlIgoKICAgIGhlbHAgewoJIiIKICAgIH0KICAgIGI=
 aW5kaGFuZGxlIHByeCB4Zm9ybSAiVHJhbnNmb3JtZXIiIHBpdm90X3J4ICIiCiAgICBiaW5kaGFuZGxlIHByeSB4Zm9ybSAiVHJhbnNmb3JtZXIiIHBpdm90X3J5ICIiCiAgICBiaW5kaGFuZGxlIHByeiB4Zm9ybSAiVHJhbnM=
 Zm9ybWVyIiBwaXZvdF9yeiAiIgogICAgYmluZGhhbmRsZSBweCB4Zm9ybSAiVHJhbnNmb3JtZXIiIHB4ICIiCiAgICBiaW5kaGFuZGxlIHB5IHhmb3JtICJUcmFuc2Zvcm1lciIgcHkgIiIKICAgIGJpbmRoYW5kbGUgcHogeGY=
@@ -2003,7 +2003,7 @@ ICAgICBsYW5ndWFnZSBweXRob24KICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIHBhcm10
 YXJncywgVHJ1ZSkiIH0KICAgICAgICAgICAgICAgIHBhcm10YWcgeyAic2NyaXB0X2FjdGlvbl9oZWxwIiAiU2VsZWN0IHByaW1pdGl2ZXMgaW4gdGhlIFNjZW5lIFZpZXdlciBvciBTY2VuZSBHcmFwaCBUcmVlIHBhbmUuXG4=
 Q3RybC1jbGljayB0byBzZWxlY3QgdXNpbmcgdGhlIHByaW1pdGl2ZSBwaWNrZXIgZGlhbG9nLlxuU2hpZnQtY2xpY2sgdG8gc2VsZWN0IHVzaW5nIHRoZSBwcmltaXRpdmUgcGF0dGVybiBlZGl0b3IuXG5BbHQtY2xpY2sgdG8=
 IHRvZ2dsZSBtb3ZlbWVudCBvZiB0aGUgZGlzcGxheSBmbGFnLiIgfQogICAgICAgICAgICAgICAgcGFybXRhZyB7ICJzY3JpcHRfYWN0aW9uX2ljb24iICJCVVRUT05TX3Jlc2VsZWN0IiB9CiAgICAgICAgICAgICAgICBwYXI=
-bXRhZyB7ICJzaWRlZng6OnVzZHBhdGh0eXBlIiAicHJpbWxpc3QiIH0KICAgICAgICAgICAgfQogICAgICAgIH0KCiAgICB9Cgp9CklORFgAAAAAAAAAAAAAAAEAAAAMRGlhbG9nU2NyaXB0AAAAAAAAEhpnM4mRewogICAgbmE=
+bXRhZyB7ICJzaWRlZng6OnVzZHBhdGh0eXBlIiAicHJpbWxpc3QiIH0KICAgICAgICAgICAgfQogICAgICAgIH0KCiAgICB9Cgp9CklORFgAAAAAAAAAAAAAAAEAAAAMRGlhbG9nU2NyaXB0AAAAAAAAEhpmVX37ewogICAgbmE=
 bWUgInVzZHByZXZpZXdzdXJmYWNlIgogICAgc2NyaXB0ICJVc2RQcmV2aWV3U3VyZmFjZSIKICAgIGxhYmVsICJVU0QgUHJldmlldyBTdXJmYWNlIgogICAgcmVuZGVybWFzayBVU0QKICAgIHNoYWRlcnR5cGUgdm9wbWF0ZXI=
 aWFsCiAgICBleHRlcm5hbHNoYWRlciAxCgogICAgaGVscCB7CiAgICAgICAgIiN0eXBlOiBub2RlIgogICAgICAgICIjY29udGV4dDogdm9wIgogICAgICAgICIjdGFnczogdXNkIgogICAgICAgICIiCiAgICAgICAgIj0gVVM=
 RCBQcmV2aWV3IFN1cmZhY2UgPSIKICAgICAgICAiIgoJIlJlcHJlc2VudHMgYSBVU0QgU3VyZmFjZSBQcmV2aWV3IG1hdGVyaWFsLiIKICAgICAgICAiIgogICAgfQoKCiAgICBpbnB1dCBjb2xvciBkaWZmdXNlQ29sb3IJCSI=
@@ -2175,7 +2175,7 @@ inputs
 stat
 {
   create 1680755038
-  modify 1753337788
+  modify 1755120074
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -2243,7 +2243,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1753333716
+  modify 1755120138
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2266,7 +2266,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1753333716
+  modify 1755120138
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2289,7 +2289,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1753333716
+  modify 1755120138
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2312,7 +2312,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1753333716
+  modify 1755120138
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2335,7 +2335,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1753333715
+  modify 1755120137
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2358,7 +2358,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1753333716
+  modify 1755120138
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2381,7 +2381,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1753333716
+  modify 1755120138
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2404,7 +2404,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1753333724
+  modify 1755120146
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2427,7 +2427,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1753333719
+  modify 1755120141
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2450,7 +2450,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1753333719
+  modify 1755120141
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2473,7 +2473,7 @@ Content-Type: text/plain
 }
 {
   create 1720203512
-  modify 1753333721
+  modify 1755120143
   author pmolodowitch@NV-MEGALODON
   access 0777
 }
@@ -2755,8 +2755,7 @@ text "1-5: light rotate worldZ from 0 to 60 (intensity=5)
 16-20: colorTemperature from 2000 to 11000 (enableColorTemperature=on, intensity=5, width=2)
 21-25: cone:angle from 170 to 10 (intensity=125, width=2)
 26-30: cone:softness from 0 to 1 (intensity=5, cone:angle=45, width=2)
-31-34: focus from 0 to 3.8 (intensity=5, width=2)
-35-35: (constant)
+31-35: focus from 0 to 5 (intensity=5, width=2)
 36-40: focus from 0 to 5 (intensity=5, cone:angle=60, focusTint=red, width=2)
 41-45: focusTint from black to green to white (intensity=5, focus=3, width=2)
 46-54: ies:angleScale from -2 to 2 (exposure=-11, intensity=5, ies:file='ies/bega_omni002_4777lm.ies', width=2)
@@ -2768,7 +2767,7 @@ flags = minimize off
 stat
 {
   create 1686112034
-  modify 1753337785
+  modify 1755120071
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -2798,8 +2797,7 @@ text "1-5: light rotate worldZ from 0 to 60 (intensity=5)
 16-20: colorTemperature from 2000 to 11000 (enableColorTemperature=on, intensity=5)
 21-25: cone:angle from 170 to 10 (intensity=125, radius=.1)
 26-30: cone:softness from 0 to 1 (intensity=5, cone:angle=45)
-31-34: focus from 0 to 3.8 (intensity=5)
-35-35: (constant)
+31-35: focus from 0 to 5 (intensity=5)
 36-40: focus from 0 to 5 (intensity=5, cone:angle=60, focusTint=red)
 41-45: focusTint from black to green to white (intensity=5, focus=3)
 46-54: ies:angleScale from -2 to 2 (exposure=-11, intensity=5, ies:file='ies/bega_omni002_4777lm.ies')
@@ -2811,7 +2809,7 @@ flags = minimize off
 stat
 {
   create 1686112034
-  modify 1753337785
+  modify 1755120071
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -2841,8 +2839,7 @@ text "1-5: light rotate worldZ from 0 to 60 (intensity=5)
 16-20: colorTemperature from 2000 to 11000 (enableColorTemperature=on, intensity=5)
 21-25: cone:angle from 170 to 10 (intensity=125, radius=.1)
 26-30: cone:softness from 0 to 1 (intensity=5, cone:angle=45)
-31-34: focus from 0 to 3.8 (intensity=5)
-35-35: (constant)
+31-35: focus from 0 to 5 (intensity=5)
 36-40: focus from 0 to 5 (intensity=5, cone:angle=60, focusTint=red)
 41-45: focusTint from black to green to white (intensity=5, focus=3)
 46-54: ies:angleScale from -2 to 2 (exposure=-11, intensity=5, ies:file='ies/bega_omni002_4777lm.ies')
@@ -2854,7 +2851,7 @@ flags = minimize off
 stat
 {
   create 1686112034
-  modify 1753337785
+  modify 1755120071
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -2884,8 +2881,7 @@ text "1-5: light rotate worldZ from 0 to 60 (intensity=5)
 16-20: colorTemperature from 2000 to 11000 (enableColorTemperature=on, intensity=5)
 21-25: cone:angle from 170 to 10 (intensity=125, radius=.1)
 26-30: cone:softness from 0 to 1 (intensity=5, cone:angle=45)
-31-34: focus from 0 to 3.8 (intensity=5)
-35-35: (constant)
+31-35: focus from 0 to 5 (intensity=5)
 36-40: focus from 0 to 5 (intensity=5, cone:angle=60, focusTint=red)
 41-45: focusTint from black to green to white (intensity=5, focus=3)
 46-54: ies:angleScale from -2 to 2 (exposure=-11, intensity=5, ies:file='ies/bega_omni002_4777lm.ies')
@@ -2897,7 +2893,7 @@ flags = minimize off
 stat
 {
   create 1686112034
-  modify 1753337785
+  modify 1755120071
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -18225,7 +18221,7 @@ inputs
 stat
 {
   create 1680838012
-  modify 1753337534
+  modify 1754355873
   author alanglands@DESKTOP-9RVQ9GM
   access 0777
 }
@@ -20574,7 +20570,7 @@ return xform.extractRotates()[2]
       segment { options = {	 untie  is os ia oa }
 
 	 length = 0.041666666666666741 value = 5 0 slope = -119.99999999999979 -119.99999999999979 accel = 1.6667245360323777 1.6667245360323777
-	 expr = 0 }
+	 expr = linear() }
       segment { options = {	 untie  is os ia oa }
 
 	 length = 0.16666666666666674 value = 0 5 slope = 29.999999999999986 29.999999999999986 accel = 1.6675923355337372 1.6675923355337372
@@ -149902,7 +149898,7 @@ viewroto  -S file -F '$HH/pic/uvgrid_grey.pic' -C '' -a on -f 'scale' -o 0 0 -s 
 viewroto  -S file -F '' -C '' -a on -f 'scale' -o 0 0 -s 1 1 -O 1 -B 1 -e off image Solaris.pane1.solaris.persp1
 viewforeground -d on -f on -D Pz -s 0 Solaris.pane1.solaris.persp1
 viewforeground -o 1 Solaris.pane1.solaris.persp1
-viewtransform Solaris.pane1.solaris.persp1 version ( 3 )  flag ( Fax )  orthowidth ( 3.84369 )  focal ( 0.05 )  aperture ( 0.020955 )  window ( 0 1 0 1 )  winroll ( 0 )  clear ( 1 )  nearfar ( 1 1e+06 )  aspect ( 1 )  pixelaspect ( 1 )  txyz ( -4.20176e-16 0 -0.431 )  pxyz ( -2.10088e-16 0 -1.7155 )  rotation ( -1 0 -1.22465e-16 0 1 0 1.22465e-16 0 -1  )  homedistance ( 6.35524 )  homeadjboxwidth ( 3.84369 )  homeorthowidth ( 3.84369 )  homeradius ( 4.9738 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612372 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 3 )  fov ( 45b)  inffreecam ( 0 )  
+viewtransform Solaris.pane1.solaris.persp1 version ( 3 )  flag ( Fax )  orthowidth ( 5.8474 )  focal ( 0.05 )  aperture ( 0.020955 )  window ( 0 1 0 1 )  winroll ( 0 )  clear ( 1 )  nearfar ( 1 1e+06 )  aspect ( 1 )  pixelaspect ( 1 )  txyz ( -4.20176e-16 0 -0.431 )  pxyz ( -2.10088e-16 0 -1.7155 )  rotation ( -1 0 -1.22465e-16 0 1 0 1.22465e-16 0 -1  )  homedistance ( 8.77393 )  homeadjboxwidth ( 5.8474 )  homeorthowidth ( 5.8474 )  homeradius ( 6.36139 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612372 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 3 )  fov ( 45b)  inffreecam ( 0 )  
 viewcamera -c /cameras/camera1 Solaris.pane1.solaris.persp1
 vieworthogrid -d on -o 0 0 0 -s 0.2 0.2 -r 5 5 -R 1 Solaris.pane1.solaris.persp1
 viewuvgrid -r on -s 0.1 0.1 -P off -S 64 64 -O 0 0 -C on -t on Solaris.pane1.solaris.persp1
@@ -150051,13 +150047,12 @@ viewsnapshotoption -s off -h off -a 1 -v '*' -m 0 Solaris.pane1.solaris
 cplane -o 0 0 0 -n 4.37114e-08 1 -4.37114e-08 -x 1.91069e-15 4.37114e-08 1 -l n -s 0.1 0.1 -c 40 40 -r 10 10 -d off Solaris.pane1.solaris
 glcache -t 9828 -v 39312
 sceneviewopts -C on -c on -e on -F on -g on -H on -i -1 -k """" -l off -m on -M off -p /Render/Settings -P off -s on -S 1 -r "BRAY_HdKarmaXPU" -K off -R 512 512 -V off Solaris.pane1.solaris
-sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" "RenderMan RIS" Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" "RenderMan XPU - GPU" Solaris.pane1.solaris
+sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" "RenderMan RIS" Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -r -m "Normal Lighting" "RenderMan XPU - CPU" Solaris.pane1.solaris
-sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" "Karma CPU" Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" "RenderMan XPU" Solaris.pane1.solaris
+sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" "Karma CPU" Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -g -p -m "High Quality Lighting" Storm Solaris.pane1.solaris
-sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" Arnold Solaris.pane1.solaris
 sceneviewconfig -y 1 -l 1 -o 1 -r -m "High Quality Lighting" "Karma XPU" Solaris.pane1.solaris
 sceneviewrenderopts -b "xn__riintegratorPxrPathTracersampleModebxdfriintegratorPxrUnifiedaccumOpacity1riprojectionPxrCameramatteriintegratorPxrUnifiedmaxInterfaces2rilightingselectionlearningscheme1riintegratorPxrUnifiedmaxIndirectBounces8Photon_Guiding_folder0riintegratorPxrVCMmaxIndirectBounces8riprojectionPxrSphereCamerahsweep360rilimitsgeocachememory2097152riintegratorPxrPathTracernumSubsurfaceSamples1riintegratorPxrUnifiedsssOversampling8Russian_Roulette_folder0rihiderdecidither0Intensity_Clamping_folder0riintegratorPxrVCMmergePaths1riprojectionPxrCamerafocus3000riintegratorPxrUnifiedindirectOversampling2riintegratorPxrUnifiedcausticClamp1e06ribucketordercircleriintegratorPxrUnifiedphotonAdaptive0riintegratorPxrUnifiedcatchAllLights0Sampling_folder0riintegratorPxrVCMphotonGuidingBBoxMax1e301e301e30rishaderoughnessmollification1riintegratorPxrVCMnumLightSamples1riintegratorPxrVCMrouletteDepth4riintegratorPxrPathTracerrouletteThreshold02rihiderpixelfiltermodeweightedriintegratorPxrPathTracernumLightSamples0riintegratorPxrUnifiedmanifoldWalk0riintegratorPxrUnifiedphotonVisibilityRod0riintegratorPxrVisualizerwireframeOpacity05riintegratorPxrOcclusionuseAlbedo0riintegratorPxrUnifiedphotonEstimationRadius0riintegratorPxrPathTracernumSpecularSamples1riprojectionPxrCamerafocus1000riintegratorPxrUnifiedenableShadingTimers0riintegratorPxrPathTracernumBxdfSamples1riprojectionPxrCamerafocus2000riprojectionPxrCameradetail0Chromatic_Aberration_folder20rihidermaxsamples0riintegratorPxrVisualizerwireframe1riprojectionPxrCameraroll0riintegratorPxrVCMrouletteThreshold02riprojectionPxrSphereCameravsweep90riintegratorPxrPathTraceraccumOpacity0rilimitstexturememory2097152riintegratorPxrUnifiedallowMultilobeIndirect0riintegratorPxrPathTracerclampLuminance10Vignetting_folder30riintegratorPxrUnifiednumIndirectSamples1rihiderminextrasamples1riintegratorPxrUnifiedmaxIterations10riprojectionPxrCamerashiftY0riintegratorPxrDirectLightingnumBxdfSamples4riintegratorPxrUnifiedphotonVisibilityRodDirectProb0riintegratorPxrUnifiednumLightSamples1riintegratorPxrUnifiedindirectTrainingSamples0riintegratorPxrUnifiedphotonVisibilityRodMax000riprojectionPxrCamerasweepdownriprojectionPxrCamerashiftX0riprojectionPxrCameraassymX0riprojectionnamePxrPerspectiverihiderbluenoise1riintegratorPxrPathTracerrouletteDepth4riprojectionPxrCameraduration1riintegratorPxrVisualizerwireframeWidth1riintegratorPxrUnifiedenableSampleTimers0rihiderdarkfalloff0025riintegratorPxrPathTracermaxContinuationLength1riintegratorPxrOcclusionnumSamples4riintegratorPxrOcclusionmaxDistance0riintegratorPxrPathTracermaxNonStochasticOpacityEvents0riintegratorPxrUnifiedindirectClamp8riintegratorPxrVCMtimeRadius1riintegratorPxrVCMmergeRadius5riintegratorPxrUnifiedphotonVisibilityRodMin000Indirect_Clamping_folder0ridiceoffscreenmultiplier1riintegratorPxrPathTracernumIndirectSamples0riintegratorPxrVCMclampDepth2riintegratorPxrDebugShadingContextviewchannelNnShutter_folder40Lens_Distortion_folder10riintegratorPxrVisualizernormalCheck0riintegratorPxrUnifiedindirectSpatialBlurRadius025riintegratorPxrPathTracerclampDepth2riprojectionPxrCamerasqueeze1riintegratorPxrVCMclampLuminance10riprojectionPxrCamerafovEnd0rihideradaptivemetricvarianceriintegratorPxrUnifiedrouletteDepth1riprojectionPxrCameraaxial000riprojectionPxrCylinderCameravsweep90riprojectionPxrPerspectivefovEnd0riintegratorPxrVisualizerwireframeColor000rihiderextrememotiondof0rihidergeomShadowTermBias1riintegratorPxrUnifiedsuppressNaNs0riintegratorPxrUnifiedtraceLightPaths0riintegratorPxrPathTracerallowCaustics0riprojectionPxrCylinderCamerahsweep360Tilt_Shift_folder00riintegratorPxrUnifiedphotonEstimationNumber64riintegratorPxrVCMphotonGuidingBBoxMin1e301e301e30riprojectionPxrCameraenhance001riintegratorPxrUnifiedindirectDirectionalBlurRadius0rihideradaptall0riprojectionPxrCameranatural0riintegratorPxrOcclusionfalloff0riprojectionPxrCameraradial10rihiderminsamples1riintegratorPxrVCMnumBxdfSamples1riintegratorPxrOcclusioncosineSpread1riintegratorPxrUnifieddirectClamp1e06Russian_Roulette_folder20riintegratorPxrUnifiedemissionMultiplier1riintegratorPxrUnifiedmaxRayDistance10000Vertex_Merging_folder0riprojectionPxrCameraoptical0riprojectionPxrCameraassymY0riprojectionPxrCameratransverse111riintegratorPxrUnifiedenableVolumeCaustics0riprojectionPxrCameratilt0riintegratorPxrVCMphotonGuiding0riintegratorPxrUnifiednumBxdfSamples1riprojectionOmnidirectionalStereointerpupilaryDistance00635riintegratorPxrVisualizermatCapriintegratorPxrUnifiedwalkThreshold0005riintegratorPxrPathTracermaxIndirectBounces0riintegratorPxrVisualizerstyleshadedriintegratorPxrPathTracernumRefractionSamples1riintegratorPxrVCMconnectPaths1rihiderexposurebracket11riintegratorPxrPathTracernumDiffuseSamples1ribucketorderorigin11riprojectionPxrCameraradial20riintegratorPxrVisualizershadedPrimVardisplayColorriintegratorPxrUnifiedrouletteLightDepth1riintegratorPxrDirectLightingnumLightSamples4riintegratornamePxrPathTracerWireframe_Settings_folder0Advanced_folder50riintegratorPxrUnifiedrouletteThreshold02riRiPixelVariance0015riintegratorPxrOcclusiondistribution1folder00_cz0le5da45cga61aia10jea6eo78dc9yia86ja7ig6uma6hn756r9ag8ab0ac9ab7ab4bbvb0bb7adwh9bb1bbxbrbzb2ab1ad6bb8aeni0bb0bbpb2bm3ab7ab5ab6bcwk4bb8ab5bb5bc7ab8bb7bb1ad5bb3bb1ad1ab2abrb8abzb9ac7ac1bbvh8bb3bcsb4bbwb9ac1ab7bb5cb1bb9bb8bd0ag1ab1abqqqb2bb3ab3bb4bbse0cb8ab9ab8cb9ab2ab3ab8bdybzb7bb2ab9bepbxb0bb1cd9ab2ab6ac1abvk9ab0ad9ac6ab3bdxbzb8ab1bb2bb9adsb8bc2bm2ad5cbpb2ab5ab2abrb6ab0bb7aeyb4bb0bfvb2ab1ab5ad6bbzb5ab0bb8cf5ac9ae7bb4ai9bb4abwc6bbtc2ab2bo4bb8bbqpzbqb3bcre0bbh79c4h9szdv0buulrzd4onb56bmpgcx9cmh1s0dw0bvumr0dtp8a40cmphct39ayeee391aeae15al5bcb4a2byb6bya3b0b5a2c1b0au2a5a5abc9b2bx3b1bs0cfg6a0b8a9b8a6bzb7b6bxbzc7b5abc8b3b5abc4a5au1b2a3bzb3b4a1c4bv7bza3b4a0c2c0byc9bbc8a4a4a8at5b6a6b5bya3cyb1b7cxb5a6a2cbc1a2a0c5a5cs0a3b2cyb5a0b4a7a2b4abc3b9a6bbc0a2a1b3b3b2bv2c7bfg6abc8cs5a8a5au9a2b2b1a7b5bya5a4a9abc9b2a8a2bzd9a4b8b1byc7a0ac9bxac5a8c3b9b7a2at7bx3bk27fgag85igug3ckyahcc82l7frst4ahtx1cjc15awa4003dkanlkkknfkjggkkofiyfkktzfkgtfkphhgplknvfkkq1affl3afkglfkjhlkkvfkknjggmkkpfkkptfkgv0afxfkgqfkgofknshfqoknqfkknfkkufknrhkmkfkkxfkntfkjhlkkufknpfkjhlkjh6afflfknkfkjffkgshkphgknnfgolkkxfknpxfkktffqgkkogkjhfkrpfkk4afkkqfkkyfkkxlkjgkkjhfkjhfkfufkfknofkjjfknpfkktffmjknwgkmlfkmmfkn4afkkofkglfkgmfkkx8afeufkntfkglfkwmw1afknmfkk0aiknlfkjifkgpgkjhffpokkofkjglkrhgkohfknplfrfftfkknfkkqfknofkrhyfkkxgkgvxkjilkk4affjfkjifkmifkjifflgkgpfkmnfkkm6afkktfkkp3afkjifkjhfkjllkkvfkjffkgofkkpfkvwkknhgkkojkntfkngmknvfkgnffqkknsfgmlkjifknoskktfkrqfkf7bufkkshcojkmnl71740bgcpa" HdPrmanLoaderRendererPlugin
 sceneviewrenderopts -b "xn__karmaglobalipr_continuous_dicing0karmaglobalimagemodeProgressivekarmaglobalcolorlimit10disableMotionBlur0karmagloballight_sampling_modeLightTreekarmahydraoverride_lighting_menuheadlightkarmahydradenoise0karmaglobalipr_proxy_for_imagefilter2karmaglobalpathtracedsamples128karmahydraoverride_lighting0karmahydravariance001primvarskarmaobjectrefractlimit0karmaglobaldicingqualityscale1primvarskarmaobjectdiffuselimit0karmaglobalipr_reserve_threads1karmaglobalprogressivepasses0primvarskarmaobjectvolumesteprate025karmaglobalsamplesperpixel9primvarskarmaobjectreflectlimit0karmagloballight_sampling_quality1karmaglobalenable_dof1karmaglobalenginecpukarmaglobalipr_proxydepth2_her26fla5ek6aj17bd56y6abunvcrb4am6alrb0bb2ad1absd5ab3ab5ab4ab2ab7ad0ab5ab7abvbrfz950a9azau8b6bu3b7a4ax8a6a8a7a5a2b3a8azbyy2a22i7fn93agawigkuglwigutfxsfiig0aigskfsifjofgnigtlfgniguigslfgplgqlfgnigxiglighmgp9873cu9b" BRAY_HdKarma
